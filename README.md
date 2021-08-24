@@ -1,2 +1,2 @@
 # Corrupted-Mythos
- Git-Hub repository for the game Corrupted Mythos
+ GitHub repository for the game Corrupted Mythos
