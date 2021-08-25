@@ -8,8 +8,8 @@ public class Movement : MonoBehaviour
     public CharacterController cPlayer;
     private Inputs pcontroller;
     private Vector2 desiredDirection;
-    private int speed;
-    private float gravity = -9.8f;
+    [SerializeField]
+    private int speed = 1;
 
     private void OnEnable()
     {
