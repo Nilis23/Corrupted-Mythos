@@ -25,6 +25,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""325fb5be-cd10-4c97-8a6e-7dd00f0b3a85"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -97,7 +105,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""702a2ff3-9493-4caf-99b3-a7d9b95ed9e1"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""path"": ""<XInputController>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -108,7 +116,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""e9543a30-d577-4f6c-931d-1a26d60f3f73"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -119,7 +127,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""6f647539-380a-4507-8cbe-a93de7eb6563"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""path"": ""<XInputController>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -130,7 +138,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""d4cc1638-a0fa-4283-8f7d-1e13959c4c34"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""path"": ""<XInputController>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -192,6 +200,28 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""action"": ""movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7c8846e-19a4-416a-9582-2808ec36f5a7"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ec4667f-0c26-48a5-b249-ec657993aef1"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -218,6 +248,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         // player
         m_player = asset.FindActionMap("player", throwIfNotFound: true);
         m_player_movement = m_player.FindAction("movement", throwIfNotFound: true);
+        m_player_attack = m_player.FindAction("attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,11 +299,13 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputActionMap m_player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_player_movement;
+    private readonly InputAction m_player_attack;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
         public PlayerActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @movement => m_Wrapper.m_player_movement;
+        public InputAction @attack => m_Wrapper.m_player_attack;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,6 +318,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -292,6 +328,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @movement.started += instance.OnMovement;
                 @movement.performed += instance.OnMovement;
                 @movement.canceled += instance.OnMovement;
+                @attack.started += instance.OnAttack;
+                @attack.performed += instance.OnAttack;
+                @attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -308,5 +347,6 @@ public class @Inputs : IInputActionCollection, IDisposable
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

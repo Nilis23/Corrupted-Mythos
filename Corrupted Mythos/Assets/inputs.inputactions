@@ -12,6 +12,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "attack",
+                    "type": "Button",
+                    "id": "325fb5be-cd10-4c97-8a6e-7dd00f0b3a85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -84,7 +92,7 @@
                 {
                     "name": "up",
                     "id": "702a2ff3-9493-4caf-99b3-a7d9b95ed9e1",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<XInputController>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "controls",
@@ -95,7 +103,7 @@
                 {
                     "name": "down",
                     "id": "e9543a30-d577-4f6c-931d-1a26d60f3f73",
-                    "path": "<Gamepad>/leftStick/down",
+                    "path": "<XInputController>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "controls",
@@ -106,7 +114,7 @@
                 {
                     "name": "left",
                     "id": "6f647539-380a-4507-8cbe-a93de7eb6563",
-                    "path": "<Gamepad>/leftStick/left",
+                    "path": "<XInputController>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "controls",
@@ -117,7 +125,7 @@
                 {
                     "name": "right",
                     "id": "d4cc1638-a0fa-4283-8f7d-1e13959c4c34",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<XInputController>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "controls",
@@ -179,6 +187,28 @@
                     "action": "movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c7c8846e-19a4-416a-9582-2808ec36f5a7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ec4667f-0c26-48a5-b249-ec657993aef1",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
