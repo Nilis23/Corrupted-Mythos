@@ -11,8 +11,8 @@ public class attackState : State
     {
         //Move into range of the player. Once in range use attack animation. 
         //If the player leaves detection range, swap back to patrol state.
-
-        if(executingManager.getCollisionState() == 1)
+        int colState = executingManager.getCollisionState();
+        if(colState == 1)
         {
             return patrolState;
         }

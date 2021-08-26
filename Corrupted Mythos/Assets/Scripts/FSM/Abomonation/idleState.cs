@@ -14,7 +14,8 @@ public class idleState : State
 
         Debug.Log("I am in idle state");
 
-        if(executingManager.getCollisionState() > 0) //If the collision state is greater than 0, transfer to the patrol state
+        int colState = executingManager.getCollisionState();
+        if (colState > 0) //If the collision state is greater than 0, transfer to the patrol state
         {
             return patrol;
         }

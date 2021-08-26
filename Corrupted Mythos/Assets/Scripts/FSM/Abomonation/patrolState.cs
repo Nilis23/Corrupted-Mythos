@@ -11,9 +11,15 @@ public class patrolState : State
     {
         //Patrol state will walk around once player is within a certian range. Once they are close enough to be detected, and are reachable, the attack state will be entered.
         Debug.Log("I am in patrol state");
-        if(executingManager.getCollisionState() > 1) //The player has entered the second sphere, transfer to attack
+
+        int colState = executingManager.getCollisionState();
+        if (colState > 1) //The player has entered the second sphere, transfer to attack
         {
             return attack;
+        }
+        else if(colState < 1)
+        {
+            return idle;
         }
         
         return this;
