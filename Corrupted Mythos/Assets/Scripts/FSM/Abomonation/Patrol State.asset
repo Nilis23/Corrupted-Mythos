@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790784b10160d2f41a7ea9e9fbdea818, type: 3}
   m_Name: Patrol State
   m_EditorClassIdentifier: 
-  chase: {fileID: 0}
+  executingManager: {fileID: 0}
+  attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
+  idle: {fileID: 11400000, guid: 096b8f8208e71e041bf1069ad223a92b, type: 2}

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Idle State", menuName = "FSM/States/Idle", order = 1)]
 public class idleState : State
 {
-    public State chase; //The chase state it can swap into
+    public State patrol; //The chase state it can swap into
 
     public override State RunCurrentState()
     {
@@ -14,9 +14,9 @@ public class idleState : State
 
         Debug.Log("I am in idle state");
 
-        if(Time.realtimeSinceStartup > 2)
+        if(executingManager.getCollisionState() > 0) //If the collision state is greater than 0, transfer to the patrol state
         {
-            return chase;
+            return patrol;
         }
 
         return this;

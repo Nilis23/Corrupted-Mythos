@@ -11,6 +11,8 @@ public class StateManager : MonoBehaviour
 
     State currentState;
 
+    int collisions = 0;
+
     private void Start()
     {
         foreach(State state in ValidStates)
@@ -42,6 +44,26 @@ public class StateManager : MonoBehaviour
         if (ValidStates.Contains(newState))
         {
             currentState = newState;
+        }
+    }
+
+    public int getCollisionState()
+    {
+        return collisions;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            collisions++;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            collisions--;
         }
     }
 }
