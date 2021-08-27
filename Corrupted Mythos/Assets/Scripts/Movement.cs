@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public CharacterController cPlayer;
     private Inputs pcontroller;
     private Vector2 desiredDirection;
+    private AudioClip swing;
     private Rigidbody2D playerbody;
     private BoxCollider2D playerbox;
     private float jumpVelocity = 10f;
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
 
     private void OnEnable()
     {
+        swing = transform.GetComponent<AudioClip>();
         playerbox = transform.GetComponent<BoxCollider2D>();
         playerbody = transform.GetComponent<Rigidbody2D>();
         cPlayer = GetComponent<CharacterController>();
@@ -40,6 +42,10 @@ public class Movement : MonoBehaviour
         {
             attack();
         }
+        if (pcontroller.player.jump.triggered)
+        {
+            jump();
+        }
     }
 
     void movement()
@@ -47,18 +53,16 @@ public class Movement : MonoBehaviour
         desiredDirection.x = pcontroller.player.movement.ReadValue<Vector2>().x;
         cPlayer.Move(desiredDirection * Time.deltaTime * speed);
 
-        
-        if(pcontroller.player.movement.triggered){ 
-            if (pcontroller.player.movement.ReadValue<Vector2>().y>0 && isGrounded()) //checks if up button is inputed
-            {
-                //jump
-                playerbody.velocity = Vector2.up * jumpVelocity;
+         
+        if (pcontroller.player.movement.ReadValue<Vector2>().y > 0 && isGrounded()) 
+        {
+        //jump
+        playerbody.velocity = Vector2.up * jumpVelocity;
                 
-            }
-            else if(pcontroller.player.movement.ReadValue<Vector2>().y < 0) //checks if down button is inputed
-            {
+        }
+        else if(pcontroller.player.movement.ReadValue<Vector2>().y < 0) 
+        {
 
-            }
         }
         
 
@@ -81,8 +85,13 @@ public class Movement : MonoBehaviour
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(playerbox.bounds.center, playerbox.bounds.size, 0f, Vector2.down, .1f);
 
-
+        Debug.Log(raycastHit2D);
 
         return raycastHit2D.collider != null;
+    }
+
+    void jump()
+    {
+        playerbody.velocity = Vector2.up * jumpVelocity;
     }
 }
