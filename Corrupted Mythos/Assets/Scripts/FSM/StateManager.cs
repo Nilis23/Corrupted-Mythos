@@ -15,10 +15,12 @@ public class StateManager : MonoBehaviour
 
     private void Start()
     {
+        /*
         foreach(State state in ValidStates)
         {
             state.executingManager = this;
         }
+        */
     }
     void Update()
     {
@@ -31,7 +33,7 @@ public class StateManager : MonoBehaviour
 
     private void RunStateMachine()
     {
-        State nextState = currentState?.RunCurrentState(); //If the current state is not null, it will run the state's logic and then grab the returned state
+        State nextState = currentState?.RunCurrentState(this); //If the current state is not null, it will run the state's logic and then grab the returned state
 
         if(nextState != null)
         {
