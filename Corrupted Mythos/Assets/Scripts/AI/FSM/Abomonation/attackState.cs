@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [CreateAssetMenu(fileName = "Attack State", menuName = "FSM/States/Attack", order = 3)]
 public class attackState : State
 {
     public State patrolState;
     bool atkplaying;
+
+    public override void StartState(StateManager em)
+    {
+        CreatePath(em, em.player);
+    }
 
     public override State RunCurrentState(StateManager em)
     {
@@ -18,7 +24,12 @@ public class attackState : State
         {
             return patrolState;
         }
-        
+
+        if(em.timer == 0)
+        {
+            CreatePath(em, em.player);
+            em.timer = 10;
+        }
         stateDebugInfo();
 
         return this;

@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [CreateAssetMenu(fileName = "Patrol State", menuName = "FSM/States/Patrol", order = 2)]
 public class patrolState : State
 {
     public State attack;
     public State idle;
+
+    public override void StartState(StateManager em)
+    {
+        return;
+    }
+
     public override State RunCurrentState(StateManager em)
     {
         //Patrol state will walk around once player is within a certian range. Once they are close enough to be detected, and are reachable, the attack state will be entered.
@@ -20,6 +27,7 @@ public class patrolState : State
         }
         else if(colState < 1)
         {
+            em.idle = true;
             return idle;
         }
         

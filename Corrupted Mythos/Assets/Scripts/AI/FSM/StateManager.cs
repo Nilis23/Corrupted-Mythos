@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class StateManager : MonoBehaviour
 {
@@ -8,19 +9,23 @@ public class StateManager : MonoBehaviour
     List<State> ValidStates;
     [SerializeField]
     State startState;
-
+    
+    public Seeker seeker;
+    public GameObject player;
+    public GameObject origin;
+    public int timer;
+    public bool idle;
     State currentState;
-
     int collisions = 0;
 
     private void Start()
     {
-        /*
-        foreach(State state in ValidStates)
-        {
-            state.executingManager = this;
-        }
-        */
+        //Find and store the player
+        player = GameObject.FindGameObjectWithTag("Player");
+        //Grab this agent's seeker
+        seeker = this.GetComponent<Seeker>();
+
+        idle = true;
     }
     void Update()
     {
@@ -29,6 +34,11 @@ public class StateManager : MonoBehaviour
             currentState = startState;
         }
         RunStateMachine();
+
+        if(timer > 0)
+        {
+            timer--;
+        }
     }
 
     private void RunStateMachine()
@@ -46,6 +56,7 @@ public class StateManager : MonoBehaviour
         if (ValidStates.Contains(newState))
         {
             currentState = newState;
+            currentState.StartState(this);
         }
     }
 
