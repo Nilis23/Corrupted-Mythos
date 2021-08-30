@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
         {
             attack();
         }
-        if (pcontroller.player.jump.triggered)
+        if (pcontroller.player.jump.triggered && isGrounded())
         {
             jump();
         }
@@ -70,14 +70,17 @@ public class Movement : MonoBehaviour
 
     void attack()
     {
-        //run animation 
-        /*
-        if (check if "space is false")
+        if (atk.GetBool("attack") == false) //atk's attack goes back to false at end of animation
         {
-            atk.SetBool("space", true);
-        }else{do nothing}
-        */
+            atk.SetBool("attack", true);
+        }else{}
+
         //if hit calc damage
+        atkcalc();
+    }
+
+    void atkcalc()
+    {
 
     }
 
@@ -92,6 +95,9 @@ public class Movement : MonoBehaviour
 
     void jump()
     {
-        playerbody.velocity = Vector2.up * jumpVelocity;
+        //playerbody.velocity = Vector2.up * jumpVelocity;
+        //cPlayer.velocity = Vector2.up * jumpVelocity;
+        transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
+        
     }
 }
