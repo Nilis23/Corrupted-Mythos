@@ -10,8 +10,6 @@ public class Movement : MonoBehaviour
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
-    private Rigidbody2D playerbody;
-    private BoxCollider2D playerbox;
     private float jumpVelocity = 10f;
     [SerializeField]
     private int speed = 1;
@@ -19,8 +17,6 @@ public class Movement : MonoBehaviour
     private void OnEnable()
     {
         swing = transform.GetComponent<AudioClip>();
-        playerbox = transform.GetComponent<BoxCollider2D>();
-        playerbody = transform.GetComponent<Rigidbody2D>();
         cPlayer = GetComponent<CharacterController>();
         pcontroller = new Inputs();
         pcontroller.Enable();
@@ -56,8 +52,7 @@ public class Movement : MonoBehaviour
          
         if (pcontroller.player.movement.ReadValue<Vector2>().y > 0 && isGrounded()) 
         {
-        //jump
-        playerbody.velocity = Vector2.up * jumpVelocity;
+            jump();
                 
         }
         else if(pcontroller.player.movement.ReadValue<Vector2>().y < 0) 
@@ -86,7 +81,7 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(playerbox.bounds.center, playerbox.bounds.size, 0f, Vector2.down, .1f);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(cPlayer.bounds.center, cPlayer.bounds.size, 0f, Vector2.down, .1f);
 
         Debug.Log(raycastHit2D);
 
