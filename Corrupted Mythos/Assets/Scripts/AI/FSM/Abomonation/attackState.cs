@@ -24,15 +24,11 @@ public class attackState : State
         {
             return patrolState;
         }
+        
+        CreatePath(em, em.player);
+        //stateDebugInfo();
 
-        if(em.timer == 0)
-        {
-            CreatePath(em, em.player);
-            em.timer = 10;
-        }
-        stateDebugInfo();
-
-        return this;
+        return null;
     }
 
     public override void stateDebugInfo()

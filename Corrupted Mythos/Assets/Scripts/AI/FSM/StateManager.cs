@@ -12,9 +12,15 @@ public class StateManager : MonoBehaviour
     
     public Seeker seeker;
     public GameObject player;
-    public GameObject origin;
+    public AstarAI aim;
+
+    public GameObject pointOne;
+    public GameObject pointTwo;
+    public int point = 0;
+
     public int timer;
     public bool idle;
+
     State currentState;
     int collisions = 0;
 
@@ -24,15 +30,17 @@ public class StateManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //Grab this agent's seeker
         seeker = this.GetComponent<Seeker>();
+        aim = this.GetComponent<AstarAI>();
+
+        if (currentState == null)
+        {
+            currentState = startState;
+        }
 
         idle = true;
     }
     void Update()
     {
-        if(currentState == null)
-        {
-            currentState = startState;
-        }
         RunStateMachine();
 
         if(timer > 0)

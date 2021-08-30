@@ -16,10 +16,10 @@ public abstract class State : ScriptableObject
 
     public virtual void CreatePath(StateManager em, GameObject targ)
     {
-        if (em.timer == 0)
+        if (em.timer <= 0)
         {
             em.seeker.StartPath(em.gameObject.transform.position, targ.transform.position);
-            em.timer = 10;
+            em.timer = 20;
         }
     }
 }

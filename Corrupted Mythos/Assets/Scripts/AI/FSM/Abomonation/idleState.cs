@@ -9,7 +9,6 @@ public class idleState : State
 
     public override void StartState(StateManager em)
     {
-        CreatePath(em, em.origin);
         return;
     }
 
@@ -18,7 +17,7 @@ public class idleState : State
         //Idle enemy patrols a limited area around them.
         //If the player is within chase range, and can be reached, enter chase state. Otherwise continue in idle.
 
-        stateDebugInfo();
+        //stateDebugInfo();
         
         int colState = em.getCollisionState();
         if (colState > 0) //If the collision state is greater than 0, transfer to the patrol state
@@ -26,8 +25,8 @@ public class idleState : State
             em.idle = false;
             return patrol;
         }
-        
 
-        return this;
+
+        return null;
     }
 }

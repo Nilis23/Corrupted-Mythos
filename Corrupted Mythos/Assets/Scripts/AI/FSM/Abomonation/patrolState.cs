@@ -9,16 +9,41 @@ public class patrolState : State
     public State attack;
     public State idle;
 
+    
+
     public override void StartState(StateManager em)
     {
+        if(em.point == 0)
+        {
+            CreatePath(em, em.pointOne);
+            em.point = 1;
+        }
+        else
+        {
+            CreatePath(em, em.pointTwo);
+            em.point = 0;
+        }
         return;
     }
 
     public override State RunCurrentState(StateManager em)
     {
         //Patrol state will walk around once player is within a certian range. Once they are close enough to be detected, and are reachable, the attack state will be entered.
-        stateDebugInfo();
+        //stateDebugInfo();
 
+        if (em.aim.reachedEndOfPath) //If the ai has reached the end of it's path
+        {
+            if (em.point == 0)
+            {
+                CreatePath(em, em.pointOne);
+                em.point = 1;
+            }
+            else
+            {
+                CreatePath(em, em.pointTwo);
+                em.point = 0;
+            }
+        }
         
         int colState = em.getCollisionState();
         if (colState > 1) //The player has entered the second sphere, transfer to attack
@@ -32,6 +57,6 @@ public class patrolState : State
         }
         
         
-        return this;
+        return null;
     }
 }

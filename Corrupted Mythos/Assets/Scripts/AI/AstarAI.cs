@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class AstarAI : MonoBehaviour
 {
-    public Transform targetPosition;
+    //public Transform targetPosition;
 
     private Seeker seeker;
     private CharacterController controller;
@@ -17,8 +17,6 @@ public class AstarAI : MonoBehaviour
     public float nextWaypointDistance = 3;
 
     private int currentWaypoint = 0;
-
-    public float repathRate = 0.5f;
 
     public bool reachedEndOfPath;
 
@@ -50,6 +48,7 @@ public class AstarAI : MonoBehaviour
             path = p;
             // Reset the waypoint counter so that we start to move towards the first point in the path
             currentWaypoint = 0;
+            reachedEndOfPath = false;
         }
         else
         {
@@ -59,7 +58,7 @@ public class AstarAI : MonoBehaviour
 
     public void Update()
     {
-            if (path == null)
+            if (path == null || em.idle)
             {
                 // We have no path to follow yet, so don't do anything
                 return;
@@ -73,6 +72,7 @@ public class AstarAI : MonoBehaviour
             float distanceToWaypoint;
             while (true)
             {
+                Debug.Log("Moving");
                 // If you want maximum performance you can check the squared distance instead to get rid of a
                 // square root calculation. But that is outside the scope of this tutorial.
                 distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
@@ -110,9 +110,5 @@ public class AstarAI : MonoBehaviour
             // Move the agent using the CharacterController component
             // Note that SimpleMove takes a velocity in meters/second, so we should not multiply by Time.deltaTime
             controller.SimpleMove(velocity);
-
-            // If you are writing a 2D game you may want to remove the CharacterController and instead modify the position directly
-            // transform.position += velocity * Time.deltaTime;
-        
     }
 }
