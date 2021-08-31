@@ -16,12 +16,12 @@ public class patrolState : State
         if(em.point == 0)
         {
             CreatePath(em, em.pointOne);
-            em.point = 1;
+            //em.point = 1;
         }
         else
         {
             CreatePath(em, em.pointTwo);
-            em.point = 0;
+            //em.point = 0;
         }
         return;
     }
@@ -31,7 +31,7 @@ public class patrolState : State
         //Patrol state will walk around once player is within a certian range. Once they are close enough to be detected, and are reachable, the attack state will be entered.
         //stateDebugInfo();
 
-        if (em.aim.reachedEndOfPath) //If the ai has reached the end of it's path
+        if (em.aim.reachedEndOfPath && em.timer == 0) //If the ai has reached the end of it's path
         {
             if (em.point == 0)
             {

@@ -34,6 +34,7 @@ public class AstarAI : MonoBehaviour
 
     public void OnPathComplete(Path p)
     {
+        reachedEndOfPath = false;
         Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
 
         // Path pooling. To avoid unnecessary allocations paths are reference counted.
@@ -48,7 +49,7 @@ public class AstarAI : MonoBehaviour
             path = p;
             // Reset the waypoint counter so that we start to move towards the first point in the path
             currentWaypoint = 0;
-            reachedEndOfPath = false;
+            //reachedEndOfPath = false;
         }
         else
         {
