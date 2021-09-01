@@ -25,10 +25,9 @@ public class projectileManager : MonoBehaviour
     {
         if(timer <= 0)
         {
-            GameObject newProj = Instantiate(projPref, launcher.transform.position, Quaternion.identity);
+            GameObject newProj = Instantiate(projPref, Vector3.MoveTowards(launcher.transform.position, GameObject.Find("Target").transform.position, 0.8f), Quaternion.identity);
             //Rigidbody projRB = newProj.GetComponent<Rigidbody>();
 
-            //projRB.AddForce((GameObject.Find("Target").transform.position - transform.position).normalized * speed);
 
             timer = 10f;
         }
