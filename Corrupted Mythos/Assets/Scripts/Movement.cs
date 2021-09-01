@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
     public Animator atk;
     public CharacterController cPlayer;
+    private Transform hitbox;
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
@@ -16,6 +17,9 @@ public class Movement : MonoBehaviour
 
     private void OnEnable()
     {
+        hitbox = transform.GetChild(0);
+        //disable hitbox
+        //transform.GetComponent<CircleCollider2D>().enabled = false;
         swing = transform.GetComponent<AudioClip>();
         cPlayer = GetComponent<CharacterController>();
         pcontroller = new Inputs();
@@ -65,13 +69,22 @@ public class Movement : MonoBehaviour
 
     void attack()
     {
+        /*
         if (atk.GetBool("attack") == false) //atk's attack goes back to false at end of animation
         {
             atk.SetBool("attack", true);
         }else{}
+        */
 
         //if hit calc damage
+
+        hitbox.gameObject.SetActive(true);
+
+
+
+        //transform.GetComponentInChildren<CircleCollider2D>().enabled = false;
         atkcalc();
+        
     }
 
     void atkcalc()
@@ -94,5 +107,14 @@ public class Movement : MonoBehaviour
         //cPlayer.velocity = Vector2.up * jumpVelocity;
         transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy"))
+        {
+            Debug.Log("hit");
+        }
+
     }
 }
