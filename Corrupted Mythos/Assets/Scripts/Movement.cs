@@ -79,10 +79,8 @@ public class Movement : MonoBehaviour
         //if hit calc damage
 
         hitbox.gameObject.SetActive(true);
+        hitbox.gameObject.SetActive(false);
 
-
-
-        //transform.GetComponentInChildren<CircleCollider2D>().enabled = false;
         atkcalc();
         
     }
@@ -109,12 +107,4 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("enemy"))
-        {
-            Debug.Log("hit");
-        }
-
-    }
 }
