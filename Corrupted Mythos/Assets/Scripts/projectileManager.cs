@@ -7,7 +7,7 @@ public class projectileManager : MonoBehaviour
     [Space]
     [Tooltip("The prefab from which the projectile will be instantiated")]
     [SerializeField]GameObject projPref;
-    [SerializeField]float speed;
+    //[SerializeField]float speed;
     float timer = 0f;
 
     // Update is called once per frame
