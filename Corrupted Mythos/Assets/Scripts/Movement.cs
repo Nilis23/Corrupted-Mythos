@@ -56,8 +56,7 @@ public class Movement : MonoBehaviour
          
         if (pcontroller.player.movement.ReadValue<Vector2>().y > 0 && isGrounded()) 
         {
-            jump();
-                
+            jump(); 
         }
         else if(pcontroller.player.movement.ReadValue<Vector2>().y < 0) 
         {
@@ -69,7 +68,7 @@ public class Movement : MonoBehaviour
 
     void attack()
     {
-        /*
+        /*attack animation
         if (atk.GetBool("attack") == false) //atk's attack goes back to false at end of animation
         {
             atk.SetBool("attack", true);
@@ -81,7 +80,7 @@ public class Movement : MonoBehaviour
         hitbox.gameObject.SetActive(true);
         hitbox.gameObject.SetActive(false);
 
-        atkcalc();
+        //atkcalc();
         
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyhealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public int health;
     public Transform enemy;
