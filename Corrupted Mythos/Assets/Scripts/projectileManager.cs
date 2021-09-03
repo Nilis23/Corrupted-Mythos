@@ -18,7 +18,7 @@ public class projectileManager : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        attemptProjectileLaunch(this.gameObject);
+        //attemptProjectileLaunch(this.gameObject);
     }
 
     public void attemptProjectileLaunch(GameObject launcher)

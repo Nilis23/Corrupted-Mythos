@@ -10,8 +10,7 @@ public class fireGiantProjectile : MonoBehaviour
     SphereCollider myCol;
     [SerializeField]
     float step;
-
-    Transform target;
+    Vector3 dir;
 
     float life;
 
@@ -19,7 +18,9 @@ public class fireGiantProjectile : MonoBehaviour
     void Start()
     {
         life = 10f;
-        target = GameObject.Find("Target").transform;
+
+        dir = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).normalized;
+        //this.gameObject.transform.position = dir * 1;
 
         Invoke("activateCol", 0.2f);
     }
@@ -27,7 +28,9 @@ public class fireGiantProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        //this.transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        this.transform.Translate(dir * Time.deltaTime * step);
+        //this.GetComponent<Rigidbody>().AddForce(dir * step);
 
         if(life > 0)
         {
@@ -47,6 +50,7 @@ public class fireGiantProjectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //myMesh.enabled = false;
+        //step = 0;
         life = 5f;
     }
 }
