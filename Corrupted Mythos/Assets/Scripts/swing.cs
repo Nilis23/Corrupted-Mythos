@@ -7,11 +7,9 @@ public class swing : MonoBehaviour
     private int damage;
     public EnemyHealth script;
 
-
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("enemy"))
+        if (collision.CompareTag("enemy"))
         {
             Debug.Log("hit");
             //damage enemy
@@ -20,6 +18,5 @@ public class swing : MonoBehaviour
             script.minusHealth(damage);
             */
         }
-
     }
 }

@@ -18,8 +18,7 @@ public class Movement : MonoBehaviour
     private void OnEnable()
     {
         hitbox = transform.GetChild(0);
-        //disable hitbox
-        //transform.GetComponent<CircleCollider2D>().enabled = false;
+        //Debug.Log(hitbox.name);
         swing = transform.GetComponent<AudioClip>();
         cPlayer = GetComponent<CharacterController>();
         pcontroller = new Inputs();
@@ -40,6 +39,7 @@ public class Movement : MonoBehaviour
         movement();
         if (pcontroller.player.attack.triggered)
         {
+            //Debug.Log("attack");
             attack();
         }
         if (pcontroller.player.jump.triggered && isGrounded())
@@ -75,18 +75,9 @@ public class Movement : MonoBehaviour
         }else{}
         */
 
-        //if hit calc damage
-
         hitbox.gameObject.SetActive(true);
         hitbox.gameObject.SetActive(false);
-
-        //atkcalc();
         
-    }
-
-    void atkcalc()
-    {
-
     }
 
     private bool isGrounded()
@@ -103,7 +94,6 @@ public class Movement : MonoBehaviour
         //playerbody.velocity = Vector2.up * jumpVelocity;
         //cPlayer.velocity = Vector2.up * jumpVelocity;
         transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
-        
     }
 
 }
