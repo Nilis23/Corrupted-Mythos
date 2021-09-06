@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     public Animator atk;
     public CharacterController cPlayer;
-    private Transform hitbox;
+    public GameObject hitbox;
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     private void OnEnable()
     {
-        hitbox = transform.GetChild(0);
+        //hitbox = transform.GetChild(0);
         //Debug.Log(hitbox.name);
         swing = transform.GetComponent<AudioClip>();
         cPlayer = GetComponent<CharacterController>();
@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
             //Debug.Log("attack");
             attack();
         }
-        if (pcontroller.player.jump.triggered && isGrounded())
+        if (pcontroller.player.jump.triggered/* && isGrounded()*/)
         {
             jump();
         }
@@ -52,17 +52,6 @@ public class Movement : MonoBehaviour
     {
         desiredDirection.x = pcontroller.player.movement.ReadValue<Vector2>().x;
         cPlayer.Move(desiredDirection * Time.deltaTime * speed);
-
-         
-        if (pcontroller.player.movement.ReadValue<Vector2>().y > 0 && isGrounded()) 
-        {
-            jump(); 
-        }
-        else if(pcontroller.player.movement.ReadValue<Vector2>().y < 0) 
-        {
-
-        }
-        
 
     }
 
@@ -76,7 +65,7 @@ public class Movement : MonoBehaviour
         */
 
         hitbox.gameObject.SetActive(true);
-        hitbox.gameObject.SetActive(false);
+        //hitbox.gameObject.SetActive(false);
         
     }
 
@@ -94,6 +83,8 @@ public class Movement : MonoBehaviour
         //playerbody.velocity = Vector2.up * jumpVelocity;
         //cPlayer.velocity = Vector2.up * jumpVelocity;
         transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
+        //cPlayer.transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
+        Debug.Log("jump");
     }
 
 }

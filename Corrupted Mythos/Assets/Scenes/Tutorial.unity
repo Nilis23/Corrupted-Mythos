@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: {fileID: 0}
   cPlayer: {fileID: 1339949539}
+  hitbox: {fileID: 1941318255}
   speed: 5
 --- !u!65 &1339949541
 BoxCollider:

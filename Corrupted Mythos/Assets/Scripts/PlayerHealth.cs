@@ -6,11 +6,14 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
     public Transform player;
+    public Transform spawn;
+
     void Update()
     {
         if (health <= 0)
         {
-            //Application.Quit;
+            //player.position = spawn.position;
+            health = 100;
         }
     }
 
