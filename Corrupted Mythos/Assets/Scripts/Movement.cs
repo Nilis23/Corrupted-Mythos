@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public Animator atk;
     public CharacterController cPlayer;
     public GameObject hitbox;
+    private bool grounded = false;
+    private float gravity = -9.8f;
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
@@ -43,7 +45,7 @@ public class Movement : MonoBehaviour
             //Debug.Log("attack");
             attack();
         }
-        if (pcontroller.player.jump.triggered/* && isGrounded()*/)
+        if (pcontroller.player.jump.triggered && grounded)
         {
             jump();
         }
@@ -53,7 +55,7 @@ public class Movement : MonoBehaviour
     {
         desiredDirection.x = pcontroller.player.movement.ReadValue<Vector2>().x;
         cPlayer.Move(desiredDirection * Time.deltaTime * speed);
-
+        desiredDirection.y = gravity *Time.deltaTime;
     }
 
     void attack()
@@ -66,19 +68,23 @@ public class Movement : MonoBehaviour
         */
 
         hitbox.gameObject.SetActive(true);
-        //hitbox.gameObject.SetActive(false);
+        hitbox.gameObject.SetActive(false);
         
     }
 
+    /*
     private bool isGrounded()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(cPlayer.bounds.center, cPlayer.bounds.size, 0f, Vector2.down, .1f);
+        bool grounded = false;
 
-        Debug.Log(raycastHit2D);
+        if (grounded)
+        {
+            grounded = true;
+        }
 
-        return raycastHit2D.collider != null;
+        return grounded;
     }
-
+    */
     void jump()
     {
         //playerbody.velocity = Vector2.up * jumpVelocity;
@@ -86,6 +92,14 @@ public class Movement : MonoBehaviour
         transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
         //cPlayer.transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
         Debug.Log("jump");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("floor"))
+        {
+            grounded = true;
+        }
     }
 
 }
