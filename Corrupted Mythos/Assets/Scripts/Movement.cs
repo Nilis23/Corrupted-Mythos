@@ -7,8 +7,10 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     public Animator atk;
+    public Transform checkpoint;
     public CharacterController cPlayer;
     public GameObject hitbox;
+    private int check=0;
     private bool grounded = false;
     private float gravity = -9.8f;
     private Inputs pcontroller;
@@ -40,6 +42,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         movement();
+        
         if (pcontroller.player.attack.triggered)
         {
             //Debug.Log("attack");
@@ -49,13 +52,19 @@ public class Movement : MonoBehaviour
         {
             jump();
         }
+        
     }
 
     void movement()
     {
         desiredDirection.x = pcontroller.player.movement.ReadValue<Vector2>().x;
         cPlayer.Move(desiredDirection * Time.deltaTime * speed);
-        desiredDirection.y = gravity *Time.deltaTime;
+        
+        if(grounded == false)
+        {
+            desiredDirection.y += gravity *Time.deltaTime;
+        } 
+        
     }
 
     void attack()
@@ -69,37 +78,36 @@ public class Movement : MonoBehaviour
 
         hitbox.gameObject.SetActive(true);
         hitbox.gameObject.SetActive(false);
-        
+
     }
-
-    /*
-    private bool isGrounded()
-    {
-        bool grounded = false;
-
-        if (grounded)
-        {
-            grounded = true;
-        }
-
-        return grounded;
-    }
-    */
+    
     void jump()
     {
         //playerbody.velocity = Vector2.up * jumpVelocity;
         //cPlayer.velocity = Vector2.up * jumpVelocity;
-        transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
+        //transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
         //cPlayer.transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
+        desiredDirection.y = jumpVelocity;
         Debug.Log("jump");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag("floor"))
         {
+            Debug.Log("grounded");
+            desiredDirection.y = 0;
             grounded = true;
         }
+        else if (collision.CompareTag("checkpoint"))
+        {
+            checkpoint.position = collision.transform.position;
+            check += 1;
+            //collision.disable();
+        }
+
     }
+
 
 }
