@@ -20,6 +20,8 @@ public class loadoutManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //This code doesn't work, needs input manager
+
         if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("One");
