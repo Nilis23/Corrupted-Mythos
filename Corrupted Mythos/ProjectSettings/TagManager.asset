@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - checkpoint
+  - floor
   layers:
   - Default
   - TransparentFX

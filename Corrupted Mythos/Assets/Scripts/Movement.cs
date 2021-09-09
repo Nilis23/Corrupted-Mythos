@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
-    private float jumpVelocity = 10f;
+    private float jumpVelocity = 1f;
     [SerializeField]
     private int speed = 1;
 
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             //Debug.Log("attack");
             attack();
         }
-        if (pcontroller.player.jump.triggered && grounded)
+        if (pcontroller.player.jump.triggered /*&& grounded*/)
         {
             jump();
         }
@@ -63,8 +63,7 @@ public class Movement : MonoBehaviour
         if(grounded == false)
         {
             desiredDirection.y += gravity *Time.deltaTime;
-        } 
-        
+        }
     }
 
     void attack()
@@ -89,12 +88,13 @@ public class Movement : MonoBehaviour
         //cPlayer.transform.Translate(0, jumpVelocity * Time.deltaTime, 0);
         desiredDirection.y = jumpVelocity;
         Debug.Log("jump");
+        grounded = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
-        if (collision.CompareTag("floor"))
+        if (collision.CompareTag("floor"))//<--this doesnt get called
         {
             Debug.Log("grounded");
             desiredDirection.y = 0;
