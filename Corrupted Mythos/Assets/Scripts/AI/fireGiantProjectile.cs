@@ -5,12 +5,12 @@ using UnityEngine;
 public class fireGiantProjectile : MonoBehaviour
 {
     [SerializeField]
-    MeshRenderer myMesh;
+    SpriteRenderer mySprite;
     [SerializeField]
-    SphereCollider myCol;
+    CircleCollider2D myCol;
     [SerializeField]
     float step;
-    Vector3 dir;
+    Vector2 dir;
 
     float life;
 
@@ -20,17 +20,12 @@ public class fireGiantProjectile : MonoBehaviour
         life = 10f;
 
         dir = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).normalized;
-        //this.gameObject.transform.position = dir * 1;
-
-        Invoke("activateCol", 0.2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.transform.position = Vector3.MoveTowards(transform.position, target.position, step);
         this.transform.Translate(dir * Time.deltaTime * step);
-        //this.GetComponent<Rigidbody>().AddForce(dir * step);
 
         if(life > 0)
         {
@@ -47,10 +42,8 @@ public class fireGiantProjectile : MonoBehaviour
         myCol.enabled = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //myMesh.enabled = false;
-        //step = 0;
-        life = 5f;
+        Destroy(this.gameObject);
     }
 }

@@ -25,23 +25,17 @@ public class loadoutManager : MonoBehaviour
     {
         //This code doesn't work, needs input manager
 
-        if(pcontroller.player.artifact.triggered)
+        if(pcontroller.player.ArtifactOne.triggered && one != null)
         {
-            Debug.Log("One");
             one.doAction();
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+        if(pcontroller.player.ArtifactTwo.triggered && two != null)
         {
-            Debug.Log("Two");
             two.doAction();
-
         }
-        if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+        if (pcontroller.player.ArtifactThree.triggered && three != null)
         {
-            Debug.Log("Three");
             three.doAction();
         }
-        */
     }
 }

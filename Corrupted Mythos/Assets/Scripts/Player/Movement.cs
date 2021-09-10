@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     private Inputs pcontroller;
     private Vector2 desiredDirection;
     private AudioClip swing;
-    private float jumpVelocity = 1f;
+    private float jumpVelocity = 20f;
     [SerializeField]
     private int speed = 1;
 

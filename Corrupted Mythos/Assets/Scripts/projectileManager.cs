@@ -17,17 +17,27 @@ public class projectileManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-
-        //attemptProjectileLaunch(this.gameObject);
     }
 
     public void attemptProjectileLaunch(GameObject launcher)
     {
         if(timer <= 0)
         {
-            GameObject newProj = Instantiate(projPref, Vector3.MoveTowards(launcher.transform.position, GameObject.Find("Target").transform.position, 0.8f), Quaternion.identity);
+            Vector2 dir = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).normalized;
+            if(dir.x > 0)
+            {
+                Vector2 start = this.transform.position;
+                start.x = start.x + 1f;
+                GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+            }
+            else
+            {
+                Vector2 start = this.transform.position;
+                start.x = start.x - 1f;
+                GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+            }
+            
             //Rigidbody projRB = newProj.GetComponent<Rigidbody>();
-
 
             timer = 10f;
         }

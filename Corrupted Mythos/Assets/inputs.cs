@@ -43,9 +43,25 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""artifact"",
+                    ""name"": ""ArtifactOne"",
                     ""type"": ""Button"",
-                    ""id"": ""de5784de-d529-4ad1-8875-184a4c1e1b64"",
+                    ""id"": ""dbdd42e2-46c1-4a08-b656-ca599e51ad4f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ArtifactTwo"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6869282-d3bd-441a-8eec-ab3632400c32"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ArtifactThree"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a79d76a-1a80-4cfb-b024-8c5e4c61f23a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -263,34 +279,34 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d13c3fef-01e9-4d18-8142-2e931aad4394"",
+                    ""id"": ""ef24a9ec-a6e7-4158-bfee-f511432ee28f"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""artifact"",
+                    ""action"": ""ArtifactOne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2b9a576d-166a-4d1f-b16b-f853dc28fc5f"",
+                    ""id"": ""90ebf820-b958-44e3-80a4-ff91ba0ac53f"",
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""artifact"",
+                    ""action"": ""ArtifactTwo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""503070df-5e21-4e32-b4df-01900f3d0c19"",
+                    ""id"": ""492401be-9d99-44e4-9396-49b221555e5d"",
                     ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""artifact"",
+                    ""action"": ""ArtifactThree"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -321,7 +337,9 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_movement = m_player.FindAction("movement", throwIfNotFound: true);
         m_player_attack = m_player.FindAction("attack", throwIfNotFound: true);
         m_player_jump = m_player.FindAction("jump", throwIfNotFound: true);
-        m_player_artifact = m_player.FindAction("artifact", throwIfNotFound: true);
+        m_player_ArtifactOne = m_player.FindAction("ArtifactOne", throwIfNotFound: true);
+        m_player_ArtifactTwo = m_player.FindAction("ArtifactTwo", throwIfNotFound: true);
+        m_player_ArtifactThree = m_player.FindAction("ArtifactThree", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -374,7 +392,9 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_movement;
     private readonly InputAction m_player_attack;
     private readonly InputAction m_player_jump;
-    private readonly InputAction m_player_artifact;
+    private readonly InputAction m_player_ArtifactOne;
+    private readonly InputAction m_player_ArtifactTwo;
+    private readonly InputAction m_player_ArtifactThree;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -382,7 +402,9 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @movement => m_Wrapper.m_player_movement;
         public InputAction @attack => m_Wrapper.m_player_attack;
         public InputAction @jump => m_Wrapper.m_player_jump;
-        public InputAction @artifact => m_Wrapper.m_player_artifact;
+        public InputAction @ArtifactOne => m_Wrapper.m_player_ArtifactOne;
+        public InputAction @ArtifactTwo => m_Wrapper.m_player_ArtifactTwo;
+        public InputAction @ArtifactThree => m_Wrapper.m_player_ArtifactThree;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -401,9 +423,15 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @artifact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
-                @artifact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
-                @artifact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
+                @ArtifactOne.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactOne;
+                @ArtifactOne.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactOne;
+                @ArtifactOne.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactOne;
+                @ArtifactTwo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactTwo;
+                @ArtifactTwo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactTwo;
+                @ArtifactTwo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactTwo;
+                @ArtifactThree.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
+                @ArtifactThree.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
+                @ArtifactThree.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,9 +445,15 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @jump.started += instance.OnJump;
                 @jump.performed += instance.OnJump;
                 @jump.canceled += instance.OnJump;
-                @artifact.started += instance.OnArtifact;
-                @artifact.performed += instance.OnArtifact;
-                @artifact.canceled += instance.OnArtifact;
+                @ArtifactOne.started += instance.OnArtifactOne;
+                @ArtifactOne.performed += instance.OnArtifactOne;
+                @ArtifactOne.canceled += instance.OnArtifactOne;
+                @ArtifactTwo.started += instance.OnArtifactTwo;
+                @ArtifactTwo.performed += instance.OnArtifactTwo;
+                @ArtifactTwo.canceled += instance.OnArtifactTwo;
+                @ArtifactThree.started += instance.OnArtifactThree;
+                @ArtifactThree.performed += instance.OnArtifactThree;
+                @ArtifactThree.canceled += instance.OnArtifactThree;
             }
         }
     }
@@ -438,6 +472,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnArtifact(InputAction.CallbackContext context);
+        void OnArtifactOne(InputAction.CallbackContext context);
+        void OnArtifactTwo(InputAction.CallbackContext context);
+        void OnArtifactThree(InputAction.CallbackContext context);
     }
 }
