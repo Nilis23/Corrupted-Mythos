@@ -41,6 +41,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""artifact"",
+                    ""type"": ""Button"",
+                    ""id"": ""de5784de-d529-4ad1-8875-184a4c1e1b64"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -252,6 +260,39 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""action"": ""jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d13c3fef-01e9-4d18-8142-2e931aad4394"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""artifact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b9a576d-166a-4d1f-b16b-f853dc28fc5f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""artifact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""503070df-5e21-4e32-b4df-01900f3d0c19"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""artifact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -280,6 +321,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_movement = m_player.FindAction("movement", throwIfNotFound: true);
         m_player_attack = m_player.FindAction("attack", throwIfNotFound: true);
         m_player_jump = m_player.FindAction("jump", throwIfNotFound: true);
+        m_player_artifact = m_player.FindAction("artifact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -332,6 +374,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_movement;
     private readonly InputAction m_player_attack;
     private readonly InputAction m_player_jump;
+    private readonly InputAction m_player_artifact;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -339,6 +382,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @movement => m_Wrapper.m_player_movement;
         public InputAction @attack => m_Wrapper.m_player_attack;
         public InputAction @jump => m_Wrapper.m_player_jump;
+        public InputAction @artifact => m_Wrapper.m_player_artifact;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -357,6 +401,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @artifact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
+                @artifact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
+                @artifact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifact;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -370,6 +417,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @jump.started += instance.OnJump;
                 @jump.performed += instance.OnJump;
                 @jump.canceled += instance.OnJump;
+                @artifact.started += instance.OnArtifact;
+                @artifact.performed += instance.OnArtifact;
+                @artifact.canceled += instance.OnArtifact;
             }
         }
     }
@@ -388,5 +438,6 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnArtifact(InputAction.CallbackContext context);
     }
 }
