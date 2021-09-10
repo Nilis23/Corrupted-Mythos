@@ -7,10 +7,8 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     public Animator atk;
-    public Transform checkpoint;
     public CharacterController cPlayer;
     public GameObject hitbox;
-    private int check=0;
     private bool grounded = false;
     private float gravity = -9.8f;
     private Inputs pcontroller;
@@ -94,17 +92,11 @@ public class Movement : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
 
-        if (collision.CompareTag("floor"))//<--this doesnt get called
+        if (collision.CompareTag("floor"))
         {
             Debug.Log("grounded");
             desiredDirection.y = 0;
             grounded = true;
-        }
-        else if (collision.CompareTag("checkpoint"))
-        {
-            checkpoint.position = collision.transform.position;
-            check += 1;
-            //collision.disable();
         }
 
     }

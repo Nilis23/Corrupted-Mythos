@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
+    public int health, check=0;
     public Transform player;
     public Transform spawn;
 
@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            //player.position = spawn.position;
+            player.position = spawn.position;
             health = 100;
         }
     }
@@ -26,5 +26,16 @@ public class PlayerHealth : MonoBehaviour
     {
         health += gain;
         //update UI
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("checkpoint"))
+        {
+            Debug.Log("checkpoint");
+            spawn.position = other.transform.position;
+            check += 1;
+            Destroy(other);
+        }
     }
 }
