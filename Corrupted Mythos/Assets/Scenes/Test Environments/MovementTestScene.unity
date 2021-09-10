@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 312817842}
   - component: {fileID: 312817841}
-  - component: {fileID: 312817844}
   - component: {fileID: 312817843}
+  - component: {fileID: 312817844}
   - component: {fileID: 312817845}
   m_Layer: 0
   m_Name: Player
@@ -264,13 +264,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 312817840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fd544207199a046b1d6d8f0a79bfde, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b1ae708712d6fb48a9cf9d51de7f73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   atk: {fileID: 0}
-  checkpoint: {fileID: 0}
-  cPlayer: {fileID: 312817844}
+  playerRB: {fileID: 312817844}
   hitbox: {fileID: 0}
+  jumpVelocity: 3
   speed: 1
 --- !u!1 &1140283394
 GameObject:
