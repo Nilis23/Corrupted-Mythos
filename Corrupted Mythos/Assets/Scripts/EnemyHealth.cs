@@ -18,9 +18,11 @@ public class EnemyHealth : MonoBehaviour
     public void minusHealth(int damage)
     {
         health -= damage;
+        Debug.Log(health);
     }
     public void addHealth(int gain)
     {
         health += gain;
+        Debug.Log(health);
     }
 }

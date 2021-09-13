@@ -20,11 +20,13 @@ public class PlayerHealth : MonoBehaviour
     public void minusHealth(int damage)
     {
         health -= damage;
+        Debug.Log(health);
         //update UI
     }
     public void addHealth(int gain)
     {
         health += gain;
+        Debug.Log(health);
         //update UI
     }
 
