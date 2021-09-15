@@ -236,7 +236,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c7c8846e-19a4-416a-9582-2808ec36f5a7"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
