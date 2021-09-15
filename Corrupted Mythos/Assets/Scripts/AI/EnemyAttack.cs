@@ -6,12 +6,31 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField]
     int damage;
+    float t = 0;
+
+    private void Update()
+    {
+        if(t > 0)
+        {
+            t -= Time.deltaTime;
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && t <= 0)
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
+            t = 1;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && t <= 0)
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
+            t = 1;
         }
     }
 }
