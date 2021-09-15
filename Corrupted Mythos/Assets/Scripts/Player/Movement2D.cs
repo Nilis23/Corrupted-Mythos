@@ -30,6 +30,8 @@ public class Movement2D : MonoBehaviour
         swing = transform.GetComponent<AudioClip>();
         pcontroller = new Inputs();
         pcontroller.Enable();
+        hitbox = transform.GetChild(0).gameObject;
+        Debug.Log(hitbox.name);
     }
     private void OnDisable()
     {
@@ -50,6 +52,11 @@ public class Movement2D : MonoBehaviour
             desiredDirection.y = jumpVelocity;
             grounded = false;
         }
+        if (pcontroller.player.attack.triggered)
+        {
+            Debug.Log("atk");
+            attack();
+        }
         playerRB.velocity = desiredDirection;
     }
 
@@ -63,7 +70,7 @@ public class Movement2D : MonoBehaviour
         */
 
         hitbox.gameObject.SetActive(true);
-        hitbox.gameObject.SetActive(false);
+        //hitbox.gameObject.SetActive(false);
 
     }
 

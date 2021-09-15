@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class swing : MonoBehaviour
 {
-    private int damage=10;
+    private int damage=50;
     public EnemyHealth script;
 
     private void OnTriggerEnter2D(Collider2D collision)
