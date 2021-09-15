@@ -18,7 +18,8 @@ public abstract class State : ScriptableObject
     {
         if (em.timer <= 0)
         {
-            em.seeker.StartPath(em.gameObject.transform.position, targ.transform.position);
+            Rigidbody2D rb = em.GetComponent<Rigidbody2D>();
+            em.nav.StartPath(rb, targ.transform);
             em.timer = 20;
         }
     }

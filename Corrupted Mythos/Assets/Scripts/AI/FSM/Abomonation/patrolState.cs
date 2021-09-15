@@ -31,7 +31,7 @@ public class patrolState : State
         //Patrol state will walk around once player is within a certian range. Once they are close enough to be detected, and are reachable, the attack state will be entered.
         //stateDebugInfo();
 
-        if (em.aim.reachedEndOfPath && em.timer == 0) //If the ai has reached the end of it's path
+        if (em.nav.getEOP() && em.timer == 0) //If the ai has reached the end of it's path
         {
             if (em.point == 0)
             {
