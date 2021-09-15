@@ -12,7 +12,7 @@ public class StateManager : MonoBehaviour
     
     public Seeker seeker;
     public GameObject player;
-    public AstarAI aim;
+    public EnemyNavigator nav;
 
     public GameObject pointOne;
     public GameObject pointTwo;
@@ -30,7 +30,7 @@ public class StateManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //Grab this agent's seeker
         seeker = this.GetComponent<Seeker>();
-        aim = this.GetComponent<AstarAI>();
+        nav = this.GetComponent<EnemyNavigator>();
 
         if (currentState == null)
         {
