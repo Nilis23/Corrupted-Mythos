@@ -18,10 +18,8 @@ public abstract class State : ScriptableObject
     {
         if (em.timer <= 0)
         {
-            Debug.Log("eee");
             Rigidbody2D rb = em.GetComponent<Rigidbody2D>();
             em.nav.StartPath(rb, targ.transform);
-            Debug.Log("Ahh yes");
             em.timer = 20;
         }
     }

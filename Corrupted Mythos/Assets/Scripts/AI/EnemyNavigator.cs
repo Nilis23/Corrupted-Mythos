@@ -80,7 +80,6 @@ public class EnemyNavigator : MonoBehaviour
 
     public void StartPath(Rigidbody2D rigid, Transform targ)
     {
-        Debug.Log("log");
         seeker.StartPath(rigid.position, targ.position, OnPathComplete);
     }
 }
