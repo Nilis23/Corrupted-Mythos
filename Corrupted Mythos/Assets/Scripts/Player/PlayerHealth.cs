@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
         //update UI
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("checkpoint"))
         {

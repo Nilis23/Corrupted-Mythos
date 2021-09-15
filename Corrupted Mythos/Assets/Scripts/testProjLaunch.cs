@@ -49,7 +49,7 @@ public class testProjLaunch : MonoBehaviour
     {
         if (collision.gameObject == targ)
         {
-            inRange = true;
+            inRange = false;
         }
     }
 }

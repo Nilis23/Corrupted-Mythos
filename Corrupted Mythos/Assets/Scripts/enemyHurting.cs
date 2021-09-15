@@ -9,9 +9,9 @@ public class enemyHurting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("player"))
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("hit");
+            Debug.Log("hit " + this.name);
             //damage player
             ///*
             script = collision.GetComponent<PlayerHealth>();
