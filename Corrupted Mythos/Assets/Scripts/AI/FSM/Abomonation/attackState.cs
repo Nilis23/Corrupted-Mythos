@@ -20,7 +20,7 @@ public class attackState : State
         //If the player leaves detection range, swap back to patrol state.
         
         int colState = em.getCollisionState();
-        if(colState == 1)
+        if(Vector2.Distance(em.gameObject.transform.position, em.player.transform.position) >= 6.5f) //Needs a fix for when player is destroyed
         {
             return patrolState;
         }

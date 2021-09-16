@@ -46,7 +46,7 @@ public class patrolState : State
         }
         
         int colState = em.getCollisionState();
-        if (colState > 1) //The player has entered the second sphere, transfer to attack
+        if (Vector2.Distance(em.gameObject.transform.position, em.player.transform.position) < 6.5f) //The player has entered the second sphere, transfer to attack
         {
             return attack;
         }

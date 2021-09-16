@@ -7,7 +7,8 @@ public class Movement2D : MonoBehaviour
 {
     public Animator atk;
     public Rigidbody2D playerRB;
-    public GameObject hitbox;
+    public swing weap;
+    public GameObject pause;
 
     private bool grounded = false;
     //private float gravity = -9.8f;
@@ -23,6 +24,8 @@ public class Movement2D : MonoBehaviour
     [Tooltip("The force applied on jump. Bigger means higher jump.")]
     [SerializeField] private float jumpVelocity = 1f; //Modifier for how high the player jumps
 
+    bool paused;
+
     private void OnEnable()
     {
         //hitbox = transform.GetChild(0);
@@ -30,8 +33,11 @@ public class Movement2D : MonoBehaviour
         swing = transform.GetComponent<AudioClip>();
         pcontroller = new Inputs();
         pcontroller.Enable();
+
+        /*
         hitbox = transform.GetChild(0).gameObject;
         Debug.Log(hitbox.name);
+        */
     }
     private void OnDisable()
     {
@@ -57,7 +63,23 @@ public class Movement2D : MonoBehaviour
             Debug.Log("atk");
             attack();
         }
+        /*
+        if (pcontroller.player.Pause.triggered)
+        {
+            pause.SetActive(true);
+            //paused = true;
+        }
+        */
         playerRB.velocity = desiredDirection;
+
+        if(desiredDirection.x > 0)
+        {
+            this.transform.localScale = new Vector2(1f, 1f);
+        }
+        else if(desiredDirection.x < 0)
+        {
+            this.transform.localScale = new Vector2(-1f, 1f);
+        }
     }
 
     void attack()
@@ -69,8 +91,10 @@ public class Movement2D : MonoBehaviour
         }else{}
         */
 
-        hitbox.gameObject.SetActive(true);
+        //hitbox.gameObject.SetActive(true);
         //hitbox.gameObject.SetActive(false);
+
+        weap.attack();
 
     }
 

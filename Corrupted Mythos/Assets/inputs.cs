@@ -65,6 +65,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8a92472-a853-4e88-81cc-694ee8aa7508"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -137,7 +145,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""702a2ff3-9493-4caf-99b3-a7d9b95ed9e1"",
-                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -148,7 +156,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""e9543a30-d577-4f6c-931d-1a26d60f3f73"",
-                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -159,7 +167,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""6f647539-380a-4507-8cbe-a93de7eb6563"",
-                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -170,7 +178,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""d4cc1638-a0fa-4283-8f7d-1e13959c4c34"",
-                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -247,7 +255,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9ec4667f-0c26-48a5-b249-ec657993aef1"",
-                    ""path"": ""<XInputController>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -269,7 +277,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ea85193b-7a9f-4e84-89f1-c53f25197dd0"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -309,6 +317,28 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""action"": ""ArtifactThree"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9e554e5-a976-426e-bb6b-72947abdf312"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0273fe9e-cfde-4a65-80e6-fdd80961fe51"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -340,6 +370,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_ArtifactOne = m_player.FindAction("ArtifactOne", throwIfNotFound: true);
         m_player_ArtifactTwo = m_player.FindAction("ArtifactTwo", throwIfNotFound: true);
         m_player_ArtifactThree = m_player.FindAction("ArtifactThree", throwIfNotFound: true);
+        m_player_Pause = m_player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -395,6 +426,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_ArtifactOne;
     private readonly InputAction m_player_ArtifactTwo;
     private readonly InputAction m_player_ArtifactThree;
+    private readonly InputAction m_player_Pause;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -405,6 +437,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @ArtifactOne => m_Wrapper.m_player_ArtifactOne;
         public InputAction @ArtifactTwo => m_Wrapper.m_player_ArtifactTwo;
         public InputAction @ArtifactThree => m_Wrapper.m_player_ArtifactThree;
+        public InputAction @Pause => m_Wrapper.m_player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -432,6 +465,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @ArtifactThree.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
                 @ArtifactThree.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
                 @ArtifactThree.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactThree;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -454,6 +490,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @ArtifactThree.started += instance.OnArtifactThree;
                 @ArtifactThree.performed += instance.OnArtifactThree;
                 @ArtifactThree.canceled += instance.OnArtifactThree;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -475,5 +514,6 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnArtifactOne(InputAction.CallbackContext context);
         void OnArtifactTwo(InputAction.CallbackContext context);
         void OnArtifactThree(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
