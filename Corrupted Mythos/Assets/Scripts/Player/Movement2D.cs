@@ -24,7 +24,7 @@ public class Movement2D : MonoBehaviour
     [Tooltip("The force applied on jump. Bigger means higher jump.")]
     [SerializeField] private float jumpVelocity = 1f; //Modifier for how high the player jumps
 
-    bool paused;
+    public bool paused;
 
     private void OnEnable()
     {
@@ -51,34 +51,36 @@ public class Movement2D : MonoBehaviour
 
     void Update()
     {
-        desiredDirection = playerRB.velocity;
-        desiredDirection.x = (pcontroller.player.movement.ReadValue<Vector2>().x * speed);
-        if (pcontroller.player.jump.triggered && grounded)
-        {
-            desiredDirection.y = jumpVelocity;
-            grounded = false;
-        }
-        if (pcontroller.player.attack.triggered)
-        {
-            Debug.Log("atk");
-            attack();
-        }
-        /*
         if (pcontroller.player.Pause.triggered)
         {
             pause.SetActive(true);
-            //paused = true;
+            paused = true;
         }
-        */
-        playerRB.velocity = desiredDirection;
 
-        if(desiredDirection.x > 0)
+        if (!paused)
         {
-            this.transform.localScale = new Vector2(1f, 1f);
-        }
-        else if(desiredDirection.x < 0)
-        {
-            this.transform.localScale = new Vector2(-1f, 1f);
+            desiredDirection = playerRB.velocity;
+            desiredDirection.x = (pcontroller.player.movement.ReadValue<Vector2>().x * speed);
+            if (pcontroller.player.jump.triggered && grounded)
+            {
+                desiredDirection.y = jumpVelocity;
+                grounded = false;
+            }
+            if (pcontroller.player.attack.triggered)
+            {
+                Debug.Log("atk");
+                attack();
+            }
+            playerRB.velocity = desiredDirection;
+
+            if (desiredDirection.x > 0)
+            {
+                this.transform.localScale = new Vector2(1f, 1f);
+            }
+            else if (desiredDirection.x < 0)
+            {
+                this.transform.localScale = new Vector2(-1f, 1f);
+            }
         }
     }
 

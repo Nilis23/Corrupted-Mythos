@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +9,13 @@ public class PlayerHealth : MonoBehaviour
     public Transform player;
     public Transform spawn;
     public GameObject death;
+    public Slider hpBar;
+
+    private void Start()
+    {
+        hpBar.maxValue = health;
+        hpBar.value = health;
+    }
 
     void Update()
     {
@@ -24,13 +31,13 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         Debug.Log(health);
         //update UI
+        hpBar.value = health;
 
         //For now we delete the player;
         if (health <= 0)
         {
             death.SetActive(true);
-            //Destroy(this.gameObject);
-            Invoke("reloadScene", 2);
+            Destroy(this.gameObject);
         }
     }
     public void addHealth(int gain)
@@ -49,10 +56,5 @@ public class PlayerHealth : MonoBehaviour
             check += 1;
             Destroy(other);
         }
-    }
-
-    public void reloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

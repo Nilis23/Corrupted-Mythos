@@ -7,9 +7,11 @@ public class MenuControl : MonoBehaviour
 {
     public GameObject pause;
     public GameObject restart;
+    public Movement2D player;
 
     public void Resume()
     {
+        player.paused = false;
         pause.SetActive(false);
     }
     public void Restart()
