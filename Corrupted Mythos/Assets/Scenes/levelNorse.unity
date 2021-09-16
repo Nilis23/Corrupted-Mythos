@@ -4141,7 +4141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac41c5992678712439d8be2d8861b2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstButton: {fileID: 0}
+  firstButton: {fileID: 2111992057}
 --- !u!1001 &1071536775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7376,7 +7376,7 @@ GameObject:
   - component: {fileID: 2111992058}
   - component: {fileID: 2111992057}
   m_Layer: 5
-  m_Name: Resume
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
