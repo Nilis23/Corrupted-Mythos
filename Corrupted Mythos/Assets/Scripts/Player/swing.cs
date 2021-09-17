@@ -20,13 +20,13 @@ public class swing : MonoBehaviour
                 isAnim = false;
             }
 
-            if(t >= 1)
+            if(t >= 0.25)
             {
-                transform.Rotate(0, 0, Time.deltaTime * -60);
+                transform.Rotate(0, 0, Time.deltaTime * -240);
             }
             else
             {
-                transform.Rotate(0, 0, Time.deltaTime * 60);
+                transform.Rotate(0, 0, Time.deltaTime * 240);
             }
         }
     }
@@ -36,7 +36,7 @@ public class swing : MonoBehaviour
         if (!isAnim)
         {
             isAnim = true;
-            t = 2;
+            t = 0.5f;
         }
     }
 

@@ -7,7 +7,7 @@ public class MenuControl : MonoBehaviour
 {
     public GameObject pause;
     public GameObject restart;
-    public Movement2D player;
+    public PlayerMovement player;
 
     public void Resume()
     {

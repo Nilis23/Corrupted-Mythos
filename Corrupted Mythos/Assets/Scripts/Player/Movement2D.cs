@@ -64,7 +64,7 @@ public class Movement2D : MonoBehaviour
             if (pcontroller.player.jump.triggered && grounded)
             {
                 desiredDirection.y = jumpVelocity;
-                grounded = false;
+                //grounded = false;
             }
             if (pcontroller.player.attack.triggered)
             {
@@ -100,13 +100,22 @@ public class Movement2D : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("floor"))
+        if (collision.gameObject.tag == "floor")
         {
             Debug.Log("grounded");
             //desiredDirection.y = 0;
             grounded = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "floor")
+        {
+            Debug.Log("degrounded");
+            //desiredDirection.y = 0;
+            grounded = false;
         }
     }
 }
