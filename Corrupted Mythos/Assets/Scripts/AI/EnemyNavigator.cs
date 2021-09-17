@@ -19,6 +19,8 @@ public class EnemyNavigator : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    float t = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,23 +46,34 @@ public class EnemyNavigator : MonoBehaviour
         }
 
         Vector2 dir = ((Vector2)path.vectorPath[currentWP] - rb.position).normalized;
-        Vector2 force = dir * speed * Time.deltaTime;
-        rb.AddForce(force);
+        Vector2 force = dir * (speed * Time.fixedDeltaTime);
+        //rb.AddForce(force);
+        rb.velocity += force;
+
+        if(t > 10)
+        {
+            Debug.Log("WP: " + currentWP.ToString() + " EndWP: " + path.vectorPath.Count.ToString() + " Force: " + force.ToString() + " RB Vel: " + rb.velocity.ToString() + " X Dir: " + dir.x.ToString() + " Speed: " + speed + " Reached EOP: " + reachedEOP.ToString());
+            t = 9;
+        }
+
 
         float dist = Vector2.Distance(rb.position, path.vectorPath[currentWP]);
         if(dist < nWaypointDistance)
         {
             currentWP++;
+            t = 0;
         }
 
-        if (force.x >= 0.01f)
+        if (rb.velocity.x >= 0.01f)
         {
             gfx.localScale = new Vector2(1f, 1f);
         }
-        else if (force.x <= -0.01f)
+        else if (rb.velocity.x <= -0.01f)
         {
             gfx.localScale = new Vector2(-1f, 1f);
         }
+
+        t += Time.deltaTime;
     }
 
     void OnPathComplete(Path p)
