@@ -48,7 +48,7 @@ public class EnemyNavigator : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWP] - rb.position).normalized;
         Vector2 force = dir * (speed * Time.fixedDeltaTime);
         //rb.AddForce(force);
-        rb.velocity += force;
+        rb.velocity += new Vector2(force.x, 0);
 
         if(t > 10)
         {
