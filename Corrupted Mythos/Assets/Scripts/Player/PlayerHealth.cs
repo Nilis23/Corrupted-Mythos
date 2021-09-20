@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
         hpBar.value = health;
     }
 
+    /*
     void Update()
     {
         if (health <= 0)
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
             health = 100;
         }
     }
+    */
 
     public void minusHealth(int damage)
     {
@@ -39,6 +41,13 @@ public class PlayerHealth : MonoBehaviour
             death.SetActive(true);
             Destroy(this.gameObject);
         }
+        /* respawn script
+        if (health <= 0)
+        {
+            player.position = spawn.position;
+            health = 100;
+        }
+        */
     }
     public void addHealth(int gain)
     {

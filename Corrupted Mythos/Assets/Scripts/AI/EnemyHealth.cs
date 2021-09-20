@@ -26,6 +26,14 @@ public class EnemyHealth : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             //Destroy(this);
+            //10% chance to drop an item that increases player health by 10
+            float drop = Random.value;
+            if (drop == .1)
+            {
+                GameObject newFood = Instantiate(gameObject);
+                newFood.transform.position = this.transform.position;
+                //attach script and collider2D to gameobject
+            }
         }
     }
     public void addHealth(int gain)
