@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health, check=0;
+    public int health, check=0, maxHealth;
     public Transform player;
     public Transform spawn;
     public GameObject death;
@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     {
         hpBar.maxValue = health;
         hpBar.value = health;
+
+        health = 100;
+        maxHealth = health;
     }
 
     /*
@@ -51,7 +54,11 @@ public class PlayerHealth : MonoBehaviour
     }
     public void addHealth(int gain)
     {
+        if (health + gain <= maxHealth)
+        {
         health += gain;
+        }
+
         Debug.Log(health);
         //update UI
     }
