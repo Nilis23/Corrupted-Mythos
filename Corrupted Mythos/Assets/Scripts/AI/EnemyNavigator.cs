@@ -48,13 +48,16 @@ public class EnemyNavigator : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWP] - rb.position).normalized;
         Vector2 force = dir * (speed * Time.fixedDeltaTime);
         //rb.AddForce(force);
-        rb.velocity += new Vector2(force.x, 0);
+        //rb.velocity += new Vector2(force.x, 0);
+        //rb.MovePosition( new Vector2((this.transform.position.x + force.x), this.transform.position.y) );
+        this.transform.Translate(new Vector2(force.x, 0f));
 
-        if(t > 10)
-        {
+
+        //if(t > 10)
+        //{
             Debug.Log("WP: " + currentWP.ToString() + " EndWP: " + path.vectorPath.Count.ToString() + " Force: " + force.ToString() + " RB Vel: " + rb.velocity.ToString() + " X Dir: " + dir.x.ToString() + " Speed: " + speed + " Reached EOP: " + reachedEOP.ToString());
-            t = 9;
-        }
+            //t = 9;
+        //}
 
 
         float dist = Vector2.Distance(rb.position, path.vectorPath[currentWP]);
@@ -64,11 +67,11 @@ public class EnemyNavigator : MonoBehaviour
             t = 0;
         }
 
-        if (rb.velocity.x >= 0.01f)
+        if (force.x >= 0.01f)
         {
             gfx.localScale = new Vector2(1f, 1f);
         }
-        else if (rb.velocity.x <= -0.01f)
+        else if (force.x <= -0.01f)
         {
             gfx.localScale = new Vector2(-1f, 1f);
         }

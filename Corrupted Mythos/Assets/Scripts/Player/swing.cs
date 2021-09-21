@@ -8,7 +8,8 @@ public class swing : MonoBehaviour
     
     EnemyHealth script;
     bool isAnim = false;
-    float t;
+    float t = 0;
+    float dt = 0;
 
     private void Update()
     {
@@ -29,6 +30,10 @@ public class swing : MonoBehaviour
                 transform.Rotate(0, 0, Time.deltaTime * 240);
             }
         }
+        if(dt >= 0)
+        {
+            dt -= Time.deltaTime;
+        }
     }
 
     public void attack()
@@ -42,7 +47,7 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
         {
             Debug.Log("hit");
             //damage enemy
@@ -50,6 +55,21 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage);
             //*/
+            dt = 1;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
+        {
+            Debug.Log("hit");
+            //damage enemy
+            ///*
+            script = collision.GetComponent<EnemyHealth>();
+            script.minusHealth(damage);
+            //*/
+
+            dt = 1;
         }
     }
 }
