@@ -93,14 +93,6 @@ public class Movement2D : MonoBehaviour
         }else{}
         */
 
-<<<<<<< Updated upstream
-        //hitbox.gameObject.SetActive(true);
-        //hitbox.gameObject.SetActive(false);
-=======
-        hitbox.gameObject.SetActive(true);
-        hitbox.gameObject.SetActive(false);
->>>>>>> Stashed changes
-
         weap.attack();
 
     }
