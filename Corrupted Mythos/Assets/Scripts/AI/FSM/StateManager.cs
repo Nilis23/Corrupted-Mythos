@@ -23,6 +23,7 @@ public class StateManager : MonoBehaviour
 
     State currentState;
     public int collisions = 0;
+    public float stagr = 0;
 
     private void Start()
     {
@@ -41,11 +42,18 @@ public class StateManager : MonoBehaviour
     }
     void Update()
     {
-        RunStateMachine();
-
-        if(timer > 0)
+        if (stagr <= 0)
         {
-            timer--;
+            RunStateMachine();
+
+            if (timer > 0)
+            {
+                timer--;
+            }
+        }
+        else
+        {
+            stagr -= Time.deltaTime;
         }
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField]
+    StateManager em;
+    [SerializeField]
     int damage;
     float t = 0;
 
@@ -19,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && t <= 0)
+        if(collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
             t = 1;
@@ -27,7 +29,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && t <= 0)
+        if (collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
             t = 1;

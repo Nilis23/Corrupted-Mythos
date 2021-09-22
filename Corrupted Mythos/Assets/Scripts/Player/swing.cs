@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class swing : MonoBehaviour
 {
+    [SerializeField]
     private int damage = 50;
-    
+
     EnemyHealth script;
     bool isAnim = false;
     float t = 0;

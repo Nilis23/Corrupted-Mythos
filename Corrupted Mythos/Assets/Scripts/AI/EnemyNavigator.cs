@@ -12,6 +12,9 @@ public class EnemyNavigator : MonoBehaviour
 
     public Transform gfx;
 
+    [SerializeField]
+    StateManager em;
+
     //private Path path;
     //int currentWP;
     bool reachedEOP = false;
@@ -51,7 +54,7 @@ public class EnemyNavigator : MonoBehaviour
         */
         #endregion
 
-        if (target != null)
+        if (target != null && em.stagr <= 0)
         {
             Vector2 dir = ((Vector2)target.transform.position - (Vector2)rb.position).normalized;
             Vector2 force = dir * (speed * Time.fixedDeltaTime);
