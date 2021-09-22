@@ -12,7 +12,7 @@ public class attackState : State
 
     public override void StartState(StateManager em)
     {
-        CreatePath(em, em.player);
+        em.SetTarget(em.player);
         WPDist = em.nav.nWaypointDistance;
     }
 
@@ -29,11 +29,13 @@ public class attackState : State
             {
                 return patrolState;
             }
-
+            
+            /*
             if (dist >= WPDist)
             {
-                CreatePath(em, em.player);
+                //CreatePath(em, em.player);
             }
+            */
         }
         //stateDebugInfo();
 

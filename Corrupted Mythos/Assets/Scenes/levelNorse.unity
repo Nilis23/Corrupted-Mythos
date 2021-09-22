@@ -1686,7 +1686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 564575376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CellingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,8 +2806,8 @@ GameObject:
   - component: {fileID: 885110813}
   - component: {fileID: 885110820}
   - component: {fileID: 885110821}
-  m_Layer: 0
-  m_Name: player
+  m_Layer: 7
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2892,8 +2892,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1334362789
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4394,7 +4394,7 @@ GameObject:
   - component: {fileID: 1279592028}
   - component: {fileID: 1279592027}
   - component: {fileID: 1279592026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4512,7 +4512,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1896865509
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0491b389a17a0ff44bf7494ed14a5525, type: 3}
   m_Color: {r: 0.36930403, g: 0.379872, b: 0.4056604, a: 1}
@@ -15303,7 +15303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1842964022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15571,6 +15571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1516348075
+      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Enemy

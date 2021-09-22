@@ -15,9 +15,9 @@ TagManager:
   - Water
   - UI
   - Walkable
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Cross-Layer Triggers
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 1516348075
+    locked: 0
+  - name: Player
+    uniqueID: 1334362789
     locked: 0
   - name: Special
     uniqueID: 1896865509

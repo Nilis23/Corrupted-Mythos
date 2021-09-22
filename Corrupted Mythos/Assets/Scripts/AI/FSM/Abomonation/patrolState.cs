@@ -13,16 +13,8 @@ public class patrolState : State
 
     public override void StartState(StateManager em)
     {
-        if(em.point == 0)
-        {
-            CreatePath(em, em.pointOne);
-            //em.point = 1;
-        }
-        else
-        {
-            CreatePath(em, em.pointTwo);
-            //em.point = 0;
-        }
+        em.SwapTarget();
+
         return;
     }
 
@@ -35,13 +27,11 @@ public class patrolState : State
         {
             if (em.point == 0)
             {
-                CreatePath(em, em.pointOne);
-                em.point = 1;
+                em.SwapTarget();
             }
             else
             {
-                CreatePath(em, em.pointTwo);
-                em.point = 0;
+                em.SwapTarget();
             }
         }
         

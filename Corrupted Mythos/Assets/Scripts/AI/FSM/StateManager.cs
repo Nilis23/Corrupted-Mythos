@@ -22,7 +22,7 @@ public class StateManager : MonoBehaviour
     public bool idle;
 
     State currentState;
-    int collisions = 0;
+    public int collisions = 0;
 
     private void Start()
     {
@@ -73,18 +73,21 @@ public class StateManager : MonoBehaviour
         return collisions;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void SwapTarget()
     {
-        if(other.gameObject.tag == "Player")
+        if(point == 0)
         {
-            collisions++;
+            nav.target = pointTwo;
+            point = 1;
+        }
+        else if(point == 1)
+        {
+            nav.target = pointOne;
+            point = 0;
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    public void SetTarget(GameObject targ)
     {
-        if(other.gameObject.tag == "Player")
-        {
-            collisions--;
-        }
+        nav.target = targ;
     }
 }
