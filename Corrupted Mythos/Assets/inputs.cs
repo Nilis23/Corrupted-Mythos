@@ -73,9 +73,72 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""fall"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6579ed0-f7d0-49cc-bfab-54f600bfb599"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": ""keyboard arrows"",
+                    ""id"": ""dc6415a4-7523-4d6b-a4e9-286e0b7e371c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8255faca-a458-4ca5-9c00-a502edc0a800"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""controls"",
+                    ""action"": ""movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""d8b75338-dd4b-433a-b468-bdcab46944b4"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""controls"",
+                    ""action"": ""movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""54d769f6-48f6-4b36-80a1-faf90b69fef5"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""controls"",
+                    ""action"": ""movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""126c4d40-8fd0-4cf8-9d1b-33c302e0303f"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""controls"",
+                    ""action"": ""movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
                 {
                     ""name"": ""keyboard WASD"",
                     ""id"": ""f86e8b27-e7ac-4dc9-8755-a414706d7878"",
@@ -145,7 +208,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""702a2ff3-9493-4caf-99b3-a7d9b95ed9e1"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -156,7 +219,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""e9543a30-d577-4f6c-931d-1a26d60f3f73"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -167,7 +230,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""6f647539-380a-4507-8cbe-a93de7eb6563"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -178,62 +241,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""d4cc1638-a0fa-4283-8f7d-1e13959c4c34"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""controls"",
-                    ""action"": ""movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""keyboard arrows"",
-                    ""id"": ""dc6415a4-7523-4d6b-a4e9-286e0b7e371c"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8255faca-a458-4ca5-9c00-a502edc0a800"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""controls"",
-                    ""action"": ""movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d8b75338-dd4b-433a-b468-bdcab46944b4"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""controls"",
-                    ""action"": ""movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""54d769f6-48f6-4b36-80a1-faf90b69fef5"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""controls"",
-                    ""action"": ""movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""126c4d40-8fd0-4cf8-9d1b-33c302e0303f"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -277,7 +285,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ea85193b-7a9f-4e84-89f1-c53f25197dd0"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<XInputController>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -337,6 +345,28 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cfa7cdf-16d8-4ccc-ab3d-541ec034da4b"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""fall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52b8dc77-e103-46ac-8549-93c2c9430bc7"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""fall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -888,6 +918,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_ArtifactTwo = m_player.FindAction("ArtifactTwo", throwIfNotFound: true);
         m_player_ArtifactThree = m_player.FindAction("ArtifactThree", throwIfNotFound: true);
         m_player_Pause = m_player.FindAction("Pause", throwIfNotFound: true);
+        m_player_fall = m_player.FindAction("fall", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -956,6 +987,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_ArtifactTwo;
     private readonly InputAction m_player_ArtifactThree;
     private readonly InputAction m_player_Pause;
+    private readonly InputAction m_player_fall;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -967,6 +999,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @ArtifactTwo => m_Wrapper.m_player_ArtifactTwo;
         public InputAction @ArtifactThree => m_Wrapper.m_player_ArtifactThree;
         public InputAction @Pause => m_Wrapper.m_player_Pause;
+        public InputAction @fall => m_Wrapper.m_player_fall;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -997,6 +1030,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @fall.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
+                @fall.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
+                @fall.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1022,6 +1058,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @fall.started += instance.OnFall;
+                @fall.performed += instance.OnFall;
+                @fall.canceled += instance.OnFall;
             }
         }
     }
@@ -1149,6 +1188,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnArtifactTwo(InputAction.CallbackContext context);
         void OnArtifactThree(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnFall(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

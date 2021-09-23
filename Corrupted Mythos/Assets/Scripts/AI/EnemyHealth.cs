@@ -25,8 +25,6 @@ public class EnemyHealth : MonoBehaviour
         em.stagr = stagTime;
         if(health <= 0)
         {
-            this.gameObject.SetActive(false);
-
             float drop = Random.value;
             Debug.Log(drop);
             if (drop == .1)
@@ -38,6 +36,8 @@ public class EnemyHealth : MonoBehaviour
                 newFood.transform.gameObject.AddComponent<Collider2D>();
                 //add sprite
             }
+
+            this.gameObject.SetActive(false);
         }
     }
     public void addHealth(int gain)
