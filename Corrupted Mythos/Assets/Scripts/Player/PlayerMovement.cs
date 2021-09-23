@@ -51,15 +51,6 @@ public class PlayerMovement : MonoBehaviour
         {
             cntrler.Move(dir * Time.fixedDeltaTime, false, jump);
             jump = false;
-
-            if (desiredDirection.x > 0)
-            {
-                this.transform.localScale = new Vector2(1f, 1f);
-            }
-            else if (desiredDirection.x < 0)
-            {
-                this.transform.localScale = new Vector2(-1f, 1f);
-            }
         }
     }
 }

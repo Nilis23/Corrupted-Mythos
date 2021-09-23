@@ -13,10 +13,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        health = 100;
+
         hpBar.maxValue = health;
         hpBar.value = health;
 
-        health = 100;
         maxHealth = health;
     }
 
@@ -38,19 +39,20 @@ public class PlayerHealth : MonoBehaviour
         //update UI
         hpBar.value = health;
 
+        /*
         //For now we delete the player;
         if (health <= 0)
         {
             death.SetActive(true);
             Destroy(this.gameObject);
         }
-        /* respawn script
+        */
+        // respawn script
         if (health <= 0)
         {
-            player.position = spawn.position;
-            health = 100;
+            RespawnPlayer();
         }
-        */
+        
     }
     public void addHealth(int gain)
     {
@@ -61,6 +63,15 @@ public class PlayerHealth : MonoBehaviour
 
         Debug.Log(health);
         //update UI
+    }
+
+    public void RespawnPlayer()
+    {
+        player.position = spawn.position;
+        health = 100;
+        hpBar.value = health;
+        this.GetComponent<CharacterController2D>().m_FacingRight = true;
+        this.transform.localScale = new Vector2(1f, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
