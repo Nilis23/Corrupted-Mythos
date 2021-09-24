@@ -28,10 +28,10 @@ public class platform : MonoBehaviour
 
     private void fallThrough()
     {
-        this.GetComponent<PlatformEffector2D>().rotationalOffset = 180;
+        this.GetComponent<PlatformEffector2D>().rotationalOffset = 0;
     }
     private void flipUp()
     {
-        this.GetComponent<PlatformEffector2D>().rotationalOffset = 0;
+        this.GetComponent<PlatformEffector2D>().rotationalOffset = 180;
     }
 }

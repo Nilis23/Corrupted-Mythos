@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     public bool paused = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         pcontroller = new Inputs();
