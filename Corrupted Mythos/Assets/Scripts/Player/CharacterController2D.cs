@@ -143,4 +143,38 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("floor boost"))
+        {
+			Debug.Log("boostio");
+			m_JumpForce = 2000f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("floor boost"))
+        {
+			m_JumpForce = 400f;
+        }
+    }
+
+	/*
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.CompareTag("floor boost"))
+		{
+			Debug.Log("boostio");
+			m_JumpForce = 800f;
+		}
+	}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+		if (collision.CompareTag("floor boost"))
+		{
+			m_JumpForce = 400f;
+		}
+	}
+	*/
 }
