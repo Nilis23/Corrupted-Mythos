@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Artifact : ScriptableObject
 {
-    public abstract void doAction();
+    public abstract void doAction(GameObject caller);
 }

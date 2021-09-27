@@ -146,7 +146,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("floor boost"))
+        if (collision.CompareTag("FloorBoost"))
         {
 			Debug.Log("boostio");
 			m_JumpForce = 2000f;
@@ -154,7 +154,7 @@ public class CharacterController2D : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("floor boost"))
+        if (collision.CompareTag("FloorBoost"))
         {
 			m_JumpForce = 400f;
         }

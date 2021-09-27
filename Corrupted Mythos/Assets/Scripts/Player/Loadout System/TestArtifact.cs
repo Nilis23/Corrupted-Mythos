@@ -8,7 +8,7 @@ public class TestArtifact : Artifact
     [SerializeField]
     GameObject prefThrowable;
 
-    public override void doAction()
+    public override void doAction(GameObject caller)
     {
         Debug.Log("Artifact doing a thing");
 

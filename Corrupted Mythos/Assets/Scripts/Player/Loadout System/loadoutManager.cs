@@ -27,15 +27,15 @@ public class loadoutManager : MonoBehaviour
 
         if(pcontroller.player.ArtifactOne.triggered && one != null)
         {
-            one.doAction();
+            one.doAction(this.gameObject);
         }
         if(pcontroller.player.ArtifactTwo.triggered && two != null)
         {
-            two.doAction();
+            two.doAction(this.gameObject);
         }
         if (pcontroller.player.ArtifactThree.triggered && three != null)
         {
-            three.doAction();
+            three.doAction(this.gameObject);
         }
     }
 }
