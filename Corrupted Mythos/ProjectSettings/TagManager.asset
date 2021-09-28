@@ -8,7 +8,6 @@ TagManager:
   - checkpoint
   - floor
   - FloorBoost
-  - jump boost
   layers:
   - Default
   - TransparentFX

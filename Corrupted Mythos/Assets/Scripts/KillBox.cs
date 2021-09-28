@@ -8,7 +8,7 @@ public class KillBox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(100);
+            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(1000);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
