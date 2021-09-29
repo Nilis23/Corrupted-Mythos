@@ -11,10 +11,8 @@ public class Axe : Artifact
     public override void doAction(GameObject caller)
     {
         canLaunch = true;
-        Debug.Log("Launching Proj");
         if (canLaunch)
         {
-            Debug.Log("Hello");
             GameObject newAxe = Instantiate(axPref);
             newAxe.transform.position = caller.transform.position;
             if(caller.transform.localScale.x < 0)
