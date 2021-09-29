@@ -1630,6 +1630,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360208988}
   m_CullTransparentMesh: 1
+--- !u!1001 &407335443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_RootOrder
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 196.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278286, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278287, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_Name
+      value: RuneStone (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
 --- !u!1 &427857640
 GameObject:
   m_ObjectHideFlags: 0
@@ -42982,6 +43043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunestoneCheckpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1966303035295869423, guid: f956b455b3cee134cbfabf85148212b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f956b455b3cee134cbfabf85148212b6, type: 3}
 --- !u!1001 &199727142985160699
@@ -43041,6 +43106,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
+--- !u!1001 &898773140269679419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_RootOrder
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 63.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278285, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898773140276278287, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
+      propertyPath: m_Name
+      value: RuneStone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
 --- !u!1001 &2420976754269359613
 PrefabInstance:
   m_ObjectHideFlags: 0
