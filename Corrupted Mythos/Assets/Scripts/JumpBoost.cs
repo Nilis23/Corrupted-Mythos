@@ -19,7 +19,7 @@ public class JumpBoost : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("unboostio");
-            collision.gameObject.GetComponent<CharacterController2D>().m_JumpForce = 400f;
+            collision.gameObject.GetComponent<CharacterController2D>().m_JumpForce = 700;
         }
     }
 }

@@ -156,7 +156,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (collision.CompareTag("FloorBoost"))
         {
-			m_JumpForce = 400f;
+			m_JumpForce = 700f;
         }
     }
 

@@ -81,7 +81,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("checkpoint");
             spawn.position = other.transform.position;
             check += 1;
-            Destroy(other);
+            //Destroy(other);
         }
     }
 }

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5083d71b85f7746ba44258391a1bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   launchForce: 200
   lifetime: 100
   xMod: 0.6

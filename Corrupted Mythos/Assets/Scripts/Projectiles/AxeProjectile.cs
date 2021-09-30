@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AxeProjectile : MonoBehaviour
 {
+    [Tooltip("The damage dealt when an enemy is hit")]
+    [SerializeField]
+    int damage;
     [Tooltip("The total force applied to the axe after being created")]
     [SerializeField]
     float launchForce;
@@ -69,6 +72,11 @@ public class AxeProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
+            if(collision.gameObject.tag == "enemy")
+            {
+                Debug.Log("Enemy hit");
+                collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
+            }
             Destroy(this.gameObject);
         }
     }
