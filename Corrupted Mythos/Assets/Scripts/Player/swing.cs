@@ -11,25 +11,29 @@ public class swing : MonoBehaviour
     bool isAnim = false;
     float t = 0;
     float dt = 0;
+    float step = 60f / 5;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isAnim)
         {
-            t -= Time.deltaTime;
-            if(t <= 0)
+            if (t == 10)
             {
                 isAnim = false;
             }
-
-            if(t >= 0.25)
-            {
-                transform.Rotate(0, 0, Time.deltaTime * -240);
-            }
             else
             {
-                transform.Rotate(0, 0, Time.deltaTime * 240);
+                if (t < 5)
+                {
+                    transform.Rotate(0, 0, -1 * step);
+                }
+                else if (t < 10)
+                {
+                    transform.Rotate(0, 0, step);
+                }
             }
+
+            t += 1;
         }
         if(dt >= 0)
         {
@@ -42,7 +46,7 @@ public class swing : MonoBehaviour
         if (!isAnim)
         {
             isAnim = true;
-            t = 0.5f;
+            t = 0;
         }
     }
 
@@ -56,7 +60,7 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage);
             //*/
-            dt = 1;
+            dt = 0.25f;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -70,7 +74,7 @@ public class swing : MonoBehaviour
             script.minusHealth(damage);
             //*/
 
-            dt = 1;
+            dt = 0.25f;
         }
     }
 }
