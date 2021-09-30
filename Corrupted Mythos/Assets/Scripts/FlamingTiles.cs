@@ -30,6 +30,7 @@ public class FlamingTiles : MonoBehaviour
         {
             script = collision.GetComponent<PlayerHealth>();
             flaming = true;
+            Debug.Log(flaming);
         } 
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -38,6 +39,7 @@ public class FlamingTiles : MonoBehaviour
         {
             script = collision.gameObject.GetComponent<PlayerHealth>();
             flaming = false;
+            Debug.Log(flaming);
         }
         
     }
