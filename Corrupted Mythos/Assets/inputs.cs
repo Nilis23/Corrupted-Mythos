@@ -285,7 +285,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ea85193b-7a9f-4e84-89f1-c53f25197dd0"",
-                    ""path"": ""<XInputController>/dpad/up"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
