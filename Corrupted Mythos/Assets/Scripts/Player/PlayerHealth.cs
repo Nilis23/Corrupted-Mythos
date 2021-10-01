@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject death;
     public Slider hpBar;
 
+    float timer;
+
     private void Start()
     {
         health = 100;
@@ -21,32 +23,31 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
     }
 
-    /*
+    
     void Update()
     {
-        if (health <= 0)
+        if(timer >= 0)
         {
-            player.position = spawn.position;
-            health = 100;
+            timer -= Time.deltaTime;
+
+            if(timer <= 0)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
-    */
 
     public void minusHealth(int damage)
     {
-        health -= damage;
-        Debug.Log(health);
-        //update UI
-        hpBar.value = health;
-
-        /*
-        //For now we delete the player;
-        if (health <= 0)
+        if (timer <= 0)
         {
-            death.SetActive(true);
-            Destroy(this.gameObject);
+            health -= damage;
+            Debug.Log(health);
+            //update UI
+            hpBar.value = health;
+            timer = 0.25f;
+            this.GetComponent<SpriteRenderer>().color = Color.red;
         }
-        */
         // respawn script
         if (health <= 0)
         {

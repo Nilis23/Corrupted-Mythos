@@ -5,24 +5,13 @@ using UnityEngine;
 public class StandingStone : MonoBehaviour
 {
     [SerializeField]
-    PlayerHealth playerHealth;
-
-    bool Checked;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
-    }
+    ParticleSystem effect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!Checked)
+        if (collision.gameObject.tag == "Player" && !effect.isPlaying)
         {
-            if (collision.gameObject.tag == "Player" && !collision.isTrigger)
-            {
-
-            }
+            effect.Play();
         }
     }
 }

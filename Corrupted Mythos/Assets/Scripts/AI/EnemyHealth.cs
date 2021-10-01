@@ -23,11 +23,12 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         Debug.Log(health);
         em.stagr = stagTime;
+        
         if(health <= 0)
         {
             float drop = Random.value;
             Debug.Log(drop);
-            if (drop == .1)
+            if (drop == 0.1f)
             {
                 //Instead of using a new gameoject and adding new components, which uses considerable performance, consider instantiating a prefab
                 GameObject newFood = Instantiate(gameObject);
