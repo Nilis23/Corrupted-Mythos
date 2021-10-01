@@ -12,12 +12,18 @@ public class loadoutManager : MonoBehaviour
     Artifact three;
 
     private Inputs pcontroller;
+    private float[] timers = new float[3];
 
     // Start is called before the first frame update
     void Start()
     {
         pcontroller = new Inputs();
         pcontroller.Enable();
+
+        for(int i = 0; i < timers.Length; i++)
+        {
+            timers[i] = 0;
+        }
     }
 
     // Update is called once per frame
@@ -25,17 +31,25 @@ public class loadoutManager : MonoBehaviour
     {
         //This code doesn't work, needs input manager
 
-        if(pcontroller.player.ArtifactOne.triggered && one != null)
+        if(pcontroller.player.ArtifactOne.triggered && one != null && timers[0] <= 0)
         {
             one.doAction(this.gameObject);
+            timers[0] = one.getTimer();
         }
-        if(pcontroller.player.ArtifactTwo.triggered && two != null)
+        if(pcontroller.player.ArtifactTwo.triggered && two != null && timers[1] <= 0)
         {
             two.doAction(this.gameObject);
+            timers[1] = one.getTimer();
         }
-        if (pcontroller.player.ArtifactThree.triggered && three != null)
+        if (pcontroller.player.ArtifactThree.triggered && three != null && timers[2] <= 0)
         {
             three.doAction(this.gameObject);
+            timers[2] = one.getTimer();
+        }
+
+        for(int i = 0; i < timers.Length; i++)
+        {
+            timers[i] -= Time.deltaTime;
         }
     }
 }
