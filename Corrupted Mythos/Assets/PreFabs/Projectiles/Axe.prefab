@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  launchForce: 200
+  launchForce: 150
   lifetime: 100
-  xMod: 0.6
+  xMod: 0.1
   rb: {fileID: 4739295258158011062}
 --- !u!50 &4739295258158011062
 Rigidbody2D:
