@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-[CreateAssetMenu(fileName = "Patrol State", menuName = "FSM/States/Patrol", order = 2)]
+[CreateAssetMenu(fileName = "Patrol State", menuName = "FSM/States/Abom/Patrol", order = 2)]
 public class patrolState : State
 {
     public State attack;

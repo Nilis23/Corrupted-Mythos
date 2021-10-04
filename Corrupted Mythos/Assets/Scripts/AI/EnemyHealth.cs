@@ -21,13 +21,11 @@ public class EnemyHealth : MonoBehaviour
     public void minusHealth(int damage)
     {
         health -= damage;
-        Debug.Log(health);
         em.stagr = stagTime;
         
         if(health <= 0)
         {
             float drop = Random.value;
-            Debug.Log(drop);
             if (drop == 0.1f)
             {
                 //Instead of using a new gameoject and adding new components, which uses considerable performance, consider instantiating a prefab
@@ -38,7 +36,8 @@ public class EnemyHealth : MonoBehaviour
                 //add sprite
             }
 
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
     public void addHealth(int gain)

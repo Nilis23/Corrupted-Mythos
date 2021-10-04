@@ -26,16 +26,19 @@ public class FlamingTiles : MonoBehaviour
             }
         }
 */
-        /*private void OnCollisionEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag == "Player")
-            {
-                script = collision.GetComponent<PlayerHealth>();
-                time = 1f;
-                //flaming = true;
-                //Debug.Log(flaming);
-            } 
-        }*/
+            script = collision.gameObject.GetComponent<PlayerHealth>();
+            time = 1f;
+            //flaming = true;
+            //Debug.Log(flaming);
+        }
+    }
+        
+            
+        
 /*
         private void OnCollisionExit2D(Collision2D collision)
         {
@@ -47,9 +50,9 @@ public class FlamingTiles : MonoBehaviour
                 Debug.Log(flaming);
             }
 
-        }
-*/
-    /*private void OnCollisionStay2D(Collision2D collision)
+        }*/
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
         time += Time.deltaTime;
 
@@ -58,5 +61,5 @@ public class FlamingTiles : MonoBehaviour
             script.minusHealth(damage);
             time = 0;
         }
-    }*/
+    }
 }

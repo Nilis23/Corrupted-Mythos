@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
         if (pcontroller.player.Pause.triggered)
         {
             pause.SetActive(true);
-            paused = true;
+            //paused = true;
+            Time.timeScale = 0f;
         }
 
         dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
@@ -40,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (pcontroller.player.attack.triggered && !paused)
         {
-            Debug.Log("atk");
             weap.attack();
         }
     }

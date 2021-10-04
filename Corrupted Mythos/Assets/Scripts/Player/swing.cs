@@ -54,7 +54,6 @@ public class swing : MonoBehaviour
     {
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
         {
-            Debug.Log("hit");
             //damage enemy
             ///*
             script = collision.GetComponent<EnemyHealth>();
@@ -67,7 +66,6 @@ public class swing : MonoBehaviour
     {
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
         {
-            Debug.Log("hit");
             //damage enemy
             ///*
             script = collision.GetComponent<EnemyHealth>();

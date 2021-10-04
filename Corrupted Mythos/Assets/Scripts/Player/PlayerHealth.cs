@@ -42,7 +42,6 @@ public class PlayerHealth : MonoBehaviour
         if (timer <= 0)
         {
             health -= damage;
-            Debug.Log(health);
             //update UI
             hpBar.value = health;
             timer = 0.25f;
@@ -72,14 +71,13 @@ public class PlayerHealth : MonoBehaviour
         health = 100;
         hpBar.value = health;
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
-        this.transform.localScale = new Vector2(1f, 1f);
+        this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("checkpoint"))
         {
-            Debug.Log("checkpoint");
             spawn.position = other.transform.position;
             check += 1;
             //Destroy(other);

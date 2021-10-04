@@ -36,6 +36,7 @@ public class StateManager : MonoBehaviour
         if (currentState == null)
         {
             currentState = startState;
+            currentState.StartState(this);
         }
 
         idle = true;

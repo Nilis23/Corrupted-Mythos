@@ -68,6 +68,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ArtifactInteract",
+                    "type": "Button",
+                    "id": "74a49646-8b8d-4acc-a609-416a182429c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -398,6 +406,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "fall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d273066-28e3-4706-b775-dd2bd2e83306",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArtifactInteract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

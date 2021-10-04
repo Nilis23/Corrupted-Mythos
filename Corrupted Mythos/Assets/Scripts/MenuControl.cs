@@ -11,7 +11,7 @@ public class MenuControl : MonoBehaviour
 
     public void Resume()
     {
-        player.paused = false;
+        Time.timeScale = 1f;
         pause.SetActive(false);
     }
     public void Restart()

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba3310706b9d4c40874ff9a5b7a2866, type: 3}
+  m_Name: N1N1_Abomonation
+  m_EditorClassIdentifier: 
+  EnemyPref: {fileID: 2882597727957746579, guid: bf34db0887147b347b05b6c9f3d128ba, type: 3}
+  spawnerTag: AbomSpawner

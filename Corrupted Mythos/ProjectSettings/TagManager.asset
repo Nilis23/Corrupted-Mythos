@@ -8,6 +8,7 @@ TagManager:
   - checkpoint
   - floor
   - FloorBoost
+  - AbomSpawner
   layers:
   - Default
   - TransparentFX

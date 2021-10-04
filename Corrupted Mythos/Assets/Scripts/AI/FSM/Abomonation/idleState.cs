@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Idle State", menuName = "FSM/States/Idle", order = 1)]
+[CreateAssetMenu(fileName = "Idle State", menuName = "FSM/States/Abom/Idle", order = 1)]
 public class idleState : State
 {
     public State patrol; //The chase state it can swap into

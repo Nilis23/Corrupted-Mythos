@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-[CreateAssetMenu(fileName = "Attack State", menuName = "FSM/States/Abom/Attack", order = 3)]
-public class attackState : State
+[CreateAssetMenu(fileName = "Node Attack State", menuName = "FSM/States/Abom/Node Attack", order = 4)]
+public class NodeAttackState : State
 {
-    public State patrolState;
+    //public State patrolState;
     bool atkplaying;
     float WPDist;
 
@@ -23,12 +23,13 @@ public class attackState : State
 
         if (em.player != null)
         {
-            int colState = em.getCollisionState();
             float dist = Vector2.Distance(em.gameObject.transform.position, em.player.transform.position);
-            if (dist >= 6.5f)
+            /*if (dist >= 6.5f)
             {
                 return patrolState;
             }
+            We do not exit this state
+            */
             
             /*
             if (dist >= WPDist)

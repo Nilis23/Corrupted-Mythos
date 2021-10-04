@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class GameAction : MonoBehaviour
 {
-    public abstract void action();
+    public float delay;
+
+    public abstract void Action();
 }

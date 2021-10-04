@@ -81,6 +81,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ArtifactInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""74a49646-8b8d-4acc-a609-416a182429c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -411,6 +419,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""fall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d273066-28e3-4706-b775-dd2bd2e83306"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArtifactInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -963,6 +982,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_ArtifactThree = m_player.FindAction("ArtifactThree", throwIfNotFound: true);
         m_player_Pause = m_player.FindAction("Pause", throwIfNotFound: true);
         m_player_fall = m_player.FindAction("fall", throwIfNotFound: true);
+        m_player_ArtifactInteract = m_player.FindAction("ArtifactInteract", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1032,6 +1052,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_ArtifactThree;
     private readonly InputAction m_player_Pause;
     private readonly InputAction m_player_fall;
+    private readonly InputAction m_player_ArtifactInteract;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1044,6 +1065,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @ArtifactThree => m_Wrapper.m_player_ArtifactThree;
         public InputAction @Pause => m_Wrapper.m_player_Pause;
         public InputAction @fall => m_Wrapper.m_player_fall;
+        public InputAction @ArtifactInteract => m_Wrapper.m_player_ArtifactInteract;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1077,6 +1099,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @fall.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
                 @fall.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
                 @fall.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
+                @ArtifactInteract.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
+                @ArtifactInteract.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
+                @ArtifactInteract.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1105,6 +1130,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @fall.started += instance.OnFall;
                 @fall.performed += instance.OnFall;
                 @fall.canceled += instance.OnFall;
+                @ArtifactInteract.started += instance.OnArtifactInteract;
+                @ArtifactInteract.performed += instance.OnArtifactInteract;
+                @ArtifactInteract.canceled += instance.OnArtifactInteract;
             }
         }
     }
@@ -1233,6 +1261,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnArtifactThree(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnFall(InputAction.CallbackContext context);
+        void OnArtifactInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
