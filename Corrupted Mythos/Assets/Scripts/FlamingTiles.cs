@@ -10,37 +10,53 @@ public class FlamingTiles : MonoBehaviour
     private bool flaming=false;
     public PlayerHealth script;
 
-    private void Update()
-    {
-        if (flaming)
+    /*
+        private void Update()
         {
-            time += Time.deltaTime;
-        }
+            if (flaming)
+            {
+                time += Time.deltaTime;
+                //Debug.Log(time);
+            }
 
-        if (time>=1f)
+            if (time>=1f)
+            {
+                script.minusHealth(damage);
+                time = 0;
+            }
+        }
+*/
+        private void OnCollisionEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                script = collision.GetComponent<PlayerHealth>();
+                time = 1f;
+                //flaming = true;
+                //Debug.Log(flaming);
+            } 
+        }
+/*
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                script = collision.gameObject.GetComponent<PlayerHealth>();
+                time = 0f;
+                flaming = false;
+                Debug.Log(flaming);
+            }
+
+        }
+*/
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        time += Time.deltaTime;
+
+        if (time >= 1f)
         {
             script.minusHealth(damage);
             time = 0;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            script = collision.GetComponent<PlayerHealth>();
-            flaming = true;
-            Debug.Log(flaming);
-        } 
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            script = collision.gameObject.GetComponent<PlayerHealth>();
-            flaming = false;
-            Debug.Log(flaming);
-        }
-        
     }
 }
