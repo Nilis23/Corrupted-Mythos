@@ -83,7 +83,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ArtifactInteract"",
+                    ""name"": ""NodeInteract"",
                     ""type"": ""Button"",
                     ""id"": ""74a49646-8b8d-4acc-a609-416a182429c0"",
                     ""expectedControlType"": ""Button"",
@@ -203,8 +203,8 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""controller"",
-                    ""id"": ""0c161e4e-0072-4c4c-81c1-62b72953dfaf"",
+                    ""name"": ""Controller Stick"",
+                    ""id"": ""265189dd-efe5-4ac4-aa44-f0280c88bbc6"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -215,8 +215,8 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""702a2ff3-9493-4caf-99b3-a7d9b95ed9e1"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""id"": ""500abf1f-d8cc-45e7-a8f7-47688e9f5ae0"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -226,8 +226,8 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""e9543a30-d577-4f6c-931d-1a26d60f3f73"",
-                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""id"": ""4ea20dab-aa75-4b00-8755-f3baf5386f64"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -237,8 +237,8 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""6f647539-380a-4507-8cbe-a93de7eb6563"",
-                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""id"": ""e1d820e1-b424-4241-a4f3-c167a9ab9d4d"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -248,8 +248,8 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""d4cc1638-a0fa-4283-8f7d-1e13959c4c34"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""id"": ""5e8f6aa5-a873-40e9-867f-b7228c07c840"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""controls"",
@@ -315,7 +315,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6f6dcaf0-118d-4955-a20d-a6d7a599c141"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -429,7 +429,18 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ArtifactInteract"",
+                    ""action"": ""NodeInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""840a25fb-7e50-42b8-b3cd-00b1ad17fab6"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NodeInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -982,7 +993,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_ArtifactThree = m_player.FindAction("ArtifactThree", throwIfNotFound: true);
         m_player_Pause = m_player.FindAction("Pause", throwIfNotFound: true);
         m_player_fall = m_player.FindAction("fall", throwIfNotFound: true);
-        m_player_ArtifactInteract = m_player.FindAction("ArtifactInteract", throwIfNotFound: true);
+        m_player_NodeInteract = m_player.FindAction("NodeInteract", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1052,7 +1063,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_ArtifactThree;
     private readonly InputAction m_player_Pause;
     private readonly InputAction m_player_fall;
-    private readonly InputAction m_player_ArtifactInteract;
+    private readonly InputAction m_player_NodeInteract;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1065,7 +1076,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @ArtifactThree => m_Wrapper.m_player_ArtifactThree;
         public InputAction @Pause => m_Wrapper.m_player_Pause;
         public InputAction @fall => m_Wrapper.m_player_fall;
-        public InputAction @ArtifactInteract => m_Wrapper.m_player_ArtifactInteract;
+        public InputAction @NodeInteract => m_Wrapper.m_player_NodeInteract;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1099,9 +1110,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @fall.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
                 @fall.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
                 @fall.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFall;
-                @ArtifactInteract.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
-                @ArtifactInteract.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
-                @ArtifactInteract.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnArtifactInteract;
+                @NodeInteract.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
+                @NodeInteract.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
+                @NodeInteract.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1130,9 +1141,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @fall.started += instance.OnFall;
                 @fall.performed += instance.OnFall;
                 @fall.canceled += instance.OnFall;
-                @ArtifactInteract.started += instance.OnArtifactInteract;
-                @ArtifactInteract.performed += instance.OnArtifactInteract;
-                @ArtifactInteract.canceled += instance.OnArtifactInteract;
+                @NodeInteract.started += instance.OnNodeInteract;
+                @NodeInteract.performed += instance.OnNodeInteract;
+                @NodeInteract.canceled += instance.OnNodeInteract;
             }
         }
     }
@@ -1261,7 +1272,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnArtifactThree(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnFall(InputAction.CallbackContext context);
-        void OnArtifactInteract(InputAction.CallbackContext context);
+        void OnNodeInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

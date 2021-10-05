@@ -36,6 +36,7 @@ public class CorruptedNode : MonoBehaviour
     bool active = false;
     List<GameObject> Enemies = new List<GameObject>();
     private Inputs pcontroller;
+    bool inRange;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,12 @@ public class CorruptedNode : MonoBehaviour
             StartNodeActivity();
             ManualStart = false;
         }
+
+        if(!active && inRange && pcontroller.player.NodeInteract.triggered)
+        {
+            StartNodeActivity();
+        }
+
         if (active)
         {
             t += Time.deltaTime;
@@ -132,13 +139,16 @@ public class CorruptedNode : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Spot where we could do a prompt for what button to press
-
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (pcontroller.player.ArtifactInteract.triggered)
+        if (collision.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
         {
-            StartNodeActivity();
+            inRange = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
+        {
+            inRange = false;
         }
     }
 }
