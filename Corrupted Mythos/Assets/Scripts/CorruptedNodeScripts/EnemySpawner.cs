@@ -17,15 +17,17 @@ public class EnemySpawner : ScriptableObject
         SpawnPoints = GameObject.FindGameObjectsWithTag(spawnerTag);
     }
 
-    public GameObject Spawn(CorruptedNode node)
+    public void Spawn(CorruptedNode node)
     {
         int point = Random.Range(0, SpawnPoints.Length);
+        float xmod = Random.Range(-1.5f, 1.5f);
+
         GameObject es = Instantiate(EnemyPref);
-        es.transform.position = SpawnPoints[point].transform.position;
+
+        Vector2 sp = SpawnPoints[point].transform.position;
+        es.transform.position = new Vector2(sp.x + xmod, sp.y);
 
         node.addEnemy(es);
         es.GetComponent<ArenaDeathHelper>().SetArena(node);
-
-        return es;
     }
 }
