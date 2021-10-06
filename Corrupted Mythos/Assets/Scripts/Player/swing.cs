@@ -50,6 +50,11 @@ public class swing : MonoBehaviour
         }
     }
 
+    public bool getStatus()
+    {
+        return isAnim;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 desiredDirection;
 
     private bool jump = false;
+    private bool atk;
     public bool paused = false;
 
     void Start()
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dir = 0;
 
         if (pcontroller.player.Pause.triggered)
         {
@@ -33,7 +35,14 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
+        if (!weap.getStatus())
+        {
+            dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
+        }
+        else
+        {
+            dir = (pcontroller.player.movement.ReadValue<Vector2>().x * speed)/1.5f;
+        }
 
         if (pcontroller.player.jump.triggered && !paused)
         {
