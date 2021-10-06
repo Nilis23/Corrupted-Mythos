@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject death;
     public Slider hpBar;
 
+    [HideInInspector]
+    public CorruptedNode node;
+
     float timer;
 
     private void Start()
@@ -72,6 +75,13 @@ public class PlayerHealth : MonoBehaviour
         hpBar.value = health;
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
+
+        if(node != null)
+        {
+            node.ResetNodeActivity();
+            node.active = false;
+            node = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

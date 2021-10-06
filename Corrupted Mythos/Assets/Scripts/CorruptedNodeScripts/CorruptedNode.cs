@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CorruptedNode : MonoBehaviour
 {
@@ -33,10 +34,10 @@ public class CorruptedNode : MonoBehaviour
     //Internal variables
     int spawned = 0;
     float t;
-    bool active = false;
+    public bool active = false;
     List<GameObject> Enemies = new List<GameObject>();
     private Inputs pcontroller;
-    bool inRange;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +59,6 @@ public class CorruptedNode : MonoBehaviour
             ManualStart = false;
         }
 
-        if(!active && inRange && pcontroller.player.NodeInteract.triggered)
-        {
-            StartNodeActivity();
-        }
-
         if (active)
         {
             t += Time.deltaTime;
@@ -75,14 +71,6 @@ public class CorruptedNode : MonoBehaviour
             if(Enemies.Count == 0 && spawned == SpawnCount)
             {
                 EndNodeActivity();
-            }
-
-            for(int i = 0; i < Enemies.Count; i++)
-            {
-                if(Enemies[i] == null) 
-                {
-                    Enemies.RemoveAt(i);
-                }
             }
         }   
     }
@@ -117,11 +105,30 @@ public class CorruptedNode : MonoBehaviour
     public void SpawnEnemy()
     {
         int pick = Random.Range(0, EnemyList.Count);
+        EnemyList[pick].Spawn(this);
 
-        Enemies.Add(EnemyList[pick].Spawn());
         spawned++;
-
         t = 0;
+    }
+
+    public void ResetNodeActivity()
+    {
+        foreach(GameObject enemy in Enemies)
+        {
+            Destroy(enemy);
+        }
+        Enemies.Clear();
+        spawned = 0;
+        t = 0;
+        foreach (GameObject barrier in BarrierList)
+        {
+            barrier.SetActive(false);
+        }
+
+        foreach (GameObject spawner in Spawners)
+        {
+            spawner.SetActive(false);
+        }
     }
 
     public void EndNodeActivity()
@@ -134,21 +141,39 @@ public class CorruptedNode : MonoBehaviour
         //Temporary, eventually there will be an effect here and an invoked destroy
         Destroy(this.gameObject);
     }
+
+    public void addEnemy(GameObject enemy)
+    {
+        Enemies.Add(enemy);
+    }
+
+    public void removeEnemy(GameObject enemy)
+    {
+        if (Enemies.Contains(enemy))
+        {
+            Enemies.Remove(enemy);
+        }
+    }
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Spot where we could do a prompt for what button to press
-        if (collision.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
+        if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
         {
-            inRange = true;
+            target = collision.transform;
+            pcontroller.player.NodeInteract.started += StartNode;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
-        {
-            inRange = false;
+        if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
+        {           
+            pcontroller.player.NodeInteract.started -= StartNode;       
         }
+    }
+    private void StartNode(InputAction.CallbackContext c)
+    {
+        StartNodeActivity();
+        target.GetComponent<PlayerHealth>().node = this;
     }
 }

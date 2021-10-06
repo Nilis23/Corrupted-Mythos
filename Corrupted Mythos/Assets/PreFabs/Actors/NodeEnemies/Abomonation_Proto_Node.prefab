@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
   - component: {fileID: 1824765836}
+  - component: {fileID: 8921645956111960794}
   m_Layer: 8
   m_Name: Abomonation_Proto_Node
   m_TagString: enemy
@@ -482,3 +483,15 @@ MonoBehaviour:
   health: 100
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
+--- !u!114 &8921645956111960794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882597727957746579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0797fe2a618b034b920763366df5d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
