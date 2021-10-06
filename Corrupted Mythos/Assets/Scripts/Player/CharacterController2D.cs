@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	// grounded fix: change the bottom circle collider and only change isGrounded on collison with only that collider
 	[SerializeField] public float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -160,22 +161,4 @@ public class CharacterController2D : MonoBehaviour
 			m_JumpForce = 700f;
         }
     }
-
-	/*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-		if (collision.CompareTag("floor boost"))
-		{
-			Debug.Log("boostio");
-			m_JumpForce = 800f;
-		}
-	}
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-		if (collision.CompareTag("floor boost"))
-		{
-			m_JumpForce = 400f;
-		}
-	}
-	*/
 }
