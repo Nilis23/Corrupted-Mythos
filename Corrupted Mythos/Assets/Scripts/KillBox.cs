@@ -10,6 +10,10 @@ public class KillBox : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(1000);
         }
+        else if(collision.gameObject.tag == "enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().minusHealth(1000);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

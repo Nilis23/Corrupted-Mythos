@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnemyNavigator : MonoBehaviour
 {
-    public GameObject target;
+    public Vector2 target;
 
     public float speed = 1;
     public float nWaypointDistance = 3f;
@@ -14,6 +14,8 @@ public class EnemyNavigator : MonoBehaviour
 
     [SerializeField]
     StateManager em;
+    [SerializeField]
+    float bypassDist;
 
     //private Path path;
     //int currentWP;
@@ -21,14 +23,18 @@ public class EnemyNavigator : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    GameObject player;
 
     float t = 0;
+    bool bypass = false;
+    bool right = true;
 
     // Start is called before the first frame update
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -54,9 +60,9 @@ public class EnemyNavigator : MonoBehaviour
         */
         #endregion
 
-        if (target != null && em.stagr <= 0)
+        if (target != null && em.stagr <= 0 && !em.idle)
         {
-            Vector2 dir = ((Vector2)target.transform.position - (Vector2)rb.position).normalized;
+            Vector2 dir = ((Vector2)target - (Vector2)rb.position).normalized;
             Vector2 force = dir * (speed * Time.fixedDeltaTime);
             //rb.AddForce(force);
             //rb.velocity += new Vector2(force.x, 0);
@@ -79,25 +85,57 @@ public class EnemyNavigator : MonoBehaviour
             */
             #endregion
 
-            float dist = Vector2.Distance(rb.position, target.transform.position);
+            float dist = Vector2.Distance(rb.position, target);
             if (dist < nWaypointDistance)
             {
                 reachedEOP = true;
+                if (em.GetState().GetType() == typeof(attackState))
+                {
+                    if (!bypass)
+                    {
+                        BypassTarget();
+                    }
+                    else
+                    {
+                        target = player.transform.position;
+                        bypass = false;
+                    }
+                }
             }
-            if (force.x >= 0.01f)
-            {
-                gfx.localScale = new Vector2(1f, 1f);
-            }
-            else if (force.x <= -0.01f)
-            {
-                gfx.localScale = new Vector2(-1f, 1f);
-            }
+
+            SwapGFX(force);
         }
 
         t += Time.deltaTime;
     }
 
-    
+    public void SwapGFX(Vector2 force)
+    {
+        if (force.x >= 0.01f)
+        {
+            gfx.localScale = new Vector2(1f, 1f);
+            right = true;
+        }
+        else if (force.x <= -0.01f)
+        {
+            gfx.localScale = new Vector2(-1f, 1f);
+            right = false;
+        }
+    }
+
+    public void BypassTarget() 
+    {
+        if (right)
+        {
+            target = new Vector2(target.x + bypassDist, target.y);
+        }
+        else
+        {
+            target = new Vector2(target.x - bypassDist, target.y);
+        }
+        bypass = true;
+    }
+
 
     public bool getEOP()
     {

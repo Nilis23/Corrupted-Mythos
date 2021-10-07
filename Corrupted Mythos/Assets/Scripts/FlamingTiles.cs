@@ -54,12 +54,15 @@ public class FlamingTiles : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        time += Time.deltaTime;
-
-        if (time >= 1f)
+        if (collision.gameObject.tag == "Player")
         {
-            script.minusHealth(damage);
-            time = 0;
+            time += Time.deltaTime;
+
+            if (time >= 1f)
+            {
+                script.minusHealth(damage);
+                time = 0;
+            }
         }
     }
 }

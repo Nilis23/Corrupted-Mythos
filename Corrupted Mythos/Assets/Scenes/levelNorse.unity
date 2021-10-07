@@ -892,6 +892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f956b455b3cee134cbfabf85148212b6, type: 3}
+--- !u!1 &182114142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6084865303878170531, guid: 822f5f4f1372a0b4ba3cad2293c873b4, type: 3}
+  m_PrefabInstance: {fileID: 135927091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &223397240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6349,6 +6354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2882597727957746578, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: bypassDist
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (9)
@@ -53518,6 +53527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2882597727957746578, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: bypassDist
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (1)
@@ -55070,7 +55083,7 @@ PrefabInstance:
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: BarrierList.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 182114142}
     - target: {fileID: 199727143045169880, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: m_RootOrder
       value: 21

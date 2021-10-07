@@ -93,17 +93,31 @@ public class StateManager : MonoBehaviour
     {
         if(point == 0)
         {
-            nav.target = pointTwo;
+            nav.target = pointTwo.transform.position;
             point = 1;
         }
         else if(point == 1)
         {
-            nav.target = pointOne;
+            nav.target = pointOne.transform.position;
             point = 0;
         }
     }
     public void SetTarget(GameObject targ)
     {
-        nav.target = targ;
+        nav.target = targ.transform.position;
     }
+
+    public State GetState()
+    {
+        return currentState;
+    }
+    /*
+    public void BypassTarget(GameObject targ)
+    {
+        if(nav.getEOP() && currentState.GetType() == typeof(attackState))
+        {
+            nav.target.position = new Vector2(targ.transform.position.x + 1, targ.transform.position.y);
+        }
+    }
+    */
 }
