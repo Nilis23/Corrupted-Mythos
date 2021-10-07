@@ -420,7 +420,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1.5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 894fd41ed8fa3154ca87ac3ec456b92e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -444,6 +444,7 @@ MonoBehaviour:
   gfx: {fileID: 2882597726456735917}
   em: {fileID: 2882597727957746669}
   bypassDist: 4.5
+  Attack: {fileID: 11400000, guid: 4b584008f1f5d7a4ca9ed3eecdb690d1, type: 2}
 --- !u!114 &2882597727957746669
 MonoBehaviour:
   m_ObjectHideFlags: 0

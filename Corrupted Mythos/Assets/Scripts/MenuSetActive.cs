@@ -10,6 +10,18 @@ public class MenuSetActive : MonoBehaviour
 
     private void OnEnable()
     {
+        SelectButton();
+    }
+
+    public void SelectButton()
+    {
+        StartCoroutine("doButtonSelect");
+    }
+
+    IEnumerator doButtonSelect()
+    {
+        yield return new WaitForEndOfFrame();
         firstButton.Select();
+
     }
 }

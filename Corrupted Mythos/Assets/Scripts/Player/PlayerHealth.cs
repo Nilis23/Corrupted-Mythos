@@ -32,11 +32,6 @@ public class PlayerHealth : MonoBehaviour
         if(timer >= 0)
         {
             timer -= Time.deltaTime;
-
-            if(timer <= 0)
-            {
-                this.GetComponent<SpriteRenderer>().color = Color.white;
-            }
         }
     }
 
@@ -48,7 +43,8 @@ public class PlayerHealth : MonoBehaviour
             //update UI
             hpBar.value = health;
             timer = 0.25f;
-            this.GetComponent<SpriteRenderer>().color = Color.red;
+
+            StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
         }
         // respawn script
         if (health <= 0)
@@ -74,7 +70,9 @@ public class PlayerHealth : MonoBehaviour
         health = 100;
         hpBar.value = health;
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
+        this.GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
+        StopAllCoroutines();
 
         if(node != null)
         {
@@ -83,6 +81,27 @@ public class PlayerHealth : MonoBehaviour
             node = null;
         }
     }
+    IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
+    {
+        float flashingFor = 0;
+        Color newColor = flashColor;
+        while (flashingFor < flashTime)
+        {
+            toFlash.color = newColor;
+            flashingFor += Time.deltaTime;
+            yield return new WaitForSeconds(flashSpeed);
+            flashingFor += flashSpeed;
+            if (newColor == flashColor)
+            {
+                newColor = originalColor;
+            }
+            else
+            {
+                newColor = flashColor;
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

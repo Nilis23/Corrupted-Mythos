@@ -16,6 +16,8 @@ public class EnemyNavigator : MonoBehaviour
     StateManager em;
     [SerializeField]
     float bypassDist;
+    [SerializeField]
+    State Attack;
 
     //private Path path;
     //int currentWP;
@@ -90,7 +92,7 @@ public class EnemyNavigator : MonoBehaviour
             if (dist < nWaypointDistance)
             {
                 reachedEOP = true;
-                if (em.GetState().GetType() == typeof(attackState))
+                if (em.GetState().GetType() == Attack.GetType())
                 {
                     if (!bypass)
                     {

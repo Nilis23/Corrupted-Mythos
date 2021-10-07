@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab7d50cdb733ab458317f96ee5e2f72, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
+  timer: 2
   axPref: {fileID: 679738632903409333, guid: 306e6627efb08024dbe6ae176953af77, type: 3}

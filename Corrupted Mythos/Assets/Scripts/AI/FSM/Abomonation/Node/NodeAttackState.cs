@@ -24,12 +24,12 @@ public class NodeAttackState : State
         if (em.player != null)
         {
             float dist = Vector2.Distance(em.gameObject.transform.position, em.player.transform.position);
-            /*if (dist >= 6.5f)
+            if (dist >= 6.5f)
             {
-                return patrolState;
+                em.SetTarget(em.player);
             }
-            We do not exit this state
-            */
+            //We do not exit this state
+            
             
             /*
             if (dist >= WPDist)
