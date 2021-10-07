@@ -64,6 +64,7 @@ public class EnemyNavigator : MonoBehaviour
         {
             Vector2 dir = ((Vector2)target - (Vector2)rb.position).normalized;
             Vector2 force = dir * (speed * Time.fixedDeltaTime);
+            SwapGFX(force);
             //rb.AddForce(force);
             //rb.velocity += new Vector2(force.x, 0);
             //rb.MovePosition( new Vector2((this.transform.position.x + force.x), this.transform.position.y) );
@@ -85,7 +86,7 @@ public class EnemyNavigator : MonoBehaviour
             */
             #endregion
 
-            float dist = Vector2.Distance(rb.position, target);
+            float dist = Mathf.Abs(rb.position.x - target.x);
             if (dist < nWaypointDistance)
             {
                 reachedEOP = true;
@@ -102,8 +103,6 @@ public class EnemyNavigator : MonoBehaviour
                     }
                 }
             }
-
-            SwapGFX(force);
         }
 
         t += Time.deltaTime;
@@ -125,15 +124,65 @@ public class EnemyNavigator : MonoBehaviour
 
     public void BypassTarget() 
     {
+        Vector2 modPos = new Vector2(this.transform.position.x, this.transform.position.y - 1);
+        LayerMask mask = ~(1 << 7);
         if (right)
         {
-            target = new Vector2(target.x + bypassDist, target.y);
+            RaycastHit2D hit = Physics2D.Raycast(modPos, new Vector2(bypassDist, 0), bypassDist, mask);
+            if(hit.collider != null && !hit.collider.isTrigger && hit.collider.tag != "Player")
+            {
+                //float dist = Vector2.Distance(this.transform.position, hit.transform.position);
+                float dist = this.transform.position.x - hit.point.x;
+                target = new Vector2(this.transform.position.x + (Mathf.Abs(dist) - 2), this.transform.position.y);
+                bypass = true;
+
+                Debug.Log("Moving right to dist of " + dist.ToString() + " after hitting " + hit.collider.name);
+                return;
+
+            }
+            else
+            {
+                Vector2 pos = new Vector2(transform.position.x + bypassDist, transform.position.y);
+                RaycastHit2D down = Physics2D.Raycast(pos, new Vector2(0, -5));
+                if(down.collider != null && !down.collider.isTrigger && down.collider.tag != "Player")
+                {
+                    target = pos;
+                    bypass = true;
+
+                    Debug.Log("Moving right at full distance");
+                    return;
+                }
+            }
         }
         else
         {
-            target = new Vector2(target.x - bypassDist, target.y);
+            RaycastHit2D hit = Physics2D.Raycast(modPos, new Vector2(-1 * bypassDist, 0), bypassDist, mask);
+            if (hit.collider != null && !hit.collider.isTrigger && hit.collider.tag != "Player")
+            {
+                //float dist = Vector2.Distance(this.transform.position, hit.transform.position);
+                float dist = this.transform.position.x - hit.point.x;
+                target = new Vector2(this.transform.position.x - (Mathf.Abs(dist) - 2), this.transform.position.y);
+                bypass = true;
+
+                Debug.Log("Moving left to a dist of " + dist.ToString() + " after hitting " + hit.collider.name);
+                return;
+            }
+            else
+            {
+                Vector2 pos = new Vector2(transform.position.x - bypassDist, transform.position.y);
+                RaycastHit2D down = Physics2D.Raycast(pos, new Vector2(0, -5));
+                if (down.collider != null && !down.collider.isTrigger && down.collider.tag != "Player")
+                {
+                    target = pos;
+                    bypass = true;
+
+                    Debug.Log("Moving left at full distance");
+                    return;
+                }
+            }
         }
-        bypass = true;
+        Debug.Log("Could not find suitble point in direction looked");
+        //bypass = true;
     }
 
 

@@ -39,7 +39,10 @@ public class StateManager : MonoBehaviour
             currentState.StartState(this);
         }
 
-        idle = true;
+        if (startState.GetType() == typeof(idleState))
+        {
+            idle = true;
+        }
     }
     void Update()
     {
