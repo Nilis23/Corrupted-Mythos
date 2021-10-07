@@ -442,7 +442,7 @@ MonoBehaviour:
   nWaypointDistance: 1
   gfx: {fileID: 2882597726456735917}
   em: {fileID: 2882597727957746669}
-  bypassDist: 0
+  bypassDist: 3.5
 --- !u!114 &2882597727957746669
 MonoBehaviour:
   m_ObjectHideFlags: 0
