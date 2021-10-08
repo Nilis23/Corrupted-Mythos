@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levelNorse.unity
     guid: 5f4e411435fadef4c972f621a4502561
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: dccc72572621bc34b8cbf8384856c2f4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2a7502f5dfc392d46a7dae3b8d5615d0, type: 2}

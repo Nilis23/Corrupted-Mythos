@@ -38,6 +38,8 @@ public class CorruptedNode : MonoBehaviour
     List<GameObject> Enemies = new List<GameObject>();
     private Inputs pcontroller;
     private Transform target;
+    private LevelEndHandler leh;
+    bool init = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,9 @@ public class CorruptedNode : MonoBehaviour
         }
         pcontroller = new Inputs();
         pcontroller.Enable();
+
+        leh = GameObject.FindGameObjectWithTag("LevelEndHandler").GetComponent<LevelEndHandler>();
+        init = leh.AddToList(this);
     }
 
     // Update is called once per frame
@@ -138,6 +143,10 @@ public class CorruptedNode : MonoBehaviour
             barrier.SetActive(false);
         }
 
+        if (init)
+        {
+            leh.RemoveFromList(this);
+        }
         //Temporary, eventually there will be an effect here and an invoked destroy
         Destroy(this.gameObject);
     }
