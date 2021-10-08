@@ -5,8 +5,7 @@ using UnityEngine;
 public class JumpBoost : MonoBehaviour
 {
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -14,7 +13,7 @@ public class JumpBoost : MonoBehaviour
             collision.gameObject.GetComponent<CharacterController2D>().m_JumpForce = 1000f;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

@@ -6,12 +6,13 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     public int health;
+    public GameObject foodPref;
     [SerializeField]
     StateManager em;
     [SerializeField]
     float stagTime;
     //public Transform enemy;
-
+    private GameObject food;
     //void Update()
     //{
 
@@ -29,10 +30,12 @@ public class EnemyHealth : MonoBehaviour
             if (drop == 0.1f)
             {
                 //Instead of using a new gameoject and adding new components, which uses considerable performance, consider instantiating a prefab
-                GameObject newFood = Instantiate(gameObject);
-                newFood.transform.position = this.transform.position;
+                GameObject food = Instantiate(foodPref);
+                food.transform.position = this.transform.position;
+                /*
                 newFood.transform.gameObject.AddComponent<Food>();
                 newFood.transform.gameObject.AddComponent<Collider2D>();
+                */
                 //add sprite
             }
 
