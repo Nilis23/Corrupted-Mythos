@@ -9963,8 +9963,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
+      propertyPath: subWaves
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: SpawnCount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: Spawners.Array.data[0]

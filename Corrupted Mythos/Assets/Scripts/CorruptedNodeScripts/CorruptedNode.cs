@@ -19,12 +19,12 @@ public class CorruptedNode : MonoBehaviour
     [Tooltip("The number of spawns")]
     [SerializeField]
     int SpawnCount;
-    [Tooltip("The time between spawns")]
-    [SerializeField]
-    float tMax;
     [Tooltip("The initial wave")]
     [SerializeField]
     int initWave;
+    [Tooltip("The size of subsequent waves")]
+    [SerializeField]
+    int subWaves;
 
     [Space]
     [SerializeField]
@@ -33,7 +33,6 @@ public class CorruptedNode : MonoBehaviour
 
     //Internal variables
     int spawned = 0;
-    float t;
     public bool active = false;
     List<GameObject> Enemies = new List<GameObject>();
     private Inputs pcontroller;
@@ -66,16 +65,28 @@ public class CorruptedNode : MonoBehaviour
 
         if (active)
         {
+            /*
             t += Time.deltaTime;
 
             if(t >= tMax && spawned < SpawnCount)
             {
                 SpawnEnemy();
             }
+            */
 
-            if(Enemies.Count == 0 && spawned == SpawnCount)
+            if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
                 EndNodeActivity();
+            }
+            else if(Enemies.Count == 0)
+            {
+                for(int i = 0; i < subWaves; i++)
+                {
+                    if (spawned < SpawnCount)
+                    {
+                        SpawnEnemy();
+                    }
+                }
             }
         }   
     }
@@ -103,7 +114,6 @@ public class CorruptedNode : MonoBehaviour
             SpawnEnemy();
         }
 
-        t = 0;
         active = true;
     }
 
@@ -113,7 +123,6 @@ public class CorruptedNode : MonoBehaviour
         EnemyList[pick].Spawn(this);
 
         spawned++;
-        t = 0;
     }
 
     public void ResetNodeActivity()
@@ -124,7 +133,6 @@ public class CorruptedNode : MonoBehaviour
         }
         Enemies.Clear();
         spawned = 0;
-        t = 0;
         foreach (GameObject barrier in BarrierList)
         {
             barrier.SetActive(false);

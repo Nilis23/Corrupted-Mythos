@@ -17,7 +17,7 @@ public class TilemapCollider : MonoBehaviour
     [Tooltip("This is the max the X value can deviate between two positions")]
     [SerializeField]
     float MaxXDiff;
-    [Tooltip("The dip in Y value when an X gap is reached")]
+    [Tooltip("The depth to which the collider dips when an x gap is reached")]
     [SerializeField]
     float dip;
     
