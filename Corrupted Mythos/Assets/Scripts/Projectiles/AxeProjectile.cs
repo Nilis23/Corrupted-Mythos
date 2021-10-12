@@ -14,10 +14,10 @@ public class AxeProjectile : MonoBehaviour
     [SerializeField]
     float lifetime;
     [Space]
-    [Tooltip("Xmod cannot be greater than 1. It determines how much force is applied laterally vs vertically")]
-    [Range(0.1f, 0.9f)]
     [SerializeField]
     float xMod;
+    [SerializeField]
+    float yMod;
     [Space] 
     [SerializeField]
     Rigidbody2D rb;
@@ -26,16 +26,16 @@ public class AxeProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float yMod = 1 - xMod;
+        //float yMod = 1 - xMod;
 
         if(this.transform.localScale.x > 0)
         {
-            Vector2 force = new Vector2(launchForce / xMod, launchForce / yMod);
+            Vector2 force = new Vector2(xMod, yMod);
             rb.AddForce(force);
         }
         else
         {
-            Vector2 force = new Vector2((launchForce / xMod) * -1, launchForce / yMod);
+            Vector2 force = new Vector2((xMod * -1), yMod);
             rb.AddForce(force);
         }
 
