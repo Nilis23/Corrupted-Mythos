@@ -50,8 +50,8 @@ public class TilemapCollider : MonoBehaviour
                 if (Mathf.Abs(newPos.x - lastPos.x) > 1)
                 {
                     validPositions.Add(new Vector2(lastPos.x + 1, lastPos.y));
-                    validPositions.Add(new Vector2(lastPos.x + 1, lastPos.y - dip));
-                    validPositions.Add(new Vector2(newPos.x, lastPos.y - dip));
+                    validPositions.Add(new Vector2(lastPos.x + 1, dip));
+                    validPositions.Add(new Vector2(newPos.x, dip));
                 }
                 else if(Mathf.Abs(newPos.y - lastPos.y) > 0)
                 {
