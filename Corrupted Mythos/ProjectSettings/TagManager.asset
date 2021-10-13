@@ -44,7 +44,10 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: ScrollingBackground
+    uniqueID: 297926493
+    locked: 0
+  - name: BackgroundEnviro
     uniqueID: 600147573
     locked: 0
   - name: Default
