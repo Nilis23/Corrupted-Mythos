@@ -9,6 +9,12 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField]
     int damage;
     float t = 0;
+    AudioManager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<AudioManager>();
+    }
 
     private void Update()
     {
@@ -25,6 +31,7 @@ public class EnemyAttack : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
             t = 1;
+            manager.PlaySound("abomHit");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

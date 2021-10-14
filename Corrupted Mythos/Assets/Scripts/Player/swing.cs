@@ -7,11 +7,17 @@ public class swing : MonoBehaviour
     [SerializeField]
     private int damage = 50;
 
+    AudioManager manager;
     EnemyHealth script;
     bool isAnim = false;
     float t = 0;
     float dt = 0;
     float step = 60f / 5;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<AudioManager>();
+    }
 
     private void FixedUpdate()
     {
@@ -47,6 +53,7 @@ public class swing : MonoBehaviour
         {
             isAnim = true;
             t = 0;
+            manager.PlaySound("swing");
         }
     }
 

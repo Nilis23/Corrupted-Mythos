@@ -43,4 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991d6649dab90fa4d8547973a3bd3047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: swing
+    clip: {fileID: 8300000, guid: 14cc847c428e4f64f87ac014a23311fe, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: abomHit
+    clip: {fileID: 8300000, guid: de93f379ddea8a64daaeea606fbe88f1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: lvlFin
+    clip: {fileID: 8300000, guid: eca2d57ba293f3d4aa6dd6bfb324a720, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
