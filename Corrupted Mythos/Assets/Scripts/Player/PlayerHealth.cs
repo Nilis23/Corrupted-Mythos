@@ -60,8 +60,7 @@ public class PlayerHealth : MonoBehaviour
         health += gain;
         }
 
-        Debug.Log(health);
-        //update UI
+        hpBar.value = health;
     }
 
     public void RespawnPlayer()
