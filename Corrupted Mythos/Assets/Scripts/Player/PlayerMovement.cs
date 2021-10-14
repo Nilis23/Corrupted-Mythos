@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (pcontroller.player.Pause.triggered)
         {
             pause.SetActive(true);
-            //paused = true;
+            paused = true;
             Time.timeScale = 0f;
         }
 

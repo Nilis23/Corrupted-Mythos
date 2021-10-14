@@ -12,14 +12,19 @@ public class MenuControl : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1f;
+        player.paused = false;
         pause.SetActive(false);
     }
     public void Restart()
     {
+        Time.timeScale = 1f;
+        player.paused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Quit()
     {
+        Time.timeScale = 1f;
+        player.paused = false;
         SceneManager.LoadScene(0);
     }
 }
