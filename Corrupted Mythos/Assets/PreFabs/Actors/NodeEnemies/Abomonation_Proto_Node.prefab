@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  foodPref: {fileID: 0}
+  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
 --- !u!114 &8921645956111960794

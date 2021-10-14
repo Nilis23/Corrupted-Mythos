@@ -10,6 +10,7 @@ TagManager:
   - FloorBoost
   - AbomSpawner
   - LevelEndHandler
+  - Item
   layers:
   - Default
   - TransparentFX

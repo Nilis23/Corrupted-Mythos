@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private int damage = 10;
+    private int hpGain = 10;
     public PlayerHealth script;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("player"))
+        if (collision.gameObject.tag == "Player")
         {
-            script = collision.GetComponent<PlayerHealth>();
-            script.addHealth(damage);
+            Debug.Log("Collision event firing");
+            script = collision.gameObject.GetComponent<PlayerHealth>();
+            script.addHealth(hpGain);
+
+            Destroy(gameObject);
         }
     }
 }

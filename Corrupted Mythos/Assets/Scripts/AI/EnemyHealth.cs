@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             float drop = Random.value;
-            if (drop == 0.1f)
+            if (drop <= 0.1f)
             {
                 //Instead of using a new gameoject and adding new components, which uses considerable performance, consider instantiating a prefab
                 GameObject food = Instantiate(foodPref);

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1205042776732751423}
   - component: {fileID: 2885670241898906345}
-  - component: {fileID: 1354464742107202889}
-  - component: {fileID: 4739295258158011062}
+  - component: {fileID: 395663509039255221}
   - component: {fileID: 1577840161901279880}
+  - component: {fileID: 1264876288321598814}
   m_Layer: 10
   m_Name: Axe
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1896865509
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 877a367de2596194982e02e7bfa6ff7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,25 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1354464742107202889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679738632903409333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5083d71b85f7746ba44258391a1bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  launchForce: 175
-  lifetime: 5
-  xMod: 350
-  yMod: 450
-  rb: {fileID: 4739295258158011062}
---- !u!50 &4739295258158011062
+--- !u!50 &395663509039255221
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -111,14 +93,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679738632903409333}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -194,3 +176,21 @@ PolygonCollider2D:
       - {x: -0.05859375, y: -0.43359375}
       - {x: -0.041015625, y: -0.40625}
       - {x: -0.04296875, y: -0.37109375}
+--- !u!114 &1264876288321598814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679738632903409333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1acd0acfcf7cf4882d116fb6d41e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  lifetime: 100
+  xSpeed: 20
+  launchAngle: 1
+  timeToPeak: 0.5
+  rotSpeed: 360

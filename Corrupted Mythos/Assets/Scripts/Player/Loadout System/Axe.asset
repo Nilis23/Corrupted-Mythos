@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   timer: 2
-  axPref: {fileID: 679738632903409333, guid: 306e6627efb08024dbe6ae176953af77, type: 3}
+  axPref: {fileID: 679738632903409333, guid: bf28dee46d42dc6449e0e7a4b4d8fc4f, type: 3}
