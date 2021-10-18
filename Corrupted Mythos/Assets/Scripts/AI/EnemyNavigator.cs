@@ -127,7 +127,7 @@ public class EnemyNavigator : MonoBehaviour
     public void BypassTarget() 
     {
         Vector2 modPos = new Vector2(this.transform.position.x, this.transform.position.y - 1);
-        LayerMask mask = ~(1 << 7);
+        LayerMask mask = ~((1 << 7) | (1 << 8));
         if (right)
         {
             RaycastHit2D hit = Physics2D.Raycast(modPos, new Vector2(bypassDist, 0), bypassDist, mask);
