@@ -22,6 +22,9 @@ public class CorruptedNode : MonoBehaviour
     [Tooltip("The initial wave")]
     [SerializeField]
     int initWave;
+    [Tooltip("The rest period for the player")]
+    [SerializeField]
+    float restT = 2;
     [Tooltip("The size of subsequent waves")]
     [SerializeField]
     int subWaves;
@@ -39,6 +42,7 @@ public class CorruptedNode : MonoBehaviour
     private Transform target;
     private LevelEndHandler leh;
     bool init = false;
+    float t = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -65,28 +69,25 @@ public class CorruptedNode : MonoBehaviour
 
         if (active)
         {
-            /*
-            t += Time.deltaTime;
-
-            if(t >= tMax && spawned < SpawnCount)
-            {
-                SpawnEnemy();
-            }
-            */
-
             if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
                 EndNodeActivity();
             }
             else if(Enemies.Count == 0)
             {
-                for(int i = 0; i < subWaves; i++)
+                if (t <= 0)
                 {
-                    if (spawned < SpawnCount)
+                    for (int i = 0; i < subWaves; i++)
                     {
-                        SpawnEnemy();
+                        if (spawned < SpawnCount)
+                        {
+                            SpawnEnemy();
+                        }
                     }
+                    t = restT;
+                    return;
                 }
+                t -= Time.deltaTime;
             }
         }   
     }
@@ -114,6 +115,7 @@ public class CorruptedNode : MonoBehaviour
             SpawnEnemy();
         }
 
+        t = restT;
         active = true;
     }
 
