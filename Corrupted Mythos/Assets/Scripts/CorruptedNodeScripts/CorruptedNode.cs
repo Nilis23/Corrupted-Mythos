@@ -164,7 +164,7 @@ public class CorruptedNode : MonoBehaviour
         if (!end)
         {
             Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
-            Destroy(this.gameObject, 0.8f);
+            Destroy(this.gameObject, 1.3f);
             end = true;
         }
     }
