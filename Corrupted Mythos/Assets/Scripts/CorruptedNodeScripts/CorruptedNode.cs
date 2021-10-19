@@ -164,7 +164,8 @@ public class CorruptedNode : MonoBehaviour
         if (!end)
         {
             Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
-            Destroy(this.gameObject, 1.3f);
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(5, 3.4f, true);
+            Destroy(this.gameObject, 3f);
             end = true;
         }
     }
