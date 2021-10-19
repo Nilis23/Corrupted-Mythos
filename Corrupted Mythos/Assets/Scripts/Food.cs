@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private int hpGain = 10;
+    //private int hpGain = 10;
     public PlayerHealth script;
 
 
@@ -12,9 +12,8 @@ public class Food : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Collision event firing");
             script = collision.gameObject.GetComponent<PlayerHealth>();
-            script.addHealth(hpGain);
+            script.hpGainItems++;
 
             Destroy(gameObject);
         }
