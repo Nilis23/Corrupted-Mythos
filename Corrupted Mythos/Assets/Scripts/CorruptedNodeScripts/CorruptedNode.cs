@@ -28,6 +28,8 @@ public class CorruptedNode : MonoBehaviour
     [Tooltip("The size of subsequent waves")]
     [SerializeField]
     int subWaves;
+    [SerializeField]
+    GameObject EndEffect;
 
     [Space]
     [SerializeField]
@@ -43,6 +45,7 @@ public class CorruptedNode : MonoBehaviour
     private LevelEndHandler leh;
     bool init = false;
     float t = 0;
+    bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +70,7 @@ public class CorruptedNode : MonoBehaviour
             ManualStart = false;
         }
 
-        if (active)
+        if (active && !end)
         {
             if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
@@ -157,8 +160,13 @@ public class CorruptedNode : MonoBehaviour
         {
             leh.RemoveFromList(this);
         }
-        //Temporary, eventually there will be an effect here and an invoked destroy
-        Destroy(this.gameObject);
+
+        if (!end)
+        {
+            Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
+            Destroy(this.gameObject, 0.8f);
+            end = true;
+        }
     }
 
     public void addEnemy(GameObject enemy)

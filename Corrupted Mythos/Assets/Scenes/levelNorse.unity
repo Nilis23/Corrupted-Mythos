@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 143294271}
   - component: {fileID: 143294270}
   - component: {fileID: 143294273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KillBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14254,6 +14254,10 @@ PrefabInstance:
       propertyPath: subWaves
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
+      propertyPath: EndEffect
+      value: 
+      objectReference: {fileID: 6787741493592540932, guid: 455fccc679548d44abe899815a412c83, type: 3}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: SpawnCount
       value: 5
