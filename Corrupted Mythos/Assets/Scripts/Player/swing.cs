@@ -12,12 +12,8 @@ public class swing : MonoBehaviour
     bool isAnim = false;
     float t = 0;
     float dt = 0;
-<<<<<<< Updated upstream
     float step = 90f / 5;
-=======
-    float step = 60f / 5;
     public Animator hit;
->>>>>>> Stashed changes
 
     private void Start()
     {
