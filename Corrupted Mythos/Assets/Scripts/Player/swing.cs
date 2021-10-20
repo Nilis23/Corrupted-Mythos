@@ -12,7 +12,12 @@ public class swing : MonoBehaviour
     bool isAnim = false;
     float t = 0;
     float dt = 0;
+<<<<<<< Updated upstream
     float step = 90f / 5;
+=======
+    float step = 60f / 5;
+    public Animator hit;
+>>>>>>> Stashed changes
 
     private void Start()
     {
@@ -72,6 +77,10 @@ public class swing : MonoBehaviour
             script.minusHealth(damage);
             //*/
             dt = 0.25f;
+
+            Debug.Log("play");
+            hit.Play("impact1_0", 0);
+            
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

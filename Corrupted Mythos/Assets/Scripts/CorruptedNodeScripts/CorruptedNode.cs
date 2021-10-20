@@ -39,6 +39,7 @@ public class CorruptedNode : MonoBehaviour
     //Internal variables
     int spawned = 0;
     public bool active = false;
+    public GameObject E;
     List<GameObject> Enemies = new List<GameObject>();
     private Inputs pcontroller;
     private Transform target;
@@ -59,6 +60,8 @@ public class CorruptedNode : MonoBehaviour
 
         leh = GameObject.FindGameObjectWithTag("LevelEndHandler").GetComponent<LevelEndHandler>();
         init = leh.AddToList(this);
+
+        E.SetActive(false);
     }
 
     // Update is called once per frame
@@ -190,13 +193,15 @@ public class CorruptedNode : MonoBehaviour
         {
             target = collision.transform;
             pcontroller.player.NodeInteract.started += StartNode;
+            E.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
         {           
-            pcontroller.player.NodeInteract.started -= StartNode;       
+            pcontroller.player.NodeInteract.started -= StartNode;
+            E.SetActive(false);
         }
     }
     private void StartNode(InputAction.CallbackContext c)
