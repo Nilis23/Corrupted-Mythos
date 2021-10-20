@@ -154,6 +154,18 @@ public class CorruptedNode : MonoBehaviour
 
     public void EndNodeActivity()
     {
+        if (!end)
+        {
+            Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(6, 3.4f, true);
+            Invoke("DestroyObjs", 3);
+            Destroy(this.gameObject, 3f);
+            end = true;
+        }
+    }
+
+    public void DestroyObjs()
+    {
         foreach (GameObject barrier in BarrierList)
         {
             barrier.SetActive(false);
@@ -162,14 +174,6 @@ public class CorruptedNode : MonoBehaviour
         if (init)
         {
             leh.RemoveFromList(this);
-        }
-
-        if (!end)
-        {
-            Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(5, 3.4f, true);
-            Destroy(this.gameObject, 3f);
-            end = true;
         }
     }
 
