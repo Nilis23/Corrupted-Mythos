@@ -13,7 +13,7 @@ public class swing : MonoBehaviour
     float t = 0;
     float dt = 0;
     float step = 90f / 5;
-    public Animator hit;
+    //public Animator hit;
     
     private GameObject impact;
 
@@ -30,6 +30,7 @@ public class swing : MonoBehaviour
 
     private void FixedUpdate()
     {
+        impact.SetActive(false);
         if (isAnim)
         {
             if (t == 10)
@@ -75,6 +76,7 @@ public class swing : MonoBehaviour
     {
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
         {
+            impact.SetActive(false);
             //damage enemy
             ///*
             script = collision.GetComponent<EnemyHealth>();
@@ -87,9 +89,12 @@ public class swing : MonoBehaviour
             hit.Play("impact1_0", 0);
             */
 
+            ///*
             impact.SetActive(true);
-            //wait for impact animation 
-            impact.SetActive(false);
+            //wait for impact animation
+            //Wait();
+            //impact.SetActive(false);
+            //*/
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -104,5 +109,10 @@ public class swing : MonoBehaviour
 
             dt = 0.25f;
         }
+    }
+
+    private void Wait()
+    {
+
     }
 }
