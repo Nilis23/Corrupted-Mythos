@@ -14,6 +14,14 @@ public class swing : MonoBehaviour
     float dt = 0;
     float step = 90f / 5;
     public Animator hit;
+    
+    private GameObject impact;
+
+    private void OnEnable()
+    {
+        impact = this.gameObject.transform.GetChild(0).gameObject;
+        impact.SetActive(false);
+    }
 
     private void Start()
     {
@@ -74,9 +82,14 @@ public class swing : MonoBehaviour
             //*/
             dt = 0.25f;
 
+            /*
             Debug.Log("play");
             hit.Play("impact1_0", 0);
-            
+            */
+
+            impact.SetActive(true);
+            //wait for impact animation 
+            impact.SetActive(false);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
