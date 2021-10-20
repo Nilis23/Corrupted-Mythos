@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     StateManager em;
     [SerializeField]
     float stagTime;
+    [SerializeField]
+    float foodChance = 0.1f;
     //public Transform enemy;
     private GameObject food;
     //void Update()
@@ -27,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             float drop = Random.value;
-            if (drop <= 0.1f)
+            if (drop <= foodChance)
             {
                 //Instead of using a new gameoject and adding new components, which uses considerable performance, consider instantiating a prefab
                 GameObject food = Instantiate(foodPref);

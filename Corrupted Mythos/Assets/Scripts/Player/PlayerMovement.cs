@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D cntrler;
+    [SerializeField]
+    PlayerHealth playerHP;
+    [Space]
     public float speed;
     public swing weap;
     public GameObject pause;
@@ -51,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
         if (pcontroller.player.attack.triggered && !paused)
         {
             weap.attack();
+        }
+        if (pcontroller.player.Heal.triggered)
+        {
+            playerHP.doPotion();
         }
     }
     private void FixedUpdate()

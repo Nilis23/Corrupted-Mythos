@@ -32,6 +32,7 @@ public class EnemyAttack : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
             t = 1;
             manager.PlaySound("abomHit");
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -40,6 +41,8 @@ public class EnemyAttack : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
             t = 1;
+            manager.PlaySound("abomHit");
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
         }
     }
 }

@@ -12,7 +12,7 @@ public class swing : MonoBehaviour
     bool isAnim = false;
     float t = 0;
     float dt = 0;
-    float step = 60f / 5;
+    float step = 90f / 5;
 
     private void Start()
     {
@@ -43,7 +43,7 @@ public class swing : MonoBehaviour
         }
         if(dt >= 0)
         {
-            dt -= Time.deltaTime;
+            dt -= Time.fixedDeltaTime;
         }
     }
 

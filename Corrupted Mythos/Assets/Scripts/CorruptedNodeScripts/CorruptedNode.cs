@@ -22,9 +22,14 @@ public class CorruptedNode : MonoBehaviour
     [Tooltip("The initial wave")]
     [SerializeField]
     int initWave;
+    [Tooltip("The rest period for the player")]
+    [SerializeField]
+    float restT = 2;
     [Tooltip("The size of subsequent waves")]
     [SerializeField]
     int subWaves;
+    [SerializeField]
+    GameObject EndEffect;
 
     [Space]
     [SerializeField]
@@ -39,6 +44,8 @@ public class CorruptedNode : MonoBehaviour
     private Transform target;
     private LevelEndHandler leh;
     bool init = false;
+    float t = 0;
+    bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -63,30 +70,27 @@ public class CorruptedNode : MonoBehaviour
             ManualStart = false;
         }
 
-        if (active)
+        if (active && !end)
         {
-            /*
-            t += Time.deltaTime;
-
-            if(t >= tMax && spawned < SpawnCount)
-            {
-                SpawnEnemy();
-            }
-            */
-
             if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
                 EndNodeActivity();
             }
             else if(Enemies.Count == 0)
             {
-                for(int i = 0; i < subWaves; i++)
+                if (t <= 0)
                 {
-                    if (spawned < SpawnCount)
+                    for (int i = 0; i < subWaves; i++)
                     {
-                        SpawnEnemy();
+                        if (spawned < SpawnCount)
+                        {
+                            SpawnEnemy();
+                        }
                     }
+                    t = restT;
+                    return;
                 }
+                t -= Time.deltaTime;
             }
         }   
     }
@@ -114,6 +118,7 @@ public class CorruptedNode : MonoBehaviour
             SpawnEnemy();
         }
 
+        t = restT;
         active = true;
     }
 
@@ -155,8 +160,14 @@ public class CorruptedNode : MonoBehaviour
         {
             leh.RemoveFromList(this);
         }
-        //Temporary, eventually there will be an effect here and an invoked destroy
-        Destroy(this.gameObject);
+
+        if (!end)
+        {
+            Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(5, 3.4f, true);
+            Destroy(this.gameObject, 3f);
+            end = true;
+        }
     }
 
     public void addEnemy(GameObject enemy)

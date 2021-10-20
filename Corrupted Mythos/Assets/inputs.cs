@@ -89,6 +89,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ddb322f-b8e0-470a-a403-a45467a886ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -441,6 +449,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""NodeInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""639c9ca7-dae0-4d2d-a6fa-0d850c02f8e8"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -994,6 +1013,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_Pause = m_player.FindAction("Pause", throwIfNotFound: true);
         m_player_fall = m_player.FindAction("fall", throwIfNotFound: true);
         m_player_NodeInteract = m_player.FindAction("NodeInteract", throwIfNotFound: true);
+        m_player_Heal = m_player.FindAction("Heal", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1064,6 +1084,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_Pause;
     private readonly InputAction m_player_fall;
     private readonly InputAction m_player_NodeInteract;
+    private readonly InputAction m_player_Heal;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1077,6 +1098,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @Pause => m_Wrapper.m_player_Pause;
         public InputAction @fall => m_Wrapper.m_player_fall;
         public InputAction @NodeInteract => m_Wrapper.m_player_NodeInteract;
+        public InputAction @Heal => m_Wrapper.m_player_Heal;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1113,6 +1135,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @NodeInteract.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
                 @NodeInteract.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
                 @NodeInteract.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNodeInteract;
+                @Heal.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
+                @Heal.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
+                @Heal.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1144,6 +1169,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @NodeInteract.started += instance.OnNodeInteract;
                 @NodeInteract.performed += instance.OnNodeInteract;
                 @NodeInteract.canceled += instance.OnNodeInteract;
+                @Heal.started += instance.OnHeal;
+                @Heal.performed += instance.OnHeal;
+                @Heal.canceled += instance.OnHeal;
             }
         }
     }
@@ -1273,6 +1301,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnFall(InputAction.CallbackContext context);
         void OnNodeInteract(InputAction.CallbackContext context);
+        void OnHeal(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

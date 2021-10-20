@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public CorruptedNode node;
 
     float timer;
+    public int hpGainItems;
 
     private void Start()
     {
@@ -101,6 +102,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void doPotion()
+    {
+        if(hpGainItems > 0)
+        {
+            addHealth(10);
+            hpGainItems--;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
