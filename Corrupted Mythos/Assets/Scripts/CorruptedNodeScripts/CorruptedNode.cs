@@ -30,6 +30,8 @@ public class CorruptedNode : MonoBehaviour
     int subWaves;
     [SerializeField]
     GameObject EndEffect;
+    [SerializeField]
+    GameObject Pulse;
 
     [Space]
     [SerializeField]
@@ -86,6 +88,7 @@ public class CorruptedNode : MonoBehaviour
             {
                 if (t <= 0)
                 {
+                    Instantiate(Pulse);
                     for (int i = 0; i < subWaves; i++)
                     {
                         if (spawned < SpawnCount)
@@ -104,6 +107,7 @@ public class CorruptedNode : MonoBehaviour
     #region NodeActivity
     public void StartNodeActivity()
     {
+        Instantiate(Pulse);
         foreach(GameObject barrier in BarrierList)
         {
             barrier.SetActive(true);
@@ -222,7 +226,10 @@ public class CorruptedNode : MonoBehaviour
     }
     private void StartNode(InputAction.CallbackContext c)
     {
-        StartNodeActivity();
-        target.GetComponent<PlayerHealth>().node = this;
+        if (!active)
+        {
+            StartNodeActivity();
+            target.GetComponent<PlayerHealth>().node = this;
+        }
     }
 }

@@ -93,6 +93,8 @@ public class AxeProjectileTest : MonoBehaviour
                 Debug.Log("Enemy hit");
                 collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
             }
+
+            FindObjectOfType<AudioManager>().StopSound("axeThrow");
             Destroy(this.gameObject);
         }
     }
