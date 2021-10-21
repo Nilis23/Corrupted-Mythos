@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ShockwaveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 40114c990a5688c409122828fd6c26ac, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_697cbc80dc80491b9d14936469297cdf: 0.1
+    - Vector1_7c70be81ee8c4ed3ad06af96ac1d1d8e: 0.1
+    - Vector1_b9e5849dedb64b46b924e3a9387ae901: -1
+    m_Colors:
+    - Color_2bcee5842ec1477d889172b4302967a5: {r: 0.4784314, g: 0.38823533, b: 0.6313726, a: 1}
+    - Vector2_5b99decc1b3f46d48108d692b4b9d9aa: {r: 0.5, g: 0.5, b: 0, a: 0}
+  m_BuildTextureStacks: []
