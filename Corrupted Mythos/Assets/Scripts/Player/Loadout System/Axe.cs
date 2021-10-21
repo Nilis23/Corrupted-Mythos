@@ -10,6 +10,10 @@ public class Axe : Artifact
 
     public override void doAction(GameObject caller)
     {
+        if(soundName != null)
+        {
+            FindObjectOfType<AudioManager>().PlaySound(soundName);
+        }
         GameObject newAxe = Instantiate(axPref);
         newAxe.transform.position = caller.transform.position;
         if (caller.transform.localScale.x < 0)

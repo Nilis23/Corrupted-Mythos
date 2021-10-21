@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: swing
-    clip: {fileID: 8300000, guid: 14cc847c428e4f64f87ac014a23311fe, type: 3}
+    clip: {fileID: 8300000, guid: 9cafaa554b4cdaa498b331ed97bdd880, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -58,6 +58,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: lvlFin
     clip: {fileID: 8300000, guid: eca2d57ba293f3d4aa6dd6bfb324a720, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: nodeExplosion
+    clip: {fileID: 8300000, guid: 549f9f6a41871204cb9c8550518afc8f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: battleHorn
+    clip: {fileID: 8300000, guid: b6ec098d36ffde84b90a4d07a193b956, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: axeThrow
+    clip: {fileID: 8300000, guid: 419aff622b0097b40aa1a00da6f0a3e6, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -47,6 +47,7 @@ public class CorruptedNode : MonoBehaviour
     bool init = false;
     float t = 0;
     bool end = false;
+    AudioManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,8 @@ public class CorruptedNode : MonoBehaviour
 
         leh = GameObject.FindGameObjectWithTag("LevelEndHandler").GetComponent<LevelEndHandler>();
         init = leh.AddToList(this);
+
+        manager = FindObjectOfType<AudioManager>();
 
         E.SetActive(false);
     }
@@ -121,6 +124,11 @@ public class CorruptedNode : MonoBehaviour
             SpawnEnemy();
         }
 
+        if(manager != null)
+        {
+            manager.PlaySound("battleHorn");
+        }
+
         t = restT;
         active = true;
     }
@@ -156,6 +164,10 @@ public class CorruptedNode : MonoBehaviour
     {
         if (!end)
         {
+            if (manager != null)
+            {
+                manager.PlaySound("nodeExplosion");
+            }
             Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
             GameObject.FindObjectOfType<CameraShake>().shakeCam(6, 3.4f, true);
             Invoke("DestroyObjs", 3);

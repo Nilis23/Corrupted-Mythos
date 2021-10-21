@@ -6,6 +6,8 @@ public abstract class Artifact : ScriptableObject
 { 
     [SerializeField]
     float timer;
+    
+    public string soundName;
 
     public abstract void doAction(GameObject caller);
 
