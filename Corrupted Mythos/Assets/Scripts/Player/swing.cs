@@ -30,7 +30,7 @@ public class swing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        impact.SetActive(false);
+        //impact.SetActive(false);
         if (isAnim)
         {
             if (t == 10)
@@ -93,7 +93,7 @@ public class swing : MonoBehaviour
             impact.SetActive(true);
             //wait for impact animation
             StartCoroutine(Wait());
-            impact.SetActive(false);
+            //impact.SetActive(false);
             //*/
             Debug.Log("notdoingsomething");
         }
@@ -115,5 +115,6 @@ public class swing : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);
+        impact.SetActive(false);
     }
 }
