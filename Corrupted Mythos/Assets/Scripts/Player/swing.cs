@@ -88,13 +88,14 @@ public class swing : MonoBehaviour
             Debug.Log("play");
             hit.Play("impact1_0", 0);
             */
-
+            Debug.Log("doingsomehthing");
             ///*
             impact.SetActive(true);
             //wait for impact animation
-            //Wait();
-            //impact.SetActive(false);
+            StartCoroutine(Wait());
+            impact.SetActive(false);
             //*/
+            Debug.Log("notdoingsomething");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -111,8 +112,8 @@ public class swing : MonoBehaviour
         }
     }
 
-    private void Wait()
+    IEnumerator Wait()
     {
-
+        yield return new WaitForSeconds(1);
     }
 }

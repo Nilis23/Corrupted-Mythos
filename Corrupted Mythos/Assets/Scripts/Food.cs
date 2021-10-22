@@ -12,6 +12,7 @@ public class Food : MonoBehaviour
     {
         pickUp = this.gameObject.transform.GetChild(0).gameObject;
         pickUp.SetActive(false);
+        pickUp.transform.position = this.transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,15 +23,15 @@ public class Food : MonoBehaviour
             script.hpGainItems++;
 
             pickUp.SetActive(true);
-            Wait();
+            StartCoroutine(Wait());
             pickUp.SetActive(false);
 
             Destroy(gameObject);
         }
     }
 
-    private void Wait()
+    IEnumerator Wait()
     {
-
+        yield return new WaitForSeconds(1);
     }
 }
