@@ -22,9 +22,10 @@ public class Food : MonoBehaviour
             script = collision.gameObject.GetComponent<PlayerHealth>();
             script.hpGainItems++;
 
+            Debug.Log("food debug start");
             pickUp.SetActive(true);
             StartCoroutine(Wait());
-            pickUp.SetActive(false);
+            Debug.Log("food debug done");
 
             Destroy(gameObject);
         }
@@ -33,5 +34,6 @@ public class Food : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);
+        pickUp.SetActive(false);
     }
 }

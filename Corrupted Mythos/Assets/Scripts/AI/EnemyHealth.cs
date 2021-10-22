@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
+        Debug.Log("Debugging outside swing");
         health -= damage;
         em.stagr = stagTime;
         
