@@ -96,3 +96,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 6f1d5a53fb160ec409ae305fbd4601dd, type: 2}
+  sr: {fileID: 1571215509008609549}

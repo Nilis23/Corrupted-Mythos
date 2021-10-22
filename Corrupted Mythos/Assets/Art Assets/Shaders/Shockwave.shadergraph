@@ -1195,7 +1195,7 @@
     },
     "m_Name": "TVal",
     "m_DefaultReferenceName": "Vector1_3e81c71d66f6497db2d76927302e83ae",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_TVal",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

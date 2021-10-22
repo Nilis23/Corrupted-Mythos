@@ -90,7 +90,7 @@ public class CorruptedNode : MonoBehaviour
             {
                 if (t <= 0)
                 {
-                    //Instantiate(Pulse);
+                    Instantiate(Pulse);
                     for (int i = 0; i < subWaves; i++)
                     {
                         if (spawned < SpawnCount)
@@ -109,7 +109,7 @@ public class CorruptedNode : MonoBehaviour
     #region NodeActivity
     public void StartNodeActivity()
     {
-        //Instantiate(Pulse);
+        Instantiate(Pulse);
         foreach(GameObject barrier in BarrierList)
         {
             barrier.SetActive(true);
