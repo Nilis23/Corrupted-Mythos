@@ -172,15 +172,21 @@ public class CorruptedNode : MonoBehaviour
         {
             if (manager != null)
             {
-                manager.PlaySound("nodeExplosion");
+                manager.PlaySound("whoosh");
             }
             Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(6, 3.4f, true);
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(6, 3.8f, true);
+            Invoke("PlaySecondSound", 2.7f);
             Invoke("DestroyObjs", 3);
             Destroy(this.gameObject, 3f);
             end = true;
             myCrystal.ChangeSprite();
         }
+    }
+
+    void PlaySecondSound()
+    {
+        manager.PlaySound("nodeExplosion");
     }
 
     public void DestroyObjs()

@@ -13,7 +13,7 @@ public class NodeEndBehavior : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SwapEffects", tMax - 0.6f);
+        Invoke("SwapEffects", tMax - 0.8f);
         Destroy(gameObject, tMax);
     }
 

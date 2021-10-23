@@ -9689,6 +9689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517ae4d286a9ae24abb6f09da867cf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tMax: 3.6
+  tMax: 3.8
   Effect1: {fileID: 5443520953525639157}
   Effect2: {fileID: 4106035040868765996}

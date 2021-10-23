@@ -97771,6 +97771,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5663992059825265213, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
+      propertyPath: sounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663992059825265213, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b391f6499d35fc43a1d6d8bac8f9c3f, type: 3}
+    - target: {fileID: 5663992059825265213, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: whoosh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663992059825265213, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
+      propertyPath: sounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5663992059825265213, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5663992059825265214, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
       propertyPath: m_Name
       value: AudioManager
