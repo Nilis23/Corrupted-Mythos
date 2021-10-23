@@ -10,13 +10,15 @@ public class PulseController : MonoBehaviour
     [SerializeField]
     SpriteRenderer sr;
 
-    int pID;
+    int tID;
+    int sID;
     float t = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        pID = Shader.PropertyToID("_TVal");
+        tID = Shader.PropertyToID("_TVal");
+        sID = Shader.PropertyToID("_Speed");
     }
 
     // Update is called once per frame
@@ -25,7 +27,12 @@ public class PulseController : MonoBehaviour
         t += Time.deltaTime;
         ///mat.SetFloat(pID, t);
 
-        sr.material.SetFloat(pID, t);
-        Debug.Log(sr.material.GetFloat(pID));
+        sr.material.SetFloat(tID, t);
+
+        Debug.Log(t * sr.material.GetFloat(sID));
+        if((t * sr.material.GetFloat(sID)) >= 0.8)
+        {
+            Destroy(gameObject);
+        }
     }
 }

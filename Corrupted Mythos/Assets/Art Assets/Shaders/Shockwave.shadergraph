@@ -1755,7 +1755,7 @@
     },
     "m_Name": "Speed",
     "m_DefaultReferenceName": "Vector1_7c70be81ee8c4ed3ad06af96ac1d1d8e",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Speed",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
