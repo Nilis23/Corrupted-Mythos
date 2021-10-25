@@ -96415,7 +96415,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1824765836, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: foodChance
-      value: 1.1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name

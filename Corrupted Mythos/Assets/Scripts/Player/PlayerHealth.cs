@@ -58,7 +58,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health + gain <= maxHealth)
         {
-        health += gain;
+            health += gain;
+        }
+        else
+        {
+            health = maxHealth;
         }
 
         hpBar.value = health;
@@ -106,7 +110,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(hpGainItems > 0)
         {
-            addHealth(10);
+            addHealth(30);
             hpGainItems--;
         }
     }
