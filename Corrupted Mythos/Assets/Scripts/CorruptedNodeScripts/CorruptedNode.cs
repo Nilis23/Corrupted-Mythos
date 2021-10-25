@@ -218,19 +218,21 @@ public class CorruptedNode : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
+        if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D) && !active)
         {
             target = collision.transform;
-            pcontroller.player.NodeInteract.started += StartNode;
-            E.SetActive(true);
+            //pcontroller.player.NodeInteract.started += StartNode;
+            //E.SetActive(true);
+            StartNodeActivity();
+            target.GetComponent<PlayerHealth>().node = this;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.GetType() == typeof(BoxCollider2D))
         {           
-            pcontroller.player.NodeInteract.started -= StartNode;
-            E.SetActive(false);
+            //pcontroller.player.NodeInteract.started -= StartNode;
+            //E.SetActive(false);
         }
     }
     private void StartNode(InputAction.CallbackContext c)

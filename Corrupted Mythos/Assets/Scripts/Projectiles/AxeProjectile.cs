@@ -77,7 +77,10 @@ public class AxeProjectile : MonoBehaviour
                 Debug.Log("Enemy hit");
                 collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
             }
-            Destroy(this.gameObject);
+            else if(collision.name == "ForestFrontGrass")
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
