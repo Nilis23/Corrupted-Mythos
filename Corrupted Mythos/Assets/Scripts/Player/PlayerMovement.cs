@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D cntrler;
+    public Animator animatior;
     [SerializeField]
     PlayerHealth playerHP;
     [Space]
@@ -41,11 +42,12 @@ public class PlayerMovement : MonoBehaviour
         if (!weap.getStatus())
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
+            animatior.SetFloat("Speed", Mathf.Abs(dir));
         }
-        else
-        {
-            dir = (pcontroller.player.movement.ReadValue<Vector2>().x * speed)/1.5f;
-        }
+        //else
+        //{
+        //    dir = (pcontroller.player.movement.ReadValue<Vector2>().x * speed)/1.5f;
+        //}
 
         if (pcontroller.player.jump.triggered && !paused)
         {

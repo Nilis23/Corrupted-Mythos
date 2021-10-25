@@ -1860,6 +1860,30 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &228220786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+  m_PrefabInstance: {fileID: 8994769088381562276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &228220793
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228220786}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 463df177cbae3a046b2ebd1b7b684796, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &241419762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8080,7 +8104,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8994769088578590081, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
   m_PrefabInstance: {fileID: 8994769088381562276}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 228220786}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bdc741a9e7d6e84e83b616acd010780, type: 3}
@@ -93355,7 +93379,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8994769088578590087, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
   m_PrefabInstance: {fileID: 8994769088381562276}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 228220786}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35532c4a863bba24383ce5b1f571f2c9, type: 3}
@@ -97973,7 +97997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8994769087110360057, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8994769087110360057, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: m_SortingLayerID
@@ -97995,6 +98019,10 @@ PrefabInstance:
       propertyPath: playerHP
       value: 
       objectReference: {fileID: 1481291688}
+    - target: {fileID: 8994769088578590081, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: animatior
+      value: 
+      objectReference: {fileID: 228220793}
     - target: {fileID: 8994769088578590084, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: m_RootOrder
       value: 10

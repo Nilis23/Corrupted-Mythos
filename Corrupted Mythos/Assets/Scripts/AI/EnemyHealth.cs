@@ -18,7 +18,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
-        Debug.Log("Debugging outside swing");
         health -= damage;
         em.stagr = stagTime;
         
@@ -27,7 +26,6 @@ public class EnemyHealth : MonoBehaviour
             float drop = Random.value;
             if (drop <= (foodChance + chanceMod) )
             {
-                Debug.Log("Food Chance: " + (foodChance + chanceMod).ToString());
                 GameObject food = Instantiate(foodPref);
                 food.transform.position = this.transform.position;
                 chanceMod = 0;
@@ -35,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
             else
             {
                 chanceMod += 0.05f;
-                Debug.Log("Food Chance: " + (foodChance + chanceMod).ToString());
             }
 
             //this.gameObject.SetActive(false);
