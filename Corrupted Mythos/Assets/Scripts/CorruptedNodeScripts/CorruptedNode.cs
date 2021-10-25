@@ -90,7 +90,7 @@ public class CorruptedNode : MonoBehaviour
             {
                 if (t <= 0)
                 {
-                    Instantiate(Pulse);
+                    Instantiate(Pulse, transform.position, new Quaternion(0, 0, 0, 0));
                     for (int i = 0; i < subWaves; i++)
                     {
                         if (spawned < SpawnCount)
@@ -109,8 +109,8 @@ public class CorruptedNode : MonoBehaviour
     #region NodeActivity
     public void StartNodeActivity()
     {
-        Instantiate(Pulse);
-        foreach(GameObject barrier in BarrierList)
+        Instantiate(Pulse, transform.position, new Quaternion(0, 0, 0, 0));
+        foreach (GameObject barrier in BarrierList)
         {
             barrier.SetActive(true);
         }
