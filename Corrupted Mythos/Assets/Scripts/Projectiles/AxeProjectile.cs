@@ -72,6 +72,7 @@ public class AxeProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
+            Debug.Log(collision.name);
             if(collision.gameObject.tag == "enemy")
             {
                 Debug.Log("Enemy hit");

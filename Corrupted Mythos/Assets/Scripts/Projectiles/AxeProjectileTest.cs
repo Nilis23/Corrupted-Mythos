@@ -92,10 +92,13 @@ public class AxeProjectileTest : MonoBehaviour
             {
                 Debug.Log("Enemy hit");
                 collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
+                FindObjectOfType<AudioManager>().PlaySound("swing");
             }
-
-            FindObjectOfType<AudioManager>().StopSound("axeThrow");
-            Destroy(this.gameObject);
+            else if (collision.name == "ForestFrontGrass")
+            {
+                FindObjectOfType<AudioManager>().StopSound("axeThrow");
+                Destroy(this.gameObject);
+            }
         }
     }
 
