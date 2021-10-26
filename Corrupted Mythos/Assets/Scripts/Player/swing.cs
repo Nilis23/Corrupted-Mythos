@@ -80,7 +80,7 @@ public class swing : MonoBehaviour
             //damage enemy
             ///*
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage);
+            script.minusHealth(damage, true);
             //*/
             dt = 0.25f;
 
@@ -105,7 +105,7 @@ public class swing : MonoBehaviour
             //damage enemy
             ///*
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage);
+            script.minusHealth(damage, true);
             //*/
 
             dt = 0.25f;

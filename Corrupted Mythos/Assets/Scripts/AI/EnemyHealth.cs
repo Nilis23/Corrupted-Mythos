@@ -16,11 +16,15 @@ public class EnemyHealth : MonoBehaviour
 
     static float chanceMod = 0;
 
-    public void minusHealth(int damage)
+    public void minusHealth(int damage, bool knockback)
     {
         health -= damage;
         em.stagr = stagTime;
-        
+        if (knockback)
+        {
+            em.knockback();
+        }
+
         if(health <= 0)
         {
             float drop = Random.value;

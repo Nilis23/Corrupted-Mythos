@@ -25,11 +25,11 @@ public class Food : MonoBehaviour
             script.hpGainItems++;
             this.GetComponent<PolygonCollider2D>().enabled = false;
 
-            Debug.Log("food debug start");
+            //Debug.Log("food debug start");
             bottle.enabled = false;
             pickUp.SetActive(true);
             StartCoroutine(Wait());
-            Debug.Log("food debug done");
+           // Debug.Log("food debug done");
 
         }
     }

@@ -7,7 +7,7 @@ public class FlamingTiles : MonoBehaviour
 
     public int damage = 20;
     private float time;
-    private bool flaming=false;
+    //private bool flaming=false;
     public PlayerHealth script;
 
     /*

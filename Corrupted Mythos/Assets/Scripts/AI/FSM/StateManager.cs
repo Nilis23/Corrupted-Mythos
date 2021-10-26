@@ -123,4 +123,32 @@ public class StateManager : MonoBehaviour
         }
     }
     */
+
+    public void knockback()
+    {
+        float dir = player.transform.position.x - transform.position.x;
+        if(dir > 0)
+        {
+            Vector2 newPos = new Vector2(this.transform.position.x - 0.75f, this.transform.position.y);
+            StartCoroutine(moveBack(newPos));
+        }
+        else if(dir < 0)
+        {
+            //Knockback to the left
+            Vector2 newPos = new Vector2(this.transform.position.x + 0.75f, this.transform.position.y);
+            StartCoroutine(moveBack(newPos));
+        }
+    }
+
+    IEnumerator moveBack(Vector2 targPos)
+    {
+        float t = 0;
+        while(t <= 1f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(transform.position, targPos, t);
+
+            yield return null;
+        }
+    }
 }

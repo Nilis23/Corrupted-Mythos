@@ -28,8 +28,6 @@ public class PulseController : MonoBehaviour
         ///mat.SetFloat(pID, t);
 
         sr.material.SetFloat(tID, t);
-
-        Debug.Log(t * sr.material.GetFloat(sID));
         if((t * sr.material.GetFloat(sID)) >= 0.8)
         {
             Destroy(gameObject);

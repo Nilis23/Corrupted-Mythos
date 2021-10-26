@@ -5,7 +5,7 @@ using UnityEngine;
 public class platform : MonoBehaviour
 {
     private Inputs character;
-    private bool fall=false;
+    //private bool fall = false;
 
     private void Start()
     {
@@ -17,12 +17,12 @@ public class platform : MonoBehaviour
     {
         if (character.player.jump.triggered)
         {
-            Debug.Log("up");
+            //Debug.Log("up");
             fallThrough();
         }
         else if (character.player.fall.triggered /*&& fall*/)
         {
-            Debug.Log("down");
+            //Debug.Log("down");
             flipUp();
         }
     }
@@ -40,14 +40,14 @@ public class platform : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            fall = true;
+            //fall = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            fall = false;
+           // fall = false;
             fallThrough();
         }
     }

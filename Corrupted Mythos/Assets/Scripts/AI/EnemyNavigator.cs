@@ -44,49 +44,12 @@ public class EnemyNavigator : MonoBehaviour
     {
         reachedEOP = false;
 
-        #region commentStorage
-        /*
-        if(path == null)
-        {
-            return;
-        }
-        else if(currentWP >= path.vectorPath.Count)
-        {
-            reachedEOP = true;
-            return;
-        }
-        else
-        {
-            reachedEOP = false;
-        }
-        */
-        #endregion
-
         if (target != null && em.stagr <= 0 && !em.idle)
         {
-            Vector2 dir = ((Vector2)target - (Vector2)rb.position).normalized;
+            Vector2 dir = (target - rb.position).normalized;
             Vector2 force = dir * (speed * Time.fixedDeltaTime);
             SwapGFX(force);
-            //rb.AddForce(force);
-            //rb.velocity += new Vector2(force.x, 0);
-            //rb.MovePosition( new Vector2((this.transform.position.x + force.x), this.transform.position.y) );
             this.transform.Translate(new Vector2(force.x, 0f));
-            #region commentStorage
-            //if(t > 10)
-            //{
-            //Debug.Log("WP: " + currentWP.ToString() + " EndWP: " + path.vectorPath.Count.ToString() + " Force: " + force.ToString() + " RB Vel: " + rb.velocity.ToString() + " X Dir: " + dir.x.ToString() + " Speed: " + speed + " Reached EOP: " + reachedEOP.ToString());
-            //t = 9;
-            //}
-
-            /*
-            float dist = Vector2.Distance(rb.position, path.vectorPath[currentWP]);
-            if(dist < nWaypointDistance)
-            {
-                currentWP++;
-                t = 0;
-            }
-            */
-            #endregion
 
             float dist = Mathf.Abs(rb.position.x - target.x);
             if (dist < nWaypointDistance)
