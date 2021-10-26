@@ -71,4 +71,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void spawning()
+    {
+        StartCoroutine(SpawnedIn());
+    }
+
+    IEnumerator SpawnedIn()
+    {
+        paused = true;
+        yield return new WaitForSeconds(1);
+        paused = false;
+    }
+
 }

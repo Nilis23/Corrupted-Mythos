@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public Transform spawn;
     public GameObject death;
     public Slider hpBar;
+    public PlayerMovement script;
 
     [HideInInspector]
     public CorruptedNode node;
@@ -25,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
         hpBar.value = health;
 
         maxHealth = health;
+
+        script = this.gameObject.GetComponent<PlayerMovement>();
     }
 
     
@@ -77,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
         this.GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
         StopAllCoroutines();
+        script.spawning();
 
         if(node != null)
         {
