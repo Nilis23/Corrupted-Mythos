@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 24100000, guid: 4a6502f6a57b44b4f9c6cbfdb19e79bd, type: 2}
     - target: {fileID: 5663992059825265214, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
       propertyPath: m_Name
-      value: AudioManager1
+      value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
@@ -1582,7 +1582,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls
+  m_Text: 'Options & Controls
+
+'
 --- !u!222 &1174509019
 CanvasRenderer:
   m_ObjectHideFlags: 0
