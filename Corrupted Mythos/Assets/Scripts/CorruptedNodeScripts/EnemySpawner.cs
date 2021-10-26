@@ -20,7 +20,11 @@ public class EnemySpawner : ScriptableObject
     public void Spawn(CorruptedNode node)
     {
         int point = Random.Range(0, SpawnPoints.Length);
-        float xmod = Random.Range(-1.5f, 1.5f);
+        float xmod = Random.Range(0.5f, 1.5f);
+        if (Random.value < 0.5)
+        {
+            xmod *= -1;
+        }
 
         GameObject es = Instantiate(EnemyPref);
 

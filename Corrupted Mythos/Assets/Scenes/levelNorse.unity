@@ -6178,7 +6178,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options / Controls
+  m_Text: Options & Controls
 --- !u!222 &760098668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15808,6 +15808,10 @@ PrefabInstance:
       propertyPath: Pulse
       value: 
       objectReference: {fileID: 4077531993475796596, guid: eeb2c5018a42f984cab1307c087f6abe, type: 3}
+    - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
+      propertyPath: restT
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: myCrystal
       value: 
@@ -94773,6 +94777,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4077531993475796596, guid: eeb2c5018a42f984cab1307c087f6abe, type: 3}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
+      propertyPath: restT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: initWave
       value: 6
       objectReference: {fileID: 0}
@@ -98294,7 +98302,7 @@ PrefabInstance:
       objectReference: {fileID: 4077531993475796596, guid: eeb2c5018a42f984cab1307c087f6abe, type: 3}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: restT
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 199727142985160701, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
       propertyPath: subWaves
