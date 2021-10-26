@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public AudioMixer mixer;
     public static AudioManager instance;
 
     // Start is called before the first frame update
@@ -15,21 +16,22 @@ public class AudioManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            DestroyImmediate(gameObject);
             return;
         }
-        DontDestroyOnLoad(this.gameObject);
 
         foreach(Sound s in sounds)
         {
-            //change to child component
             GameObject ns = new GameObject();
             ns.transform.parent = this.gameObject.transform;
             ns.name = s.name;
             s.source = ns.AddComponent<AudioSource>();
+
+            s.source.outputAudioMixerGroup = mixer.FindMatchingGroups("Master")[0];
 
             s.source.clip = s.clip;
             s.source.volume = s.volume;
@@ -41,8 +43,13 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if(s != null)
+        if(s != null && s.source != null)
             s.source.Play();
+
+        if(s != null && s.source == null)
+        {
+            Debug.Log("Name: " + s.name + " source not existent in " + this.name);
+        }
     }
     public void StopSound(string name)
     {

@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (!weap.getStatus())
+        if (!weap.getStatus() && !paused)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
             animatior.SetFloat("Speed", Mathf.Abs(dir));

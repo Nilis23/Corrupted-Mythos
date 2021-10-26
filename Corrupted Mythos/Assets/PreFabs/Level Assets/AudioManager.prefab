@@ -80,3 +80,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: whoosh
+    clip: {fileID: 8300000, guid: 3b391f6499d35fc43a1d6d8bac8f9c3f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: main
+    clip: {fileID: 8300000, guid: af6e30751a2a70b45895917600125376, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

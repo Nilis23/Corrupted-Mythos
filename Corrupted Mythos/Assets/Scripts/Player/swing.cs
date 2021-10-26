@@ -26,6 +26,7 @@ public class swing : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<AudioManager>();
+        Debug.Log(manager.name);
     }
 
     private void FixedUpdate()
