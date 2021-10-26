@@ -28,6 +28,7 @@ public class EnemyNavigator : MonoBehaviour
     GameObject player;
 
     float t = 0;
+    float speedMod = 0;
     bool bypass = false;
     bool right = true;
 
@@ -37,6 +38,16 @@ public class EnemyNavigator : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        speedMod = Random.Range(0, 0.3f);
+        if (Random.value < 0.5)
+        {
+            speed += speedMod;
+        }
+        else
+        {
+            speed -= speedMod;
+        }
     }
 
     // Update is called once per frame
