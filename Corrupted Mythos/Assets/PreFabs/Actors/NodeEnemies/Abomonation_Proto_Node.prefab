@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2882597726456735917}
   - component: {fileID: 2882597726456735916}
+  - component: {fileID: 4672619371814289234}
   m_Layer: 8
   m_Name: EnemyGFX
   m_TagString: Untagged
@@ -153,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1516348075
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4bca3e959d4b14b46a9ca6da81062882, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,6 +167,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4672619371814289234
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882597726456736594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aff763e16c7a14440a8c9187c151b460, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2882597727957746579
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +360,8 @@ MonoBehaviour:
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
+  foodChance: 0.1
+  animator: {fileID: 4672619371814289234}
 --- !u!114 &8921645956111960794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   em: {fileID: 2882597727957746669}
   damage: 25
+  animator: {fileID: 4672619371814289234}
 --- !u!50 &1553759223894863277
 Rigidbody2D:
   serializedVersion: 4

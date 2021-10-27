@@ -8,6 +8,9 @@ public class EnemyAttack : MonoBehaviour
     StateManager em;
     [SerializeField]
     int damage;
+    [Space]
+    [SerializeField]
+    Animator animator;
     float t = 0;
     AudioManager manager;
 
@@ -33,6 +36,7 @@ public class EnemyAttack : MonoBehaviour
             t = 1;
             manager.PlaySound("abomHit");
             GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+            animator.SetTrigger("Attack");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -43,6 +47,7 @@ public class EnemyAttack : MonoBehaviour
             t = 1;
             manager.PlaySound("abomHit");
             GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+            animator.SetTrigger("Attack");
         }
     }
 }

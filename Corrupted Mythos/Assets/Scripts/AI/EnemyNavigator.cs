@@ -88,12 +88,12 @@ public class EnemyNavigator : MonoBehaviour
     {
         if (force.x >= 0.01f)
         {
-            gfx.localScale = new Vector2(1f, 1f);
+            transform.transform.localScale = new Vector2(1f, 1f);
             right = true;
         }
         else if (force.x <= -0.01f)
         {
-            gfx.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(-1f, 1f);
             right = false;
         }
     }

@@ -13,14 +13,15 @@ public class EnemyHealth : MonoBehaviour
     float stagTime;
     [SerializeField]
     float foodChance = 0.1f;
+    [Space]
+    [SerializeField]
+    Animator animator;
 
     static float chanceMod = 0;
 
     public void minusHealth(int damage, bool knockback)
     {
         health -= damage;
-        if (em != null)
-        {
             em.stagr = stagTime;
             if (knockback)
             {
@@ -43,29 +44,11 @@ public class EnemyHealth : MonoBehaviour
 
                 Destroy(this.gameObject, 0.1f);
             }
-        }
-        else
-        {
-            this.transform.GetComponent<SpriteRenderer>().color = Color.red;
-
-            Invoke("ResetColor", 1.5f);
-
-            if (health >= 0)
-            {
-                Destroy(this.gameObject);
-            }
-        }
+        animator.SetTrigger("Hit");
     }
     public void addHealth(int gain)
     {
         health += gain;
         Debug.Log(health);
     }
-
-    #region Dummy
-    public void ResetColor()
-    {
-        this.transform.GetComponent<SpriteRenderer>().color = Color.white;
-    }
-    #endregion
 }
