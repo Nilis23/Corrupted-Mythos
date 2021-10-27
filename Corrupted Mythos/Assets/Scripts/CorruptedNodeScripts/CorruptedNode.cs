@@ -168,6 +168,8 @@ public class CorruptedNode : MonoBehaviour
 
     public void EndNodeActivity()
     {
+        E.SetActive(false);
+
         if (!end)
         {
             if (manager != null)

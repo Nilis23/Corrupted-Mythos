@@ -39,7 +39,6 @@ public class EnemyHealth : MonoBehaviour
                 chanceMod += 0.05f;
             }
 
-            //this.gameObject.SetActive(false);
             Destroy(this.gameObject);
         }
     }
