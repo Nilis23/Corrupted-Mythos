@@ -7,27 +7,21 @@ public class AmbienceCntrl : MonoBehaviour
 {
     AudioManager manager;
     Scene scenetoplay;
+    [SerializeField]
+    string songName;
 
     bool play = false;
     private void Start()
     {
         manager = FindObjectOfType<AudioManager>();
-        scenetoplay = SceneManager.GetActiveScene();
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     // Update is called once per frame
     void Update()
     {
-        if(!play && manager!= null && SceneManager.GetActiveScene() == scenetoplay)
+        if(!play && manager!= null)
         {
-            manager.PlaySound("main");
+            manager.PlaySound(songName);
             play = true;
         }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        manager.StopSound("main");
-        play = false;
     }
 }

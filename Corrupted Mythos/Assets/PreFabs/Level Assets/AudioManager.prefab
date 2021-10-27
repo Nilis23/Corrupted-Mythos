@@ -86,8 +86,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: main
+  - name: Main
     clip: {fileID: 8300000, guid: af6e30751a2a70b45895917600125376, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DummyHit
+    clip: {fileID: 8300000, guid: d30f2fb75c4e972408696e24c31f873f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 0df30b7417036ca45a65df636ba1062e, type: 3}
     volume: 1
     pitch: 1
     loop: 1

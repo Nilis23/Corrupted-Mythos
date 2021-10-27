@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public AudioMixer mixer;
-    public static AudioManager instance;
+    private static AudioManager instance;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,7 +17,7 @@ public class AudioManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -30,6 +31,7 @@ public class AudioManager : MonoBehaviour
             ns.transform.parent = this.gameObject.transform;
             ns.name = s.name;
             s.source = ns.AddComponent<AudioSource>();
+            //s.source = this.gameObject.AddComponent<AudioSource>();
 
             s.source.outputAudioMixerGroup = mixer.FindMatchingGroups("Master")[0];
 
@@ -38,6 +40,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+        this.stopAllSounds();
     }
 
     public void PlaySound(string name)
@@ -56,5 +59,16 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null && s.source.isPlaying)
             s.source.Stop();
+    }
+
+    public void stopAllSounds()
+    {
+        foreach(Sound s in sounds)
+        {
+            if (s.source.isPlaying)
+            {
+                s.source.Stop();
+            }
+        }
     }
 }

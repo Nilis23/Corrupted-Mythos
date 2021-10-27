@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             walking = true;
         }
 
-        if (pcontroller.player.jump.triggered && !paused)
+        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus())
         {
             jump = true;
         }

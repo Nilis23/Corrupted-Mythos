@@ -10,10 +10,12 @@ public class DummyHealth : MonoBehaviour
     Animator dummyanim;
 
     SpriteRenderer sr;
+    AudioManager manager;
     // Start is called before the first frame update
     void Start()
     {
         sr = this.GetComponent<SpriteRenderer>();
+        manager = FindObjectOfType<AudioManager>();
     }
 
     public void doDamage(int damage)
@@ -29,6 +31,7 @@ public class DummyHealth : MonoBehaviour
         }
 
         dummyanim.SetTrigger("Hit");
+        manager.PlaySound("DummyHit");
     }
 
     public void ResetColor()
