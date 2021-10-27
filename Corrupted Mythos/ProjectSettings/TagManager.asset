@@ -11,6 +11,7 @@ TagManager:
   - AbomSpawner
   - LevelEndHandler
   - Item
+  - Dummy
   layers:
   - Default
   - TransparentFX

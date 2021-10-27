@@ -63,13 +63,23 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
         {
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
-            dt = 0.3f;
+            dt = 0.56f;
+
+            impact.SetActive(true);
+            StartCoroutine(Wait());
+        }
+        else if(!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
+        {
+            impact.SetActive(false);
+
+            collision.GetComponent<DummyHealth>()?.doDamage(damage);
+            dt = 0.56f;
 
             impact.SetActive(true);
             StartCoroutine(Wait());
@@ -77,12 +87,22 @@ public class swing : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && hit && dt <= 0)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && hit && dt <= 0 && hit)
         {
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
 
-            dt = 0.3f;
+            dt = 0.56f;
+
+            impact.SetActive(true);
+            StartCoroutine(Wait());
+        }
+        else if (!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
+        {
+            impact.SetActive(false);
+
+            collision.GetComponent<DummyHealth>()?.doDamage(damage);
+            dt = 0.56f;
 
             impact.SetActive(true);
             StartCoroutine(Wait());

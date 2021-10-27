@@ -99,6 +99,11 @@ public class AxeProjectileTest : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopSound("axeThrow");
                 Destroy(this.gameObject);
             }
+            else if (!collision.isTrigger && collision.gameObject.tag == "Dummy")
+            {
+                collision.GetComponent<DummyHealth>()?.doDamage(damage);
+                FindObjectOfType<AudioManager>().PlaySound("swing");
+            }
         }
     }
 
