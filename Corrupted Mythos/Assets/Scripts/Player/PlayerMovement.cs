@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     private bool atk;
     public bool paused = false;
+    private bool walking;
 
     void Start()
     {
@@ -42,12 +43,13 @@ public class PlayerMovement : MonoBehaviour
         if (!weap.getStatus() && !paused)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
-            animatior.SetFloat("Speed", Mathf.Abs(dir));
+            if (walking)
+            {
+                animatior.SetFloat("Speed", Mathf.Abs(dir));
+            }
+
+            walking = true;
         }
-        //else
-        //{
-        //    dir = (pcontroller.player.movement.ReadValue<Vector2>().x * speed)/1.5f;
-        //}
 
         if (pcontroller.player.jump.triggered && !paused)
         {
@@ -74,6 +76,11 @@ public class PlayerMovement : MonoBehaviour
     public void spawning()
     {
         StartCoroutine(SpawnedIn());
+    }
+
+    public void ToggleSwingBox(bool lean)
+    {
+        GetComponentInChildren<swing>()?.setHit(lean);
     }
 
     IEnumerator SpawnedIn()

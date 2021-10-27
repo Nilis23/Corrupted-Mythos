@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class swing : MonoBehaviour
     float t = 0;
     float dt = 0;
     float step = 90f / 5;
-    //public Animator hit;
+    public Animator animator;
+    public bool hit = false;
     
     private GameObject impact;
 
@@ -31,27 +33,6 @@ public class swing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //impact.SetActive(false);
-        if (isAnim)
-        {
-            if (t == 10)
-            {
-                isAnim = false;
-            }
-            else
-            {
-                if (t < 5)
-                {
-                    transform.Rotate(0, 0, -1 * step);
-                }
-                else if (t < 10)
-                {
-                    transform.Rotate(0, 0, step);
-                }
-            }
-
-            t += 1;
-        }
         if(dt >= 0)
         {
             dt -= Time.fixedDeltaTime;
@@ -65,7 +46,14 @@ public class swing : MonoBehaviour
             isAnim = true;
             t = 0;
             manager.PlaySound("swing");
+            animator.SetTrigger("S2");
+            Invoke("UnAttack", 0.55f);
         }
+    }
+
+    public void UnAttack()
+    {
+        isAnim = false;
     }
 
     public bool getStatus()
@@ -78,39 +66,32 @@ public class swing : MonoBehaviour
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
         {
             impact.SetActive(false);
-            //damage enemy
-            ///*
+
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
-            //*/
-            dt = 0.25f;
+            dt = 0.3f;
 
-            /*
-            Debug.Log("play");
-            hit.Play("impact1_0", 0);
-            */
-            Debug.Log("doingsomehthing");
-            ///*
             impact.SetActive(true);
-            //wait for impact animation
             StartCoroutine(Wait());
-            //impact.SetActive(false);
-            //*/
-            Debug.Log("notdoingsomething");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && hit && dt <= 0)
         {
-            //damage enemy
-            ///*
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
-            //*/
 
-            dt = 0.25f;
+            dt = 0.3f;
+
+            impact.SetActive(true);
+            StartCoroutine(Wait());
         }
+    }
+
+    internal void setHit(bool lean)
+    {
+        hit = lean;
     }
 
     IEnumerator Wait()

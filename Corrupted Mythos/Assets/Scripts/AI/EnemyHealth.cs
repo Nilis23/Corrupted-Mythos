@@ -39,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
                 chanceMod += 0.05f;
             }
 
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.1f);
         }
     }
     public void addHealth(int gain)
