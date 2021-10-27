@@ -19,27 +19,41 @@ public class EnemyHealth : MonoBehaviour
     public void minusHealth(int damage, bool knockback)
     {
         health -= damage;
-        em.stagr = stagTime;
-        if (knockback)
+        if (em != null)
         {
-            em.knockback();
+            em.stagr = stagTime;
+            if (knockback)
+            {
+                em.knockback();
+            }
+
+            if (health <= 0)
+            {
+                float drop = Random.value;
+                if (drop <= (foodChance + chanceMod))
+                {
+                    GameObject food = Instantiate(foodPref);
+                    food.transform.position = this.transform.position;
+                    chanceMod = 0;
+                }
+                else
+                {
+                    chanceMod += 0.05f;
+                }
+
+                Destroy(this.gameObject, 0.1f);
+            }
         }
-
-        if(health <= 0)
+        else
         {
-            float drop = Random.value;
-            if (drop <= (foodChance + chanceMod) )
-            {
-                GameObject food = Instantiate(foodPref);
-                food.transform.position = this.transform.position;
-                chanceMod = 0;
-            }
-            else
-            {
-                chanceMod += 0.05f;
-            }
+            this.transform.GetComponent<SpriteRenderer>().color = Color.red;
 
-            Destroy(this.gameObject, 0.1f);
+            Invoke("ResetColor", 1.5f);
+
+            if (health >= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     public void addHealth(int gain)
@@ -47,4 +61,11 @@ public class EnemyHealth : MonoBehaviour
         health += gain;
         Debug.Log(health);
     }
+
+    #region Dummy
+    public void ResetColor()
+    {
+        this.transform.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    #endregion
 }
