@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     public void minusHealth(int damage, bool knockback)
     {
         health -= damage;
-        em.stagr = stagTime;
+        em.setStgr(stagTime, true);
         animator.SetTrigger("Hit");
         if (knockback)
         {

@@ -58,7 +58,6 @@ public class StateManager : MonoBehaviour
         else
         {
             //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 73, 73);
-            this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             stagr -= Time.deltaTime;
 
             if(stagr <= 0)
@@ -149,6 +148,16 @@ public class StateManager : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, targPos, t);
 
             yield return null;
+        }
+    }
+
+    public void setStgr(float val, bool clr = false)
+    {
+        stagr = val;
+
+        if (clr)
+        {
+            this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
     }
 }

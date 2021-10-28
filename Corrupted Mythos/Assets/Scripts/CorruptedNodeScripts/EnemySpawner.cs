@@ -9,6 +9,8 @@ public class EnemySpawner : ScriptableObject
     GameObject EnemyPref;
     [SerializeField]
     string spawnerTag;
+    [SerializeField]
+    float sTimer;
 
     GameObject[] SpawnPoints;
 
@@ -30,6 +32,8 @@ public class EnemySpawner : ScriptableObject
 
         Vector2 sp = SpawnPoints[point].transform.position;
         es.transform.position = new Vector2(sp.x + xmod, sp.y);
+
+        es.GetComponent<StateManager>()?.setStgr(sTimer);
 
         node.addEnemy(es);
         es.GetComponent<ArenaDeathHelper>().SetArena(node);

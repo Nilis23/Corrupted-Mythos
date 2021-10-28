@@ -43,12 +43,11 @@ public class PlayerMovement : MonoBehaviour
         if (!weap.getStatus() && !paused)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
-            if (walking)
-            {
-                animatior.SetFloat("Speed", Mathf.Abs(dir));
-            }
-
-            walking = true;
+            animatior.SetFloat("Speed", Mathf.Abs(dir));
+        }
+        else
+        {
+            animatior.SetFloat("Speed", 0);
         }
 
         if (pcontroller.player.jump.triggered && !paused && !weap.getStatus())

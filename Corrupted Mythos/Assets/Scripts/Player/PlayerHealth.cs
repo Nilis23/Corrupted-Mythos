@@ -88,6 +88,9 @@ public class PlayerHealth : MonoBehaviour
             node.active = false;
             node = null;
         }
+
+        GetComponent<Animator>()?.SetFloat("Speed", 0f);
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {
