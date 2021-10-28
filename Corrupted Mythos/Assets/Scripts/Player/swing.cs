@@ -7,6 +7,8 @@ public class swing : MonoBehaviour
 {
     [SerializeField]
     private int damage = 50;
+    [SerializeField]
+    GameObject impact;
 
     AudioManager manager;
     EnemyHealth script;
@@ -16,12 +18,9 @@ public class swing : MonoBehaviour
     //float step = 90f / 5;
     public Animator animator;
     public bool hit = false;
-    
-    private GameObject impact;
 
     private void OnEnable()
     {
-        impact = this.gameObject.transform.GetChild(0).gameObject;
         impact.SetActive(false);
     }
 
@@ -72,6 +71,7 @@ public class swing : MonoBehaviour
             dt = 0.56f;
 
             impact.SetActive(true);
+            impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
         else if(!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
@@ -82,6 +82,7 @@ public class swing : MonoBehaviour
             dt = 0.56f;
 
             impact.SetActive(true);
+            impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
     }
@@ -95,6 +96,7 @@ public class swing : MonoBehaviour
             dt = 0.56f;
 
             impact.SetActive(true);
+            impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
         else if (!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
@@ -105,6 +107,7 @@ public class swing : MonoBehaviour
             dt = 0.56f;
 
             impact.SetActive(true);
+            impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
     }
