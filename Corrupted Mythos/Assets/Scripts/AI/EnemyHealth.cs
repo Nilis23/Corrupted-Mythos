@@ -22,29 +22,30 @@ public class EnemyHealth : MonoBehaviour
     public void minusHealth(int damage, bool knockback)
     {
         health -= damage;
-            em.stagr = stagTime;
-            if (knockback)
-            {
-                em.knockback();
-            }
-
-            if (health <= 0)
-            {
-                float drop = Random.value;
-                if (drop <= (foodChance + chanceMod))
-                {
-                    GameObject food = Instantiate(foodPref);
-                    food.transform.position = this.transform.position;
-                    chanceMod = 0;
-                }
-                else
-                {
-                    chanceMod += 0.05f;
-                }
-
-                Destroy(this.gameObject, 0.1f);
-            }
+        em.stagr = stagTime;
         animator.SetTrigger("Hit");
+        if (knockback)
+        {
+            em.knockback();
+        }
+
+        if (health <= 0)
+        {
+            float drop = Random.value;
+            if (drop <= (foodChance + chanceMod))
+            {
+                GameObject food = Instantiate(foodPref);
+                food.transform.position = this.transform.position;
+                chanceMod = 0;
+            }
+            else
+            {
+                chanceMod += 0.05f;
+            }
+
+            Destroy(this.gameObject, 0.1f);
+        }
+
     }
     public void addHealth(int gain)
     {

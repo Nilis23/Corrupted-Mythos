@@ -11,9 +11,9 @@ public class swing : MonoBehaviour
     AudioManager manager;
     EnemyHealth script;
     bool isAnim = false;
-    float t = 0;
+    //float t = 0;
     float dt = 0;
-    float step = 90f / 5;
+    //float step = 90f / 5;
     public Animator animator;
     public bool hit = false;
     
@@ -44,7 +44,7 @@ public class swing : MonoBehaviour
         if (!isAnim)
         {
             isAnim = true;
-            t = 0;
+            //t = 0;
             manager.PlaySound("swing");
             animator.SetTrigger("S2");
             Invoke("UnAttack", 0.55f);
