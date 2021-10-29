@@ -115,7 +115,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void doPotion()
     {
-        if(hpGainItems > 0)
+        if(hpGainItems > 0 && health != maxHealth)
         {
             addHealth(30);
             hpGainItems--;

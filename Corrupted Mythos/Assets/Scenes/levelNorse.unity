@@ -1531,8 +1531,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -785640293
-  m_SortingLayer: 5
+  m_SortingLayerID: 600147573
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 09476cd1e168a0c4fa27645e5bf54571, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84331,8 +84331,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -785640293
-  m_SortingLayer: 5
+  m_SortingLayerID: 600147573
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 851b6b4aa6506d046927910ad9ecaaa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88060,11 +88060,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1319010287424570813, guid: 8235a5e865d0e064287581b03441275f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1319010287424570813, guid: 8235a5e865d0e064287581b03441275f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1319010287665214996, guid: 8235a5e865d0e064287581b03441275f, type: 3}
       propertyPath: m_IsActive
@@ -88172,7 +88172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1319010288258014143, guid: 8235a5e865d0e064287581b03441275f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1319010288392293431, guid: 8235a5e865d0e064287581b03441275f, type: 3}
       propertyPath: m_FontData.m_Font
