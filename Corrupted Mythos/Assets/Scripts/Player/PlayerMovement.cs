@@ -62,6 +62,17 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHP.doPotion();
         }
+        if (pcontroller.player.berserk.triggered)
+        {
+            /*
+            if (berserk)
+            {
+                //turn player red
+                //turn impact red/purple
+                StartCoroutine(rageMode());
+            }
+            */
+        }
     }
     private void FixedUpdate()
     {
@@ -89,4 +100,11 @@ public class PlayerMovement : MonoBehaviour
         paused = false;
     }
 
+    /*
+    IEnumerator rageMode()
+    {
+        //deplete the berserk mode bar
+        berserk = false;
+    }
+    */
 }

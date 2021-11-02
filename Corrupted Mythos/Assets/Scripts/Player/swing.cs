@@ -7,6 +7,7 @@ public class swing : MonoBehaviour
 {
     [SerializeField]
     private int damage = 50;
+    private int berserkDamage = 100;
     [SerializeField]
     GameObject impact;
 
@@ -18,10 +19,13 @@ public class swing : MonoBehaviour
     //float step = 90f / 5;
     public Animator animator;
     public bool hit = false;
+    public PlayerHealth PlayerHealth;
+    private int lifesteal;
 
     private void OnEnable()
     {
         impact.SetActive(false);
+        PlayerHealth = this.GetComponentInParent<PlayerHealth>();
     }
 
     private void Start()
@@ -62,18 +66,35 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit /*&& berserk*/)
+        {
+            impact.SetActive(false);
+
+            script = collision.GetComponent<EnemyHealth>();
+            script.minusHealth(berserkDamage, true);
+            dt = 0.56f;
+
+            PlayerHealth.addHealth(lifesteal);
+            impact.SetActive(true);
+            impact.transform.position = transform.position;
+            StartCoroutine(Wait());
+        }
+
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
         {
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
             dt = 0.56f;
+            //rageCounter += 10;
 
             impact.SetActive(true);
             impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
+        
+
         else if(!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
         {
             impact.SetActive(false);

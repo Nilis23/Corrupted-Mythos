@@ -97,6 +97,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""berserk"",
+                    ""type"": ""Button"",
+                    ""id"": ""cabe7924-6b23-4ca6-af42-f159ff0dfb9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -471,6 +479,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c52464ec-1771-4d2f-9c6b-6e43c5deab52"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""berserk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1025,6 +1044,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_fall = m_player.FindAction("fall", throwIfNotFound: true);
         m_player_NodeInteract = m_player.FindAction("NodeInteract", throwIfNotFound: true);
         m_player_Heal = m_player.FindAction("Heal", throwIfNotFound: true);
+        m_player_berserk = m_player.FindAction("berserk", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1096,6 +1116,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_fall;
     private readonly InputAction m_player_NodeInteract;
     private readonly InputAction m_player_Heal;
+    private readonly InputAction m_player_berserk;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1110,6 +1131,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @fall => m_Wrapper.m_player_fall;
         public InputAction @NodeInteract => m_Wrapper.m_player_NodeInteract;
         public InputAction @Heal => m_Wrapper.m_player_Heal;
+        public InputAction @berserk => m_Wrapper.m_player_berserk;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1149,6 +1171,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @Heal.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
                 @Heal.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
                 @Heal.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
+                @berserk.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
+                @berserk.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
+                @berserk.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1183,6 +1208,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @Heal.started += instance.OnHeal;
                 @Heal.performed += instance.OnHeal;
                 @Heal.canceled += instance.OnHeal;
+                @berserk.started += instance.OnBerserk;
+                @berserk.performed += instance.OnBerserk;
+                @berserk.canceled += instance.OnBerserk;
             }
         }
     }
@@ -1313,6 +1341,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnFall(InputAction.CallbackContext context);
         void OnNodeInteract(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
+        void OnBerserk(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

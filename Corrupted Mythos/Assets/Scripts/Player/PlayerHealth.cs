@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static bool berserk;
+    public static int rageCounter;
+
     public int health, check=0, maxHealth;
     public Transform player;
     public Transform spawn;
@@ -21,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         health = 100;
+        rageCounter = 0;
 
         hpBar.maxValue = health;
         hpBar.value = health;
@@ -41,12 +45,24 @@ public class PlayerHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
-        if (timer <= 0)
+        if (timer <= 0 && berserk)
+        {
+            damage -= 10;
+            health -= damage;
+            //update UI
+            hpBar.value = health;
+            timer = 0.25f;
+
+            StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
+        }
+
+        else if (timer <= 0)
         {
             health -= damage;
             //update UI
             hpBar.value = health;
             timer = 0.25f;
+            rageCounter += 10;
 
             StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
         }
@@ -75,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
     {
         player.position = spawn.position;
         health = 100;
+        rageCounter = 0;
         hpBar.value = health;
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
         this.GetComponent<SpriteRenderer>().color = Color.white;
@@ -129,6 +146,14 @@ public class PlayerHealth : MonoBehaviour
             spawn.position = other.transform.position;
             check += 1;
             //Destroy(other);
+        }
+    }
+
+    public static void enrage()
+    {
+        if (rageCounter >= 100)
+        {
+            berserk = true;
         }
     }
 }
