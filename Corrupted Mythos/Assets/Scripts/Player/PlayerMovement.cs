@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool atk;
     public bool paused = false;
     private bool walking;
+    private bool Bactive;
     public PlayerHealth playerHealth;
     public Transform impact;
 
@@ -75,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(rageMode());
             }
         }
+        if (Bactive)
+        {
+            playerHealth.rageCounter -= Time.deltaTime;
+                if(playerHealth.rageCounter <= 0)
+                {
+                    Bactive = false;
+                    playerHealth.rageCounter = 0; 
+                }
+            playerHealth.rageMeter.value = playerHealth.rageCounter;
+        }
     }
     private void FixedUpdate()
     {
@@ -105,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator rageMode()
     {
         //deplete the berserk mode bar
-
+        Bactive = true;
         yield return new WaitForSeconds(10);
 
         playerHealth.rageCounter = 0;
