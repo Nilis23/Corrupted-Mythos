@@ -48,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
             animatior.SetFloat("Speed", Mathf.Abs(dir));
+
+            if (pcontroller.player.DashR.triggered)
+            {
+                Debug.Log("Dashing Right");
+            }
         }
         else
         {

@@ -92,6 +92,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "DashL",
+                    "type": "Button",
+                    "id": "edbbffe2-f247-468a-a891-e9826ffb6564",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DashR",
+                    "type": "Button",
+                    "id": "3d82a416-5bd0-435e-a15a-f3d5de16aeec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -477,6 +493,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "berserk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86d89046-2c19-458a-90d8-e1b77ab0cb7d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da3ad921-4e59-4ebf-96cc-21351b203277",
+                    "path": "<Keyboard>/d",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashR",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

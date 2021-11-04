@@ -94,7 +94,6 @@ public class swing : MonoBehaviour
             impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
-        
 
         else if(!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
         {
@@ -110,7 +109,7 @@ public class swing : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && hit && dt <= 0 && hit)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
         {
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
