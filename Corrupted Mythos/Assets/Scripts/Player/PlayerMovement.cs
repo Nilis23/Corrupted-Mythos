@@ -22,9 +22,11 @@ public class PlayerMovement : MonoBehaviour
     public bool paused = false;
     private bool walking;
     public PlayerHealth playerHealth;
+    public Transform impact;
 
     void Start()
     {
+        impact = this.transform.GetChild(0);
         pcontroller = new Inputs();
         pcontroller.Enable();
         playerHealth = this.GetComponentInParent<PlayerHealth>();
@@ -68,8 +70,9 @@ public class PlayerMovement : MonoBehaviour
             if (playerHealth.berserk)
             {
                 this.GetComponent<SpriteRenderer>().color = Color.red;
-                //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.magenta; //needs to get impact
-                rageMode();
+                impact.GetComponent<SpriteRenderer>().color = Color.magenta;
+                speed += 40;
+                StartCoroutine(rageMode());
             }
         }
     }
@@ -99,23 +102,19 @@ public class PlayerMovement : MonoBehaviour
         paused = false;
     }
 
-    public void rageMode()
+    IEnumerator rageMode()
     {
         //deplete the berserk mode bar
 
-        while (playerHealth.rageCounter >= 0)
-        {
-            playerHealth.rageCounter -= (Time.deltaTime/2);
-            playerHealth.rageMeter.value = playerHealth.rageCounter;
-            Debug.Log(playerHealth.rageCounter);
-        }
+        yield return new WaitForSeconds(10);
+
         playerHealth.rageCounter = 0;
         playerHealth.rageMeter.value = playerHealth.rageCounter;
 
-
+        speed -= 40;
         playerHealth.berserk = false;
         Debug.Log("unberserking");
         this.GetComponent<SpriteRenderer>().color = Color.white;
-        //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        impact.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

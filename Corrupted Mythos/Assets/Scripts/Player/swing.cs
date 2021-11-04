@@ -88,7 +88,6 @@ public class swing : MonoBehaviour
             script.minusHealth(damage, true);
             dt = 0.56f;
             PlayerHealth.rageCounter += 50;
-            Debug.Log(PlayerHealth.rageCounter);
             PlayerHealth.enrage();
 
             impact.SetActive(true);
