@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static bool berserk;
-    public static int rageCounter;
+    public bool berserk;
+    public float rageCounter;
 
     public int health, check=0, maxHealth;
     public Transform player;
     public Transform spawn;
     public GameObject death;
     public Slider hpBar;
+    public Slider rageMeter;
     public PlayerMovement script;
 
     [HideInInspector]
@@ -62,7 +63,9 @@ public class PlayerHealth : MonoBehaviour
             //update UI
             hpBar.value = health;
             timer = 0.25f;
+
             rageCounter += 10;
+            enrage();
 
             StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
         }
@@ -149,11 +152,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public static void enrage()
+    public void enrage()
     {
+        //fill rage meter
+        rageMeter.value = rageCounter;
         if (rageCounter >= 100)
         {
             berserk = true;
+            Debug.Log("berserkable");
         }
     }
 }

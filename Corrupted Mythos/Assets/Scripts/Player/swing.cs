@@ -66,7 +66,7 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit /*&& berserk*/)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserk)
         {
             impact.SetActive(false);
 
@@ -87,7 +87,9 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, true);
             dt = 0.56f;
-            //rageCounter += 10;
+            PlayerHealth.rageCounter += 50;
+            Debug.Log(PlayerHealth.rageCounter);
+            PlayerHealth.enrage();
 
             impact.SetActive(true);
             impact.transform.position = transform.position;

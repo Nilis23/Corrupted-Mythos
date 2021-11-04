@@ -21,14 +21,15 @@ public class PlayerMovement : MonoBehaviour
     private bool atk;
     public bool paused = false;
     private bool walking;
+    public PlayerHealth playerHealth;
 
     void Start()
     {
         pcontroller = new Inputs();
         pcontroller.Enable();
+        playerHealth = this.GetComponentInParent<PlayerHealth>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         dir = 0;
@@ -64,14 +65,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (pcontroller.player.berserk.triggered)
         {
-            /*
-            if (berserk)
+            if (playerHealth.berserk)
             {
-                //turn player red
-                //turn impact red/purple
-                StartCoroutine(rageMode());
+                this.GetComponent<SpriteRenderer>().color = Color.red;
+                //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.magenta; //needs to get impact
+                rageMode();
             }
-            */
         }
     }
     private void FixedUpdate()
@@ -100,11 +99,23 @@ public class PlayerMovement : MonoBehaviour
         paused = false;
     }
 
-    /*
-    IEnumerator rageMode()
+    public void rageMode()
     {
         //deplete the berserk mode bar
-        berserk = false;
+
+        while (playerHealth.rageCounter >= 0)
+        {
+            playerHealth.rageCounter -= (Time.deltaTime/2);
+            playerHealth.rageMeter.value = playerHealth.rageCounter;
+            Debug.Log(playerHealth.rageCounter);
+        }
+        playerHealth.rageCounter = 0;
+        playerHealth.rageMeter.value = playerHealth.rageCounter;
+
+
+        playerHealth.berserk = false;
+        Debug.Log("unberserking");
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
     }
-    */
 }
