@@ -24,13 +24,14 @@ public class swing : MonoBehaviour
 
     private void OnEnable()
     {
-        impact.SetActive(false);
         PlayerHealth = this.GetComponentInParent<PlayerHealth>();
+        impact.SetActive(false);
     }
 
     private void Start()
     {
         manager = FindObjectOfType<AudioManager>();
+            lifesteal = 10;
         Debug.Log(manager.name);
     }
 

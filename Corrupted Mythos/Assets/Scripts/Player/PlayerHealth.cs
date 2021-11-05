@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
             hpBar.value = health;
             timer = 0.25f;
 
-            StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
+            //StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
         }
 
         else if (timer <= 0)

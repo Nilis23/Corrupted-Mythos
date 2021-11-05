@@ -77,10 +77,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 this.GetComponent<SpriteRenderer>().color = Color.red;
                 impact.GetComponent<SpriteRenderer>().color = Color.magenta;
-                speed += 40;
+                speed += 20;
                 StartCoroutine(rageMode());
             }
         }
+        ///*
         if (Bactive)
         {
             playerHealth.rageCounter -= Time.deltaTime;
@@ -91,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             playerHealth.rageMeter.value = playerHealth.rageCounter;
         }
+        //*/
     }
     private void FixedUpdate()
     {
@@ -120,14 +122,22 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator rageMode()
     {
+        int i;
         //deplete the berserk mode bar
         Bactive = true;
-        yield return new WaitForSeconds(10);
+
+        for (i=0;i<5;i++) {
+            yield return new WaitForSeconds(2);
+            playerHealth.rageCounter -= 20;
+            playerHealth.rageMeter.value = playerHealth.rageCounter;
+        }
+
+        //yield return new WaitForSeconds(10);
 
         playerHealth.rageCounter = 0;
         playerHealth.rageMeter.value = playerHealth.rageCounter;
 
-        speed -= 40;
+        speed -= 20;
         playerHealth.berserk = false;
         Debug.Log("unberserking");
         this.GetComponent<SpriteRenderer>().color = Color.white;
