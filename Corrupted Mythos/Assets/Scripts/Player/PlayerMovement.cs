@@ -12,15 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public swing weap;
     public GameObject pause;
+    public GameObject dashbox;
 
     private Inputs pcontroller;
     private float dir;
-    private Vector2 desiredDirection;
-
     private bool jump = false;
-    private bool atk;
     public bool paused = false;
-    private bool walking;
     private bool Bactive;
     public PlayerHealth playerHealth;
     public Transform impact;
@@ -51,7 +48,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (pcontroller.player.DashR.triggered)
             {
-                Debug.Log("Dashing Right");
+                StartCoroutine(Dash(1f));
+            }
+            else if (pcontroller.player.DashL.triggered)
+            {
+                StartCoroutine(Dash(-1f));
             }
         }
         else
@@ -117,6 +118,40 @@ public class PlayerMovement : MonoBehaviour
     {
         paused = true;
         yield return new WaitForSeconds(1);
+        paused = false;
+    }
+
+    IEnumerator Dash(float dir)
+    {
+        //preperatory work
+        paused = true;
+        float t = 0;
+        playerHealth.inv = true;
+        dashbox.SetActive(true);
+        Vector2 targPos = new Vector2(transform.position.x + (5 * dir), transform.position.y);
+        Vector2 orgPos = transform.position;
+        int layermask = LayerMask.GetMask("Platforms");
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), 5, layermask);
+        if (hit)
+        {
+            t = 1;
+        }
+        //Move
+        while (t < 0.25f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(orgPos, targPos, (t / 0.25f));
+
+            yield return null;
+            Debug.Log(t + " " + transform.position.ToString());
+        }
+        //End
+        playerHealth.inv = false;
+        if (!hit)
+        {
+            transform.position = targPos;
+        }
+        dashbox.SetActive(false);
         paused = false;
     }
 

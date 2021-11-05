@@ -107,17 +107,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""DashL"",
+                    ""name"": ""DashR"",
                     ""type"": ""Button"",
-                    ""id"": ""edbbffe2-f247-468a-a891-e9826ffb6564"",
+                    ""id"": ""3d82a416-5bd0-435e-a15a-f3d5de16aeec"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""DashR"",
+                    ""name"": ""DashL"",
                     ""type"": ""Button"",
-                    ""id"": ""3d82a416-5bd0-435e-a15a-f3d5de16aeec"",
+                    ""id"": ""becdeb63-26e1-47a8-aee2-2367d41f21c7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -511,23 +511,23 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""86d89046-2c19-458a-90d8-e1b77ab0cb7d"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": ""MultiTap"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashL"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""da3ad921-4e59-4ebf-96cc-21351b203277"",
+                    ""id"": ""3b016a68-2fa7-4a39-8683-23195833a4be"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": ""MultiTap"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DashR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39cbb432-a19b-414b-bbd5-4d5801a12bb6"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DashL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1083,8 +1083,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_NodeInteract = m_player.FindAction("NodeInteract", throwIfNotFound: true);
         m_player_Heal = m_player.FindAction("Heal", throwIfNotFound: true);
         m_player_berserk = m_player.FindAction("berserk", throwIfNotFound: true);
-        m_player_DashL = m_player.FindAction("DashL", throwIfNotFound: true);
         m_player_DashR = m_player.FindAction("DashR", throwIfNotFound: true);
+        m_player_DashL = m_player.FindAction("DashL", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1157,8 +1157,8 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_NodeInteract;
     private readonly InputAction m_player_Heal;
     private readonly InputAction m_player_berserk;
-    private readonly InputAction m_player_DashL;
     private readonly InputAction m_player_DashR;
+    private readonly InputAction m_player_DashL;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1174,8 +1174,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @NodeInteract => m_Wrapper.m_player_NodeInteract;
         public InputAction @Heal => m_Wrapper.m_player_Heal;
         public InputAction @berserk => m_Wrapper.m_player_berserk;
-        public InputAction @DashL => m_Wrapper.m_player_DashL;
         public InputAction @DashR => m_Wrapper.m_player_DashR;
+        public InputAction @DashL => m_Wrapper.m_player_DashL;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1218,12 +1218,12 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @berserk.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
                 @berserk.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
                 @berserk.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
-                @DashL.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
-                @DashL.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
-                @DashL.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
                 @DashR.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
                 @DashR.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
                 @DashR.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
+                @DashL.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
+                @DashL.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
+                @DashL.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1261,12 +1261,12 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @berserk.started += instance.OnBerserk;
                 @berserk.performed += instance.OnBerserk;
                 @berserk.canceled += instance.OnBerserk;
-                @DashL.started += instance.OnDashL;
-                @DashL.performed += instance.OnDashL;
-                @DashL.canceled += instance.OnDashL;
                 @DashR.started += instance.OnDashR;
                 @DashR.performed += instance.OnDashR;
                 @DashR.canceled += instance.OnDashR;
+                @DashL.started += instance.OnDashL;
+                @DashL.performed += instance.OnDashL;
+                @DashL.canceled += instance.OnDashL;
             }
         }
     }
@@ -1398,8 +1398,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnNodeInteract(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
         void OnBerserk(InputAction.CallbackContext context);
-        void OnDashL(InputAction.CallbackContext context);
         void OnDashR(InputAction.CallbackContext context);
+        void OnDashL(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

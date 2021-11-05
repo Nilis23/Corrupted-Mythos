@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
     float timer;
     public int hpGainItems;
 
+    public bool inv = false;
+
     private void Start()
     {
         health = 100;
@@ -46,33 +48,36 @@ public class PlayerHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
-        if (timer <= 0 && berserk)
+        if (!inv)
         {
-            damage -= 10;
-            health -= damage;
-            //update UI
-            hpBar.value = health;
-            timer = 0.25f;
+            if (timer <= 0 && berserk)
+            {
+                damage -= 10;
+                health -= damage;
+                //update UI
+                hpBar.value = health;
+                timer = 0.25f;
 
-            //StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
-        }
+                //StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
+            }
 
-        else if (timer <= 0)
-        {
-            health -= damage;
-            //update UI
-            hpBar.value = health;
-            timer = 0.25f;
+            else if (timer <= 0)
+            {
+                health -= damage;
+                //update UI
+                hpBar.value = health;
+                timer = 0.25f;
 
-            rageCounter += 10;
-            enrage();
+                rageCounter += 10;
+                enrage();
 
-            StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
-        }
-        // respawn script
-        if (health <= 0)
-        {
-            RespawnPlayer();
+                StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
+            }
+            // respawn script
+            if (health <= 0)
+            {
+                RespawnPlayer();
+            }
         }
         
     }

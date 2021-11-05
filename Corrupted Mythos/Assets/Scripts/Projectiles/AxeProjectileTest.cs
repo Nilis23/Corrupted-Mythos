@@ -90,7 +90,6 @@ public class AxeProjectileTest : MonoBehaviour
         {
             if(collision.gameObject.tag == "enemy")
             {
-                Debug.Log("Enemy hit");
                 collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage, false);
                 FindObjectOfType<AudioManager>().PlaySound("swing");
             }

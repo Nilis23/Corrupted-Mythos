@@ -94,17 +94,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "DashL",
+                    "name": "DashR",
                     "type": "Button",
-                    "id": "edbbffe2-f247-468a-a891-e9826ffb6564",
+                    "id": "3d82a416-5bd0-435e-a15a-f3d5de16aeec",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "DashR",
+                    "name": "DashL",
                     "type": "Button",
-                    "id": "3d82a416-5bd0-435e-a15a-f3d5de16aeec",
+                    "id": "becdeb63-26e1-47a8-aee2-2367d41f21c7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -498,23 +498,23 @@
                 },
                 {
                     "name": "",
-                    "id": "86d89046-2c19-458a-90d8-e1b77ab0cb7d",
-                    "path": "<Keyboard>/a",
-                    "interactions": "MultiTap",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DashL",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "da3ad921-4e59-4ebf-96cc-21351b203277",
+                    "id": "3b016a68-2fa7-4a39-8683-23195833a4be",
                     "path": "<Keyboard>/d",
                     "interactions": "MultiTap",
                     "processors": "",
                     "groups": "",
                     "action": "DashR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39cbb432-a19b-414b-bbd5-4d5801a12bb6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashL",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
