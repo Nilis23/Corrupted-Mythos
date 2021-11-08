@@ -82,6 +82,20 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(rageMode());
             }
         }
+        if (pcontroller.player.block.triggered)
+        {
+            if (playerHealth.block)
+            {
+                playerHealth.block = false;
+                speed += 40;
+            }
+            else if(playerHealth.block == false)
+            {
+                StartCoroutine(PerfectBlock());
+                playerHealth.block = true;
+                speed -= 40;
+            }
+        }
         ///*
         if (Bactive)
         {
@@ -177,5 +191,12 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("unberserking");
         this.GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    IEnumerator PerfectBlock()
+    {
+        playerHealth.perfectBlock = true;
+        yield return new WaitForSeconds(1);
+        playerHealth.perfectBlock = false;
     }
 }

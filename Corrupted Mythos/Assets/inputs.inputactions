@@ -108,6 +108,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "block",
+                    "type": "Button",
+                    "id": "50ab4aec-1f28-4d08-86e3-83738b8823f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -515,6 +523,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "DashL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f56aaff-81b1-470a-81b5-a87673a054c0",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

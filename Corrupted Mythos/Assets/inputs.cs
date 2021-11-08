@@ -121,6 +121,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""block"",
+                    ""type"": ""Button"",
+                    ""id"": ""50ab4aec-1f28-4d08-86e3-83738b8823f6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -528,6 +536,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DashL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f56aaff-81b1-470a-81b5-a87673a054c0"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1085,6 +1104,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_berserk = m_player.FindAction("berserk", throwIfNotFound: true);
         m_player_DashR = m_player.FindAction("DashR", throwIfNotFound: true);
         m_player_DashL = m_player.FindAction("DashL", throwIfNotFound: true);
+        m_player_block = m_player.FindAction("block", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1159,6 +1179,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_berserk;
     private readonly InputAction m_player_DashR;
     private readonly InputAction m_player_DashL;
+    private readonly InputAction m_player_block;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1176,6 +1197,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @berserk => m_Wrapper.m_player_berserk;
         public InputAction @DashR => m_Wrapper.m_player_DashR;
         public InputAction @DashL => m_Wrapper.m_player_DashL;
+        public InputAction @block => m_Wrapper.m_player_block;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1224,6 +1246,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @DashL.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
                 @DashL.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
                 @DashL.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
+                @block.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
+                @block.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
+                @block.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1267,6 +1292,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @DashL.started += instance.OnDashL;
                 @DashL.performed += instance.OnDashL;
                 @DashL.canceled += instance.OnDashL;
+                @block.started += instance.OnBlock;
+                @block.performed += instance.OnBlock;
+                @block.canceled += instance.OnBlock;
             }
         }
     }
@@ -1400,6 +1428,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnBerserk(InputAction.CallbackContext context);
         void OnDashR(InputAction.CallbackContext context);
         void OnDashL(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

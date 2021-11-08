@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public bool berserk;
     public float rageCounter;
+    public bool block;
+    public bool perfectBlock;
 
     public int health, check=0, maxHealth;
     public Transform player;
@@ -48,6 +50,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
+
+
         if (!inv)
         {
             if (timer <= 0 && berserk)

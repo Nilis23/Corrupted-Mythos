@@ -67,7 +67,12 @@ public class swing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserk)
+        if (PlayerHealth.block)
+        {
+            //do nothing
+        }
+
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserk)
         {
             impact.SetActive(false);
 
