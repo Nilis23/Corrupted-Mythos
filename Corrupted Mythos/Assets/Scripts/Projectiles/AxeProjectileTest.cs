@@ -90,7 +90,7 @@ public class AxeProjectileTest : MonoBehaviour
         {
             if(collision.gameObject.tag == "enemy")
             {
-                collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage, false);
+                collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
                 FindObjectOfType<AudioManager>().PlaySound("swing");
             }
             else if (collision.name == "ForestFrontGrass")

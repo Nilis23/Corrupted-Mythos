@@ -138,14 +138,41 @@ public class StateManager : MonoBehaviour
             StartCoroutine(moveBack(newPos));
         }
     }
+    public void KnockUp()
+    {
+        StartCoroutine(knockUp());
+    }
 
     IEnumerator moveBack(Vector2 targPos)
     {
+        Vector2 orgPos = transform.position;
         float t = 0;
-        while(t <= 1f)
+        while(t <= 0.25f)
         {
             t += Time.deltaTime;
-            transform.position = Vector2.Lerp(transform.position, targPos, t);
+            transform.position = Vector2.Lerp(orgPos, targPos, t/0.25f);
+
+            yield return null;
+        }
+    }
+
+    IEnumerator knockUp()
+    {
+        Vector2 upPos = new Vector2(transform.position.x, transform.position.y + 4);
+        Vector2 orgPos = transform.position;
+        float t = 0;
+
+        while(t <= 0.3f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(orgPos, upPos, t / 0.3f);
+
+            yield return null;
+        }
+        while(t <= 0.5f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(upPos, orgPos, (t - 0.3f) / 0.25f);
 
             yield return null;
         }

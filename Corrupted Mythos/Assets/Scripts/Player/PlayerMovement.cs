@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D cntrler;
     public Animator animatior;
+    [Space]
     [SerializeField]
     PlayerHealth playerHP;
     [Space]
@@ -13,14 +14,15 @@ public class PlayerMovement : MonoBehaviour
     public swing weap;
     public GameObject pause;
     public GameObject dashbox;
+    public bool paused = false;
+    public PlayerHealth playerHealth;
+    public Transform impact;
 
     private Inputs pcontroller;
     private float dir;
-    private bool jump = false;
-    public bool paused = false;
     private bool Bactive;
-    public PlayerHealth playerHealth;
-    public Transform impact;
+    private bool jump = false;
+    private float dashTimer;
 
     void Start()
     {
@@ -46,13 +48,15 @@ public class PlayerMovement : MonoBehaviour
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
             animatior.SetFloat("Speed", Mathf.Abs(dir));
 
-            if (pcontroller.player.DashR.triggered)
+            if (pcontroller.player.DashR.triggered && dashTimer < 0f)
             {
                 StartCoroutine(Dash(1f));
+                dashTimer = 1.25f;
             }
-            else if (pcontroller.player.DashL.triggered)
+            else if (pcontroller.player.DashL.triggered && dashTimer < 0f)
             {
                 StartCoroutine(Dash(-1f));
+                dashTimer = 1.25f;
             }
         }
         else
@@ -108,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.rageMeter.value = playerHealth.rageCounter;
         }
         //*/
+
+        dashTimer -= Time.deltaTime;
     }
     private void FixedUpdate()
     {

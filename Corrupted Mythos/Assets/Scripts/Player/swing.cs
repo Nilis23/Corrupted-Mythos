@@ -77,7 +77,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(berserkDamage, true);
+            script.minusHealth(berserkDamage, 1);
             dt = 0.56f;
 
             PlayerHealth.addHealth(lifesteal);
@@ -91,7 +91,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage, true);
+            script.minusHealth(damage, 1);
             dt = 0.56f;
             PlayerHealth.rageCounter += 50;
             PlayerHealth.enrage();
@@ -118,7 +118,7 @@ public class swing : MonoBehaviour
         if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
         {
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage, true);
+            script.minusHealth(damage, 1);
 
             dt = 0.56f;
 

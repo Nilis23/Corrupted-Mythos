@@ -19,14 +19,18 @@ public class EnemyHealth : MonoBehaviour
 
     static float chanceMod = 0;
 
-    public void minusHealth(int damage, bool knockback)
+    public void minusHealth(int damage, int knockback = 0)
     {
         health -= damage;
         em.setStgr(stagTime, true);
         animator.SetTrigger("Hit");
-        if (knockback)
+        if (knockback == 1)
         {
             em.knockback();
+        }
+        else if(knockback == 2)
+        {
+            em.KnockUp();
         }
 
         if (health <= 0)
