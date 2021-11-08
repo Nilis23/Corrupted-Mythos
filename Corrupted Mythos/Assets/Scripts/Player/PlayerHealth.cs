@@ -54,18 +54,21 @@ public class PlayerHealth : MonoBehaviour
 
         if (!inv)
         {
+            if (perfectBlock)
+            {
+                damage = 0;
+            }
+            else if (block)
+            {
+                damage -= 15;
+            }
+
             if (timer <= 0 && berserk)
             {
                 damage -= 10;
-                health -= damage;
-                //update UI
-                hpBar.value = health;
-                timer = 0.25f;
-
-                //StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
             }
 
-            else if (timer <= 0)
+            if (timer <= 0)
             {
                 health -= damage;
                 //update UI

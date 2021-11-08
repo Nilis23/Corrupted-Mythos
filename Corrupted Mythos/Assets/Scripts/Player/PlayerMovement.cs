@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (!weap.getStatus() && !paused)
+        if (!weap.getStatus() && !paused && !playerHealth.block)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
             animatior.SetFloat("Speed", Mathf.Abs(dir));
@@ -60,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
             animatior.SetFloat("Speed", 0);
         }
 
-        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus())
+        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block)
         {
             jump = true;
         }
-        if (pcontroller.player.attack.triggered && !paused)
+        if (pcontroller.player.attack.triggered && !paused && !playerHealth.block)
         {
             weap.attack();
         }
@@ -196,7 +196,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator PerfectBlock()
     {
         playerHealth.perfectBlock = true;
+        this.GetComponent<SpriteRenderer>().color = Color.gray;
         yield return new WaitForSeconds(1);
         playerHealth.perfectBlock = false;
+        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

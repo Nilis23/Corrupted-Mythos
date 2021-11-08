@@ -32,36 +32,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
         {
-            if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)//perfect block
-            {
-                int i;
-                i = damage;
-                damage = 0;
-                collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-                damage = i;
-            }
-            else if (collision.gameObject.GetComponent<PlayerHealth>().berserk)//damage if berserked
-            {
-                damage -= 10;
-                collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-                damage += 10;
-            }
-            else if (collision.gameObject.GetComponent<PlayerHealth>().block)//damage if blocking
-            {
-                damage -= 15;
-                collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-                damage += 15;
-            }
-            else if (collision.gameObject.GetComponent<PlayerHealth>().block && collision.gameObject.GetComponent<PlayerHealth>().berserk)//damage if both
-            {
-                damage -= 20;
-                collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-                damage += 20;
-            }
-            else//regular damage
-            {
-                collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-            }
+            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
             t = 1;
             manager.PlaySound("abomHit");
