@@ -24,8 +24,7 @@ public class attackState : State
         if (em.player != null)
         {
             int colState = em.getCollisionState();
-            float dist = Vector2.Distance(em.gameObject.transform.position, em.player.transform.position);
-            if (dist >= 6.5f)
+            if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 6.5f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
             {
                 return patrolState;
             }
