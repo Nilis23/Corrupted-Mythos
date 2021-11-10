@@ -36,7 +36,7 @@ public class patrolState : State
         }
         
         int colState = em.getCollisionState();
-        if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 6.5f && Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) < 2f) //The player has entered the second sphere, transfer to attack
+        if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 6.5f && Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) < 1f) //The player has entered the second sphere, transfer to attack
         {
             return attack;
         }

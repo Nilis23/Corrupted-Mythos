@@ -11,7 +11,7 @@ public class DashHit : MonoBehaviour
     {
         if (collision.CompareTag("enemy") && !collision.isTrigger)
         {
-            collision.GetComponent<EnemyHealth>()?.minusHealth(damage, 2);
+            collision.GetComponent<EnemyHealth>()?.minusHealth(damage, 10);
             Debug.Log("Hit enemy with dash");
         }
     }
