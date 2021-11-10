@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,12 +25,37 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     private float dashTimer;
 
+    private void OnEnable()
+    {
+        pcontroller = new Inputs();
+        pcontroller.player.block.started += BlockOn;
+        pcontroller.player.block.canceled += BlockOff;
+    }
+
+    private void OnDisable()
+    {
+        pcontroller.player.block.started -= BlockOn;
+        pcontroller.player.block.canceled -= BlockOff;
+    }
+
     void Start()
     {
         impact = this.transform.GetChild(0);
-        pcontroller = new Inputs();
+        //pcontroller = new Inputs();
         pcontroller.Enable();
         playerHealth = this.GetComponentInParent<PlayerHealth>();
+    }
+
+    private void BlockOn(InputAction.CallbackContext c)
+    {
+        speed -= 40;
+        playerHealth.block = true;
+        StartCoroutine(PerfectBlock());
+    }
+    private void BlockOff(InputAction.CallbackContext c)
+    {
+        speed += 40;
+        playerHealth.block = false;
     }
 
     void Update()
@@ -86,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(rageMode());
             }
         }
+        /*
         if (pcontroller.player.block.triggered)
         {
             if (playerHealth.block)
@@ -100,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
                 speed -= 40;
             }
         }
-        ///*
+        *////*
         if (Bactive)
         {
             playerHealth.rageCounter -= Time.deltaTime;
