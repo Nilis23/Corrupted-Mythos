@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public bool berserk;
+    public bool berserking;
     public float rageCounter;
     public bool block;
     public bool perfectBlock;
@@ -63,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
                 damage -= 15;
             }
 
-            if (timer <= 0 && berserk)
+            if (timer <= 0 && berserking)
             {
                 damage -= 10;
             }

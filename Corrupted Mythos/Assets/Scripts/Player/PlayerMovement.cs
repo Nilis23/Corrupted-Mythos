@@ -207,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
         int i;
         //deplete the berserk mode bar
         Bactive = true;
+        playerHealth.berserking = true;
 
         for (i=0;i<5;i++) {
             yield return new WaitForSeconds(2);
@@ -221,6 +222,7 @@ public class PlayerMovement : MonoBehaviour
 
         speed -= 20;
         playerHealth.berserk = false;
+        playerHealth.berserking = false;
         Debug.Log("unberserking");
         this.GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;

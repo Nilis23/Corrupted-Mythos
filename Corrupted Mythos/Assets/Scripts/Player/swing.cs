@@ -72,7 +72,7 @@ public class swing : MonoBehaviour
             //do nothing
         }
 
-        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserk)
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserking)
         {
             impact.SetActive(false);
 
