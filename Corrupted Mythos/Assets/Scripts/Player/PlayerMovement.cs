@@ -232,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerHealth.perfectBlock = true;
         this.GetComponent<SpriteRenderer>().color = Color.gray;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         playerHealth.perfectBlock = false;
         this.GetComponent<SpriteRenderer>().color = Color.white;
     }

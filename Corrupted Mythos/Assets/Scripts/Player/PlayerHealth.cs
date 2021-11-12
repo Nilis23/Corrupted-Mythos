@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public bool block;
     public bool perfectBlock;
 
+    public Color hurtFlash;
     public int health, check=0, maxHealth;
     public Transform player;
     public Transform spawn;
@@ -29,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        hurtFlash = Color.red;
         health = 100;
         rageCounter = 0;
 
@@ -57,10 +59,12 @@ public class PlayerHealth : MonoBehaviour
         {
             if (perfectBlock)
             {
+                hurtFlash = Color.yellow;
                 damage = 0;
             }
             else if (block)
             {
+                hurtFlash = Color.gray;
                 damage -= 15;
             }
 
@@ -79,7 +83,11 @@ public class PlayerHealth : MonoBehaviour
                 rageCounter += 10;
                 enrage();
 
-                StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, Color.red, 1f, 0.5f));
+                StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
+            }
+            if (perfectBlock)
+            {
+                hurtFlash = Color.red;
             }
             // respawn script
             if (health <= 0)

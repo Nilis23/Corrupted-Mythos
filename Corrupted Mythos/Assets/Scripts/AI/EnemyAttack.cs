@@ -13,10 +13,12 @@ public class EnemyAttack : MonoBehaviour
     Animator animator;
     float t = 0;
     AudioManager manager;
+    public EnemyHealth eHealth;
 
     private void Start()
     {
         manager = FindObjectOfType<AudioManager>();
+        eHealth = this.transform.parent.gameObject.GetComponentInParent<EnemyHealth>();
     }
 
     private void Update()
@@ -32,6 +34,11 @@ public class EnemyAttack : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
         {
+            if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
+            {
+                eHealth.minusHealth(0, 1);
+            }
+
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
             t = 1;
