@@ -6,9 +6,8 @@ using Pathfinding;
 [CreateAssetMenu(fileName = "Patrol State", menuName = "FSM/States/Abom/Patrol", order = 2)]
 public class patrolState : State
 {
-    public State attack;
+    public State chase;
     public State idle;
-
     
 
     public override void StartState(StateManager em)
@@ -38,7 +37,7 @@ public class patrolState : State
         int colState = em.getCollisionState();
         if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 6.5f && Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) < 1f) //The player has entered the second sphere, transfer to attack
         {
-            return attack;
+            return chase;
         }
         else if(colState < 1)
         {

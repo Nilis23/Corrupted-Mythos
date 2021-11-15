@@ -1,49 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-[CreateAssetMenu(fileName = "Attack State", menuName = "FSM/States/Abom/Attack", order = 3)]
+[CreateAssetMenu(fileName = "Attack State", menuName = "FSM/States/Abom/Attack", order = 4)]
 public class attackState : State
 {
-    public State patrolState;
-    bool atkplaying;
-    float WPDist;
-
+    public State chaseState;
+    public float timer;
+    float t;
     public override void StartState(StateManager em)
     {
-        em.SetTarget(em.player);
-        WPDist = em.nav.nWaypointDistance;
+        //Begin the attack
+        t = 0;
     }
-
     public override State RunCurrentState(StateManager em)
     {
-        //Move into range of the player. Once in range use attack animation. 
-        //If the player leaves detection range, swap back to patrol state.
-
-        if (em.player != null)
+        if(t >= timer)
         {
-            int colState = em.getCollisionState();
-            if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 6.5f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
-            {
-                return patrolState;
-            }
-            
-            /*
-            if (dist >= WPDist)
-            {
-                //CreatePath(em, em.player);
-            }
-            */
+            return chaseState;
         }
-        //stateDebugInfo();
+
+        t += Time.deltaTime;
 
         return null;
-    }
-
-    public override void stateDebugInfo()
-    {
-        base.stateDebugInfo();
-        Debug.Log("Attack anim status: " + atkplaying.ToString());
     }
 }

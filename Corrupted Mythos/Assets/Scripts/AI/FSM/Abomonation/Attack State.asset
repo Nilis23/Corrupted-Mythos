@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be185a6790e26b45afea84d9b3851f3, type: 3}
+  m_Script: {fileID: 11500000, guid: a05ba29006d2b0c40a942b87ba344247, type: 3}
   m_Name: Attack State
   m_EditorClassIdentifier: 
-  executingManager: {fileID: 0}
-  patrolState: {fileID: 11400000, guid: 9efcb0b30fed93a4d88464ee056b50a6, type: 2}
+  chaseState: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
+  timer: 0.2
