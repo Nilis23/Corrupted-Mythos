@@ -93,7 +93,7 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
             dt = 0.56f;
-            PlayerHealth.rageCounter += 50;
+            PlayerHealth.rageCounter += 10;
             PlayerHealth.enrage();
 
             impact.SetActive(true);

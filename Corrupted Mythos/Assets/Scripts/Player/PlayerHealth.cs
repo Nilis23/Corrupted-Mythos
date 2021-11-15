@@ -80,7 +80,7 @@ public class PlayerHealth : MonoBehaviour
                 hpBar.value = health;
                 timer = 0.25f;
 
-                rageCounter += 10;
+                rageCounter += 5;
                 enrage();
 
                 StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
