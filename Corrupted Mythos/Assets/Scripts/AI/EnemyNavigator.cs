@@ -55,7 +55,7 @@ public class EnemyNavigator : MonoBehaviour
     {
         reachedEOP = false;
 
-        if (target != null && em.stagr <= 0 && !em.idle)
+        if (target != null && em.stagr <= 0 && !em.idle && !em.attack)
         {
             Vector2 dir = (target - rb.position).normalized;
             Vector2 force = dir * (speed * Time.fixedDeltaTime);
