@@ -481,6 +481,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 096b8f8208e71e041bf1069ad223a92b, type: 2}
   - {fileID: 11400000, guid: 9efcb0b30fed93a4d88464ee056b50a6, type: 2}
   - {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
+  - {fileID: 11400000, guid: 41380911b9c6e6743b1b80801dc94ae9, type: 2}
   startState: {fileID: 11400000, guid: 096b8f8208e71e041bf1069ad223a92b, type: 2}
   seeker: {fileID: 0}
   player: {fileID: 0}
@@ -490,5 +491,6 @@ MonoBehaviour:
   point: 0
   timer: 0
   idle: 0
+  attack: 0
   collisions: 0
   stagr: 0
