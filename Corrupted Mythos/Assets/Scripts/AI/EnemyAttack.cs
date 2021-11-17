@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
     AudioManager manager;
     public EnemyHealth eHealth;
 
+    BoxCollider2D box;
     private void Start()
     {
         manager = FindObjectOfType<AudioManager>();
@@ -32,6 +33,7 @@ public class EnemyAttack : MonoBehaviour
     IEnumerator DoAttack(Collider2D collision)
     {
         yield return new WaitForSeconds(0.1f);
+        //if (box.IsTouching(collision)) { } //Prototype for post animations
         if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
         {
             eHealth.minusHealth(0, 1);
