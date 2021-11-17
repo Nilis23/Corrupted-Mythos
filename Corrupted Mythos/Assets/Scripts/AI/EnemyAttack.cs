@@ -38,9 +38,7 @@ public class EnemyAttack : MonoBehaviour
         }
         collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
         
-        manager.PlaySound("abomHit");
         GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
-        animator.SetTrigger("Attack");
         
     }
 
@@ -50,6 +48,9 @@ public class EnemyAttack : MonoBehaviour
         {
             t = 1;
             em.attack = true;
+
+            animator.SetTrigger("Attack");
+            manager.PlaySound("abomHit");
             StartCoroutine(DoAttack(collision));
         }
     }

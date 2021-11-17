@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (8)
@@ -664,10 +660,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (21)
@@ -1454,11 +1446,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &204397950 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 228220793, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
-  m_PrefabInstance: {fileID: 8994769088381562276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &205083817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,10 +1457,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (17)
@@ -1673,10 +1656,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (6)
@@ -2502,10 +2481,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (15)
@@ -2718,10 +2693,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (14)
@@ -3422,22 +3393,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 2882597727957746669, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: pointOne
-      value: 
-      objectReference: {fileID: 852119724}
-    - target: {fileID: 2882597727957746669, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: pointTwo
-      value: 
-      objectReference: {fileID: 998711281}
     - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -3679,10 +3638,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (12)
@@ -3752,10 +3707,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (4)
@@ -4145,10 +4096,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (19)
@@ -4300,10 +4247,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (23)
@@ -5047,22 +4990,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (18)
@@ -5214,10 +5141,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (10)
@@ -5369,10 +5292,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (24)
@@ -5751,10 +5670,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (22)
@@ -7552,10 +7467,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (13)
@@ -7641,10 +7552,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (7)
@@ -8815,10 +8722,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (9)
@@ -8918,22 +8821,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (5)
@@ -9297,10 +9184,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (11)
@@ -9897,22 +9780,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (16)
@@ -10493,10 +10360,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (20)
@@ -11305,30 +11168,6 @@ Transform:
   m_Father: {fileID: 927113410}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1279004852 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2882597726456736594, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-  m_PrefabInstance: {fileID: 1961049833}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1279004855
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279004852}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aff763e16c7a14440a8c9187c151b460, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1292101455
 GameObject:
   m_ObjectHideFlags: 0
@@ -103442,14 +103281,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
-    - target: {fileID: 2882597727957746578, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: bypassDist
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (1)
@@ -104903,54 +104734,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: script
-      value: 
-      objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 2141866088}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2882597726456735917, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -105616,10 +105399,6 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 885110821}
-    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (2)
@@ -105678,11 +105457,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
---- !u!95 &2141866088 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 902374003258058748, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-  m_PrefabInstance: {fileID: 886079476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199727142985160699
 PrefabInstance:
   m_ObjectHideFlags: 0

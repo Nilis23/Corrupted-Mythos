@@ -209,7 +209,7 @@ MonoBehaviour:
   em: {fileID: 2882597727957746669}
   damage: 25
   animator: {fileID: 902374003258058748}
-  eHealth: {fileID: 0}
+  eHealth: {fileID: 2536070215304084904}
 --- !u!50 &2117801768
 Rigidbody2D:
   serializedVersion: 4
