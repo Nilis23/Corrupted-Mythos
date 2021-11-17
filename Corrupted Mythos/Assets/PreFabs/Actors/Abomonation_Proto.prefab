@@ -512,5 +512,5 @@ MonoBehaviour:
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
   foodChance: 0.1
-  animator: {fileID: 0}
+  animator: {fileID: 902374003258058748}
   script: {fileID: 0}

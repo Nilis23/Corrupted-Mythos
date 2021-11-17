@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (8)
@@ -652,6 +660,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (21)
@@ -1438,6 +1454,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &204397950 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 228220793, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+  m_PrefabInstance: {fileID: 8994769088381562276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &205083817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,6 +1466,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (17)
@@ -1640,6 +1669,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (6)
@@ -2461,6 +2498,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (15)
@@ -2669,6 +2714,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (14)
@@ -3365,6 +3418,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (3)
@@ -3614,6 +3675,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (12)
@@ -3679,6 +3748,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (4)
@@ -4064,6 +4141,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (19)
@@ -4211,6 +4296,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (23)
@@ -4950,6 +5043,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -5109,6 +5210,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (10)
@@ -5256,6 +5365,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (24)
@@ -5630,6 +5747,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (22)
@@ -7423,6 +7548,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (13)
@@ -7504,6 +7637,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (7)
@@ -8670,6 +8811,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (9)
@@ -8765,6 +8914,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -9136,6 +9293,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (11)
@@ -9728,6 +9893,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597726456735916, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -10316,6 +10489,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (20)
@@ -103257,6 +103438,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746578, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: bypassDist
       value: 2
@@ -104827,6 +105016,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto
@@ -105419,6 +105612,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 885110821}
+    - target: {fileID: 2536070215304084904, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 204397950}
     - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: m_Name
       value: Abomonation_Proto (2)
