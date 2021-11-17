@@ -129,6 +129,14 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""GodWipe"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c816ac5-ecc3-442c-a7a4-07e05ac60435"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -547,6 +555,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61219d7f-516a-49e9-950e-3d3bc843db87"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GodWipe"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1105,6 +1124,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_DashR = m_player.FindAction("DashR", throwIfNotFound: true);
         m_player_DashL = m_player.FindAction("DashL", throwIfNotFound: true);
         m_player_block = m_player.FindAction("block", throwIfNotFound: true);
+        m_player_GodWipe = m_player.FindAction("GodWipe", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1180,6 +1200,7 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_DashR;
     private readonly InputAction m_player_DashL;
     private readonly InputAction m_player_block;
+    private readonly InputAction m_player_GodWipe;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1198,6 +1219,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @DashR => m_Wrapper.m_player_DashR;
         public InputAction @DashL => m_Wrapper.m_player_DashL;
         public InputAction @block => m_Wrapper.m_player_block;
+        public InputAction @GodWipe => m_Wrapper.m_player_GodWipe;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1249,6 +1271,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @block.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
                 @block.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
                 @block.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
+                @GodWipe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
+                @GodWipe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
+                @GodWipe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1295,6 +1320,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @block.started += instance.OnBlock;
                 @block.performed += instance.OnBlock;
                 @block.canceled += instance.OnBlock;
+                @GodWipe.started += instance.OnGodWipe;
+                @GodWipe.performed += instance.OnGodWipe;
+                @GodWipe.canceled += instance.OnGodWipe;
             }
         }
     }
@@ -1429,6 +1457,7 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnDashR(InputAction.CallbackContext context);
         void OnDashL(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnGodWipe(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

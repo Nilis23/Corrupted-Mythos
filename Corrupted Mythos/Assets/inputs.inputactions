@@ -116,6 +116,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "GodWipe",
+                    "type": "Button",
+                    "id": "3c816ac5-ecc3-442c-a7a4-07e05ac60435",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -534,6 +542,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61219d7f-516a-49e9-950e-3d3bc843db87",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GodWipe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

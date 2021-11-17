@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private bool Bactive;
     private bool jump = false;
     private float dashTimer;
+    public int killCount;
 
     private void OnEnable()
     {
@@ -139,6 +140,11 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.rageMeter.value = playerHealth.rageCounter;
         }
         //*/
+        if (pcontroller.player.GodWipe.triggered && killCount >=15)
+        {
+            killCount = 0;
+            //kill enemies on screen (without minus health)
+        }
 
         dashTimer -= Time.deltaTime;
     }

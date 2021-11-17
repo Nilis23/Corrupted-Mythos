@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     [Space]
     [SerializeField]
     Animator animator;
+    public PlayerMovement script;
 
     static float chanceMod = 0;
 
@@ -47,6 +48,7 @@ public class EnemyHealth : MonoBehaviour
                 chanceMod += 0.05f;
             }
 
+            script.killCount++;
             Destroy(this.gameObject, 0.1f);
         }
 
