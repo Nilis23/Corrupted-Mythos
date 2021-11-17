@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
                 chanceMod += 0.05f;
             }
 
-            script.killCount++;
+            //script.killCount++;
             Destroy(this.gameObject, 0.1f);
         }
 

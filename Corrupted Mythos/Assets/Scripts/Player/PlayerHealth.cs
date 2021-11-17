@@ -34,6 +34,9 @@ public class PlayerHealth : MonoBehaviour
         health = 100;
         rageCounter = 0;
 
+        rageMeter.maxValue = 100;
+        rageMeter.value = rageCounter;
+
         hpBar.maxValue = health;
         hpBar.value = health;
 

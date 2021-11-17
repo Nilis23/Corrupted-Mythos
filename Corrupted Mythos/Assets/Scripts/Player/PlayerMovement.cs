@@ -142,8 +142,8 @@ public class PlayerMovement : MonoBehaviour
         //*/
         if (pcontroller.player.GodWipe.triggered && killCount >=15)
         {
+            //kill enemies on screen 
             killCount = 0;
-            //kill enemies on screen (without minus health)
         }
 
         dashTimer -= Time.deltaTime;
