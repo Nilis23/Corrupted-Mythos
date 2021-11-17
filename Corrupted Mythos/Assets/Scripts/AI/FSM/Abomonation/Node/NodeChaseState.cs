@@ -6,7 +6,7 @@ using Pathfinding;
 [CreateAssetMenu(fileName = "Node Chase State", menuName = "FSM/States/AbomNode/Node Chase", order = 1)]
 public class NodeChaseState : State
 {
-    //public State patrolState;
+    public State NodeAttackState;
     bool atkplaying;
     float WPDist;
 
@@ -28,9 +28,12 @@ public class NodeChaseState : State
             {
                 em.SetTarget(em.player);
             }
-            //We do not exit this state
-            
-            
+            else if (em.attack)
+            {
+                return NodeAttackState;
+            }
+
+
             /*
             if (dist >= WPDist)
             {

@@ -318,7 +318,7 @@ MonoBehaviour:
   gfx: {fileID: 2882597726456735917}
   em: {fileID: 2882597727957746669}
   bypassDist: 4.5
-  Attack: {fileID: 11400000, guid: 4b584008f1f5d7a4ca9ed3eecdb690d1, type: 2}
+  Attack: {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
 --- !u!114 &2882597727957746669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ValidStates:
   - {fileID: 11400000, guid: 4b584008f1f5d7a4ca9ed3eecdb690d1, type: 2}
-  startState: {fileID: 11400000, guid: 4b584008f1f5d7a4ca9ed3eecdb690d1, type: 2}
+  - {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
+  startState: {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
   seeker: {fileID: 0}
   player: {fileID: 0}
   nav: {fileID: 2882597727957746578}
@@ -342,6 +343,7 @@ MonoBehaviour:
   point: 0
   timer: 0
   idle: 0
+  attack: 0
   collisions: 0
   stagr: 0
 --- !u!114 &1824765836
@@ -362,6 +364,7 @@ MonoBehaviour:
   stagTime: 0.5
   foodChance: 0.1
   animator: {fileID: 4672619371814289234}
+  script: {fileID: 0}
 --- !u!114 &8921645956111960794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +503,7 @@ MonoBehaviour:
   em: {fileID: 2882597727957746669}
   damage: 25
   animator: {fileID: 4672619371814289234}
+  eHealth: {fileID: 0}
 --- !u!50 &1553759223894863277
 Rigidbody2D:
   serializedVersion: 4
