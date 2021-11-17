@@ -177,7 +177,8 @@ public class PlayerMovement : MonoBehaviour
         dashbox.SetActive(true);
         Vector2 targPos = new Vector2(transform.position.x + (5 * dir), transform.position.y);
         Vector2 orgPos = transform.position;
-        int layermask = LayerMask.GetMask("Platforms");
+        string[] strings = new string[] { "Platforms", "FrostGiant" };
+        int layermask = LayerMask.GetMask(strings);
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), 5, layermask);
         if (hit)
         {

@@ -20,6 +20,7 @@ public class StateManager : MonoBehaviour
 
     public int timer;
     public bool idle;
+    public bool attack;
 
     State currentState;
     public int collisions = 0;

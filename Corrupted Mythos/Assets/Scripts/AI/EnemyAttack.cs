@@ -39,23 +39,16 @@ public class EnemyAttack : MonoBehaviour
                 eHealth.minusHealth(0, 1);
             }
 
-            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
+            //collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
             t = 1;
+            /*
             manager.PlaySound("abomHit");
             GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
             animator.SetTrigger("Attack");
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-            t = 1;
-            manager.PlaySound("abomHit");
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
-            animator.SetTrigger("Attack");
+            */
+
+            em.attack = true;
         }
     }
 }

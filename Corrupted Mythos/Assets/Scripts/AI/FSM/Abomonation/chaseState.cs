@@ -29,7 +29,7 @@ public class chaseState : State
             {
                 return patrolState;
             }
-            else if(Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 1f)
+            else if(em.attack)
             {
                 return attackState;
             }

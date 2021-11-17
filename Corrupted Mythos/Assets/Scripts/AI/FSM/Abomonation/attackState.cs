@@ -15,8 +15,9 @@ public class attackState : State
     }
     public override State RunCurrentState(StateManager em)
     {
-        if(t >= timer)
+        if (t >= timer)
         {
+            em.attack = false;
             return chaseState;
         }
 
