@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public swing weap;
     public GameObject pause;
+    public GameObject godWipe;
     public GameObject dashbox;
     public bool paused = false;
     public PlayerHealth playerHealth;
@@ -41,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        godWipe = this.transform.GetChild(5).gameObject;
+        godWipe.SetActive(false);
         impact = this.transform.GetChild(0);
         //pcontroller = new Inputs();
         pcontroller.Enable();
@@ -142,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
         //*/
         if (pcontroller.player.GodWipe.triggered && killCount >=15)
         {
+            godWipe.SetActive(true);
+            godWipe.SetActive(false);
             //kill enemies on screen 
             killCount = 0;
         }
