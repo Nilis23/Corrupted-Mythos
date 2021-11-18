@@ -112,7 +112,7 @@ public class EnemyNavigator : MonoBehaviour
                 target = new Vector2(this.transform.position.x + (Mathf.Abs(dist) - 2), this.transform.position.y);
                 bypass = true;
 
-                Debug.Log("Moving right to dist of " + dist.ToString() + " after hitting " + hit.collider.name);
+                //Debug.Log("Moving right to dist of " + dist.ToString() + " after hitting " + hit.collider.name);
                 return;
 
             }
@@ -125,7 +125,7 @@ public class EnemyNavigator : MonoBehaviour
                     target = pos;
                     bypass = true;
 
-                    Debug.Log("Moving right at full distance");
+                    //Debug.Log("Moving right at full distance");
                     return;
                 }
             }
@@ -140,7 +140,7 @@ public class EnemyNavigator : MonoBehaviour
                 target = new Vector2(this.transform.position.x - (Mathf.Abs(dist) - 2), this.transform.position.y);
                 bypass = true;
 
-                Debug.Log("Moving left to a dist of " + dist.ToString() + " after hitting " + hit.collider.name);
+                //Debug.Log("Moving left to a dist of " + dist.ToString() + " after hitting " + hit.collider.name);
                 return;
             }
             else
@@ -152,7 +152,7 @@ public class EnemyNavigator : MonoBehaviour
                     target = pos;
                     bypass = true;
 
-                    Debug.Log("Moving left at full distance");
+                    //Debug.Log("Moving left at full distance");
                     return;
                 }
             }

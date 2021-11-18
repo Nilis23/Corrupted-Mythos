@@ -34,8 +34,11 @@ public class PlayerHealth : MonoBehaviour
         health = 100;
         rageCounter = 0;
 
-        rageMeter.maxValue = 100;
-        rageMeter.value = rageCounter;
+        if (rageMeter != null)
+        {
+            rageMeter.maxValue = 100;
+            rageMeter.value = rageCounter;
+        }
 
         hpBar.maxValue = health;
         hpBar.value = health;
@@ -179,12 +182,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void enrage()
     {
-        //fill rage meter
-        rageMeter.value = rageCounter;
-        if (rageCounter >= 100)
+        if (rageMeter != null)
         {
-            berserk = true;
-            Debug.Log("berserkable");
+            //fill rage meter
+            rageMeter.value = rageCounter;
+            if (rageCounter >= 100)
+            {
+                berserk = true;
+                Debug.Log("berserkable");
+            }
         }
     }
 }
