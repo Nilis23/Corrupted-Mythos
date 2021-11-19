@@ -122,7 +122,10 @@ public class PlayerHealth : MonoBehaviour
         player.position = spawn.position;
         health = 100;
         rageCounter = 0;
-        rageMeter.value = rageCounter;
+        if (rageMeter != null)
+        {
+            rageMeter.value = rageCounter;
+        }
         hpBar.value = health;
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
         this.GetComponent<SpriteRenderer>().color = Color.white;
