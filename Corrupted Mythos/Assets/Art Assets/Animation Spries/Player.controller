@@ -170,17 +170,17 @@ AnimatorStateMachine:
     m_Position: {x: 408.71185, y: 110.39696, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8219981366750465327}
-    m_Position: {x: 150, y: 290, z: 0}
+    m_Position: {x: 520, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8419573649063467609}
-    m_Position: {x: 620, y: 300, z: 0}
+    m_Position: {x: 300, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -4876079431700129913}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 320, y: 440, z: 0}
+  m_AnyStatePosition: {x: 430, y: 280, z: 0}
   m_EntryPosition: {x: 0, y: 140, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -199,25 +199,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Swing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: S2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Reset
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

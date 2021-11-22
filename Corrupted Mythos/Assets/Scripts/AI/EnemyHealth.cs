@@ -8,6 +8,9 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     public GameObject foodPref;
     [SerializeField]
+    bool inv;
+    [Space]
+    [SerializeField]
     StateManager em;
     [SerializeField]
     float stagTime;
@@ -22,37 +25,44 @@ public class EnemyHealth : MonoBehaviour
 
     public void minusHealth(int damage, int knockback = 0)
     {
-        health -= damage;
-        em.setStgr(stagTime, true);
-        animator.SetTrigger("Hit");
-        if (knockback == 1)
+        if (!inv)
         {
-            em.knockback();
-        }
-        else if(knockback == 2)
-        {
-            em.KnockUp();
-        }
-
-        if (health <= 0)
-        {
-            float drop = Random.value;
-            if (drop <= (foodChance + chanceMod))
+            health -= damage;
+            em.setStgr(stagTime, true);
+            animator.SetTrigger("Hit");
+            if (knockback == 1)
             {
-                GameObject food = Instantiate(foodPref);
-                food.transform.position = this.transform.position;
-                chanceMod = 0;
+                em.knockback();
             }
-            else
+            else if (knockback == 2)
             {
-                chanceMod += 0.05f;
+                em.KnockUp();
             }
 
-            //script.killCount++;
-            Destroy(this.gameObject, 0.1f);
-        }
+            if (health <= 0)
+            {
+                float drop = Random.value;
+                if (drop <= (foodChance + chanceMod))
+                {
+                    GameObject food = Instantiate(foodPref);
+                    food.transform.position = this.transform.position;
+                    chanceMod = 0;
+                }
+                else
+                {
+                    chanceMod += 0.05f;
+                }
 
+                //script.killCount++;
+                Destroy(this.gameObject, 0.1f);
+            }
+            else if()
+            {
+
+            }
+        }
     }
+
     public void addHealth(int gain)
     {
         health += gain;

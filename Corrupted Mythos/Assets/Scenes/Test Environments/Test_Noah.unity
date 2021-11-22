@@ -370,6 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 743690643}
   - component: {fileID: 743690644}
+  - component: {fileID: 743690645}
   m_Layer: 11
   m_Name: FrostGiantGFX
   m_TagString: enemy
@@ -385,8 +386,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743690642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3683, y: 0, z: 0}
-  m_LocalScale: {x: 0.2634, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1309075427}
   m_RootOrder: 0
@@ -442,6 +443,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &743690645
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743690642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54d7734914c2d604e848267b5a20b135, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &778941397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1051,6 +1071,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1319010287150186407, guid: 8235a5e865d0e064287581b03441275f, type: 3}
   m_PrefabInstance: {fileID: 1760711692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1108585032
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_Name
+      value: Abomonation_Proto
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.693443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.8971581
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746671, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
 --- !u!1 &1135340244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,9 +1361,11 @@ GameObject:
   - component: {fileID: 1309075427}
   - component: {fileID: 1309075425}
   - component: {fileID: 1309075424}
+  - component: {fileID: 1309075426}
   - component: {fileID: 1309075430}
   - component: {fileID: 1309075429}
   - component: {fileID: 1309075428}
+  - component: {fileID: 1309075431}
   m_Layer: 11
   m_Name: FrostGiant
   m_TagString: enemy
@@ -1341,6 +1420,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &1309075426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309075423}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1309075427
 Transform:
   m_ObjectHideFlags: 0
@@ -1354,7 +1459,7 @@ Transform:
   m_Children:
   - {fileID: 743690643}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1309075428
 MonoBehaviour:
@@ -1429,6 +1534,26 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1309075431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309075423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfcc9f2bcd40bd4890e8daa9559af26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
+  inv: 0
+  em: {fileID: 1309075428}
+  stagTime: 0.5
+  foodChance: 0.1
+  animator: {fileID: 743690645}
+  script: {fileID: 0}
 --- !u!1001 &1508143803
 PrefabInstance:
   m_ObjectHideFlags: 0

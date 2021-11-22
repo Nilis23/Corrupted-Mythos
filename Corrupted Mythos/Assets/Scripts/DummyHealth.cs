@@ -23,7 +23,7 @@ public class DummyHealth : MonoBehaviour
         HP -= damage;
         Debug.Log("Taking damage");
         sr.color = Color.red;
-        Invoke("ResetColor", 1);
+        Invoke("ResetColor", 0.25f);
 
         if(HP <= 0)
         {
