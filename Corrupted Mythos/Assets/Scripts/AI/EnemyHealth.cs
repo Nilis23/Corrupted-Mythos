@@ -7,8 +7,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     public int health;
     public GameObject foodPref;
-    [SerializeField]
-    bool inv;
+    //[SerializeField]
+    //bool inv;
     [Space]
     [SerializeField]
     StateManager em;
@@ -25,8 +25,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void minusHealth(int damage, int knockback = 0)
     {
-        if (!inv)
-        {
+        //if (!inv) //Also obsolesced
+        //{
             health -= damage;
             em.setStgr(stagTime, true);
             animator.SetTrigger("Hit");
@@ -55,11 +55,13 @@ public class EnemyHealth : MonoBehaviour
 
                 //script.killCount++;
                 Destroy(this.gameObject, 0.1f);
-            }
+            //}
+            /* obsolesced code - will be replaced with new inhertiance based health class
             else if()
             {
 
             }
+            */
         }
     }
 
