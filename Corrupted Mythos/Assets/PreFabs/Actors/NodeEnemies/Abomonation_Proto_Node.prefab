@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2882597727957746665}
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
-  - component: {fileID: 1824765836}
+  - component: {fileID: 8312455858448095165}
   - component: {fileID: 8921645956111960794}
   m_Layer: 8
   m_Name: Abomonation_Proto_Node
@@ -346,7 +346,7 @@ MonoBehaviour:
   attack: 0
   collisions: 0
   stagr: 0
---- !u!114 &1824765836
+--- !u!114 &8312455858448095165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,16 +355,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2882597727957746579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfcc9f2bcd40bd4890e8daa9559af26, type: 3}
+  m_Script: {fileID: 11500000, guid: ac849638fbe15d44797a6d3dd3138eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
-  foodChance: 0.1
   animator: {fileID: 4672619371814289234}
   script: {fileID: 0}
+  foodChance: 0.1
 --- !u!114 &8921645956111960794
 MonoBehaviour:
   m_ObjectHideFlags: 0

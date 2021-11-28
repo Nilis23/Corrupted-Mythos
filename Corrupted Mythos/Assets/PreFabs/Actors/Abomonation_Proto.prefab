@@ -209,7 +209,7 @@ MonoBehaviour:
   em: {fileID: 2882597727957746669}
   damage: 25
   animator: {fileID: 902374003258058748}
-  eHealth: {fileID: 2536070215304084904}
+  eHealth: {fileID: 0}
 --- !u!50 &2117801768
 Rigidbody2D:
   serializedVersion: 4
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 2882597727957746665}
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
-  - component: {fileID: 2536070215304084904}
+  - component: {fileID: 5347756656958841250}
   m_Layer: 8
   m_Name: Abomonation_Proto
   m_TagString: enemy
@@ -495,7 +495,7 @@ MonoBehaviour:
   attack: 0
   collisions: 0
   stagr: 0
---- !u!114 &2536070215304084904
+--- !u!114 &5347756656958841250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,13 +504,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2882597727957746579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfcc9f2bcd40bd4890e8daa9559af26, type: 3}
+  m_Script: {fileID: 11500000, guid: ac849638fbe15d44797a6d3dd3138eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
-  foodChance: 0.1
   animator: {fileID: 902374003258058748}
   script: {fileID: 0}
+  foodChance: 0.1
