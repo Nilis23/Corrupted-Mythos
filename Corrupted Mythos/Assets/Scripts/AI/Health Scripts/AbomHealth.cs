@@ -7,6 +7,7 @@ public class AbomHealth : EnemyHealth
     [SerializeField]
     float foodChance = 0.1f;
     static float chanceMod = 0;
+    public GameObject foodPref;
 
     private void Start()
     {

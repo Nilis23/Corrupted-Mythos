@@ -19,10 +19,12 @@ public class EnemyGFXCntrl : MonoBehaviour
         if(rb.velocity.x >= 0.01f)
         {
             transform.localScale = new Vector2(1f, 1f);
+            Debug.Log("Flipping right in cntrl");
         }
         else if(rb.velocity.x <= -0.01f)
         {
             transform.localScale = new Vector2(-1f, 1f);
+            Debug.Log("Flipping left in cntrl");
         }
     }
 }

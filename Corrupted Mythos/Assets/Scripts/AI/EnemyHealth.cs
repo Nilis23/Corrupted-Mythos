@@ -6,7 +6,6 @@ public abstract class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     public int health;
-    public GameObject foodPref;
     [Space]
     [SerializeField]
     StateManager em;

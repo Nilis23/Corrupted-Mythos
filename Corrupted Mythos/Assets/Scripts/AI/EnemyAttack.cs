@@ -36,6 +36,11 @@ public class EnemyAttack : MonoBehaviour
         //if (box.IsTouching(collision)) { } //Prototype for post animations
         if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
         {
+
+            if (eHealth.GetType() == typeof(FrostGiantHealth))
+            {
+                (eHealth as FrostGiantHealth).changeInv();
+            }
             eHealth.minusHealth(0, 1);
         }
         collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);

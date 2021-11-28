@@ -39,6 +39,7 @@ public class EnemyNavigator : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        /*
         speedMod = Random.Range(0, 0.3f);
         if (Random.value < 0.5)
         {
@@ -48,6 +49,7 @@ public class EnemyNavigator : MonoBehaviour
         {
             speed -= speedMod;
         }
+        */
     }
 
     // Update is called once per frame
@@ -86,15 +88,17 @@ public class EnemyNavigator : MonoBehaviour
 
     public void SwapGFX(Vector2 force)
     {
-        if (force.x >= 0.01f)
+        if (force.x >= 0.0001f)
         {
-            transform.transform.localScale = new Vector2(1f, 1f);
+            transform.transform.localScale = new Vector2(1f * transform.transform.localScale.x, 1f * transform.transform.localScale.y);
             right = true;
+            Debug.Log("Flipping right in nav");
         }
-        else if (force.x <= -0.01f)
+        else if (force.x <= -0.0001f)
         {
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.transform.localScale = new Vector2(-1f * transform.transform.localScale.x, 1f * transform.transform.localScale.y);
             right = false;
+            Debug.Log("Flipping left in nav");
         }
     }
 
