@@ -114,15 +114,6 @@ public class StateManager : MonoBehaviour
     {
         return currentState;
     }
-    /*
-    public void BypassTarget(GameObject targ)
-    {
-        if(nav.getEOP() && currentState.GetType() == typeof(attackState))
-        {
-            nav.target.position = new Vector2(targ.transform.position.x + 1, targ.transform.position.y);
-        }
-    }
-    */
 
     public void knockback()
     {
