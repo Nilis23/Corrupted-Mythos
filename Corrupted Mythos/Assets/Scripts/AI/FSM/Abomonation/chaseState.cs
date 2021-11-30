@@ -15,6 +15,7 @@ public class chaseState : State
     {
         em.SetTarget(em.player);
         WPDist = em.nav.nWaypointDistance;
+        em.attack = false;
     }
 
     public override State RunCurrentState(StateManager em)

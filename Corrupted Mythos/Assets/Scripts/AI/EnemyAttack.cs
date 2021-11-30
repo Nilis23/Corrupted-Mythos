@@ -14,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
     float t = 0;
     AudioManager manager;
     public EnemyHealth eHealth;
+    public bool fG;
 
     BoxCollider2D box;
     private void Start()
@@ -54,10 +55,14 @@ public class EnemyAttack : MonoBehaviour
         if(collision.gameObject.tag == "Player" && t <= 0 && em.stagr <= 0)
         {
             t = 1;
-            em.attack = true;
+            if (!fG)
+            {
+                em.attack = true;
+                animator.SetTrigger("Attack");
+                manager.PlaySound("abomHit");
+            }
 
-            animator.SetTrigger("Attack");
-            manager.PlaySound("abomHit");
+            
             StartCoroutine(DoAttack(collision));
         }
     }

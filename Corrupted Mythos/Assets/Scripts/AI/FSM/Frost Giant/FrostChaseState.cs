@@ -6,7 +6,7 @@ using UnityEngine;
 public class FrostChaseState : State
 {
     public State frostIdle;
-    //public State frostAttack;
+    public State frostAttack;
     bool atkplaying;
     float WPDist;
 
@@ -15,13 +15,13 @@ public class FrostChaseState : State
         if (em.player != null)
         {
             int colState = em.getCollisionState();
-            if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 6.5f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
+            if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 6.5f /*|| Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f*/)
             {
                 return frostIdle;
             }
             else if (em.attack)
             {
-                //return attackState;
+                return frostAttack;
             }
         }
         //stateDebugInfo();
@@ -33,5 +33,6 @@ public class FrostChaseState : State
     {
         em.SetTarget(em.player);
         WPDist = em.nav.nWaypointDistance;
+        em.attack = false;
     }
 }

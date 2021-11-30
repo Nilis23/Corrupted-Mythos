@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 148548ce51c28e24891e1f7d89167eaa, type: 3}
-  m_Name: Chase State
+  m_Script: {fileID: 11500000, guid: b84cec6fdbf7eab46a75c623bc4e38a1, type: 3}
+  m_Name: Attack State
   m_EditorClassIdentifier: 
-  frostIdle: {fileID: 11400000, guid: 7dbddaa0ef3f36f4bb16f0cf271a615b, type: 2}
-  frostAttack: {fileID: 11400000, guid: 4eaa6ccb68676914395e22db50c2e521, type: 2}
+  chaseState: {fileID: 11400000, guid: 7d2778d3706fc724cbb92ee6715d2dda, type: 2}
+  timer: 1
