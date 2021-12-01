@@ -59,7 +59,7 @@ public class StateManager : MonoBehaviour
         else
         {
             //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 73, 73);
-            stagr -= Time.deltaTime;
+            stagr = stagr - Time.deltaTime;
 
             if(stagr <= 0)
             {

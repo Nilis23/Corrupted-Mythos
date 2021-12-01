@@ -8,7 +8,7 @@ public abstract class EnemyHealth : MonoBehaviour
     public int health;
     [Space]
     [SerializeField]
-    StateManager em;
+    public StateManager em;
     [SerializeField]
     float stagTime;
     

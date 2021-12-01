@@ -42,7 +42,10 @@ public class EnemyAttack : MonoBehaviour
             {
                 (eHealth as FrostGiantHealth).changeInv();
             }
-            eHealth.minusHealth(0, 1);
+            else
+            {
+                eHealth.minusHealth(0, 1);
+            }
         }
         collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
         
