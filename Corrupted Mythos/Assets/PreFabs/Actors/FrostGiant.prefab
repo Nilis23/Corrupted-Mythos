@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7905687791689355367
 Transform:
   m_ObjectHideFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   em: {fileID: 7905687791689355360}
   bypassDist: 0
   Attack: {fileID: 11400000, guid: 7d2778d3706fc724cbb92ee6715d2dda, type: 2}
+  doBypass: 0
 --- !u!114 &7905687791689355360
 MonoBehaviour:
   m_ObjectHideFlags: 0
