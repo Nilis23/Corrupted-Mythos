@@ -31,7 +31,7 @@ public class StateManager : MonoBehaviour
         //Find and store the player
         player = GameObject.FindGameObjectWithTag("Player");
         //Grab this agent's seeker
-        seeker = this.GetComponent<Seeker>();
+        //seeker = this.GetComponent<Seeker>();
         nav = this.GetComponent<EnemyNavigator>();
 
         if (currentState == null)
