@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11cbaa0615c6764cb62ff0230b3045d, type: 3}
+  m_Name: Active State
+  m_EditorClassIdentifier: 
+  firelingidle: {fileID: 11400000, guid: 4bf2f7d7c59f9b24eac3ffb3da47ecfa, type: 2}
+  firelingflee: {fileID: 11400000, guid: fbb67200102ca6f4096d01931374053a, type: 2}

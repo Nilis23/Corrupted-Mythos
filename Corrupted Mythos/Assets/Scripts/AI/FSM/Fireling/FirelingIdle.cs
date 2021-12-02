@@ -22,6 +22,7 @@ public class FirelingIdle : State
     public override void StartState(StateManager em)
     {
         em.idle = true;
+        em.SetTarget(em.gameObject);
     }
 
 }

@@ -315,10 +315,10 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   speed: 4
   nWaypointDistance: 1
-  gfx: {fileID: 2882597726456735917}
   em: {fileID: 2882597727957746669}
   bypassDist: 4.5
   Attack: {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
+  doBypass: 1
 --- !u!114 &2882597727957746669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,12 +359,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   em: {fileID: 2882597727957746669}
   stagTime: 0.5
   animator: {fileID: 4672619371814289234}
   script: {fileID: 0}
   foodChance: 0.1
+  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
 --- !u!114 &8921645956111960794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +504,7 @@ MonoBehaviour:
   damage: 25
   animator: {fileID: 4672619371814289234}
   eHealth: {fileID: 0}
+  fG: 0
 --- !u!50 &1553759223894863277
 Rigidbody2D:
   serializedVersion: 4

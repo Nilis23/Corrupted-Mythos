@@ -18,6 +18,9 @@ public class EnemyNavigator : MonoBehaviour
     float bypassDist;
     [SerializeField]
     State Attack;
+    [Space]
+    [SerializeField]
+    bool doBypass = false;
 
     //private Path path;
     //int currentWP;
@@ -35,7 +38,7 @@ public class EnemyNavigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seeker = GetComponent<Seeker>();
+        //seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -68,7 +71,7 @@ public class EnemyNavigator : MonoBehaviour
             if (dist < nWaypointDistance)
             {
                 reachedEOP = true;
-                if (em.GetState().GetType() == Attack.GetType())
+                if (em.GetState().GetType() == Attack.GetType() && doBypass)
                 {
                     if (!bypass)
                     {

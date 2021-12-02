@@ -1157,6 +1157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 301566507}
+  - {fileID: 1629395178}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1173,11 +1174,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0}
-  speed: 3
+  speed: 4
   nWaypointDistance: 1
   em: {fileID: 1052718654}
   bypassDist: 0
   Attack: {fileID: 0}
+  doBypass: 0
 --- !u!114 &1052718654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,8 +1192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ff6fe7cf0fa8c4081dc8a6a5ee701b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ValidStates: []
-  startState: {fileID: 0}
+  ValidStates:
+  - {fileID: 11400000, guid: 4bf2f7d7c59f9b24eac3ffb3da47ecfa, type: 2}
+  - {fileID: 11400000, guid: 938f07e6166fe4e48a1a2b594f32f720, type: 2}
+  - {fileID: 11400000, guid: fbb67200102ca6f4096d01931374053a, type: 2}
+  startState: {fileID: 11400000, guid: 4bf2f7d7c59f9b24eac3ffb3da47ecfa, type: 2}
   seeker: {fileID: 0}
   player: {fileID: 143592611}
   nav: {fileID: 1052718653}
@@ -1249,7 +1254,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1052718657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,6 +1780,89 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+--- !u!1 &1629395177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629395178}
+  - component: {fileID: 1629395181}
+  - component: {fileID: 1629395180}
+  - component: {fileID: 1629395179}
+  m_Layer: 9
+  m_Name: PlayerInteractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629395178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1052718652}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1629395179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0997dda58cdf846a1d9f44228f52a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  em: {fileID: 1052718654}
+--- !u!50 &1629395180
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395177}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1629395181
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1001 &1760711692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38953,10 +39041,6 @@ PrefabInstance:
     - target: {fileID: 7905687791689355355, guid: 1645551d83cfd9841883d36ebf27b435, type: 3}
       propertyPath: m_Name
       value: FrostGiant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905687791689355355, guid: 1645551d83cfd9841883d36ebf27b435, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905687791689355367, guid: 1645551d83cfd9841883d36ebf27b435, type: 3}
       propertyPath: m_RootOrder
