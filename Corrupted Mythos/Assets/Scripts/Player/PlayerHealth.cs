@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public bool block;
     public bool perfectBlock;
 
+    public GameObject Pcamera;
+    public GameObject Fcamera;
+
     public Color hurtFlash;
     public int health, check=0, maxHealth;
     public Transform player;
@@ -119,6 +122,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void RespawnPlayer()
     {
+        Fcamera.SetActive(false);
+        Pcamera.SetActive(true);
+
         player.position = spawn.position;
         health = 100;
         rageCounter = 0;
