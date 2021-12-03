@@ -7,7 +7,8 @@ public class projectileManager : MonoBehaviour
     [Space]
     [Tooltip("The prefab from which the projectile will be instantiated")]
     [SerializeField]GameObject projPref;
-    //[SerializeField]float speed;
+    [SerializeField]
+    float tmax;
     float timer = 0f;
 
     // Update is called once per frame
@@ -29,17 +30,19 @@ public class projectileManager : MonoBehaviour
                 Vector2 start = launcher.transform.position;
                 start.x = start.x + 1f;
                 GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+                newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
             }
             else
             {
                 Vector2 start = launcher.transform.position;
                 start.x = start.x - 1f;
                 GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+                newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
             }
             
             //Rigidbody projRB = newProj.GetComponent<Rigidbody>();
 
-            timer = 10f;
+            timer = tmax;
         }
     }
 }
