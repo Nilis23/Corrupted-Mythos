@@ -335,6 +335,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b584008f1f5d7a4ca9ed3eecdb690d1, type: 2}
   - {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
   startState: {fileID: 11400000, guid: e6659d5f74bd57949b2c223036909e9e, type: 2}
+  hp: {fileID: 8312455858448095165}
   seeker: {fileID: 0}
   player: {fileID: 0}
   nav: {fileID: 2882597727957746578}

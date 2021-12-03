@@ -71,7 +71,7 @@ public class EnemyNavigator : MonoBehaviour
             if (dist < nWaypointDistance)
             {
                 reachedEOP = true;
-                if (em.GetState().GetType() == Attack.GetType() && doBypass)
+                if (doBypass && em.GetState().GetType() == Attack.GetType())
                 {
                     if (!bypass)
                     {

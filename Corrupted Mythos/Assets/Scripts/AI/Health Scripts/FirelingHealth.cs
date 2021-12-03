@@ -13,4 +13,9 @@ public class FirelingHealth : EnemyHealth
             takeDamage(damage, knockback);
         }
     }
+
+    public void changeInv()
+    {
+        inv = !inv;
+    }
 }

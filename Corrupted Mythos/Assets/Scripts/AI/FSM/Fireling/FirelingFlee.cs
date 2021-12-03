@@ -13,6 +13,7 @@ public class FirelingFlee : State
         //At target?
         if(Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 4f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
         {
+            (em.hp as FirelingHealth).changeInv();
             return firelingactive;
         }
         return null;
@@ -21,5 +22,6 @@ public class FirelingFlee : State
     public override void StartState(StateManager em)
     {
         //Gas mode activate
+        (em.hp as FirelingHealth).changeInv();
     }
 }

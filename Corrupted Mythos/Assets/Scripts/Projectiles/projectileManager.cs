@@ -23,16 +23,16 @@ public class projectileManager : MonoBehaviour
     {
         if(timer <= 0)
         {
-            Vector2 dir = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).normalized;
+            Vector2 dir = (GameObject.FindGameObjectWithTag("Player").transform.position - launcher.transform.position).normalized;
             if(dir.x > 0)
             {
-                Vector2 start = this.transform.position;
+                Vector2 start = launcher.transform.position;
                 start.x = start.x + 1f;
                 GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
             }
             else
             {
-                Vector2 start = this.transform.position;
+                Vector2 start = launcher.transform.position;
                 start.x = start.x - 1f;
                 GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
             }

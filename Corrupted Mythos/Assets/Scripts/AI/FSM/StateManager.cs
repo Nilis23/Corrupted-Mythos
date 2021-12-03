@@ -9,19 +9,22 @@ public class StateManager : MonoBehaviour
     List<State> ValidStates;
     [SerializeField]
     State startState;
-    
+
+    [Space]
+    public EnemyHealth hp;
     public Seeker seeker;
     public GameObject player;
     public EnemyNavigator nav;
 
+    [Space]
     public GameObject pointOne;
     public GameObject pointTwo;
     public int point = 0;
-
+    [Space]
     public int timer;
     public bool idle;
     public bool attack;
-
+    [Space]
     State currentState;
     public int collisions = 0;
     public float stagr = 0;

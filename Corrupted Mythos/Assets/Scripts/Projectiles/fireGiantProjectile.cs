@@ -17,7 +17,7 @@ public class fireGiantProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        life = 10f;
+        life = 1000f;
 
         dir = (GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).normalized;
     }
@@ -46,4 +46,5 @@ public class fireGiantProjectile : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    
 }
