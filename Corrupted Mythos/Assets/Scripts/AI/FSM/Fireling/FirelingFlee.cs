@@ -11,9 +11,10 @@ public class FirelingFlee : State
     public override State RunCurrentState(StateManager em)
     {
         //At target?
-        if(Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) > 4f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
+        if(Vector2.Distance(em.transform.position, em.player.transform.position) > 4f)
         {
-            (em.hp as FirelingHealth).inv = false; 
+            (em.hp as FirelingHealth).inv = false;
+            em.SetFleeGraphic(false);
             return firelingactive;
         }
         return null;
@@ -23,5 +24,6 @@ public class FirelingFlee : State
     {
         //Gas mode activate
         (em.hp as FirelingHealth).inv = true;
+        em.SetFleeGraphic(true);
     }
 }
