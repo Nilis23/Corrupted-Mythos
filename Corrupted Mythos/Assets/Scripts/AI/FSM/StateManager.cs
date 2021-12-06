@@ -182,4 +182,16 @@ public class StateManager : MonoBehaviour
             this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
     }
+
+    public void SetFleeGraphic(bool flee)
+    {
+        if (flee) 
+        {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+        else
+        {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
 }

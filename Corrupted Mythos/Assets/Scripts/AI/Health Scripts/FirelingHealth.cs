@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirelingHealth : EnemyHealth
 {
-    bool inv = false;
+    public bool inv = false;
 
     public override void minusHealth(int damage, int knockback = 0)
     {
@@ -12,10 +12,5 @@ public class FirelingHealth : EnemyHealth
         {
             takeDamage(damage, knockback);
         }
-    }
-
-    public void changeInv()
-    {
-        inv = !inv;
     }
 }

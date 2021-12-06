@@ -73,14 +73,16 @@ public class fireGiantProjectile : MonoBehaviour
         else if(collision.gameObject.tag == "enemy" && defl)
         {
             collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
+
+
+            Debug.Log(collision.gameObject.name);
             Destroy(gameObject);
+
         }
         else
         {
             Destroy(gameObject);
         }
-
-        Debug.Log(collision.gameObject.name);
     }
 
     IEnumerator DoAttack(Collider2D collision)

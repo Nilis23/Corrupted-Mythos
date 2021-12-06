@@ -186,8 +186,8 @@ public class PlayerMovement : MonoBehaviour
         string[] strings = new string[] { "Platforms", "FrostGiant", "Barriers" };
         int layermask = LayerMask.GetMask(strings);
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), 5, layermask);
-        RaycastHit2D hit2 = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), 5, layermask);
-        if (hit || hit2)
+        RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), 5, layermask);
+        if (hit || hitt)
         {
             t = 1;
         }
@@ -201,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
         }
         //End
         playerHealth.inv = false;
-        if (!hit)
+        if (!hit && !hitt)
         {
             transform.position = targPos;
         }

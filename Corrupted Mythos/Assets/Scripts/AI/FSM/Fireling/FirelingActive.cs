@@ -15,7 +15,7 @@ public class FirelingActive : State
         {
             return firelingidle;
         }
-        else if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 4f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) > 1f)
+        else if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 4f || Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) < 4f)
         {
             //Run away
             return firelingflee;
