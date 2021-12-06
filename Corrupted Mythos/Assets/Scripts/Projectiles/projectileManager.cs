@@ -11,9 +11,11 @@ public class projectileManager : MonoBehaviour
     float tmax;
     float timer = 0f;
     Animator anim;
+    AudioManager manager;
 
     private void Start()
     {
+        manager = FindObjectOfType<AudioManager>();
         anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -35,6 +37,7 @@ public class projectileManager : MonoBehaviour
             StartCoroutine(Launch(dir, launcher));
 
             anim.SetTrigger("Attack");
+            manager.PlaySound("FirelingCast");
 
             timer = tmax;
             return true;

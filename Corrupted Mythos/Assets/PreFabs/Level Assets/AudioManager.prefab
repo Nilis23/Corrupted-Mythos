@@ -104,4 +104,10 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: FirelingCast
+    clip: {fileID: 8300000, guid: fbbd5f00b0174c34cabf86585f9662a8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   mixer: {fileID: 24100000, guid: 4a6502f6a57b44b4f9c6cbfdb19e79bd, type: 2}
