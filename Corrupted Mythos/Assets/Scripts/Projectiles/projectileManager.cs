@@ -10,6 +10,12 @@ public class projectileManager : MonoBehaviour
     [SerializeField]
     float tmax;
     float timer = 0f;
+    Animator anim;
+
+    private void Start()
+    {
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,29 +26,41 @@ public class projectileManager : MonoBehaviour
         }
     }
 
-    public void attemptProjectileLaunch(GameObject launcher)
+    public bool attemptProjectileLaunch(GameObject launcher)
     {
         if(timer <= 0)
         {
             Vector2 dir = (GameObject.FindGameObjectWithTag("Player").transform.position - launcher.transform.position).normalized;
-            if(dir.x > 0)
-            {
-                Vector2 start = launcher.transform.position;
-                start.x = start.x + 1f;
-                GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
-                newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
-            }
-            else
-            {
-                Vector2 start = launcher.transform.position;
-                start.x = start.x - 1f;
-                GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
-                newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
-            }
-            
-            //Rigidbody projRB = newProj.GetComponent<Rigidbody>();
+
+            StartCoroutine(Launch(dir, launcher));
+
+            anim.SetTrigger("Attack");
 
             timer = tmax;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    IEnumerator Launch(Vector2 dir, GameObject launcher)
+    {
+        yield return new WaitForSeconds(0.9f);
+        if (dir.x > 0)
+        {
+            Vector2 start = launcher.transform.position;
+            start.x = start.x + 1f;
+            GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+            newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
+        }
+        else
+        {
+            Vector2 start = launcher.transform.position;
+            start.x = start.x - 1f;
+            GameObject newProj = Instantiate(projPref, start, Quaternion.identity);
+            newProj.GetComponent<fireGiantProjectile>().origin = gameObject.transform.position;
         }
     }
 }

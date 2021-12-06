@@ -174,6 +174,17 @@ public class EnemyNavigator : MonoBehaviour
         return reachedEOP;
     }
 
+    public void StartPath(Rigidbody2D rigid, Transform targ)
+    {
+        seeker.StartPath(rigid.position, targ.position, OnPathComplete);
+    }
+
+    public void FacePlayer()
+    {
+        float dist = player.transform.position.x - transform.position.x;
+        SwapGFX(new Vector2(dist, 0));
+    }
+
     #region A*_Storage
     void OnPathComplete(Path p)
     {/*
@@ -185,9 +196,5 @@ public class EnemyNavigator : MonoBehaviour
         }*/
     }
 
-    public void StartPath(Rigidbody2D rigid, Transform targ)
-    {
-        seeker.StartPath(rigid.position, targ.position, OnPathComplete);
-    }
     #endregion
 }

@@ -14,6 +14,7 @@ public class FirelingFlee : State
         if(Vector2.Distance(em.transform.position, em.player.transform.position) > 4f)
         {
             (em.hp as FirelingHealth).inv = false;
+            (em.hp as FirelingHealth).animator.SetTrigger("GasLeave");
             em.SetFleeGraphic(false);
             return firelingactive;
         }
@@ -24,6 +25,7 @@ public class FirelingFlee : State
     {
         //Gas mode activate
         (em.hp as FirelingHealth).inv = true;
+        (em.hp as FirelingHealth).animator.SetTrigger("GasEnter");
         em.SetFleeGraphic(true);
     }
 }

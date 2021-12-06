@@ -22,12 +22,12 @@ public class FirelingActive : State
         }
 
 
-        em.gameObject.GetComponent<projectileManager>()?.attemptProjectileLaunch(em.gameObject); //intensive line, ideally once EM is broken up I can store this as a reference 
+        em.gameObject.GetComponent<projectileManager>().attemptProjectileLaunch(em.gameObject); //intensive line, ideally once EM is broken up I can store this as a reference 
         return null;
     }
 
     public override void StartState(StateManager em)
     {
-        
+        em.nav.FacePlayer();
     }
 }

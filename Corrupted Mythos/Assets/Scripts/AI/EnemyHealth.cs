@@ -14,7 +14,7 @@ public abstract class EnemyHealth : MonoBehaviour
     
     [Space]
     [SerializeField]
-    Animator animator;
+    public Animator animator;
     public PlayerMovement script;
 
     //MinusHealth is now an abstract funtion implemented by individual enemy health scripts, this makes it easier for each enemy to do something different
