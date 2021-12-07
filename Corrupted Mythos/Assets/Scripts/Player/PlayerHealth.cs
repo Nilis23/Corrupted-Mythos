@@ -101,7 +101,10 @@ public class PlayerHealth : MonoBehaviour
             // respawn script
             if (health <= 0)
             {
-                RespawnPlayer();
+                //RespawnPlayer();
+
+                Time.timeScale = 0f;
+                death.SetActive(true);
             }
         }
         
@@ -122,8 +125,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        Fcamera.SetActive(false);
-        Pcamera.SetActive(true);
+        if (Fcamera != null)
+        {
+            Fcamera.SetActive(false);
+        }
+        if (Pcamera != null)
+        {
+            Pcamera.SetActive(true);
+        }
+
+        death.SetActive(false);
 
         player.position = spawn.position;
         health = 100;

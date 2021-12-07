@@ -19,7 +19,8 @@ public class MenuControl : MonoBehaviour
     {
         Time.timeScale = 1f;
         player.paused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameObject.FindObjectOfType<PlayerHealth>()?.RespawnPlayer();
     }
     public void Quit()
     {
