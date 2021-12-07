@@ -12,6 +12,7 @@ TagManager:
   - LevelEndHandler
   - Item
   - Dummy
+  - 'Projectile '
   layers:
   - Default
   - TransparentFX
