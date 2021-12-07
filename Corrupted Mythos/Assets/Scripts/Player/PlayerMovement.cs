@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer;
     public int killCount;
 
+    [SerializeField]
+    ImageController dash;
+
     private void OnEnable()
     {
         pcontroller = new Inputs();
@@ -79,11 +82,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 StartCoroutine(Dash(1f));
                 dashTimer = 1.25f;
+                dash.DeactivateImage();
             }
             else if (pcontroller.player.DashL.triggered && dashTimer < 0f)
             {
                 StartCoroutine(Dash(-1f));
                 dashTimer = 1.25f;
+                dash.DeactivateImage();
             }
         }
         else
@@ -147,6 +152,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         dashTimer -= Time.deltaTime;
+        if(dashTimer !< 0)
+        {
+            dashTimer -= Time.deltaTime;
+            if(dashTimer <= 0)
+            {
+                dash.ActivateImage();
+            }
+        }
     }
     private void FixedUpdate()
     {
