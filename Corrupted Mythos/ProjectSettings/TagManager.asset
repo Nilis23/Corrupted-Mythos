@@ -14,6 +14,7 @@ TagManager:
   - Dummy
   - 'Projectile '
   - Weapon
+  - FirelingSpawner
   layers:
   - Default
   - TransparentFX
