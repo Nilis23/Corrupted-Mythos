@@ -66,18 +66,14 @@ public class fireGiantProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !defl)
         {
             StartCoroutine(DoAttack(collision));
         }
         else if(collision.gameObject.tag == "enemy" && defl)
         {
             collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
-
-
-            Debug.Log(collision.gameObject.name);
             Destroy(gameObject);
-
         }
         else
         {

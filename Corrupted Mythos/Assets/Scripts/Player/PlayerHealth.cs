@@ -195,7 +195,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("checkpoint"))
         {
             spawn.position = new Vector3(other.transform.position.x, other.transform.position.y + 1, transform.position.z);
-            Debug.Log(other.transform.position);
+            //Debug.Log(other.transform.position);
             check += 1;
             //Destroy(other);
         }

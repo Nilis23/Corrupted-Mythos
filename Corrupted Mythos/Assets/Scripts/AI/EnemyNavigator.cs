@@ -95,13 +95,13 @@ public class EnemyNavigator : MonoBehaviour
         {
             transform.transform.localScale = new Vector2(1f /* transform.transform.localScale.x*/, 1f /* transform.transform.localScale.y*/);
             right = true;
-            Debug.Log("Flipping right in nav");
+            //Debug.Log("Flipping right in nav");
         }
         else if (force.x <= -0.01f)
         {
             transform.transform.localScale = new Vector2(-1f /* transform.transform.localScale.x*/, 1f /* transform.transform.localScale.y*/);
             right = false;
-            Debug.Log("Flipping left in nav");
+            //Debug.Log("Flipping left in nav");
         }
     }
 
@@ -164,7 +164,7 @@ public class EnemyNavigator : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Could not find suitble point in direction looked");
+        //Debug.Log("Could not find suitble point in direction looked");
         //bypass = true;
     }
 

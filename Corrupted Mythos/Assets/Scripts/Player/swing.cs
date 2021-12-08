@@ -32,7 +32,7 @@ public class swing : MonoBehaviour
     {
         manager = FindObjectOfType<AudioManager>();
             lifesteal = 10;
-        Debug.Log(manager.name);
+        //Debug.Log(manager.name);
     }
 
     private void FixedUpdate()
