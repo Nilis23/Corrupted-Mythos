@@ -514,6 +514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
+--- !u!1 &1508143804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1830983220906550978, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
+  m_PrefabInstance: {fileID: 1508143803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1605027824 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1319010287326455939, guid: 8235a5e865d0e064287581b03441275f, type: 3}
@@ -600,6 +605,10 @@ PrefabInstance:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 1953430483}
+    - target: {fileID: 8994769088578590087, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: Pcamera
+      value: 
+      objectReference: {fileID: 1508143804}
     - target: {fileID: 8994769088578590087, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: rageMeter
       value: 
