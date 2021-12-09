@@ -15,6 +15,7 @@ TagManager:
   - 'Projectile '
   - Weapon
   - FirelingSpawner
+  - NPC
   layers:
   - Default
   - TransparentFX
