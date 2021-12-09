@@ -23,20 +23,26 @@ public abstract class EnemyHealth : MonoBehaviour
     public void takeDamage(int damage, int knockback = 0)
     {
         health -= damage;
-        em.setStgr(stagTime, true);
         animator.SetTrigger("Hit");
         if (knockback == 1)
         {
-            em.knockback();
+            em.knockback(1f);
+            em.setStgr(stagTime, true);
         }
         else if (knockback == 2)
         {
             em.KnockUp();
+            em.setStgr(stagTime, true);
+        }
+        else if(knockback == 10)
+        {
+            em.knockback(4f);
+            em.setStgr(20, true);
+
         }
 
         if (health <= 0)
         {
-            
             Destroy(this.gameObject, 0.1f);
         }
     }

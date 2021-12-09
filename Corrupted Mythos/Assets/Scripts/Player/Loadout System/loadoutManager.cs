@@ -13,6 +13,8 @@ public class loadoutManager : MonoBehaviour
     [Space]
     [SerializeField]
     ImageController axe;
+    [SerializeField]
+    ImageController horn;
 
     private Inputs pcontroller;
     private float[] timers = new float[3];
@@ -43,12 +45,13 @@ public class loadoutManager : MonoBehaviour
         if(pcontroller.player.ArtifactTwo.triggered && two != null && timers[1] <= 0)
         {
             two.doAction(this.gameObject);
-            timers[1] = one.getTimer();
+            timers[1] = two.getTimer();
+            horn.DeactivateImage();
         }
         if (pcontroller.player.ArtifactThree.triggered && three != null && timers[2] <= 0)
         {
             three.doAction(this.gameObject);
-            timers[2] = one.getTimer();
+            timers[2] = three.getTimer();
         }
 
         for(int i = 0; i < timers.Length; i++)
@@ -57,6 +60,10 @@ public class loadoutManager : MonoBehaviour
             if(i == 0 && timers[i] <= 0)
             {
                 axe.ActivateImage();
+            }
+            if(i == 1 && timers[i] <= 0 && horn != null)
+            {
+                horn.ActivateImage();
             }
         }
     }

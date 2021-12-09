@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/levelNorse.unity
     guid: 5f4e411435fadef4c972f621a4502561
   - enabled: 1
+    path: Assets/Scenes/ArtifactGain.unity
+    guid: 25e02ad548935d5419f30d60b4b74e74
+  - enabled: 1
+    path: Assets/Scenes/levelNorse_2.unity
+    guid: 8293b5f3aa3f84344bf079a5503d5a37
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: dccc72572621bc34b8cbf8384856c2f4
   m_configObjects:

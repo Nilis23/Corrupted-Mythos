@@ -118,18 +118,18 @@ public class StateManager : MonoBehaviour
         return currentState;
     }
 
-    public void knockback()
+    public void knockback(float mod)
     {
         float dir = player.transform.position.x - transform.position.x;
         if(dir > 0)
         {
-            Vector2 newPos = new Vector2(this.transform.position.x - 0.75f, this.transform.position.y);
+            Vector2 newPos = new Vector2(this.transform.position.x - (0.75f * mod), this.transform.position.y);
             StartCoroutine(moveBack(newPos));
         }
         else if(dir < 0)
         {
             //Knockback to the left
-            Vector2 newPos = new Vector2(this.transform.position.x + 0.75f, this.transform.position.y);
+            Vector2 newPos = new Vector2(this.transform.position.x + (0.75f * mod), this.transform.position.y);
             StartCoroutine(moveBack(newPos));
         }
     }
