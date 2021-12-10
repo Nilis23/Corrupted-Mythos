@@ -11,6 +11,10 @@ public class CameraSwitch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            collision.GetComponent<PlayerHealth>().Pcamera = C_Player;
+            collision.GetComponent<PlayerHealth>().Fcamera = C_Fixed;
+
+
             C_Player.SetActive(false);
             C_Fixed.SetActive(true);
         }
