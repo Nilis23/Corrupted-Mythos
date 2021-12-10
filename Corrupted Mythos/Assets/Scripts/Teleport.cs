@@ -13,6 +13,7 @@ public class Teleport : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            //location.position.z = 0;
             movement = collision.GetComponent<PlayerMovement>();
             StartCoroutine(teleport(collision.gameObject));
         }
