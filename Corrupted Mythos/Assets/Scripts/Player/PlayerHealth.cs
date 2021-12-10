@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
             // respawn script
             if (health <= 0)
             {
-                //RespawnPlayer();
+                RespawnPlayer();
 
                 Time.timeScale = 0f;
                 death.SetActive(true);
@@ -125,13 +125,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        if (Fcamera != null)
-        {
-            Fcamera.SetActive(false);
-        }
-        if (Pcamera != null)
+        if (Fcamera.activeInHierarchy == true)
         {
             Pcamera.SetActive(true);
+            Fcamera.SetActive(false);
         }
 
         death.SetActive(false);
