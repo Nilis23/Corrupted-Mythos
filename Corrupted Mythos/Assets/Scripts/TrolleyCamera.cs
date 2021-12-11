@@ -10,10 +10,12 @@ public class TrolleyCamera : MonoBehaviour
     public GameObject Tcamera;
     public GameObject Fcamera;
     private PlayerMovement movement;
+    private Transform start;
     private bool go;
 
     private void Start()
     {
+        start.position = Tcamera.transform.position;
         Tcamera.SetActive(false);
         Fcamera.SetActive(true);
         endingLocation.transform.position = new Vector3(endingLocation.transform.position.x, endingLocation.transform.position.y, Tcamera.transform.position.z);
@@ -52,6 +54,7 @@ public class TrolleyCamera : MonoBehaviour
             {
                 Pcamera.SetActive(true);
                 Tcamera.SetActive(false);
+                Tcamera.transform.position = start.position;
                 go = false;
             }
         }
