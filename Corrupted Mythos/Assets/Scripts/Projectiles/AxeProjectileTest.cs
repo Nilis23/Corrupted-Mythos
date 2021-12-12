@@ -29,37 +29,6 @@ public class AxeProjectileTest : MonoBehaviour
     float xOriginal;
     float yOriginal;
 
-    /*
-    // Start is called before the first frame update
-    void Start()
-    {
-        a = (xSpeed * Mathf.Tan(angle) ) / timeToPeak;
-
-        if(this.transform.localScale.x > 0)
-        {
-            dir = 1;
-        }
-        else
-        {
-            dir = -1;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        lifetime -= Time.deltaTime;
-        if(lifetime <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-
-        t += Time.deltaTime;
-        float nY = (this.transform.position.y) + ((timeToPeak - t) * a);
-        transform.Translate(new Vector2(Time.deltaTime * xSpeed * dir, nY));
-    }
-    */
-
     void Start()
     {
         xOriginal = transform.position.x;

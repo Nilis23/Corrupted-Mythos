@@ -24,7 +24,11 @@ public abstract class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         animator.SetTrigger("Hit");
-        if (knockback == 1)
+        if(knockback == 0)
+        {
+            em.setStgr(stagTime, true);
+        }
+        else if (knockback == 1)
         {
             em.knockback(1f);
             em.setStgr(stagTime, true);

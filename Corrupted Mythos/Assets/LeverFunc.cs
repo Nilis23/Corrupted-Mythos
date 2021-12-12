@@ -10,6 +10,12 @@ public class LeverFunc : MonoBehaviour
     Animator anim;
 
     bool flipped = false;
+    AudioManager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<AudioManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +23,7 @@ public class LeverFunc : MonoBehaviour
         {
             doFunc();
             anim.SetTrigger("Lever");
+            manager.PlaySound("Lever");
             flipped = true;
         }
     }

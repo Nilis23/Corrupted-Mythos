@@ -105,7 +105,13 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: FirelingCast
-    clip: {fileID: 8300000, guid: fbbd5f00b0174c34cabf86585f9662a8, type: 3}
+    clip: {fileID: 8300000, guid: 0da086da4522c0641b4e3c652345d246, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lever
+    clip: {fileID: 8300000, guid: 9ebdc93e8fa474e4dbc011074958a96e, type: 3}
     volume: 1
     pitch: 1
     loop: 0
