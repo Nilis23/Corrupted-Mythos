@@ -10,12 +10,12 @@ public class TrolleyCamera : MonoBehaviour
     public GameObject Tcamera;
     public GameObject Fcamera;
     private PlayerMovement movement;
-    private Transform start;
+    private Vector3 start;
     private bool go;
 
     private void Start()
     {
-        start.position = Tcamera.transform.position;
+        start = Tcamera.transform.position;
         Tcamera.SetActive(false);
         Fcamera.SetActive(true);
         endingLocation.transform.position = new Vector3(endingLocation.transform.position.x, endingLocation.transform.position.y, Tcamera.transform.position.z);
@@ -28,10 +28,11 @@ public class TrolleyCamera : MonoBehaviour
             movement = collision.GetComponent<PlayerMovement>();
             Pcamera = collision.GetComponent<PlayerHealth>().Pcamera;
             collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            StartCoroutine(camera());
+            StartCoroutine(cameraSwapping());
+            Debug.Log("trolley running");
         }
     }
-    IEnumerator camera()
+    IEnumerator cameraSwapping()
     {
         movement.paused = true;
         Fcamera.SetActive(true);
@@ -50,9 +51,10 @@ public class TrolleyCamera : MonoBehaviour
         {
             Tcamera.transform.position = Vector3.MoveTowards(Tcamera.transform.position, endingLocation.transform.position, Time.deltaTime * speed);
 
-            if (Tcamera.activeInHierarchy == false)
+            if (Pcamera.activeInHierarchy == true)
             {
-                Tcamera.transform.position = start.position;
+                Tcamera.transform.position = start;
+                Tcamera.SetActive(false);
                 go = false;
             }
             if (endingLocation.transform.position == Tcamera.transform.position)
