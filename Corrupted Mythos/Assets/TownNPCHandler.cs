@@ -27,6 +27,7 @@ public class TownNPCHandler : MonoBehaviour
         if (dialouge != null && dialouge != "")
         {
             talk = true;
+            dialouge = dialouge.Replace("\\n", "\n");
             textholder = transform.GetChild(0).gameObject;
             textholder.transform.GetChild(0).GetComponent<TextMesh>().text = dialouge;
         }
