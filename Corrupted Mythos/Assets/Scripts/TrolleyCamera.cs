@@ -50,14 +50,17 @@ public class TrolleyCamera : MonoBehaviour
         {
             Tcamera.transform.position = Vector3.MoveTowards(Tcamera.transform.position, endingLocation.transform.position, Time.deltaTime * speed);
 
+            if (Tcamera.activeInHierarchy == false)
+            {
+                Tcamera.transform.position = start.position;
+                go = false;
+            }
             if (endingLocation.transform.position == Tcamera.transform.position)
             {
                 Pcamera.SetActive(true);
                 Tcamera.SetActive(false);
-                Tcamera.transform.position = start.position;
                 go = false;
             }
         }
     }
-
 }
