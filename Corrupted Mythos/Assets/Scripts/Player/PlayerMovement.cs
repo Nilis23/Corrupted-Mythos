@@ -75,7 +75,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (!weap.getStatus() && !paused && !playerHealth.block)
         {
-            dir = pcontroller.player.movement.ReadValue<Vector2>().x * speed;
+            dir = pcontroller.player.movement.ReadValue<Vector2>().x;
+            if(dir != 0)
+            {
+                if(dir < 0)
+                {
+                    dir = -1 * speed;
+                }
+                else
+                {
+                    dir = 1 * speed;
+                }
+            }
             animatior.SetFloat("Speed", Mathf.Abs(dir));
 
             if (pcontroller.player.DashR.triggered && dashTimer < 0f)

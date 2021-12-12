@@ -20,11 +20,13 @@ public class platform : MonoBehaviour
             //Debug.Log("up");
             fallThrough();
         }
-        else if (character.player.fall.triggered /*&& fall*/)
+        else if (character.player.fall.ReadValue<float>() > 0.9f)
         {
             //Debug.Log("down");
             flipUp();
         }
+
+        
     }
 
     private void fallThrough()// <--- falls through all one way platforms when called 
