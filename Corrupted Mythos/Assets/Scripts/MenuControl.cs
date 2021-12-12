@@ -21,6 +21,11 @@ public class MenuControl : MonoBehaviour
         player.paused = false;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameObject.FindObjectOfType<PlayerHealth>()?.RespawnPlayer();
+
+        if (pause.activeSelf)
+        {
+            pause.SetActive(false);
+        }
     }
     public void Quit()
     {
