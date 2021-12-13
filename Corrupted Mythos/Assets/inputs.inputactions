@@ -306,7 +306,7 @@
                 {
                     "name": "",
                     "id": "9ec4667f-0c26-48a5-b249-ec657993aef1",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -665,6 +665,17 @@
                     "action": "block",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "db1aa1a0-b760-42ec-9a89-ee2242df1822",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
