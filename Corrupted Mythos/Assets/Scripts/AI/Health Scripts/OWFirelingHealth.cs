@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirelingHealth : EnemyHealth
+public class OWFirelingHealth : EnemyHealth
 {
     public bool inv = false;
 
@@ -15,7 +15,7 @@ public class FirelingHealth : EnemyHealth
     {
         if (!inv)
         {
-            takeDamage(damage, knockback);
+            takeDamage(damage, knockback, 30);
         }
 
         if (script != null)

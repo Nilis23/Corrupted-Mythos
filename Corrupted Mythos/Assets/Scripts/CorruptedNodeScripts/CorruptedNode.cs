@@ -52,6 +52,7 @@ public class CorruptedNode : MonoBehaviour
     float t = 0;
     bool end = false;
     AudioManager manager;
+    private PlayerHealth playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -182,6 +183,7 @@ public class CorruptedNode : MonoBehaviour
             Invoke("DestroyObjs", 3);
             Destroy(this.gameObject, 3f);
             end = true;
+            playerHealth.points += 200;
             myCrystal.ChangeSprite();
         }
     }
@@ -226,6 +228,7 @@ public class CorruptedNode : MonoBehaviour
             //pcontroller.player.NodeInteract.started += StartNode;
             //E.SetActive(true);
             StartNodeActivity();
+            playerHealth = collision.GetComponent<PlayerHealth>();
             target.GetComponent<PlayerHealth>().node = this;
         }
     }

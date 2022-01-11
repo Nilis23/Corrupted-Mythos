@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
   - component: {fileID: 5347756656958841250}
+  - component: {fileID: -5919473169882004584}
   m_Layer: 8
   m_Name: Abomonation
   m_TagString: enemy
@@ -504,9 +505,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2882597727957746579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac849638fbe15d44797a6d3dd3138eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  em: {fileID: 2882597727957746669}
+  stagTime: 0.5
+  animator: {fileID: 902374003258058748}
+  script: {fileID: 0}
+  foodChance: 0.1
+  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
+--- !u!114 &-5919473169882004584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882597727957746579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1ba32c2bdc6254a8ed88da02d511dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100

@@ -20,7 +20,7 @@ public abstract class EnemyHealth : MonoBehaviour
     //MinusHealth is now an abstract funtion implemented by individual enemy health scripts, this makes it easier for each enemy to do something different
     public abstract void minusHealth(int damage, int knockback = 0);
 
-    public void takeDamage(int damage, int knockback = 0)
+    public void takeDamage(int damage, int knockback = 0, int points =0)
     {
         health -= damage;
         animator.SetTrigger("Hit");
@@ -47,7 +47,11 @@ public abstract class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(this.gameObject, 0.1f);
+            if (points != 0)
+            {
+                script.playerHealth.points += points;
+            }
+            Destroy(this.gameObject, 0.1f);            
         }
     }
 

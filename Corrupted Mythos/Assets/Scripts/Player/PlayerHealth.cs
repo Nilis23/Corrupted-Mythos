@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
     public bool block;
     public bool perfectBlock;
 
+    public int points;
+    public int deathCount;
+
     public GameObject Pcamera;
     public GameObject Fcamera;
 
@@ -158,6 +161,8 @@ public class PlayerHealth : MonoBehaviour
 
         GetComponent<Animator>()?.SetFloat("Speed", 0f);
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        deathCount += 1;
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {
@@ -197,6 +202,21 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log(other.transform.position);
             check += 1;
             //Destroy(other);
+
+            points += 100;
+            if (deathCount<=5)
+            {
+                if (deathCount<=3)
+                {
+                    if (deathCount<=0)
+                    {
+                        points += 200;
+                    }
+                    points += 100;
+                }
+                points += 100;
+            }
+            deathCount = 0;
         }
     }
 

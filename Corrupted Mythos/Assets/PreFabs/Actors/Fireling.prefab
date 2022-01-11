@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3743684799867251214}
   - component: {fileID: 3743684799867251314}
   - component: {fileID: 3743684799867251313}
+  - component: {fileID: 3444722036047962627}
   m_Layer: 8
   m_Name: Fireling
   m_TagString: enemy
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3743684799867251208}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c318c2f369c0bc4bbe9e8a818ff0e41, type: 3}
   m_Name: 
@@ -165,6 +166,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projPref: {fileID: 2570958598915870579, guid: c8bd3382c78a127409111ec8231c268c, type: 3}
   tmax: 2
+--- !u!114 &3444722036047962627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743684799867251208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6952083d75848ed478dcc1fa4b0367b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  em: {fileID: 3743684799867251213}
+  stagTime: 0.5
+  animator: {fileID: 3743684800424924702}
+  script: {fileID: 0}
+  inv: 0
 --- !u!1 &3743684800424924697
 GameObject:
   m_ObjectHideFlags: 0

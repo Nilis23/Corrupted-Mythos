@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrostGiantHealth : EnemyHealth
+public class OWFrostGiantHealth : EnemyHealth
 {
     bool inv = true;
     [Space]
@@ -18,7 +18,7 @@ public class FrostGiantHealth : EnemyHealth
     {
         if (!inv)
         {
-            takeDamage(damage, knockback); //Find a way to make frost giant take less knockback (this will probably be larger overhaul)
+            takeDamage(damage, knockback, 100); //Find a way to make frost giant take less knockback (this will probably be larger overhaul)
             //inv = true;
         }
         else
