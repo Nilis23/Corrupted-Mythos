@@ -50,6 +50,9 @@ public abstract class EnemyHealth : MonoBehaviour
             if (points != 0)
             {
                 script.playerHealth.points += points;
+                Debug.Log("adding points: enemy");
+                Debug.Log(points);
+                script.playerHealth.pointScore.text = script.playerHealth.points.ToString();
             }
             Destroy(this.gameObject, 0.1f);            
         }

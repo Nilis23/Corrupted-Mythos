@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public bool perfectBlock;
 
     public int points;
+    public Text pointScore;
     public int deathCount;
 
     public GameObject Pcamera;
@@ -217,6 +218,9 @@ public class PlayerHealth : MonoBehaviour
                 points += 100;
             }
             deathCount = 0;
+            pointScore.text = points.ToString();
+            Debug.Log("adding points: check");
+            Debug.Log(points);
         }
     }
 
