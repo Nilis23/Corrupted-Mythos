@@ -202,25 +202,8 @@ public class PlayerHealth : MonoBehaviour
             spawn.position = new Vector3(other.transform.position.x, other.transform.position.y + 1, transform.position.z);
             //Debug.Log(other.transform.position);
             check += 1;
-            //Destroy(other);
+            //Destroy(other);;
 
-            points += 100;
-            if (deathCount<=5)
-            {
-                if (deathCount<=3)
-                {
-                    if (deathCount<=0)
-                    {
-                        points += 200;
-                    }
-                    points += 100;
-                }
-                points += 100;
-            }
-            deathCount = 0;
-            pointScore.text = points.ToString();
-            Debug.Log("adding points: check");
-            Debug.Log(points);
         }
     }
 

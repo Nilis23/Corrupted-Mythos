@@ -5,6 +5,7 @@ using UnityEngine;
 public class OWFirelingHealth : EnemyHealth
 {
     public bool inv = false;
+    private int points = 30;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class OWFirelingHealth : EnemyHealth
     {
         if (!inv)
         {
-            takeDamage(damage, knockback, 30);
+            takeDamage(damage, knockback, points);
         }
 
         if (script != null)

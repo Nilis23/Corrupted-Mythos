@@ -8,6 +8,7 @@ public class OWAbomHealth : EnemyHealth
     float foodChance = 0.1f;
     static float chanceMod = 0;
     public GameObject foodPref;
+    public int AbomPoints = 50;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class OWAbomHealth : EnemyHealth
 
     public override void minusHealth(int damage, int knockback = 0)
     {
-        takeDamage(damage, knockback, 50);
+        takeDamage(damage, knockback, AbomPoints);
 
         if (health <= 0)
         {

@@ -16,6 +16,7 @@ public abstract class EnemyHealth : MonoBehaviour
     [SerializeField]
     public Animator animator;
     public PlayerMovement script;
+    public GameObject player;
 
     //MinusHealth is now an abstract funtion implemented by individual enemy health scripts, this makes it easier for each enemy to do something different
     public abstract void minusHealth(int damage, int knockback = 0);
@@ -47,12 +48,14 @@ public abstract class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            Debug.Log(points);
             if (points != 0)
             {
-                script.playerHealth.points += points;
+                player.GetComponent<PlayerHealth>().points += points;
                 Debug.Log("adding points: enemy");
                 Debug.Log(points);
-                script.playerHealth.pointScore.text = script.playerHealth.points.ToString();
+                player.GetComponent<PlayerHealth>().pointScore.text = player.GetComponent<PlayerHealth>().points.ToString();
+
             }
             Destroy(this.gameObject, 0.1f);            
         }

@@ -53,6 +53,7 @@ public class CorruptedNode : MonoBehaviour
     bool end = false;
     AudioManager manager;
     private PlayerHealth playerHealth;
+    private int points = 200;
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +87,9 @@ public class CorruptedNode : MonoBehaviour
             if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
                 EndNodeActivity();
-                playerHealth.points += 400;
+                playerHealth.points += points;
+                Debug.Log("adding points: node");
+                Debug.Log(points);
                 playerHealth.pointScore.text = playerHealth.points.ToString();
             }
             else if(Enemies.Count == 0)

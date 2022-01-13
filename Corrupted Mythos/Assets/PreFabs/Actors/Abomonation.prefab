@@ -515,6 +515,7 @@ MonoBehaviour:
   stagTime: 0.5
   animator: {fileID: 902374003258058748}
   script: {fileID: 0}
+  player: {fileID: 0}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
 --- !u!114 &-5919473169882004584
@@ -534,5 +535,6 @@ MonoBehaviour:
   stagTime: 0.5
   animator: {fileID: 902374003258058748}
   script: {fileID: 0}
+  player: {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}

@@ -8,6 +8,7 @@ public class OWFrostGiantHealth : EnemyHealth
     [Space]
     [SerializeField]
     float stagertime;
+    private int points = 100;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class OWFrostGiantHealth : EnemyHealth
     {
         if (!inv)
         {
-            takeDamage(damage, knockback, 100); //Find a way to make frost giant take less knockback (this will probably be larger overhaul)
+            takeDamage(damage, knockback, points); //Find a way to make frost giant take less knockback (this will probably be larger overhaul)
             //inv = true;
         }
         else
