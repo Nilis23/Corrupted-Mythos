@@ -23,8 +23,8 @@ public class PlayerHealth : MonoBehaviour
     public Transform player;
     public Transform spawn;
     public GameObject death;
-    public Slider hpBar;
-    public Slider rageMeter;
+    public LazyUIBar hpBar;
+    public LazyUIBar rageMeter;
     public PlayerMovement script;
 
     [HideInInspector]
@@ -37,18 +37,20 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        hpBar = GameObject.Find("HPBar")?.GetComponent<LazyUIBar>();
+        rageMeter = GameObject.Find("Berserk")?.GetComponent<LazyUIBar>();
         hurtFlash = Color.red;
         health = 100;
         rageCounter = 0;
 
         if (rageMeter != null)
         {
-            rageMeter.maxValue = 100;
-            rageMeter.value = rageCounter;
+            rageMeter.maxHP = 100;
+            rageMeter.setCurHP(rageCounter);
         }
 
-        hpBar.maxValue = health;
-        hpBar.value = health;
+        hpBar.maxHP = health;
+        hpBar.setCurHP(health);
 
         maxHealth = health;
 
@@ -90,10 +92,11 @@ public class PlayerHealth : MonoBehaviour
             {
                 health -= damage;
                 //update UI
-                hpBar.value = health;
+                hpBar.loseHP(damage);
                 timer = 0.25f;
 
                 rageCounter += 5;
+                rageMeter.gainHP(5);
                 enrage();
 
                 StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
@@ -124,7 +127,7 @@ public class PlayerHealth : MonoBehaviour
             health = maxHealth;
         }
 
-        hpBar.value = health;
+        hpBar.gainHP(gain);
     }
 
     public void RespawnPlayer()
@@ -144,9 +147,9 @@ public class PlayerHealth : MonoBehaviour
         rageCounter = 0;
         if (rageMeter != null)
         {
-            rageMeter.value = rageCounter;
+            rageMeter.setCurHP(rageCounter);
         }
-        hpBar.value = health;
+        hpBar.setCurHP(health);
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
         this.GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
@@ -212,7 +215,7 @@ public class PlayerHealth : MonoBehaviour
         if (rageMeter != null)
         {
             //fill rage meter
-            rageMeter.value = rageCounter;
+            rageMeter.setCurHP(rageCounter);
             if (rageCounter >= 100)
             {
                 berserk = true;

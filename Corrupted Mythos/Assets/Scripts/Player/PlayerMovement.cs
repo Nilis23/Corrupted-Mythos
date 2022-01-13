@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
                     Bactive = false;
                     playerHealth.rageCounter = 0; 
                 }
-            playerHealth.rageMeter.value = playerHealth.rageCounter;
+            playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
         }
         //*/
         if (pcontroller.player.GodWipe.triggered && killCount >=15)
@@ -243,13 +243,13 @@ public class PlayerMovement : MonoBehaviour
         for (i=0;i<5;i++) {
             yield return new WaitForSeconds(2);
             playerHealth.rageCounter -= 20;
-            playerHealth.rageMeter.value = playerHealth.rageCounter;
+            playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
         }
 
         //yield return new WaitForSeconds(10);
 
         playerHealth.rageCounter = 0;
-        playerHealth.rageMeter.value = playerHealth.rageCounter;
+        playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
 
         speed -= 20;
         playerHealth.berserk = false;
