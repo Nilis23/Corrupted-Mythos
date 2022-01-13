@@ -24,9 +24,9 @@ public class loadoutManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        art1 = GameObject.Find("Artifact1Ico").GetComponent<ImageController>();
-        art2 = GameObject.Find("Artifact2Ico").GetComponent<ImageController>();
-        art3 = GameObject.Find("Artifact3Ico").GetComponent<ImageController>();
+        art1 = GameObject.Find("Artifact1Ico")?.GetComponent<ImageController>();
+        art2 = GameObject.Find("Artifact2Ico")?.GetComponent<ImageController>();
+        art3 = GameObject.Find("Artifact3Ico")?.GetComponent<ImageController>();
 
         pcontroller = new Inputs();
         pcontroller.Enable();
@@ -62,7 +62,7 @@ public class loadoutManager : MonoBehaviour
         }
 
         for(int i = 0; i < timers.Length; i++)
-        {
+        { 
             timers[i] -= Time.deltaTime;
             if(i == 0 && timers[i] <= 0)
             {
