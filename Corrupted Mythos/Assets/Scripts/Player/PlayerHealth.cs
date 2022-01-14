@@ -96,8 +96,8 @@ public class PlayerHealth : MonoBehaviour
                 timer = 0.25f;
 
                 rageCounter += 5;
-                rageMeter.gainHP(5);
-                enrage();
+                //rageMeter.gainHP(5);
+                enrage(5);
 
                 StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
             }
@@ -210,12 +210,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void enrage()
+    public void enrage(float val)
     {
         if (rageMeter != null)
         {
             //fill rage meter
-            rageMeter.setCurHP(rageCounter);
+            rageMeter.gainHP(val);
             if (rageCounter >= 100)
             {
                 berserk = true;

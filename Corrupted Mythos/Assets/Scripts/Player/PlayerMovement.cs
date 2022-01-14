@@ -130,32 +130,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         /*
-        if (pcontroller.player.block.triggered)
-        {
-            if (playerHealth.block)
-            {
-                playerHealth.block = false;
-                speed += 40;
-            }
-            else if(playerHealth.block == false)
-            {
-                StartCoroutine(PerfectBlock());
-                playerHealth.block = true;
-                speed -= 40;
-            }
-        }
-        *////*
         if (Bactive)
         {
             playerHealth.rageCounter -= Time.deltaTime;
-                if(playerHealth.rageCounter <= 0)
-                {
-                    Bactive = false;
-                    playerHealth.rageCounter = 0; 
-                }
-            playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
+            playerHealth.rageMeter.loseHP(Time.deltaTime);
+            if (playerHealth.rageCounter <= 0)
+            {
+                Bactive = false;
+                playerHealth.rageCounter = 0;
+                playerHealth.rageMeter.setCurHP(0);
+            }
         }
-        //*/
+        */
         if (pcontroller.player.GodWipe.triggered && killCount >=15)
         {
             //kill enemies on screen 
@@ -235,25 +221,28 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator rageMode()
     {
-        int i;
+        float i;
         //deplete the berserk mode bar
         Bactive = true;
         playerHealth.berserking = true;
 
-        for (i=0;i<5;i++) {
-            yield return new WaitForSeconds(2);
+        for (i=0; i<5; i ++) 
+        {
             playerHealth.rageCounter -= 20;
-            playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
+            playerHealth.rageMeter.loseHP(20);
+            yield return new WaitForSeconds(2);
         }
 
         //yield return new WaitForSeconds(10);
 
         playerHealth.rageCounter = 0;
-        playerHealth.rageMeter.setCurHP(playerHealth.rageCounter);
+        playerHealth.rageMeter.setCurHP(0);
 
         speed -= 20;
         playerHealth.berserk = false;
         playerHealth.berserking = false;
+
+        Bactive = false;
         Debug.Log("unberserking");
         this.GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;

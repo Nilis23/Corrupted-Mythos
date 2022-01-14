@@ -5734,7 +5734,7 @@ GameObject:
   - component: {fileID: 5888642910144731408}
   - component: {fileID: 7025131855674806179}
   - component: {fileID: 2389014525870601504}
-  - component: {fileID: 5975998509212022034}
+  - component: {fileID: 253945888617445694}
   m_Layer: 5
   m_Name: Berserk
   m_TagString: Untagged
@@ -5801,7 +5801,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5975998509212022034
+--- !u!114 &253945888617445694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5813,7 +5813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031521dda1988904d81bebaa62f35d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 100
   damage: 100
   barFast: {fileID: 1194879198628412640}
   barSlow: {fileID: 5940067960319354610}

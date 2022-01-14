@@ -9,6 +9,7 @@ public class LazyUIBar : MonoBehaviour
     private float currHP, currHPSlow;
     public float damage = 100;
     public Image barFast, barSlow;
+    bool reversed;
 
     // Update is called once per frame
     float t = 0;
@@ -17,8 +18,16 @@ public class LazyUIBar : MonoBehaviour
         //interpolating slowHP and currentHP inf unequal
         if (currHPSlow != currHP)
         {
-            currHPSlow = Mathf.Lerp(currHPSlow, currHP, t);
-            t += 0.5f * Time.deltaTime;
+            if (!reversed)
+            {
+                currHPSlow = Mathf.Lerp(currHPSlow, currHP, t);
+                t += 0.5f * Time.deltaTime;
+            }
+            else
+            {
+                currHP = Mathf.Lerp(currHP, currHPSlow, t);
+                t += 0.5f * Time.deltaTime;
+            }
         }
         else
         {
@@ -35,14 +44,17 @@ public class LazyUIBar : MonoBehaviour
     {
         currHP = hp;
         currHPSlow = hp;
+        reversed = false;
     }
     public void loseHP(float num)
     {
         currHP -= num;
+        reversed = false;
     }
     public void gainHP(float num)
     {
-        currHP += num;
+        //currHP += num;
         currHPSlow += num;
+        reversed = true;
     }
 }

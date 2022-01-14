@@ -94,7 +94,8 @@ public class swing : MonoBehaviour
             script.minusHealth(damage, 1);
             dt = 0.56f;
             PlayerHealth.rageCounter += 10;
-            PlayerHealth.enrage();
+            //PlayerHealth.rageMeter.gainHP(10);
+            PlayerHealth.enrage(10);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;
