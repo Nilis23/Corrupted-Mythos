@@ -116,6 +116,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (pcontroller.player.attack.triggered && !paused && !playerHealth.block)
         {
+            if(cntrler.m_Grounded == true)
+            {
+                //weap.attack2();
+            }
             weap.attack();
         }
         if (pcontroller.player.Heal.triggered)
