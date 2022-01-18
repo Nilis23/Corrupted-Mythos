@@ -24,7 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private bool Bactive;
     private bool jump = false;
     private float dashTimer;
+
     public int killCount;
+    public ParticleSystem wipe;
+    public CameraShake shaker;
 
     [SerializeField]
     ImageController dash;
@@ -146,6 +149,10 @@ public class PlayerMovement : MonoBehaviour
         {
             //kill enemies on screen 
             killCount = 0;
+            //visual bloom
+            wipe.Play();
+            //screen shake
+            shaker.shakeCam(1,1);
         }
 
         dashTimer -= Time.deltaTime;
