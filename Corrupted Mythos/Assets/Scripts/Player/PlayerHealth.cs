@@ -167,6 +167,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         deathCount += 1;
+        points = points - (points / 10 / 2);
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {

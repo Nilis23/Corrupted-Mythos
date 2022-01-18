@@ -6,6 +6,7 @@ public class CameraSwitch : MonoBehaviour
 {
     public GameObject C_Player;
     public GameObject C_Fixed;
+    private bool switched;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +18,17 @@ public class CameraSwitch : MonoBehaviour
 
             C_Player.SetActive(false);
             C_Fixed.SetActive(true);
+            switched = true;
+        }
+    }
+
+    public void CameraSwap()
+    {
+        if (switched)
+        {
+            C_Fixed.SetActive(false);
+            C_Player.SetActive(true);
+            switched = false;
         }
     }
 }
