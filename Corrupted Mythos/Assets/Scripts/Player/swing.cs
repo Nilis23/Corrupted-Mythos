@@ -14,6 +14,7 @@ public class swing : MonoBehaviour
     AudioManager manager;
     EnemyHealth script;
     bool isAnim = false;
+    bool isatk = false;
     //float t = 0;
     float dt = 0;
     //float step = 90f / 5;
@@ -43,9 +44,18 @@ public class swing : MonoBehaviour
         }
     }
 
-    public void attack()
+    public void attack(bool atk = true)
     {
-        if (!isAnim)
+        if (!isAnim && atk)
+        {
+            isatk = true;
+            isAnim = true;
+            //t = 0;
+            manager.PlaySound("swing");
+            animator.SetTrigger("S2");
+            Invoke("UnAttack", 0.55f);
+        }
+        else
         {
             isAnim = true;
             //t = 0;
@@ -58,6 +68,7 @@ public class swing : MonoBehaviour
     public void UnAttack()
     {
         isAnim = false;
+        isatk = false;
     }
 
     public bool getStatus()
@@ -71,8 +82,7 @@ public class swing : MonoBehaviour
         {
             //do nothing
         }
-
-        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit && PlayerHealth.berserking)
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit && PlayerHealth.berserking)
         {
             impact.SetActive(false);
 
@@ -80,13 +90,14 @@ public class swing : MonoBehaviour
             script.minusHealth(berserkDamage, 1);
             dt = 0.56f;
 
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+
             PlayerHealth.addHealth(lifesteal);
             impact.SetActive(true);
             impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
-
-        else if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit)
         {
             impact.SetActive(false);
 
@@ -97,17 +108,20 @@ public class swing : MonoBehaviour
             //PlayerHealth.rageMeter.gainHP(10);
             PlayerHealth.enrage(10);
 
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+
             impact.SetActive(true);
             impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
-
-        else if(!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
+        else if(!collision.isTrigger && collision.CompareTag("Dummy") && isatk && dt <= 0 && hit)
         {
             impact.SetActive(false);
 
             collision.GetComponent<DummyHealth>()?.doDamage(damage);
             dt = 0.56f;
+
+            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;
@@ -116,7 +130,7 @@ public class swing : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isAnim && dt <= 0 && hit)
+        if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit)
         {
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
@@ -127,7 +141,7 @@ public class swing : MonoBehaviour
             impact.transform.position = transform.position;
             StartCoroutine(Wait());
         }
-        else if (!collision.isTrigger && collision.CompareTag("Dummy") && isAnim && dt <= 0 && hit)
+        else if (!collision.isTrigger && collision.CompareTag("Dummy") && isatk && dt <= 0 && hit)
         {
             impact.SetActive(false);
 

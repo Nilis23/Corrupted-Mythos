@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private bool Bactive;
     private bool jump = false;
     private float dashTimer;
+    private bool slam = false;
 
     public int killCount;
     public ParticleSystem wipe;
@@ -76,12 +77,12 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (!weap.getStatus() && !paused && !playerHealth.block)
+        if (!weap.getStatus() && !paused && !playerHealth.block && slam != true)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x;
-            if(dir != 0)
+            if (dir != 0)
             {
-                if(dir < 0)
+                if (dir < 0)
                 {
                     dir = -1 * speed;
                 }
@@ -110,17 +111,25 @@ public class PlayerMovement : MonoBehaviour
             animatior.SetFloat("Speed", 0);
         }
 
-        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block)
+        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block && slam != true)
         {
             jump = true;
         }
         if (pcontroller.player.attack.triggered && !paused && !playerHealth.block)
         {
-            if(cntrler.m_Grounded == true)
+            if (cntrler.m_Grounded == false && !slam)
             {
                 //weap.attack2();
+                //Freeze the movement
+                //Drop down, do special slam rather than normal 
+                slam = true;
+                StartCoroutine(SlamAttack());
+                weap.attack(false);
             }
-            weap.attack();
+            else
+            {
+                weap.attack();
+            }
         }
         if (pcontroller.player.Heal.triggered)
         {
@@ -149,21 +158,21 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         */
-        if (pcontroller.player.GodWipe.triggered && killCount >=15)
+        if (pcontroller.player.GodWipe.triggered && killCount >= 15)
         {
             //kill enemies on screen 
             killCount = 0;
             //visual bloom
             wipe.Play();
             //screen shake
-            shaker.shakeCam(1,1);
+            shaker.shakeCam(1, 1);
         }
 
         dashTimer -= Time.deltaTime;
-        if(dashTimer !< 0)
+        if (dashTimer! < 0)
         {
             dashTimer -= Time.deltaTime;
-            if(dashTimer <= 0)
+            if (dashTimer <= 0)
             {
                 dash.ActivateImage();
             }
@@ -237,7 +246,7 @@ public class PlayerMovement : MonoBehaviour
         Bactive = true;
         playerHealth.berserking = true;
 
-        for (i=0; i<5; i ++) 
+        for (i = 0; i < 5; i++)
         {
             playerHealth.rageCounter -= 20;
             playerHealth.rageMeter.loseHP(20);
@@ -266,5 +275,31 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         playerHealth.perfectBlock = false;
         this.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    IEnumerator SlamAttack()
+    {
+        //Fall speed up and then wait until groudned
+        cntrler.m_Rigidbody2D.gravityScale = 8;
+        playerHealth.inv = true;
+        yield return new WaitWhile(() => cntrler.m_Grounded == false);
+
+       //do the actual slam things
+        cntrler.m_Rigidbody2D.gravityScale = 3;
+        GameObject.FindObjectOfType<CameraShake>().shakeCam(7, 0.2f, true);
+        //Find and damage enemeies
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(6, 12), 0f);
+        foreach(Collider2D col in hitColliders)
+        {
+            if(col.tag == "enemy")
+            {
+                col.gameObject.GetComponent<EnemyHealth>()?.minusHealth(50, 10);
+            }
+        }
+
+        //Wait for end of frame and wrap up
+        yield return new WaitForSeconds(0.2f);
+        playerHealth.inv = false;
+        slam = false;
     }
 }
