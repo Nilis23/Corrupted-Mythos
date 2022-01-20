@@ -10,9 +10,12 @@ public class OWAbomHealth : EnemyHealth
     public GameObject foodPref;
     public int AbomPoints = 50;
 
+    private IoDAbomHealth icon;
+
     private void Start()
     {
         script = gameObject.GetComponent<PlayerMovement>();
+        icon = this.GetComponent<IoDAbomHealth>();
     }
 
     public override void minusHealth(int damage, int knockback = 0)
@@ -22,6 +25,7 @@ public class OWAbomHealth : EnemyHealth
         if (health <= 0)
         {
             float drop = Random.value;
+            icon.dead();
             if (drop <= (foodChance + chanceMod))
             {
                 GameObject food = Instantiate(foodPref);

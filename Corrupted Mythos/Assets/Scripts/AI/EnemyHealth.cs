@@ -18,6 +18,8 @@ public abstract class EnemyHealth : MonoBehaviour
     public PlayerMovement script;
     public GameObject player;
 
+    //private IoDAbomHealth icon;
+
     //MinusHealth is now an abstract funtion implemented by individual enemy health scripts, this makes it easier for each enemy to do something different
     public abstract void minusHealth(int damage, int knockback = 0);
 
@@ -48,7 +50,6 @@ public abstract class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log(points);
             if (points != 0)
             {
                 player.GetComponent<PlayerHealth>().points += points;
@@ -57,6 +58,8 @@ public abstract class EnemyHealth : MonoBehaviour
                 player.GetComponent<PlayerHealth>().pointScore.text = player.GetComponent<PlayerHealth>().points.ToString();
 
             }
+
+            //icon.dead();
             Destroy(this.gameObject, 0.1f);            
         }
     }

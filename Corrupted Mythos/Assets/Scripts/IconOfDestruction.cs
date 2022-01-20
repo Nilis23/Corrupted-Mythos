@@ -7,6 +7,7 @@ public class IconOfDestruction : MonoBehaviour
     public PlayerMovement movement;
     public ParticleSystem effect;
     public List<GameObject> enemies = new List<GameObject>();
+    public int count;
 
     private void Start()
     {
@@ -14,14 +15,21 @@ public class IconOfDestruction : MonoBehaviour
         {
             Debug.Log("assign enemies to list");
         }
+
+        for (count=0;count<enemies.Count;count++)
+        {
+            Debug.Log(count);
+        }
+        count++;
     }
 
     private void Update()
     {
-        if (enemies.Count==0)
+
+        if (count == 0)
         {
-            movement.killCount += 15;
             effect.Play();
+            movement.killCount += 15;
         }
     }
 }
