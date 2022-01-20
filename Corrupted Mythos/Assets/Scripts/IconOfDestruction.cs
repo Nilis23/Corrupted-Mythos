@@ -16,7 +16,7 @@ public class IconOfDestruction : MonoBehaviour
             Debug.Log("assign enemies to list");
         }
 
-        for (count=0;count<enemies.Count;count++)
+        for (count=0; count < enemies.Count; count++)
         {
             Debug.Log(count);
         }

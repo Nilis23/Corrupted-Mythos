@@ -55,7 +55,7 @@ public abstract class EnemyHealth : MonoBehaviour
                 player.GetComponent<PlayerHealth>().points += points;
                 Debug.Log("adding points: enemy");
                 Debug.Log(points);
-                player.GetComponent<PlayerHealth>().pointScore.text = player.GetComponent<PlayerHealth>().points.ToString();
+                //player.GetComponent<PlayerHealth>().pointScore.text = player.GetComponent<PlayerHealth>().points.ToString();
 
             }
 
