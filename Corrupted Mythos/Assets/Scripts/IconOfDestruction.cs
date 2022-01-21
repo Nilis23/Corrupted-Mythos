@@ -20,7 +20,7 @@ public class IconOfDestruction : MonoBehaviour
         {
             Debug.Log(count);
         }
-        count++;
+        //count++;
     }
 
     private void Update()
@@ -30,6 +30,7 @@ public class IconOfDestruction : MonoBehaviour
         {
             effect.Play();
             movement.killCount += 15;
+            count -= 1;
         }
     }
 }
