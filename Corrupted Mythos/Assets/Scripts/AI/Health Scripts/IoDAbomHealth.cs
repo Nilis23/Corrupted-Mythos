@@ -6,10 +6,12 @@ public class IoDAbomHealth : MonoBehaviour
 {
     public OWAbomHealth health;
     public IconOfDestruction icon;
+    public ParticleSystem death;
 
     private void Start()
     {
-        health = this.GetComponent<OWAbomHealth>();    
+        health = this.GetComponent<OWAbomHealth>();
+        death = this.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
     }
 
     public void dead()
@@ -18,6 +20,7 @@ public class IoDAbomHealth : MonoBehaviour
         if (icon != null)
         {
             icon.count -= 1;
+            death.Play();
         }
     }
 }

@@ -7,6 +7,7 @@ public class IconOfDestruction : MonoBehaviour
     public PlayerMovement movement;
     public ParticleSystem effect;
     public List<GameObject> enemies = new List<GameObject>();
+    public GameObject lit;
     public int count;
 
     private void Start()
@@ -20,7 +21,9 @@ public class IconOfDestruction : MonoBehaviour
         {
             Debug.Log(count);
         }
-        //count++;
+
+        lit.transform.position = this.transform.position;
+        lit.SetActive(false);
     }
 
     private void Update()
@@ -30,7 +33,15 @@ public class IconOfDestruction : MonoBehaviour
         {
             effect.Play();
             movement.killCount += 15;
+            StartCoroutine(destroyThis());
             count -= 1;
         }
+    }
+
+    IEnumerator destroyThis()
+    {
+        yield return new WaitForSeconds(1);
+        lit.SetActive(true);
+        Destroy(this);
     }
 }
