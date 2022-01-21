@@ -22,7 +22,6 @@ public class IconOfDestruction : MonoBehaviour
             Debug.Log(count);
         }
 
-        lit.transform.position = this.transform.position;
         lit.SetActive(false);
     }
 
@@ -42,6 +41,6 @@ public class IconOfDestruction : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         lit.SetActive(true);
-        Destroy(this);
+        this.gameObject.SetActive(false);
     }
 }
