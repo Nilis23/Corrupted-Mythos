@@ -44,7 +44,7 @@ public class swing : MonoBehaviour
         }
     }
 
-    public void attack(bool atk = true)
+    public void attack(bool atk = true, bool held = false)
     {
         if (!isAnim && atk)
         {
@@ -54,6 +54,12 @@ public class swing : MonoBehaviour
             manager.PlaySound("swing");
             animator.SetTrigger("S2");
             Invoke("UnAttack", 0.55f);
+
+            //For special held action
+            if (held)
+            {
+                
+            }
         }
         else
         {
