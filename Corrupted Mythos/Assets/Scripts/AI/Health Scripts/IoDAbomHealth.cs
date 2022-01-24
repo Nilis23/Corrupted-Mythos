@@ -16,7 +16,6 @@ public class IoDAbomHealth : MonoBehaviour
 
     public void dead()
     {
-        Debug.Log(icon.count);
         if (icon != null)
         {
             icon.count -= 1;

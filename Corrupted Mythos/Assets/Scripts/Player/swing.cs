@@ -10,6 +10,8 @@ public class swing : MonoBehaviour
     private int berserkDamage = 100;
     [SerializeField]
     GameObject impact;
+    [SerializeField]
+    GameObject swoosh;
 
     AudioManager manager;
     EnemyHealth script;
@@ -58,10 +60,10 @@ public class swing : MonoBehaviour
             //For special held action
             if (held)
             {
-                
+                Instantiate(swoosh);
             }
         }
-        else
+        else if(!isAnim && !atk)
         {
             isAnim = true;
             //t = 0;

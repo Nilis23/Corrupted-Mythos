@@ -28,9 +28,9 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""attack"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""325fb5be-cd10-4c97-8a6e-7dd00f0b3a85"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },

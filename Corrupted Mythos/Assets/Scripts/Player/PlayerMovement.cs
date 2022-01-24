@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     private float dashTimer;
     private bool slam = false;
+    private bool chkAttk;
 
     public int killCount;
     public ParticleSystem wipe;
@@ -115,20 +116,18 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-        if (pcontroller.player.attack.triggered && !paused && !playerHealth.block)
+        if (pcontroller.player.attack.triggered && !paused && !playerHealth.block && !chkAttk)
         {
             if (cntrler.m_Grounded == false && !slam)
             {
-                //weap.attack2();
-                //Freeze the movement
-                //Drop down, do special slam rather than normal 
                 slam = true;
                 StartCoroutine(SlamAttack());
                 weap.attack(false);
             }
             else
             {
-                weap.attack();
+                //weap.attack();
+                StartCoroutine(DetermineAttack());
             }
         }
         if (pcontroller.player.Heal.triggered)
@@ -145,19 +144,6 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(rageMode());
             }
         }
-        /*
-        if (Bactive)
-        {
-            playerHealth.rageCounter -= Time.deltaTime;
-            playerHealth.rageMeter.loseHP(Time.deltaTime);
-            if (playerHealth.rageCounter <= 0)
-            {
-                Bactive = false;
-                playerHealth.rageCounter = 0;
-                playerHealth.rageMeter.setCurHP(0);
-            }
-        }
-        */
         if (pcontroller.player.GodWipe.triggered && killCount >= 15)
         {
             //kill enemies on screen 
@@ -202,6 +188,30 @@ public class PlayerMovement : MonoBehaviour
         paused = true;
         yield return new WaitForSeconds(1);
         paused = false;
+    }
+
+    IEnumerator DetermineAttack()
+    {
+        float t = 0;
+        chkAttk = true;
+        float max = 0.25f;
+
+        while(t < max && pcontroller.player.attack.ReadValue<float>() > 0)
+        {
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        if(t < max)
+        {
+            weap.attack();
+        }
+        else if(t >= max)
+        {
+            weap.attack(true, true);
+        }
+
+        chkAttk = false;
     }
 
     IEnumerator Dash(float dir)
@@ -297,9 +307,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        Debug.Log("Ethan stinky");
         //Wait for end of frame and wrap up
         yield return new WaitForSeconds(0.2f);
         playerHealth.inv = false;
         slam = false;
+        Debug.Log("Ethan still stinky");
     }
 }
