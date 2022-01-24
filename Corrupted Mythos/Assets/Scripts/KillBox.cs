@@ -8,7 +8,7 @@ public class KillBox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().minusHealth(1000);
+            collision.gameObject.GetComponent<PlayerHealth>().killPlayer();
         }
         else if(collision.gameObject.tag == "enemy" && !collision.isTrigger)
         {

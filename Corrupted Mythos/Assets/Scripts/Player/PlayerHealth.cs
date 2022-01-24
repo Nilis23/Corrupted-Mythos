@@ -116,6 +116,13 @@ public class PlayerHealth : MonoBehaviour
         }
         
     }
+
+    public void killPlayer()
+    {
+        Time.timeScale = 0f;
+        death.SetActive(true);
+    }
+
     public void addHealth(int gain)
     {
         if (health + gain <= maxHealth)
