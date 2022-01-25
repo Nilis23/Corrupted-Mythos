@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerHealth playerHealth;
     public Transform impact;
 
-    private Inputs pcontroller;
+    public Inputs pcontroller;
     private float dir;
     private bool Bactive;
     private bool jump = false;
@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (cntrler.m_Grounded == false && !slam)
             {
+                Debug.Log("shit is true");
                 slam = true;
                 StartCoroutine(SlamAttack());
                 weap.attack(false);
