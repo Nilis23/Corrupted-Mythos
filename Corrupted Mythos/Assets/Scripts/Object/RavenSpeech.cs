@@ -8,6 +8,7 @@ public class RavenSpeech : MonoBehaviour
     List<string> dialouge;
 
     bool talk = false;
+    bool change = false;
     int indx = 0;
     GameObject textholder;
     private Inputs pcontroller;
@@ -39,18 +40,20 @@ public class RavenSpeech : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (talk && collision.gameObject.tag == "Player" && pcontroller.player.attack.triggered && textholder.activeSelf)
+        if (talk && collision.gameObject.tag == "Player" && pcontroller.player.attack.ReadValue<float>() > 0 && textholder.activeSelf && !change)
         {
             indx++;
             if(indx == dialouge.Count)
             {
                 //Close the text box
                 textholder.SetActive(false);
+                change = false;
                 indx = 0;
             }
             else
             {
-                textholder.transform.GetChild(0).GetComponent<TextMesh>().text = dialouge[indx];
+                change = true;
+                StartCoroutine(ProgressSpeech());
             }
         }
     }
@@ -62,5 +65,12 @@ public class RavenSpeech : MonoBehaviour
             textholder.SetActive(false);
             indx = 0;
         }
+    }
+
+    IEnumerator ProgressSpeech()
+    {
+        textholder.transform.GetChild(0).GetComponent<TextMesh>().text = dialouge[indx];
+        yield return new WaitForSeconds(0.2f);
+        change = false;
     }
 }
