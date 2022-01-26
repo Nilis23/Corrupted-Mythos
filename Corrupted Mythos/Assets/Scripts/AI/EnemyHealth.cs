@@ -17,6 +17,7 @@ public abstract class EnemyHealth : MonoBehaviour
     public Animator animator;
     public PlayerMovement script;
     public GameObject player;
+    public GameObject soulPref;
 
     //private IoDAbomHealth icon;
 
@@ -59,7 +60,12 @@ public abstract class EnemyHealth : MonoBehaviour
 
             }
 
-            //icon.dead();
+            /*
+            GameObject Soul = Instantiate(soulPref);
+            Soul.transform.position = this.transform.position;
+            Soul.transform.parent = null;
+            Soul.SetActive(true);
+            */
             Destroy(this.gameObject, 0.1f);            
         }
     }

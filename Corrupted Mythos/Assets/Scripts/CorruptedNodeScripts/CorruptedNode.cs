@@ -183,7 +183,7 @@ public class CorruptedNode : MonoBehaviour
                 manager.PlaySound("whoosh");
             }
             Instantiate(EndEffect, new Vector2(transform.position.x, transform.position.y), new Quaternion(0, 0, 0, 0));
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(6, 3.8f, true);
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(6, 3.8f, true);
             Invoke("PlaySecondSound", 2.7f);
             Invoke("DestroyObjs", 3);
             Destroy(this.gameObject, 3f);

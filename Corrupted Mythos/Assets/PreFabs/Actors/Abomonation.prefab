@@ -517,6 +517,7 @@ MonoBehaviour:
   animator: {fileID: 902374003258058748}
   script: {fileID: 0}
   player: {fileID: 0}
+  soulPref: {fileID: 0}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
 --- !u!114 &-5919473169882004584
@@ -537,6 +538,7 @@ MonoBehaviour:
   animator: {fileID: 902374003258058748}
   script: {fileID: 0}
   player: {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+  soulPref: {fileID: 1293211651821104217, guid: c81a355c4e31b1644a156875f90f3e1d, type: 3}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   AbomPoints: 50
@@ -552,3 +554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242643ce7c651da47a7364634b6755a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  icon: {fileID: 0}
+  death: {fileID: 0}

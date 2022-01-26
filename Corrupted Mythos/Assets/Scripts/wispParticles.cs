@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class wispParticles : MonoBehaviour
 {
-    public GameObject end;
-    private bool on=false;
+    public GameObject player;
+    private GameObject end;
     private float speed = 5f;
 
     private void Start()
     {
+        end = player.transform.GetChild(5).gameObject;
         end.transform.position = new Vector3(end.transform.position.x, end.transform.position.y, this.transform.position.z);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(holdup());
     }
 
     private void Update()
@@ -20,6 +26,7 @@ public class wispParticles : MonoBehaviour
 
     IEnumerator holdup()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(false);
     }
 }
