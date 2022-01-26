@@ -33,8 +33,8 @@ public class RavenSpeech : MonoBehaviour
     {
         if (talk && collision.gameObject.tag == "Player")
         {
-            textholder.transform.GetChild(0).GetComponent<TextMesh>().text = dialouge[0];
             textholder.SetActive(true);
+            StartCoroutine(ProgressSpeech());
         }
     }
 
@@ -69,8 +69,15 @@ public class RavenSpeech : MonoBehaviour
 
     IEnumerator ProgressSpeech()
     {
-        textholder.transform.GetChild(0).GetComponent<TextMesh>().text = dialouge[indx];
-        yield return new WaitForSeconds(0.2f);
+        int i = 0;
+        while(i < dialouge[indx].Length)
+        {
+            string text = dialouge[indx].Substring(0, i);
+            textholder.transform.GetChild(0).GetComponent<TextMesh>().text = text;
+            i++;
+
+            yield return new WaitForSeconds(0.2f);
+        }
         change = false;
     }
 }
