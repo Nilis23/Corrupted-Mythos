@@ -7,6 +7,7 @@ public class EnemySpawner : ScriptableObject
 {
     [SerializeField]
     GameObject EnemyPref;
+    GameObject miniEnemyPref;
     [SerializeField]
     string spawnerTag;
     [SerializeField]
@@ -37,5 +38,26 @@ public class EnemySpawner : ScriptableObject
 
         node.addEnemy(es);
         es.GetComponent<ArenaDeathHelper>().SetArena(node);
+    }
+
+    public void miniSpawn(MiniNode node)
+    {
+        int point = Random.Range(0, SpawnPoints.Length);
+        float xmod = Random.Range(0.5f, 1.5f);
+        if (Random.value < 0.5)
+        {
+            xmod *= -1;
+        }
+        
+        GameObject es = Instantiate(miniEnemyPref);
+        //^here
+
+        Vector2 sp = SpawnPoints[point].transform.position;
+        es.transform.position = new Vector2(sp.x + xmod, sp.y);
+
+        es.GetComponent<StateManager>()?.setStgr(sTimer);
+
+        node.addEnemy(es);
+        es.GetComponent<MiniArenaDeathHelper>().SetArena(node);
     }
 }
