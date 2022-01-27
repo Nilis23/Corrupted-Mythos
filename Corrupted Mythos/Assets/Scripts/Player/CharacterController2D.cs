@@ -70,6 +70,7 @@ public class CharacterController2D : MonoBehaviour
                     {
 						jumped = false;
 						PlayerAnim.SetTrigger("Land");
+						GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 					}
 				}
 			}

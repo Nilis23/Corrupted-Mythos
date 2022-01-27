@@ -41150,10 +41150,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_1
       objectReference: {fileID: 0}
-    - target: {fileID: 6755750499868158624, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6755750499868158651, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -41197,10 +41193,6 @@ PrefabInstance:
     - target: {fileID: 6755750499868158651, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6755750499868158655, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
-      propertyPath: dialouge
-      value: Hello\nthere
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
