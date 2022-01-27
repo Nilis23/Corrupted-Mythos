@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     ImageController dash;
+    [SerializeField]
+    GameObject SlamEffect;
 
     private void OnEnable()
     {
@@ -307,6 +309,7 @@ public class PlayerMovement : MonoBehaviour
 
         //do the actual slam things
         animatior.SetTrigger("SlamLand");
+        SlamEffect.SetActive(true);
         cntrler.m_Rigidbody2D.gravityScale = 3;
         GameObject.FindObjectOfType<CameraShake>()?.shakeCam(7, 0.2f, true);
         //Find and damage enemeies
