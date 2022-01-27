@@ -35,6 +35,10 @@ public class PlayerHealth : MonoBehaviour
 
     public bool inv = false;
 
+    [Space]
+    [SerializeField]
+    Animator PlayerAnim;
+
     private void Start()
     {
         hpBar = GameObject.Find("HPBar")?.GetComponent<LazyUIBar>();
@@ -68,8 +72,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void minusHealth(int damage)
     {
-
-
         if (!inv)
         {
             if (perfectBlock)
@@ -109,12 +111,18 @@ public class PlayerHealth : MonoBehaviour
             if (health <= 0)
             {
                 //RespawnPlayer();
-
-                Time.timeScale = 0f;
-                death.SetActive(true);
+                PlayerAnim.SetTrigger("Die");
+                script.paused = true;
+                Invoke("DeathScreen", 0.2f);
             }
         }
         
+    }
+
+    void DeathScreen()
+    {
+        death.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void killPlayer()
@@ -139,7 +147,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        
+        PlayerAnim.SetTrigger("Respawn");
+
         if (Pcamera.activeInHierarchy == false)
         {
             Pcamera.SetActive(true);

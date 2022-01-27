@@ -92,19 +92,30 @@ public class PlayerMovement : MonoBehaviour
                     dir = 1 * speed;
                 }
             }
-            animatior.SetFloat("Speed", Mathf.Abs(dir));
+            if (cntrler.m_Grounded)
+            {
+                animatior.SetFloat("Speed", Mathf.Abs(dir));
+            }
+            else
+            {
+                animatior.SetFloat("Speed", 0f);
+            }
 
             if (pcontroller.player.DashR.triggered && dashTimer < 0f)
             {
                 StartCoroutine(Dash(1f));
                 dashTimer = 1.25f;
                 dash.DeactivateImage();
+                animatior.SetTrigger("Dash");
+                Debug.Log("Dash");
             }
             else if (pcontroller.player.DashL.triggered && dashTimer < 0f)
             {
                 StartCoroutine(Dash(-1f));
                 dashTimer = 1.25f;
                 dash.DeactivateImage();
+                animatior.SetTrigger("Dash");
+                Debug.Log("Dash");
             }
         }
         else
@@ -116,11 +127,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-        if (pcontroller.player.attack.triggered && !paused && !playerHealth.block && !chkAttk)
+        if (pcontroller.player.attack.triggered && !paused && !playerHealth.block && !chkAttk && !slam)
         {
             if (cntrler.m_Grounded == false && !slam)
             {
-                Debug.Log("shit is true");
                 slam = true;
                 StartCoroutine(SlamAttack());
                 weap.attack(false);
@@ -295,7 +305,8 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.inv = true;
         yield return new WaitWhile(() => cntrler.m_Grounded == false);
 
-       //do the actual slam things
+        //do the actual slam things
+        animatior.SetTrigger("SlamLand");
         cntrler.m_Rigidbody2D.gravityScale = 3;
         GameObject.FindObjectOfType<CameraShake>()?.shakeCam(7, 0.2f, true);
         //Find and damage enemeies
@@ -308,11 +319,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        Debug.Log("Ethan stinky");
         //Wait for end of frame and wrap up
         yield return new WaitForSeconds(0.2f);
         playerHealth.inv = false;
         slam = false;
-        Debug.Log("Ethan still stinky");
+        weap.UnAttack();
     }
 }

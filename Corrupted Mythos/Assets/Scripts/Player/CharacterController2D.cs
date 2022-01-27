@@ -31,6 +31,12 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	[Space]
+	[SerializeField]
+	Animator PlayerAnim;
+
+	bool jumped = false;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -40,6 +46,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+		//OnLandEvent.AddListener(OnLandFunc);
 	}
 
 	private void FixedUpdate()
@@ -56,7 +64,14 @@ public class CharacterController2D : MonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
+				{
 					OnLandEvent.Invoke();
+                    if (jumped)
+                    {
+						jumped = false;
+						PlayerAnim.SetTrigger("Land");
+					}
+				}
 			}
 		}
 	}
@@ -64,22 +79,9 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		/*
-		// If crouching, check to see if the character can stand up
-		if (!crouch)
-		{
-			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-			{
-				crouch = true;
-			}
-		}
-		*/
-
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-
 			// If crouching
 			if (crouch)
 			{
@@ -133,9 +135,15 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0f);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			PlayerAnim.SetTrigger("Jump");
+			jumped = true;
 		}
 	}
 
+	void OnLandFunc()
+    {
+		PlayerAnim.SetTrigger("Land");
+	}
 
 	private void Flip()
 	{

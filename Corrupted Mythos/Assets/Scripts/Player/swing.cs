@@ -54,23 +54,35 @@ public class swing : MonoBehaviour
             isAnim = true;
             //t = 0;
             manager.PlaySound("swing");
-            animator.SetTrigger("S2");
-            Invoke("UnAttack", 0.55f);
 
             //For special held action
             if (held)
             {
-                Instantiate(swoosh);
+                animator.SetTrigger("LongSwing");
+                Invoke("CreateSwoosh", 0.25f);
+                Invoke("UnAttack", 0.5f);
             }
+            else
+            {
+                animator.SetTrigger("Swing");
+                Invoke("UnAttack", 0.2f);
+            }
+
+            dt = 0;
         }
         else if(!isAnim && !atk)
         {
             isAnim = true;
             //t = 0;
             manager.PlaySound("swing");
-            animator.SetTrigger("S2");
-            Invoke("UnAttack", 0.55f);
+            animator.SetTrigger("Slam");
+            //Invoke("UnAttack", 0.55f);
         }
+    }
+
+    public void CreateSwoosh()
+    {
+        Instantiate(swoosh);
     }
 
     public void UnAttack()
