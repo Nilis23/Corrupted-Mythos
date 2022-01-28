@@ -10,8 +10,9 @@ public class wispParticles : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(player);
         end = player.transform.GetChild(5).gameObject;
-        end.transform.position = new Vector3(end.transform.position.x, end.transform.position.y, this.transform.position.z);
+        //end.transform.position = new Vector3(end.transform.position.x, end.transform.position.y, this.transform.position.z);
     }
 
     private void OnEnable()

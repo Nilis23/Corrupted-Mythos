@@ -8,9 +8,11 @@ public class MiniArenaDeathHelper : MonoBehaviour
     public void SetArena(MiniNode node)
     {
         arena = node;
+        Debug.Log(arena.name);
     }
     private void OnDestroy()
     {
-        arena.removeEnemy(this.gameObject);//-> enemyspawner
+
+        arena.removeEnemy(this.gameObject);
     }
 }
