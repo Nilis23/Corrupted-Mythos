@@ -101,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
                 //rageMeter.gainHP(5);
                 enrage(5);
 
-                StartCoroutine(FlashObject(this.GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
+                StartCoroutine(FlashObject(gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
             }
             if (perfectBlock)
             {

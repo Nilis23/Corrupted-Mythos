@@ -15,6 +15,7 @@ public class fireGiantProjectile : MonoBehaviour
     int damage;
     Vector2 dir;
 
+    bool end;
     float life;
 
     [HideInInspector]
@@ -39,7 +40,10 @@ public class fireGiantProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(dir * Time.deltaTime * step);
+        if (!end)
+        {
+            transform.Translate(dir * Time.deltaTime * step);
+        }
 
         if(life > 0)
         {
@@ -47,10 +51,18 @@ public class fireGiantProjectile : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            StartCoroutine(DoDestruction());
         }
     }
     
+    IEnumerator DoDestruction()
+    {
+        mySprite.GetComponent<Animator>().SetTrigger("End");
+        end = true;
+        yield return new WaitForSeconds(0.21f);
+        Destroy(gameObject);
+    }
+
     public void swapDir()
     {
         dir = (origin - (Vector2)this.transform.position).normalized;
@@ -73,11 +85,11 @@ public class fireGiantProjectile : MonoBehaviour
         else if(collision.gameObject.tag == "enemy" && defl)
         {
             collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
-            Destroy(gameObject);
+            StartCoroutine(DoDestruction());
         }
         else
         {
-            Destroy(gameObject);
+            StartCoroutine(DoDestruction());
         }
     }
 
@@ -95,7 +107,7 @@ public class fireGiantProjectile : MonoBehaviour
 
             GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.01f, true);
 
-            Destroy(gameObject);
+            StartCoroutine(DoDestruction());
         }
     }
 }

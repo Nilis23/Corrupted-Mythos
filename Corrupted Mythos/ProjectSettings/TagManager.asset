@@ -74,9 +74,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3509327003
     locked: 0
-  - name: Special
-    uniqueID: 1896865509
-    locked: 0
   - name: Floor
     uniqueID: 3208851893
+    locked: 0
+  - name: Special
+    uniqueID: 1896865509
     locked: 0

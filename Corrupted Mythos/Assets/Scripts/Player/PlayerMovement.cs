@@ -293,11 +293,12 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator PerfectBlock()
     {
+        SpriteRenderer sr = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         playerHealth.perfectBlock = true;
-        this.GetComponent<SpriteRenderer>().color = Color.gray;
+        sr.color = Color.gray;
         yield return new WaitForSeconds(.5f);
         playerHealth.perfectBlock = false;
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        sr.color = Color.white;
     }
 
     IEnumerator SlamAttack()

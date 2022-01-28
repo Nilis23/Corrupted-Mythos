@@ -17,10 +17,12 @@ public class LeverFunc : MonoBehaviour
         manager = FindObjectOfType<AudioManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("Hello");
         if(collision.gameObject.tag == "Weapon" && !flipped && collision.gameObject.GetComponent<swing>().getStatus() == true)
         {
+            Debug.Log("If true");
             doFunc();
             anim.SetTrigger("Lever");
             manager.PlaySound("Lever");

@@ -61,13 +61,14 @@ public abstract class EnemyHealth : MonoBehaviour
 
             }
 
+            /*
             soulPref.GetComponent<wispParticles>().player = player;
             Debug.Log(soulPref);
             GameObject Soul = Instantiate(soulPref);
             Soul.transform.position = this.transform.position;
             Soul.transform.parent = null;
             Soul.SetActive(true);
-            
+            */
             Destroy(this.gameObject, 0.1f);            
         }
     }
