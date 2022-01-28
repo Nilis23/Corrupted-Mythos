@@ -110,7 +110,7 @@ public class swing : MonoBehaviour
             script.minusHealth(berserkDamage, 1);
             dt = 0.56f;
 
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 
             PlayerHealth.addHealth(lifesteal);
             impact.SetActive(true);
@@ -128,7 +128,7 @@ public class swing : MonoBehaviour
             //PlayerHealth.rageMeter.gainHP(10);
             PlayerHealth.enrage(10);
 
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;
@@ -141,7 +141,7 @@ public class swing : MonoBehaviour
             collision.GetComponent<DummyHealth>()?.doDamage(damage);
             dt = 0.56f;
 
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.1f, true);
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;

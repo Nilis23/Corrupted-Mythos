@@ -147,6 +147,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void RespawnPlayer()
     {
+        GameObject sr = gameObject.transform.GetChild(0).gameObject;
         PlayerAnim.SetTrigger("Respawn");
 
         if (Pcamera.activeInHierarchy == false)
@@ -167,7 +168,7 @@ public class PlayerHealth : MonoBehaviour
         }
         hpBar.setCurHP(health);
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
-        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        sr.GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
         StopAllCoroutines();
         script.spawning();
@@ -179,7 +180,7 @@ public class PlayerHealth : MonoBehaviour
             node = null;
         }
 
-        GetComponent<Animator>()?.SetFloat("Speed", 0f);
+        sr.GetComponent<Animator>()?.SetFloat("Speed", 0f);
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         deathCount += 1;

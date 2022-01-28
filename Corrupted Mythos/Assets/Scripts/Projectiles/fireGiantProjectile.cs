@@ -105,7 +105,7 @@ public class fireGiantProjectile : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
-            GameObject.FindObjectOfType<CameraShake>().shakeCam(2, 0.01f, true);
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.01f, true);
 
             StartCoroutine(DoDestruction());
         }
