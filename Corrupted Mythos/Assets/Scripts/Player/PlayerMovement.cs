@@ -314,7 +314,7 @@ public class PlayerMovement : MonoBehaviour
         cntrler.m_Rigidbody2D.gravityScale = 3;
         GameObject.FindObjectOfType<CameraShake>()?.shakeCam(7, 0.2f, true);
         //Find and damage enemeies
-        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(6, 12), 0f);
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(this.transform.position, new Vector2(8, 3), 0f);
         foreach(Collider2D col in hitColliders)
         {
             if(col.tag == "enemy")
