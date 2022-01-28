@@ -167,7 +167,7 @@ public class PlayerHealth : MonoBehaviour
         }
         hpBar.setCurHP(health);
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
         StopAllCoroutines();
         script.spawning();
