@@ -19,10 +19,8 @@ public class LeverFunc : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Hello");
         if(collision.gameObject.tag == "Weapon" && !flipped && collision.gameObject.GetComponent<swing>().getStatus() == true)
         {
-            Debug.Log("If true");
             doFunc();
             anim.SetTrigger("Lever");
             manager.PlaySound("Lever");

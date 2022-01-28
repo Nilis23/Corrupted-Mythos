@@ -11,7 +11,8 @@ public class IoDAbomHealth : MonoBehaviour
     private void Start()
     {
         health = this.GetComponent<OWAbomHealth>();
-        death = this.transform.GetChild(2).GetComponentInChildren<ParticleSystem>();
+        int x = gameObject.transform.childCount;
+        death = this.transform.GetChild(x - 1).GetComponentInChildren<ParticleSystem>();
     }
 
     public void dead()
