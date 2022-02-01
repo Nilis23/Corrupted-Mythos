@@ -32,6 +32,9 @@ public class AbomHealth : EnemyHealth
                 chanceMod += 0.05f;
             }
 
+            GameObject soul = Instantiate(soulPref);
+            soul.transform.position = this.transform.position;
+
             if (script != null)
             {
                 script.killCount++;

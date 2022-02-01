@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     GameObject SlamEffect;
 
+    public GameObject beserkLocator;
+
     private void OnEnable()
     {
         pcontroller = new Inputs();
