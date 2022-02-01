@@ -22,6 +22,5 @@ public class MenuSetActive : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         firstButton.Select();
-
     }
 }
