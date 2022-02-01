@@ -41,10 +41,10 @@ public class EnemySpawner : ScriptableObject
         es.GetComponent<ArenaDeathHelper>().SetArena(node);
     }
 
-    public void miniSpawn(MiniNode node)
+    public void miniSpawn(MiniNode node, GameObject spawn)
     {
         Debug.Log("started");
-        int point = Random.Range(0, SpawnPoints.Length);
+        //int point = Random.Range(0, SpawnPoints.Length);
         float xmod = Random.Range(0.5f, 1.5f);
         if (Random.value < 0.5)
         {
@@ -52,6 +52,7 @@ public class EnemySpawner : ScriptableObject
         }
         
         GameObject es = Instantiate(miniEnemyPref);
+        es.transform.position = spawn.transform.position;
 
         //Vector2 sp = SpawnPoints[point].transform.position;
         //Vector2 sp = this.

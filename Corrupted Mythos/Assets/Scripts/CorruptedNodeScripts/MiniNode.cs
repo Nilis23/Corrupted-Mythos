@@ -119,7 +119,7 @@ public class MiniNode : MonoBehaviour
     public void SpawnEnemy()
     {
         int pick = Random.Range(0, EnemyList.Count);
-        EnemyList[pick].miniSpawn(this);
+        EnemyList[pick].miniSpawn(this, this.gameObject);
 
         spawned++;
     }
