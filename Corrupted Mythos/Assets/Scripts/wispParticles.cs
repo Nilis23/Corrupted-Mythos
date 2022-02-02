@@ -8,31 +8,32 @@ public class wispParticles : MonoBehaviour
     private Vector2 endloc;
     private float speed = 5;
     PlayerMovement player;
+    private float rate;
+    private Vector3 origScale;
 
     private void Start()
     {
-
-        Debug.Log(berserkBar);
+        origScale = transform.localScale;
         player = FindObjectOfType<PlayerMovement>();
         endloc = player.beserkLocator.transform.position;
-        //end.transform.position = new Vector3(end.transform.position.x, end.transform.position.y, this.transform.position.z);
     }
 
     private void OnEnable()
     {
         StartCoroutine(holdup());
-        //endloc = GameObject.Find("beserkLocator").transform.position;
-    }
-
-    private void Update()
-    {
-        this.transform.position = Vector2.MoveTowards(this.transform.position, endloc, Time.deltaTime*speed);
-        //this.transform.localScale += new Vector3(-.1f, -.1f, 0);
     }
 
     IEnumerator holdup()
     {
-        yield return new WaitForSeconds(2);
+        while (transform.position.x != endloc.x && transform.position.y != endloc.y)
+        {
+            yield return null;
+            transform.position = Vector2.MoveTowards(this.transform.position, endloc, Time.deltaTime * speed);
+            rate += Time.deltaTime * .5f;
+            rate = Mathf.Clamp(rate, 0, 1);
+            transform.localScale = Vector3.Lerp(origScale, Vector3.zero, rate);
+        }
+
         this.gameObject.SetActive(false);
         Destroy(this);
     }
