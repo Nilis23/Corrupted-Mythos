@@ -7,6 +7,7 @@ public class PrefabMenu : EditorWindow
 {
     public string[] options = new string[] { "Cube", "Sphere", "Plane", "Hello", "There", "General", "Kenobi", "Plaayer"  };
     public int index = 0;
+    public int index2 = 0;
 
     [MenuItem("Window/Prefab Menu %#&p")] //The container for the window
     static void Init()
@@ -17,8 +18,11 @@ public class PrefabMenu : EditorWindow
 
     private void OnInspectorUpdate()
     {
-        Repaint(); //Reloading does not occur for some reason, window updates when its manually reloaded
-        Debug.Log("Repainted");
+        if(index == 2)
+        {
+            //EditorGUILayout.Popup(index, options);
+        }
+        Repaint();
     }
 
     void OnGUI()
@@ -26,6 +30,9 @@ public class PrefabMenu : EditorWindow
         index = EditorGUILayout.Popup(index, options); //The actual menu 
 
         GUILayout.Space(15f);
+        index2 = EditorGUILayout.Popup(index2, options);
+        GUILayout.Space(15f);
+
 
         if (GUILayout.Button("Instantiate")) //Button to create prefab
         {

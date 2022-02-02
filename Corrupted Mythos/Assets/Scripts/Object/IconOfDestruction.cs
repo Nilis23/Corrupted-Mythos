@@ -14,12 +14,13 @@ public class IconOfDestruction : MonoBehaviour
     {
         if (enemies.Count == 0)
         {
-            Debug.Log("assign enemies to list");
+           // Debug.Log("assign enemies to list");
         }
 
         for (count=0; count < enemies.Count; count++)
         {
-            Debug.Log(count);
+            //Debug.Log(count);
+            //Couldn't count just be directly set rather than using a loop?
         }
 
         lit.SetActive(false);

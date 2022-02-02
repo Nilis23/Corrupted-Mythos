@@ -14,20 +14,24 @@ public class PrefabMenu_ND : ScriptableObject
     [MenuItem("Prefabs/Item1")]
     public static void Item1()
     {
+        Debug.Log("Item1");
     }
 
     [MenuItem("Prefabs/Player/Item2")]
     public static void Item2()
     {
+        Debug.Log("Item2");
     }
 
     [MenuItem("Prefabs/Player/Item3")]
     public static void Item3()
     {
+        Debug.Log("Item3");
     }
 
     [MenuItem("Prefabs/Item4")]
     public static void Item4()
     {
+        Debug.Log("Item4");
     }
 }

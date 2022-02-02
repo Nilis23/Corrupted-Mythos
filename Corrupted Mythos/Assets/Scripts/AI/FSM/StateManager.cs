@@ -124,13 +124,13 @@ public class StateManager : MonoBehaviour
         if(dir > 0)
         {
             Vector2 newPos = new Vector2(this.transform.position.x - (0.75f * mod), this.transform.position.y);
-            StartCoroutine(moveBack(newPos));
+            StartCoroutine(moveBack(newPos, dir, mod));
         }
         else if(dir < 0)
         {
             //Knockback to the left
             Vector2 newPos = new Vector2(this.transform.position.x + (0.75f * mod), this.transform.position.y);
-            StartCoroutine(moveBack(newPos));
+            StartCoroutine(moveBack(newPos, dir, mod));
         }
     }
     public void KnockUp()
@@ -138,11 +138,22 @@ public class StateManager : MonoBehaviour
         StartCoroutine(knockUp());
     }
 
-    IEnumerator moveBack(Vector2 targPos)
+    IEnumerator moveBack(Vector2 targPos, float dir, float mod)
     {
         Vector2 orgPos = transform.position;
         float t = 0;
-        while(t <= 0.25f)
+
+        string[] strings = new string[] { "Platforms", "Barriers" };
+        int layermask = LayerMask.GetMask(strings);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), mod, layermask); //Check low
+        RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), mod, layermask); //Check high
+
+        if(hit || hitt)
+        {
+            t = 1f;
+        }
+
+        while (t <= 0.25f)
         {
             t += Time.deltaTime;
             transform.position = Vector2.Lerp(orgPos, targPos, t/0.25f);

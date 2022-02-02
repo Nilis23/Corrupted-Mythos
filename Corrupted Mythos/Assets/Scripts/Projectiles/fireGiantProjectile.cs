@@ -68,6 +68,8 @@ public class fireGiantProjectile : MonoBehaviour
         dir = (origin - (Vector2)this.transform.position).normalized;
         defl = true;
 
+        step *= 1.5f;
+
         Vector2 targ = origin;
         targ.x = targ.x - transform.position.x;
         targ.y = targ.y - transform.position.y;

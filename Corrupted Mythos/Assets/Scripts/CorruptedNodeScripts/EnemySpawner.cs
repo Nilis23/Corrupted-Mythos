@@ -43,7 +43,7 @@ public class EnemySpawner : ScriptableObject
 
     public void miniSpawn(MiniNode node, GameObject spawn)
     {
-        Debug.Log("started");
+        //Debug.Log("started");
         //int point = Random.Range(0, SpawnPoints.Length);
         float xmod = Random.Range(0.5f, 1.5f);
         if (Random.value < 0.5)
@@ -61,8 +61,8 @@ public class EnemySpawner : ScriptableObject
         es.GetComponent<StateManager>()?.setStgr(sTimer);
 
         node.addEnemy(es);
-        Debug.Log(node.name);
+        //Debug.Log(node.name);
         es.GetComponent<MiniArenaDeathHelper>().SetArena(node);
-        Debug.Log("finished");
+        //Debug.Log("finished");
     }
 }
