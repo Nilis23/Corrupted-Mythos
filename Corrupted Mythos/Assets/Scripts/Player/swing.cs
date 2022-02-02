@@ -124,6 +124,7 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
             dt = 0.56f;
+            Debug.Log("+10");
             PlayerHealth.rageCounter += 10;
             //PlayerHealth.rageMeter.gainHP(10);
             PlayerHealth.enrage(10);
@@ -154,6 +155,10 @@ public class swing : MonoBehaviour
         {
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
+
+            PlayerHealth.rageCounter += 10;
+            Debug.Log("+10");
+            PlayerHealth.enrage(10);
 
             dt = 0.56f;
 
