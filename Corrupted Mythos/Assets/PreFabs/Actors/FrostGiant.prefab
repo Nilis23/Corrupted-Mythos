@@ -287,7 +287,7 @@ MonoBehaviour:
   em: {fileID: 3635417699456738389}
   damage: 75
   animator: {fileID: 3635417697809617444}
-  eHealth: {fileID: 3635417699456738390}
+  eHealth: {fileID: -5529378395534252090}
   fG: 1
 --- !u!61 &3635417699035916443
 BoxCollider2D:
@@ -444,7 +444,6 @@ GameObject:
   - component: {fileID: 3635417699456738391}
   - component: {fileID: 3635417699456738388}
   - component: {fileID: 3635417699456738389}
-  - component: {fileID: 3635417699456738390}
   - component: {fileID: -5529378395534252090}
   m_Layer: 11
   m_Name: FrostGiant
@@ -592,24 +591,6 @@ MonoBehaviour:
   attack: 0
   collisions: 0
   stagr: 0
---- !u!114 &3635417699456738390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3635417699456738414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3020121aaf0d7064d9fbe20984d3e72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 150
-  em: {fileID: 3635417699456738389}
-  stagTime: 0.5
-  animator: {fileID: 3635417697809617444}
-  script: {fileID: 0}
-  stagertime: 2
 --- !u!114 &-5529378395534252090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,4 +608,6 @@ MonoBehaviour:
   stagTime: 0.5
   animator: {fileID: 3635417697809617444}
   script: {fileID: 0}
+  player: {fileID: 0}
+  soulPref: {fileID: 0}
   stagertime: 2

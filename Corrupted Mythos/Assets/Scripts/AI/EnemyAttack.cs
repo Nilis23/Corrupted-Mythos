@@ -38,9 +38,9 @@ public class EnemyAttack : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
         {
 
-            if (eHealth.GetType() == typeof(FrostGiantHealth))
+            if (eHealth.GetType() == typeof(OWFrostGiantHealth))
             {
-                (eHealth as FrostGiantHealth).changeInv();
+                (eHealth as OWFrostGiantHealth).changeInv();
             }
             else
             {
