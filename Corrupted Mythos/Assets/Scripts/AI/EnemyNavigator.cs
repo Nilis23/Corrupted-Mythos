@@ -42,17 +42,6 @@ public class EnemyNavigator : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        /*
-        speedMod = Random.Range(0, 0.3f);
-        if (Random.value < 0.5)
-        {
-            speed += speedMod;
-        }
-        else
-        {
-            speed -= speedMod;
-        }
-        */
     }
 
     // Update is called once per frame

@@ -97,15 +97,18 @@ public class StateManager : MonoBehaviour
 
     public void SwapTarget()
     {
-        if(point == 0)
+        if (pointOne != null && pointTwo != null)
         {
-            nav.target = pointTwo.transform.position;
-            point = 1;
-        }
-        else if(point == 1)
-        {
-            nav.target = pointOne.transform.position;
-            point = 0;
+            if (point == 0)
+            {
+                nav.target = pointTwo.transform.position;
+                point = 1;
+            }
+            else if (point == 1)
+            {
+                nav.target = pointOne.transform.position;
+                point = 0;
+            }
         }
     }
     public void SetTarget(GameObject targ)
