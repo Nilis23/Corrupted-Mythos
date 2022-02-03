@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (playerHealth.berserk)
             {
-                this.GetComponent<SpriteRenderer>().color = Color.red;
+                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
                 impact.GetComponent<SpriteRenderer>().color = Color.magenta;
                 speed += 20;
                 StartCoroutine(rageMode());
@@ -288,8 +288,8 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.berserking = false;
 
         Bactive = false;
-        Debug.Log("unberserking");
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        //Debug.Log("unberserking");
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;
     }
 

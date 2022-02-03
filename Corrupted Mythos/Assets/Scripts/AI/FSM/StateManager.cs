@@ -143,10 +143,19 @@ public class StateManager : MonoBehaviour
         Vector2 orgPos = transform.position;
         float t = 0;
 
+        if (dir < 0)
+        {
+            dir = -1;
+        }
+        else
+        {
+            dir = 1;
+        }
+
         string[] strings = new string[] { "Platforms", "Barriers" };
         int layermask = LayerMask.GetMask(strings);
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), mod, layermask); //Check low
-        RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), mod, layermask); //Check high
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(-1 * dir, 0), mod, layermask); //Check low
+        RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(-1 * dir, 0), mod, layermask); //Check high
 
         if(hit || hitt)
         {

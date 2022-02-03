@@ -237,7 +237,7 @@ public class PlayerHealth : MonoBehaviour
             if (rageCounter >= 100)
             {
                 berserk = true;
-                Debug.Log("berserkable");
+                //Debug.Log("berserkable");
             }
         }
     }

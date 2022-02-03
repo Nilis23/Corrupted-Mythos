@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class LazyUIBar : MonoBehaviour
 {
@@ -58,3 +59,21 @@ public class LazyUIBar : MonoBehaviour
         reversed = true;
     }
 }
+
+[CustomEditor(typeof(LazyUIBar))]
+public class LazyUIEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        GUILayout.Space(10);
+
+        LazyUIBar myScript = (LazyUIBar)target;
+        if (GUILayout.Button("Fill Bar"))
+        {
+            myScript.gainHP(100);
+        }
+    }
+}
+
