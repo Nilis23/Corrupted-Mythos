@@ -107,33 +107,17 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""DashR"",
-                    ""type"": ""Button"",
-                    ""id"": ""3d82a416-5bd0-435e-a15a-f3d5de16aeec"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""DashL"",
-                    ""type"": ""Button"",
-                    ""id"": ""becdeb63-26e1-47a8-aee2-2367d41f21c7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""block"",
-                    ""type"": ""Button"",
-                    ""id"": ""50ab4aec-1f28-4d08-86e3-83738b8823f6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""GodWipe"",
                     ""type"": ""Button"",
                     ""id"": ""3c816ac5-ecc3-442c-a7a4-07e05ac60435"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Defend"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a2c1bf4-2f66-4587-8a98-90f1c879e930"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -363,7 +347,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6f6dcaf0-118d-4955-a20d-a6d7a599c141"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -385,7 +369,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c93b018-3c69-4de4-b193-77a25caae968"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -484,7 +468,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""840a25fb-7e50-42b8-b3cd-00b1ad17fab6"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -506,7 +490,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4ce5cb1d-a9b4-4bc2-b4b9-363c035fba10"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -538,94 +522,6 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3b016a68-2fa7-4a39-8683-23195833a4be"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": ""MultiTap"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashR"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Button With One Modifier"",
-                    ""id"": ""7946fd41-28a2-41f0-975e-81ba5db4befc"",
-                    ""path"": ""ButtonWithOneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashR"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""ac3ff01b-cf76-4961-a57c-910a5e40d06f"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashR"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""button"",
-                    ""id"": ""c648b2ef-a69a-4cbc-b952-5e2b8a95cf33"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashR"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""39cbb432-a19b-414b-bbd5-4d5801a12bb6"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": ""MultiTap"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashL"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Button With One Modifier"",
-                    ""id"": ""f3862442-b9c9-4b86-aadf-c0ddf2cbd7bf"",
-                    ""path"": ""ButtonWithOneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashL"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""d44b60aa-a2fa-4c81-9f47-7a826f291cbe"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashL"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""button"",
-                    ""id"": ""05737ee8-b2f4-4c1b-868c-ae038889d87d"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DashL"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
                     ""id"": ""61219d7f-516a-49e9-950e-3d3bc843db87"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
@@ -637,56 +533,23 @@ public class @Inputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""362c5099-a03f-45bc-a0de-10f17fbee16f"",
-                    ""path"": ""<Keyboard>/b"",
+                    ""id"": ""259b92a7-84cf-494d-a828-d0762b2821a9"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""block"",
+                    ""action"": ""Defend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Button With One Modifier"",
-                    ""id"": ""2cb97f1b-8eac-48b2-b664-03a4538c5d3a"",
-                    ""path"": ""ButtonWithOneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""block"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""f6618c7c-9eeb-4419-ae1f-ba12739da614"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""block"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""button"",
-                    ""id"": ""fdb069f5-a347-4d76-8e16-ae5d82172306"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""block"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""db1aa1a0-b760-42ec-9a89-ee2242df1822"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""id"": ""c903479e-1b1c-43a9-b5f1-92a24a27f52e"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""block"",
+                    ""action"": ""Defend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1242,10 +1105,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         m_player_NodeInteract = m_player.FindAction("NodeInteract", throwIfNotFound: true);
         m_player_Heal = m_player.FindAction("Heal", throwIfNotFound: true);
         m_player_berserk = m_player.FindAction("berserk", throwIfNotFound: true);
-        m_player_DashR = m_player.FindAction("DashR", throwIfNotFound: true);
-        m_player_DashL = m_player.FindAction("DashL", throwIfNotFound: true);
-        m_player_block = m_player.FindAction("block", throwIfNotFound: true);
         m_player_GodWipe = m_player.FindAction("GodWipe", throwIfNotFound: true);
+        m_player_Defend = m_player.FindAction("Defend", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1318,10 +1179,8 @@ public class @Inputs : IInputActionCollection, IDisposable
     private readonly InputAction m_player_NodeInteract;
     private readonly InputAction m_player_Heal;
     private readonly InputAction m_player_berserk;
-    private readonly InputAction m_player_DashR;
-    private readonly InputAction m_player_DashL;
-    private readonly InputAction m_player_block;
     private readonly InputAction m_player_GodWipe;
+    private readonly InputAction m_player_Defend;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1337,10 +1196,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         public InputAction @NodeInteract => m_Wrapper.m_player_NodeInteract;
         public InputAction @Heal => m_Wrapper.m_player_Heal;
         public InputAction @berserk => m_Wrapper.m_player_berserk;
-        public InputAction @DashR => m_Wrapper.m_player_DashR;
-        public InputAction @DashL => m_Wrapper.m_player_DashL;
-        public InputAction @block => m_Wrapper.m_player_block;
         public InputAction @GodWipe => m_Wrapper.m_player_GodWipe;
+        public InputAction @Defend => m_Wrapper.m_player_Defend;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1383,18 +1240,12 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @berserk.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
                 @berserk.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
                 @berserk.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBerserk;
-                @DashR.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
-                @DashR.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
-                @DashR.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashR;
-                @DashL.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
-                @DashL.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
-                @DashL.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDashL;
-                @block.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
-                @block.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
-                @block.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBlock;
                 @GodWipe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
                 @GodWipe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
                 @GodWipe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGodWipe;
+                @Defend.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDefend;
+                @Defend.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDefend;
+                @Defend.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDefend;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1432,18 +1283,12 @@ public class @Inputs : IInputActionCollection, IDisposable
                 @berserk.started += instance.OnBerserk;
                 @berserk.performed += instance.OnBerserk;
                 @berserk.canceled += instance.OnBerserk;
-                @DashR.started += instance.OnDashR;
-                @DashR.performed += instance.OnDashR;
-                @DashR.canceled += instance.OnDashR;
-                @DashL.started += instance.OnDashL;
-                @DashL.performed += instance.OnDashL;
-                @DashL.canceled += instance.OnDashL;
-                @block.started += instance.OnBlock;
-                @block.performed += instance.OnBlock;
-                @block.canceled += instance.OnBlock;
                 @GodWipe.started += instance.OnGodWipe;
                 @GodWipe.performed += instance.OnGodWipe;
                 @GodWipe.canceled += instance.OnGodWipe;
+                @Defend.started += instance.OnDefend;
+                @Defend.performed += instance.OnDefend;
+                @Defend.canceled += instance.OnDefend;
             }
         }
     }
@@ -1575,10 +1420,8 @@ public class @Inputs : IInputActionCollection, IDisposable
         void OnNodeInteract(InputAction.CallbackContext context);
         void OnHeal(InputAction.CallbackContext context);
         void OnBerserk(InputAction.CallbackContext context);
-        void OnDashR(InputAction.CallbackContext context);
-        void OnDashL(InputAction.CallbackContext context);
-        void OnBlock(InputAction.CallbackContext context);
         void OnGodWipe(InputAction.CallbackContext context);
+        void OnDefend(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

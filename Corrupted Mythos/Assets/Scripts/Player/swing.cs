@@ -151,16 +151,38 @@ public class swing : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit)
+        if (PlayerHealth.block)
         {
+            //do nothing
+        }
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit && PlayerHealth.berserking)
+        {
+            impact.SetActive(false);
+
+            script = collision.GetComponent<EnemyHealth>();
+            script.minusHealth(berserkDamage, 1);
+            dt = 0.56f;
+
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
+
+            PlayerHealth.addHealth(lifesteal);
+            impact.SetActive(true);
+            impact.transform.position = transform.position;
+            StartCoroutine(Wait());
+        }
+        else if (!collision.isTrigger && collision.CompareTag("enemy") && isatk && dt <= 0 && hit)
+        {
+            impact.SetActive(false);
+
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
-
-            PlayerHealth.rageCounter += 10;
+            dt = 0.56f;
             Debug.Log("+10");
+            PlayerHealth.rageCounter += 10;
+            //PlayerHealth.rageMeter.gainHP(10);
             PlayerHealth.enrage(10);
 
-            dt = 0.56f;
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;
@@ -172,6 +194,8 @@ public class swing : MonoBehaviour
 
             collision.GetComponent<DummyHealth>()?.doDamage(damage);
             dt = 0.56f;
+
+            GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 
             impact.SetActive(true);
             impact.transform.position = transform.position;

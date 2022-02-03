@@ -37,7 +37,7 @@ public class TownNPCHandler : MonoBehaviour
     {
         if (talk && collision.gameObject.tag == "Player")
         {
-            Debug.Log(gameObject.name);
+            //Debug.Log(gameObject.name);
             textholder.SetActive(true);
         }
     }

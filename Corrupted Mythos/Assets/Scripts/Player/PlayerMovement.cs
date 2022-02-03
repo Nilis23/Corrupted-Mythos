@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private bool slam = false;
     private bool chkAttk;
 
+    bool block;
+
     public int killCount;
     public ParticleSystem wipe;
     public CameraShake shaker;
@@ -41,14 +43,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         pcontroller = new Inputs();
-        pcontroller.player.block.started += BlockOn;
-        pcontroller.player.block.canceled += BlockOff;
+        //pcontroller.player.block.started += BlockOn;
+        //pcontroller.player.block.canceled += BlockOff;
     }
 
     private void OnDisable()
     {
-        pcontroller.player.block.started -= BlockOn;
-        pcontroller.player.block.canceled -= BlockOff;
+        //pcontroller.player.block.started -= BlockOn;
+        //pcontroller.player.block.canceled -= BlockOff;
     }
 
     void Start()
@@ -67,8 +69,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void BlockOff(InputAction.CallbackContext c)
     {
-        speed += 40;
-        playerHealth.block = false;
+        if (block)
+        {
+            speed = 40;
+            playerHealth.block = false;
+            block = false;
+            pcontroller.player.Defend.canceled -= BlockOff;
+        }
+        else
+        {
+            return;
+        }
     }
 
     void Update()
@@ -105,21 +116,36 @@ public class PlayerMovement : MonoBehaviour
                 animatior.SetFloat("Speed", 0f);
             }
 
-            if (pcontroller.player.DashR.triggered && dashTimer < 0f)
+            if (pcontroller.player.Defend.triggered)
             {
-                StartCoroutine(Dash(1f));
-                dashTimer = 1.25f;
-                dash.DeactivateImage();
-                animatior.SetTrigger("Dash");
-                Debug.Log("Dash");
-            }
-            else if (pcontroller.player.DashL.triggered && dashTimer < 0f)
-            {
-                StartCoroutine(Dash(-1f));
-                dashTimer = 1.25f;
-                dash.DeactivateImage();
-                animatior.SetTrigger("Dash");
-                Debug.Log("Dash");
+                if (dir != 0)
+                {
+                    if (dir > 0 && dashTimer < 0f)
+                    {
+                        StartCoroutine(Dash(1f));
+                        dashTimer = 1.25f;
+                        dash.DeactivateImage();
+                        animatior.SetTrigger("Dash");
+                    }
+                    else if (dir < 0 && dashTimer < 0f)
+                    {
+                        StartCoroutine(Dash(-1f));
+                        dashTimer = 1.25f;
+                        dash.DeactivateImage();
+                        animatior.SetTrigger("Dash");
+                    }
+                }
+                else
+                {
+                    if (!block)
+                    {
+                        speed = 0;
+                        playerHealth.block = true;
+                        StartCoroutine(PerfectBlock());
+                        block = true;
+                        pcontroller.player.Defend.canceled += BlockOff;
+                    }
+                }
             }
         }
         else

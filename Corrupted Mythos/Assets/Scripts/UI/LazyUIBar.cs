@@ -60,6 +60,7 @@ public class LazyUIBar : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(LazyUIBar))]
 public class LazyUIEditor : Editor
 {
@@ -76,4 +77,5 @@ public class LazyUIEditor : Editor
         }
     }
 }
+#endif
 
