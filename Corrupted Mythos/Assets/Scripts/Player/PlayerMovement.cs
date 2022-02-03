@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        impact = this.transform.GetChild(0);
+        impact = transform.Find("impact").gameObject.transform;
         //pcontroller = new Inputs();
         pcontroller.Enable();
         playerHealth = this.GetComponentInParent<PlayerHealth>();
