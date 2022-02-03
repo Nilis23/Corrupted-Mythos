@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class wispParticles : MonoBehaviour
 {
-    public GameObject berserkBar;
+    //public GameObject berserkBar;
     private Vector2 endloc;
     private float speed = 5;
     PlayerMovement player;
@@ -16,6 +16,7 @@ public class wispParticles : MonoBehaviour
         origScale = transform.localScale;
         player = FindObjectOfType<PlayerMovement>();
         endloc = player.beserkLocator.transform.position;
+        Debug.Log(endloc);
     }
 
     private void OnEnable()

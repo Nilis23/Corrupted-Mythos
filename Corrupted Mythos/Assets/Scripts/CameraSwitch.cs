@@ -14,7 +14,7 @@ public class CameraSwitch : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().Pcamera = C_Player;
             collision.GetComponent<PlayerHealth>().Fcamera = C_Fixed;
-
+            collision.GetComponent<PlayerMovement>().beserkLocator = C_Fixed.transform.GetChild(0).gameObject;
 
             C_Player.SetActive(false);
             C_Fixed.SetActive(true);

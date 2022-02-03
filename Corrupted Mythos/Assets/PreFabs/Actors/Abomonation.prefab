@@ -349,7 +349,6 @@ GameObject:
   - component: {fileID: 2882597727957746665}
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
-  - component: {fileID: 5347756656958841250}
   - component: {fileID: -5919473169882004584}
   m_Layer: 8
   m_Name: Abomonation
@@ -486,7 +485,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
   - {fileID: 11400000, guid: 41380911b9c6e6743b1b80801dc94ae9, type: 2}
   startState: {fileID: 11400000, guid: 096b8f8208e71e041bf1069ad223a92b, type: 2}
-  hp: {fileID: 5347756656958841250}
+  hp: {fileID: 0}
   seeker: {fileID: 0}
   player: {fileID: 0}
   nav: {fileID: 2882597727957746578}
@@ -498,27 +497,6 @@ MonoBehaviour:
   attack: 0
   collisions: 0
   stagr: 0
---- !u!114 &5347756656958841250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2882597727957746579}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac849638fbe15d44797a6d3dd3138eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  em: {fileID: 2882597727957746669}
-  stagTime: 0.5
-  animator: {fileID: 902374003258058748}
-  script: {fileID: 0}
-  player: {fileID: 0}
-  soulPref: {fileID: 0}
-  foodChance: 0.1
-  foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
 --- !u!114 &-5919473169882004584
 MonoBehaviour:
   m_ObjectHideFlags: 0
