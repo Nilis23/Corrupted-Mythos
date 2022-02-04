@@ -3,45 +3,98 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class PrefabMenu : EditorWindow
+[CreateAssetMenu(fileName = "Prefab Menu Controller", menuName = "Prefab Menu Controller", order = 0)]
+public class PrefabMenu : ScriptableObject
 {
-    public string[] options = new string[] { "Cube", "Sphere", "Plane", "Hello", "There", "General", "Kenobi", "Plaayer"  };
-    public int index = 0;
-    public int index2 = 0;
+    public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
+    public string[] folder = new string[] { "Assets/PreFabs/Level Assets", "Assets/Prefabs/Actors" };
+    public List<GameObject> Assets = new List<GameObject>();
+    public int index;
 
-    [MenuItem("Window/Prefab Menu %#&p")] //The container for the window
-    static void Init()
+    public void SpawnObj(GameObject obj)
     {
-        EditorWindow window = GetWindow(typeof(PrefabMenu));
-        window.Show();
+        Debug.Log(obj.ToString());
     }
 
-    private void OnInspectorUpdate()
+    public void LoadAssets(int indx)
     {
-        if(index == 2)
+        Debug.Log(indx);
+        Assets.Clear();
+        if(folder.Length < indx)
         {
-            //EditorGUILayout.Popup(index, options);
+            Debug.Log("Bad Index attempt - Index: " + indx + " Size: " + folder.Length);
+            return;
         }
-        Repaint();
-    }
-
-    void OnGUI()
-    {
-        index = EditorGUILayout.Popup(index, options); //The actual menu 
-
-        GUILayout.Space(15f);
-        index2 = EditorGUILayout.Popup(index2, options);
-        GUILayout.Space(15f);
-
-
-        if (GUILayout.Button("Instantiate")) //Button to create prefab
+        else
         {
-            InstantiatePrefab();
+            Object[] data = AssetDatabase.LoadAllAssetsAtPath(folder[indx]);
+            if(data == null || data.Length <= 0)
+            {
+                Debug.Log("Bad asset load");
+                return;
+            }
+            else
+            {
+                foreach(Object obj in data)
+                {
+                    //Assets.Add(GameObject.GetPrefabAssetType(obj));
+                    if(obj is GameObject)
+                    {
+                        Assets.Add(obj as GameObject);
+                    }
+                }
+            }
         }
     }
+}
 
-    void InstantiatePrefab()
+[CustomEditor(typeof(PrefabMenu))]
+public class PrefabMenu_CustGUI : Editor
+{
+    public override void OnInspectorGUI()
     {
-        //The function to create a prefab
+        DrawDefaultInspector();
+
+        GUILayout.Space(15);
+
+        PrefabMenu myMenu = (PrefabMenu)target;
+        myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
+        //myMenu.LoadAssets(myMenu.index);
+
+        //Display buttons
+
+        GUILayout.Space(15);
+
+        //Calc the width of each button
+        float size = (Screen.width / 3) - 20;
+
+        //Calc the total items to go through
+        float items = myMenu.Assets.Count;
+        int t = 0, z = 0;
+        float rows = items / 3;
+        for (float i = 0; i < rows; i++) //row control
+        {
+            GUILayout.BeginHorizontal();
+            while(z < 3 && t < items) //Buttons in each row
+            {
+                GameObject obj = myMenu.Assets[t];
+                if (obj != null) //Null protection
+                {
+                    if (GUILayout.Button(PrefabUtility.GetIconForGameObject(obj), GUILayout.Width(size), GUILayout.Height(size)))
+                    {
+                        myMenu.SpawnObj(obj);
+                    }
+                }
+                t++;
+                z++;
+                GUILayout.Space(10);
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.Space(10);
+            z = 0;
+        }
+
     }
+
+    
 }
