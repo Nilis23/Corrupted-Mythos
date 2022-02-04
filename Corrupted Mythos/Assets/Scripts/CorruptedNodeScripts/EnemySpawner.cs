@@ -13,6 +13,7 @@ public class EnemySpawner : ScriptableObject
     string spawnerTag;
     [SerializeField]
     float sTimer;
+    //public GameObject bar;
 
     GameObject[] SpawnPoints;
 
@@ -21,7 +22,7 @@ public class EnemySpawner : ScriptableObject
         SpawnPoints = GameObject.FindGameObjectsWithTag(spawnerTag);
     }
 
-    public void Spawn(CorruptedNode node)
+    public void Spawn(CorruptedNode node, GameObject bar)
     {
         int point = Random.Range(0, SpawnPoints.Length);
         float xmod = Random.Range(0.5f, 1.5f);
@@ -31,6 +32,9 @@ public class EnemySpawner : ScriptableObject
         }
 
         GameObject es = Instantiate(EnemyPref);
+        es.GetComponent<AbomHealth>().NodeBerserkBarLocator = bar;
+        Debug.Log("spawner called");
+        
 
         Vector2 sp = SpawnPoints[point].transform.position;
         es.transform.position = new Vector2(sp.x + xmod, sp.y);

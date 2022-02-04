@@ -8,6 +8,7 @@ public class AbomHealth : EnemyHealth
     float foodChance = 0.1f;
     static float chanceMod = 0;
     public GameObject foodPref;
+    public GameObject NodeBerserkBarLocator;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class AbomHealth : EnemyHealth
             }
 
             GameObject soul = Instantiate(soulPref);
+            soul.GetComponent<wispParticles>().end(NodeBerserkBarLocator);
             soul.transform.position = this.transform.position;
 
             if (script != null)

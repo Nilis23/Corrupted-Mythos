@@ -54,6 +54,7 @@ public class CorruptedNode : MonoBehaviour
     AudioManager manager;
     private PlayerHealth playerHealth;
     private int points = 200;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +125,7 @@ public class CorruptedNode : MonoBehaviour
         foreach(GameObject spawner in Spawners)
         {
             spawner.SetActive(true);
+            //spawner.GetComponent<EnemySpawner>().bar = this.transform.GetChild(3).gameObject;//here
         }
 
         foreach (EnemySpawner spawner in EnemyList)
@@ -148,7 +150,7 @@ public class CorruptedNode : MonoBehaviour
     public void SpawnEnemy()
     {
         int pick = Random.Range(0, EnemyList.Count);
-        EnemyList[pick].Spawn(this);
+        EnemyList[pick].Spawn(this, this.transform.GetChild(3).gameObject);
 
         spawned++;
     }

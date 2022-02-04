@@ -11,7 +11,7 @@ public class UnCameraSwitch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.GetComponent<PlayerMovement>().beserkLocator = C_Player.transform.GetChild(0).gameObject;
+            //collision.GetComponent<PlayerMovement>().beserkLocator = C_Player.transform.GetChild(0).gameObject;
 
             C_Fixed.SetActive(false);
             C_Player.SetActive(true);
