@@ -130065,6 +130065,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1830983220906550978, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
   m_PrefabInstance: {fileID: 1508143803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1508143805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6985425129740520880, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
+  m_PrefabInstance: {fileID: 1508143803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1616794830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130080,6 +130085,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 1103822044}
+    - target: {fileID: 8994769088578590081, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: beserkLocator
+      value: 
+      objectReference: {fileID: 1508143805}
     - target: {fileID: 8994769088578590084, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: m_RootOrder
       value: 22

@@ -241,4 +241,18 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    public void UnitySucks()
+    {
+        StartCoroutine(GiveBerserk());
+    }
+
+    IEnumerator GiveBerserk()
+    {
+        while (rageCounter <= 100)
+        {
+            enrage(5);
+            yield return new WaitForSeconds(.2f);
+        }
+    }
 }
