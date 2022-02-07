@@ -15,7 +15,8 @@ public class BerserkGiver : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            script.UnitySucks();
+            script = collision.gameObject.GetComponent<PlayerHealth>();
+            script.FillBerserk();
             this.gameObject.SetActive(false);
             Destroy(this);
         }

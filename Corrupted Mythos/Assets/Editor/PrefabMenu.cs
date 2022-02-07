@@ -7,7 +7,7 @@ using UnityEditor;
 public class PrefabMenu : ScriptableObject
 {
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
-    public string[] folder = new string[] { "Assets/PreFabs/Level Assets", "Assets/Prefabs/Actors" };
+    public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
     public List<GameObject> Assets = new List<GameObject>();
     public int index;
 
@@ -59,7 +59,7 @@ public class PrefabMenu_CustGUI : Editor
 
         PrefabMenu myMenu = (PrefabMenu)target;
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
-        //myMenu.LoadAssets(myMenu.index);
+        myMenu.LoadAssets(myMenu.index);
 
         //Display buttons
 

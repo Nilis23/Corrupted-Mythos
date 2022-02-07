@@ -124,9 +124,7 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
             dt = 0.56f;
-            Debug.Log("+10");
-            PlayerHealth.rageCounter += 10;
-            //PlayerHealth.rageMeter.gainHP(10);
+
             PlayerHealth.enrage(10);
 
             GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
@@ -177,9 +175,7 @@ public class swing : MonoBehaviour
             script = collision.GetComponent<EnemyHealth>();
             script.minusHealth(damage, 1);
             dt = 0.56f;
-            Debug.Log("+10");
-            PlayerHealth.rageCounter += 10;
-            //PlayerHealth.rageMeter.gainHP(10);
+
             PlayerHealth.enrage(10);
 
             GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);

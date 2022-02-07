@@ -97,8 +97,6 @@ public class PlayerHealth : MonoBehaviour
                 hpBar.loseHP(damage);
                 timer = 0.25f;
 
-                rageCounter += 5;
-                //rageMeter.gainHP(5);
                 enrage(5);
 
                 StartCoroutine(FlashObject(gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>(), Color.white, hurtFlash, 1f, 0.5f));
@@ -232,27 +230,22 @@ public class PlayerHealth : MonoBehaviour
     {
         if (rageMeter != null)
         {
+            rageCounter += val;
+
             //fill rage meter
             rageMeter.gainHP(val);
             if (rageCounter >= 100)
             {
                 berserk = true;
-                //Debug.Log("berserkable");
             }
         }
     }
 
-    public void UnitySucks()
+    public void FillBerserk()
     {
-        StartCoroutine(GiveBerserk());
-    }
-
-    IEnumerator GiveBerserk()
-    {
-        while (rageCounter <= 100)
-        {
-            enrage(5);
-            yield return new WaitForSeconds(.2f);
-        }
+        float diff = 100 - rageCounter;
+        enrage(diff);
+        Debug.Log("Filled bar");
+        Debug.Log(rageCounter);
     }
 }
