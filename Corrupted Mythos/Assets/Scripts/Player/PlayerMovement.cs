@@ -237,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
         chkAttk = true;
         float max = 0.25f;
 
-        while(t < max && pcontroller.player.attack.ReadValue<float>() > 0)
+        while(pcontroller.player.attack.ReadValue<float>() > 0)
         {
             t += Time.deltaTime;
             yield return new WaitForEndOfFrame();

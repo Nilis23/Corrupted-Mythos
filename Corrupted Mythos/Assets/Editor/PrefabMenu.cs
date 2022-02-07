@@ -8,10 +8,10 @@ public class PrefabMenu : ScriptableObject
 {
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
     public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
-    public List<GameObject> Assets = new List<GameObject>();
+    public List<Object> Assets = new List<Object>();
     public int index;
 
-    public void SpawnObj(GameObject obj)
+    public void SpawnObj(Object obj)
     {
         Debug.Log(obj.ToString());
     }
@@ -59,7 +59,7 @@ public class PrefabMenu_CustGUI : Editor
 
         PrefabMenu myMenu = (PrefabMenu)target;
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
-        myMenu.LoadAssets(myMenu.index);
+        //myMenu.LoadAssets(myMenu.index);
 
         //Display buttons
 
@@ -77,10 +77,10 @@ public class PrefabMenu_CustGUI : Editor
             GUILayout.BeginHorizontal();
             while(z < 3 && t < items) //Buttons in each row
             {
-                GameObject obj = myMenu.Assets[t];
+                Object obj = myMenu.Assets[t];
                 if (obj != null) //Null protection
                 {
-                    if (GUILayout.Button(PrefabUtility.GetIconForGameObject(obj), GUILayout.Width(size), GUILayout.Height(size)))
+                    if (GUILayout.Button(AssetPreview.GetAssetPreview(obj), GUILayout.Width(size), GUILayout.Height(size)))
                     {
                         myMenu.SpawnObj(obj);
                     }
