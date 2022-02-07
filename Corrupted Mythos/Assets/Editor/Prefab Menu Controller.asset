@@ -17,11 +17,7 @@ MonoBehaviour:
   - UI
   - Enemies
   folder:
-  - Assets/PreFabs/Level Assets
-  - Assets/Prefabs/Actors
-  Assets:
-  - {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
-  - {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
-  - {fileID: 2800000, guid: f269fc2befe6bc4479d7bcf4453311c8, type: 3}
-  - {fileID: 2800000, guid: 87363e9b60582274fbe412fd2eedd3e1, type: 3}
+  - Assets/PreFabs/Level Assets/
+  - Assets/Prefabs/Actors/
+  Assets: []
   index: 0

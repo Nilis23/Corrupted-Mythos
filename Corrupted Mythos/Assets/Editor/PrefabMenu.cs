@@ -59,7 +59,8 @@ public class PrefabMenu_CustGUI : Editor
 
         PrefabMenu myMenu = (PrefabMenu)target;
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
-        //myMenu.LoadAssets(myMenu.index);
+        
+        myMenu.LoadAssets(myMenu.index);
 
         //Display buttons
 
