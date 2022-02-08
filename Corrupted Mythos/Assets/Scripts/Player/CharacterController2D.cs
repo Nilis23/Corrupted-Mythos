@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -36,8 +37,9 @@ public class CharacterController2D : MonoBehaviour
 	Animator PlayerAnim;
 
 	bool jumped = false;
+    private bool canJump = false;
 
-	private void Awake()
+    private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -63,6 +65,8 @@ public class CharacterController2D : MonoBehaviour
 			if (colliders[i].gameObject != this.gameObject)
 			{
 				m_Grounded = true;
+				canJump = true;
+
 				if (!wasGrounded)
 				{
 					OnLandEvent.Invoke();
@@ -75,6 +79,11 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 		}
+
+        if (!m_Grounded && wasGrounded)
+        {
+			StartCoroutine(EdgeJump());
+        }
 	}
 
 
@@ -130,7 +139,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (jump && canJump)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
@@ -138,6 +147,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			PlayerAnim.SetTrigger("Jump");
 			jumped = true;
+			canJump = false;
 		}
 	}
 
@@ -171,5 +181,11 @@ public class CharacterController2D : MonoBehaviour
         {
 			m_JumpForce = 700f;
         }
+    }
+
+	IEnumerator EdgeJump()
+    {
+		yield return new WaitForSeconds(0.1f);
+		canJump = false;
     }
 }

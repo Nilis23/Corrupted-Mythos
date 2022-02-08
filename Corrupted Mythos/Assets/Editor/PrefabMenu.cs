@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class PrefabMenu : ScriptableObject
 {
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
-    public string[] folder = new string[] { "Assets/PreFabs/Level Assets/*", "Assets/Prefabs/Actors/*" };
+    public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
     public List<GameObject> Assets = new List<GameObject>();
+    private string[] list;
     public int index;
 
     public void SpawnObj(GameObject obj)
@@ -20,29 +21,28 @@ public class PrefabMenu : ScriptableObject
 
     public void LoadAssets(int indx)
     {
-        Debug.Log(indx);
-        Assets.Clear();
-        if(folder.Length < indx)
+        if (indx < folder.Length)
         {
-            Debug.Log("Bad Index attempt - Index: " + indx + " Size: " + folder.Length);
-            return;
-        }
-        else
-        {
-            Object[] data = AssetDatabase.LoadAllAssetsAtPath(folder[indx]);
-            if(data == null || data.Length <= 0)
+            Assets.Clear();
+            if (folder.Length < indx)
             {
-                Debug.Log("Bad asset load");
+                Debug.Log("Bad Index attempt - Index: " + indx + " Size: " + folder.Length);
                 return;
             }
             else
             {
-                foreach(Object obj in data)
+                list = AssetDatabase.FindAssets("t:prefab", new[] { folder[indx] });
+
+                if (list == null || list.Length <= 0)
                 {
-                    //Assets.Add(GameObject.GetPrefabAssetType(obj));
-                    if(obj is GameObject)
+                    Debug.Log("Bad asset load");
+                    return;
+                }
+                else
+                {
+                    for (int x = 0; x < list.Length; x++)
                     {
-                        Assets.Add(obj as GameObject);
+                        Assets.Add((GameObject)AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(list[x]), typeof(GameObject)));
                     }
                 }
             }
@@ -63,7 +63,7 @@ public class PrefabMenu_CustGUI : Editor
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
         
         //Load all of the assets in the selected directory
-        //myMenu.LoadAssets(myMenu.index);
+        myMenu.LoadAssets(myMenu.index);
 
         //Display buttons
 
