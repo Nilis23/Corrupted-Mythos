@@ -187,6 +187,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1830983220906550977}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1354657709625145779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985425129740520880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ccca3b39b4f924f83438054986c1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!61 &738493120998230558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +212,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_IsTrigger: 1
+=======
+  m_IsTrigger: 0
+>>>>>>> Stashed changes
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -5, y: 0}
@@ -213,6 +232,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 1}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!114 &1354657709625145779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccca3b39b4f924f83438054986c1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &6388732905928027994
 PrefabInstance:
   m_ObjectHideFlags: 0
