@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "Prefab Menu Controller", menuName = "Prefab Menu Controller", order = 0)]
 public class PrefabMenu : ScriptableObject
 {
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
-    public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
+    public string[] folder = new string[] { "Assets/PreFabs/Level Assets/*", "Assets/Prefabs/Actors/*" };
     public List<GameObject> Assets = new List<GameObject>();
     public int index;
 
-    public void SpawnObj(Object obj)
+    public void SpawnObj(GameObject obj)
     {
         Debug.Log(obj.ToString());
+        PrefabUtility.InstantiatePrefab(obj);
     }
 
     public void LoadAssets(int indx)
@@ -60,7 +62,8 @@ public class PrefabMenu_CustGUI : Editor
         PrefabMenu myMenu = (PrefabMenu)target;
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
         
-        myMenu.LoadAssets(myMenu.index);
+        //Load all of the assets in the selected directory
+        //myMenu.LoadAssets(myMenu.index);
 
         //Display buttons
 
