@@ -80,7 +80,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
-        if (!m_Grounded && wasGrounded)
+        if (!m_Grounded && wasGrounded && !jumped)
         {
 			StartCoroutine(EdgeJump());
         }
