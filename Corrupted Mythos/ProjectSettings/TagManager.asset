@@ -16,6 +16,7 @@ TagManager:
   - Weapon
   - FirelingSpawner
   - NPC
+  - Souls
   layers:
   - Default
   - TransparentFX

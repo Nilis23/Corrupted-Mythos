@@ -5,7 +5,7 @@ using UnityEngine;
 public class wispParticles : MonoBehaviour
 {
     private Vector2 endloc;
-    private float speed = 5;
+    private float speed = 10;
     PlayerMovement player;
     private float rate;
     private Vector3 origScale;
@@ -28,9 +28,9 @@ public class wispParticles : MonoBehaviour
         {
             yield return null;
             transform.position = Vector2.MoveTowards(this.transform.position, endloc, Time.deltaTime * speed);
-            rate += Time.deltaTime * .5f;
+            rate += Time.deltaTime * .3f;
             rate = Mathf.Clamp(rate, 0, 1);
-            transform.localScale = Vector3.Lerp(origScale, Vector3.zero, rate);
+            transform.localScale = Vector3.Slerp(origScale, Vector3.zero, rate);
         }
 
         this.gameObject.SetActive(false);

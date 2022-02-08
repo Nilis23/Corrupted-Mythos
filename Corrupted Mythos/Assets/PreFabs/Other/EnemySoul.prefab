@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1451368075790287844}
   m_Layer: 10
   m_Name: EnemySoul
-  m_TagString: Untagged
+  m_TagString: Souls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e875e94920d4546b72e506744924f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  berserkBar: {fileID: 4060102402722046698, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
 --- !u!212 &1451368075790287844
 SpriteRenderer:
   m_ObjectHideFlags: 0

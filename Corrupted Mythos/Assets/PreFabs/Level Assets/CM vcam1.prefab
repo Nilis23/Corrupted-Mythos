@@ -187,6 +187,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1830983220906550977}
+--- !u!61 &738493120998230558
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985425129740520880}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1354657709625145779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985425129740520880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ccca3b39b4f924f83438054986c1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6388732905928027994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
+--- !u!1 &6985425129740520880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4060102402722046698, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
+  m_PrefabInstance: {fileID: 6388732905928027994}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4450683416564254613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7308592629119756495, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
