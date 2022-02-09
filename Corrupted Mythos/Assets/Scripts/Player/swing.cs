@@ -58,7 +58,7 @@ public class swing : MonoBehaviour
             //For special held action
             if (held)
             {
-                animator.SetTrigger("LongSwing");
+                animator.SetTrigger("Hold_2");
                 Invoke("CreateSwoosh", 0.25f);
                 Invoke("UnAttack", 0.5f);
             }

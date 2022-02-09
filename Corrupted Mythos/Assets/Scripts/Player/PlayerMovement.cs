@@ -236,10 +236,17 @@ public class PlayerMovement : MonoBehaviour
         float t = 0;
         chkAttk = true;
         float max = 0.25f;
+        bool anim = false;
 
         while(pcontroller.player.attack.ReadValue<float>() > 0)
         {
             t += Time.deltaTime;
+            if(t > max && !anim)
+            {
+                //Play animation part one
+                animatior.SetTrigger("LongSwing");
+                anim = true;
+            }
             yield return new WaitForEndOfFrame();
         }
 
