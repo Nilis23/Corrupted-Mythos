@@ -37,6 +37,8 @@ public class StandingStone : MonoBehaviour
 
                 Debug.Log("adding points: check");
                 Debug.Log(script.points);
+
+                script.lives++;
             }
             triggered = true;
         }

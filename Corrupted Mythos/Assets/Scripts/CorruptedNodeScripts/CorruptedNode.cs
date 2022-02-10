@@ -88,10 +88,13 @@ public class CorruptedNode : MonoBehaviour
             if(Enemies.Count == 0 && spawned >= SpawnCount)
             {
                 EndNodeActivity();
+
                 playerHealth.points += points;
                 Debug.Log("adding points: node");
                 Debug.Log(points);
                 playerHealth.pointScore.text = playerHealth.points.ToString();
+
+                playerHealth.lives++;
             }
             else if(Enemies.Count == 0)
             {

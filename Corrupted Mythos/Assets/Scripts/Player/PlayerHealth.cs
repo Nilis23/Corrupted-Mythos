@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     public LazyUIBar hpBar;
     public LazyUIBar rageMeter;
     public PlayerMovement script;
+    public int lives;
 
     [HideInInspector]
     public CorruptedNode node;
@@ -59,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
 
         script = this.gameObject.GetComponent<PlayerMovement>();
+        lives = 10;
     }
 
     
@@ -112,6 +115,15 @@ public class PlayerHealth : MonoBehaviour
                 PlayerAnim.SetTrigger("Die");
                 script.paused = true;
                 Invoke("DeathScreen", 0.2f);
+
+                lives--;
+                if (lives<=0)
+                {
+                    Debug.Log("resetting");
+                    //restart scene
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    //Application.LoadLevel(Application.loadedLevel);
+                }
             }
         }
         
