@@ -12,7 +12,7 @@ public class SlamEffectController : MonoBehaviour
     {
         Debug.Log("hello");
         myanim.SetTrigger("Slam");
-        t = 0.1f;
+        t = 0.33f;
     }
 
     private void Update()
@@ -20,10 +20,7 @@ public class SlamEffectController : MonoBehaviour
         t -= Time.deltaTime;
         if(t < 0)
         {
-            if (myanim.GetCurrentAnimatorStateInfo(0).IsName("SlamLandIdle"))
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(false);
         }
     }
 }
