@@ -26,6 +26,7 @@ public class PrefabMenu : ScriptableObject
         {
             clone.transform.position = Selected.transform.position;
             DestroyImmediate(Selected);
+            Selected = null;
         }
     }
 
