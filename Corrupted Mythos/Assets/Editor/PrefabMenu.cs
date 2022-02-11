@@ -7,16 +7,26 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "Prefab Menu Controller", menuName = "Prefab Menu Controller", order = 0)]
 public class PrefabMenu : ScriptableObject
 {
+    //Public facing variables
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
     public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
     public List<GameObject> Assets = new List<GameObject>();
-    private string[] list;
     public int index;
+
+    //Private variables
+    private string[] list;
+    GameObject Selected;
 
     public void SpawnObj(GameObject obj)
     {
         Debug.Log(obj.ToString());
-        PrefabUtility.InstantiatePrefab(obj);
+        GameObject clone = (GameObject)PrefabUtility.InstantiatePrefab(obj);
+
+        if(Selected != null)
+        {
+            clone.transform.position = Selected.transform.position;
+            DestroyImmediate(Selected);
+        }
     }
 
     public void LoadAssets(int indx)
