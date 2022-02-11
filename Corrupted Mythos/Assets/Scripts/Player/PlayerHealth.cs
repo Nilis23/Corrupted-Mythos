@@ -115,15 +115,6 @@ public class PlayerHealth : MonoBehaviour
                 PlayerAnim.SetTrigger("Die");
                 script.paused = true;
                 Invoke("DeathScreen", 0.2f);
-
-                lives--;
-                if (lives<=0)
-                {
-                    Debug.Log("resetting");
-                    //restart scene
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                    //Application.LoadLevel(Application.loadedLevel);
-                }
             }
         }
         
@@ -195,6 +186,15 @@ public class PlayerHealth : MonoBehaviour
 
         deathCount += 1;
         points = points - (points / 10 / 2);
+
+        lives--;
+        if (lives <= 0)
+        {
+            Debug.Log("resetting");
+            //restart scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Application.LoadLevel(Application.loadedLevel);
+        }
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {
@@ -231,9 +231,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("checkpoint"))
         {
             spawn.position = new Vector3(other.transform.position.x, other.transform.position.y + 1, transform.position.z);
-            //Debug.Log(other.transform.position);
             check += 1;
-            //Destroy(other);;
 
         }
     }
