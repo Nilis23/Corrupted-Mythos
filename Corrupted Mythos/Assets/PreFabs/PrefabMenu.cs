@@ -1,31 +1,38 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine.SceneManagement;
+#endif
 
 [CreateAssetMenu(fileName = "Prefab Menu Controller", menuName = "Prefab Menu Controller", order = 0)]
 public class PrefabMenu : ScriptableObject
 {
+#if UNITY_EDITOR
+
     //Public facing variables
     public string[] categories = new string[] {"Level Assets", "UI", "Enemies" };
     public string[] folder = new string[] { "Assets/PreFabs/Level Assets/", "Assets/Prefabs/Actors/" };
+    [HideInInspector]
     public List<GameObject> Assets = new List<GameObject>();
+    [HideInInspector]
     public int index;
+    [HideInInspector]
+    public PrefabHandler Selected;
+    [HideInInspector]
+    public bool replace;
 
     //Private variables
     private string[] list;
-    GameObject Selected;
 
     public void SpawnObj(GameObject obj)
     {
         Debug.Log(obj.ToString());
         GameObject clone = (GameObject)PrefabUtility.InstantiatePrefab(obj);
 
-        if(Selected != null)
+        if(replace && Selected != null)
         {
             clone.transform.position = Selected.transform.position;
-            DestroyImmediate(Selected);
+            DestroyImmediate(Selected.gameObject);
             Selected = null;
         }
     }
@@ -71,6 +78,11 @@ public class PrefabMenu_CustGUI : Editor
         GUILayout.Space(15);
 
         PrefabMenu myMenu = (PrefabMenu)target;
+
+        myMenu.replace = GUILayout.Toggle(myMenu.replace, "Replace");
+
+        GUILayout.Space(15);
+
         myMenu.index = EditorGUILayout.Popup(myMenu.index, myMenu.categories);
         
         //Load all of the assets in the selected directory
@@ -111,5 +123,7 @@ public class PrefabMenu_CustGUI : Editor
 
     }
 
-    
+#endif
+
 }
+
