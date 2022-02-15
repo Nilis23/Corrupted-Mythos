@@ -278,7 +278,19 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), 5, layermask);
         if (hit || hitt)
         {
-            t = 1;
+            float a = Vector2.Distance(hit.point, orgPos);
+            float b = Vector2.Distance(hitt.point, orgPos);
+
+            if (a < b)
+            {
+                targPos = new Vector2(orgPos.x + ((a - 0.5f) * dir), orgPos.y);
+                t = (0.25f * (5 / a));
+            }
+            else
+            {
+                targPos = new Vector2(orgPos.x + ((b - 0.5f) * dir), orgPos.y);
+                t = (0.25f * (5 / b));
+            }
         }
         //Move
         while (t < 0.25f)

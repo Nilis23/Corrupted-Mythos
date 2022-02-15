@@ -33,7 +33,7 @@ public class EnemyNavigator : MonoBehaviour
     float t = 0;
     float speedMod = 0;
     bool bypass = false;
-    bool right = true;
+    public bool right = true;
 
     // Start is called before the first frame update
     void Start()
