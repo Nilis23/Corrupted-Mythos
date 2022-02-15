@@ -187,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (pcontroller.player.GodWipe.triggered && killCount >= 15)
         {
+            Debug.Log("wipe");
             //kill enemies on screen 
             killCount = 0;
             //visual bloom

@@ -90,9 +90,9 @@ public class CorruptedNode : MonoBehaviour
                 EndNodeActivity();
 
                 playerHealth.points += points;
-                Debug.Log("adding points: node");
-                Debug.Log(points);
-                playerHealth.pointScore.text = playerHealth.points.ToString();
+                Debug.Log("adding points: node "+points);
+                if(playerHealth.pointScore != null)
+                    playerHealth.pointScore.text = playerHealth.points.ToString();
 
                 playerHealth.lives++;
             }

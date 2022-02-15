@@ -22,6 +22,7 @@ public class IconOfDestruction : MonoBehaviour
             //Debug.Log(count);
             //Couldn't count just be directly set rather than using a loop?
         }
+        count = enemies.Count;
 
         lit.SetActive(false);
     }
@@ -32,7 +33,8 @@ public class IconOfDestruction : MonoBehaviour
         if (count == 0)
         {
             effect.Play();
-            movement.killCount += 15;
+            movement.killCount = 15;
+            Debug.Log("killcount set to 15");
             StartCoroutine(destroyThis());
             count -= 1;
         }

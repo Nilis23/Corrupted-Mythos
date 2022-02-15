@@ -188,6 +188,7 @@ public class PlayerHealth : MonoBehaviour
         points = points - (points / 10 / 2);
 
         lives--;
+        //update UI
         if (lives <= 0)
         {
             Debug.Log("resetting");

@@ -25,18 +25,21 @@ public class StandingStone : MonoBehaviour
                         if (script.deathCount <= 0)
                         {
                             script.points += 200;
+                            Debug.Log("adding points: check 200");
                         }
                         script.points += 100;
+                        Debug.Log("adding points: check 100");
                     }
                     script.points += 100;
+                    Debug.Log("adding points: check 100");
                 }
+                Debug.Log("adding points: check 100");
+
                 script.deathCount = 0;
 
                 if(script.pointScore != null)
                     script.pointScore.text = script.points.ToString();
 
-                Debug.Log("adding points: check");
-                Debug.Log(script.points);
 
                 script.lives++;
             }
