@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer;
     private bool slam = false;
     private bool chkAttk;
+    private GameObject godWipe;
 
     bool block;
 
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         impact = transform.Find("impact").gameObject.transform;
+        godWipe = transform.Find("GodWipe").gameObject;
         //pcontroller = new Inputs();
         pcontroller.Enable();
         playerHealth = this.GetComponentInParent<PlayerHealth>();
@@ -189,6 +191,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("wipe");
             //kill enemies on screen 
+            godWipe.SetActive(true);
+            godWipe.SetActive(false);
             killCount = 0;
             //visual bloom
             wipe.Play();

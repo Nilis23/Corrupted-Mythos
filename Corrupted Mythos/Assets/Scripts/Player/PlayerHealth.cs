@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     public LazyUIBar rageMeter;
     public PlayerMovement script;
     public int lives;
+    public ParticleSystem berserkBarEffect;
 
     [HideInInspector]
     public CorruptedNode node;
@@ -52,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
         if (rageMeter != null)
         {
             rageMeter.maxHP = 100;
-            rageMeter.setCurHP(rageCounter);
+            SetBerserkUI();
         }
 
         hpBar.maxHP = health;
@@ -165,7 +166,7 @@ public class PlayerHealth : MonoBehaviour
         rageCounter = 0;
         if (rageMeter != null)
         {
-            rageMeter.setCurHP(rageCounter);
+            SetBerserkUI();
         }
         hpBar.setCurHP(health);
         this.GetComponent<CharacterController2D>().m_FacingRight = true;
@@ -244,7 +245,7 @@ public class PlayerHealth : MonoBehaviour
             rageCounter += val;
 
             //fill rage meter
-            rageMeter.gainHP(val);
+            SetBerserkUI();
             if (rageCounter >= 100)
             {
                 berserk = true;
@@ -258,5 +259,14 @@ public class PlayerHealth : MonoBehaviour
         enrage(diff);
         Debug.Log("Filled bar");
         Debug.Log(rageCounter);
+    }
+    
+    public void SetBerserkUI()
+    {
+        rageMeter.setCurHP(rageCounter);
+        if (rageCounter >= 100)
+        {
+            //play effect
+        }
     }
 }

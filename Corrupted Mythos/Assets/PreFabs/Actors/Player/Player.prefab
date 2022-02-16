@@ -115,6 +115,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0254fa68beee80409c34668c20a81b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &771719481581574223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6285556714604739236}
+  - component: {fileID: 3608088483479866934}
+  - component: {fileID: 8539210542146263504}
+  m_Layer: 0
+  m_Name: GodWipe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6285556714604739236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771719481581574223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.15836732, y: 2.3051202, z: -0.17596339}
+  m_LocalScale: {x: 73.762276, y: 42.22622, z: 52.174904}
+  m_Children: []
+  m_Father: {fileID: 8994769088578590084}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3608088483479866934
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771719481581574223}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &8539210542146263504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771719481581574223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef76bf12d8fd5c1459f3f254245498b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5025833981360064930
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8994769088578590084}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7435615118561323116
 BoxCollider2D:
@@ -341,7 +411,7 @@ Transform:
   m_LocalScale: {x: 1.344902, y: 0.5212591, z: 1}
   m_Children: []
   m_Father: {fileID: 8994769088578590084}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4469391585007394212
 SpriteRenderer:
@@ -5414,9 +5484,10 @@ Transform:
   - {fileID: 8994769087110360061}
   - {fileID: 8994769088890999092}
   - {fileID: 8994769087623908242}
-  - {fileID: 3654171932037513839}
   - {fileID: 2357291309415602854}
+  - {fileID: 3654171932037513839}
   - {fileID: 4443516837133878420}
+  - {fileID: 6285556714604739236}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5455,7 +5526,7 @@ MonoBehaviour:
   rageCounter: 0
   block: 0
   perfectBlock: 0
-  points: 0
+  points: 150
   pointScore: {fileID: 0}
   deathCount: 0
   Pcamera: {fileID: 0}
@@ -5471,6 +5542,7 @@ MonoBehaviour:
   rageMeter: {fileID: 0}
   script: {fileID: 0}
   lives: 0
+  berserkBarEffect: {fileID: 5997739202950912177}
   node: {fileID: 0}
   hpGainItems: 0
   inv: 0
@@ -5576,7 +5648,7 @@ MonoBehaviour:
   paused: 0
   playerHealth: {fileID: 0}
   impact: {fileID: 0}
-  killCount: 0
+  killCount: 15
   wipe: {fileID: 0}
   shaker: {fileID: 0}
   dash: {fileID: 0}
