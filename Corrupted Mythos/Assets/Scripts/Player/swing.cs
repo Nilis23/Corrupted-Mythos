@@ -24,6 +24,7 @@ public class swing : MonoBehaviour
     public bool hit = false;
     public PlayerHealth PlayerHealth;
     private int lifesteal;
+    int bonus;
 
     private void OnEnable()
     {
@@ -46,12 +47,13 @@ public class swing : MonoBehaviour
         }
     }
 
-    public void attack(bool atk = true, bool held = false)
+    public void attack(bool atk = true, bool held = false, int mod = 1)
     {
         if (!isAnim && atk)
         {
             isatk = true;
             isAnim = true;
+            bonus = mod;
             //t = 0;
             manager.PlaySound("swing");
 
@@ -107,7 +109,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(berserkDamage, 1);
+            script.minusHealth(berserkDamage * bonus, 1);
             dt = 0.56f;
 
             GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
@@ -122,7 +124,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage, 1);
+            script.minusHealth(damage * bonus, 1);
             dt = 0.56f;
 
             PlayerHealth.enrage(10);
@@ -158,7 +160,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(berserkDamage, 1);
+            script.minusHealth(berserkDamage * bonus, 1);
             dt = 0.56f;
 
             GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
@@ -173,7 +175,7 @@ public class swing : MonoBehaviour
             impact.SetActive(false);
 
             script = collision.GetComponent<EnemyHealth>();
-            script.minusHealth(damage, 1);
+            script.minusHealth(damage * bonus, 1);
             dt = 0.56f;
 
             PlayerHealth.enrage(10);

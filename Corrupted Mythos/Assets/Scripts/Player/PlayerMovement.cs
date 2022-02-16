@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (!weap.getStatus() && !paused && !playerHealth.block && slam != true)
+        if (!weap.getStatus() && !paused && !playerHealth.block && slam != true && !chkAttk)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x;
             if (dir != 0)
@@ -261,7 +261,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(t >= max)
         {
-            weap.attack(true, true);
+            int mod;
+            if(t < 1.75)
+            {
+                mod = (int)((t / 1.75) * 3);
+            }
+            else
+            {
+                mod = 3;
+            }
+
+            if(mod == 0)
+            {
+                mod = 1;
+            }
+
+            Debug.Log(mod);
+            weap.attack(true, true, mod);
         }
 
         chkAttk = false;
