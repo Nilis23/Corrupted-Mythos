@@ -20,6 +20,7 @@ public class GodBarControl : MonoBehaviour
         Bar.rectTransform.sizeDelta = new Vector2(barstart, 33.081f);
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +31,18 @@ public class GodBarControl : MonoBehaviour
             t = 0;
         }
         t += Time.deltaTime;
+    }
+    */
+    
+    public void IncrementBar(float valAdd)
+    {
+        barstart += valAdd;
+        Bar.rectTransform.sizeDelta = new Vector2(barstart, 33.081f);
+    }
+
+    public void ResetBar()
+    {
+        barstart = 0;
+        Bar.rectTransform.sizeDelta = new Vector2(barstart, 33.081f);
     }
 }
