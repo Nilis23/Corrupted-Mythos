@@ -311,6 +311,8 @@ public class PlayerMovement : MonoBehaviour
                 targPos = new Vector2(orgPos.x + ((b - 0.5f) * dir), orgPos.y);
                 t = (0.25f * (5 / b));
             }
+
+            animatior.speed = 0.25f / t;
         }
         //Move
         while (t < 0.25f)
@@ -328,6 +330,7 @@ public class PlayerMovement : MonoBehaviour
         }
         dashbox.SetActive(false);
         paused = false;
+        animatior.speed = 1f;
     }
 
     IEnumerator rageMode()
