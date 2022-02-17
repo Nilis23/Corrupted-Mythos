@@ -74,16 +74,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void minusHealth(int damage)
+    public void minusHealth(int damage, bool blockable = true)
     {
         if (!inv)
         {
-            if (perfectBlock)
+            if (perfectBlock && blockable)
             {
                 hurtFlash = Color.yellow;
                 damage = 0;
             }
-            else if (block)
+            else if (block && blockable)
             {
                 hurtFlash = Color.gray;
                 damage -= 15;

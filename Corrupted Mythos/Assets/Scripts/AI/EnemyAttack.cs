@@ -53,7 +53,7 @@ public class EnemyAttack : MonoBehaviour
         
     }
 
-    IEnumerator DashAttack(float dist)
+    IEnumerator DashAttack(float dist, Collider2D collision)
     {
         float dir;
         if (em.nav.right)
@@ -86,6 +86,7 @@ public class EnemyAttack : MonoBehaviour
                 newPos = new Vector2(orgPos.x + ((b - 2) * dir), orgPos.y);
             }
         }
+        collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage, false);
         //Move
         while (t < 0.25f)
         {
