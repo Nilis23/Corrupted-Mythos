@@ -42,6 +42,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     Animator PlayerAnim;
 
+    private void OnEnable()
+    {
+        EnemyHealth.AddPoints += PointsAddition;
+        wispLoc.BerserkIncrement += enrage;
+    }
+    private void OnDisable()
+    {
+        EnemyHealth.AddPoints -= PointsAddition;
+        wispLoc.BerserkIncrement -= enrage;
+    }
+
     private void Start()
     {
         hpBar = GameObject.Find("HPBar")?.GetComponent<LazyUIBar>();
@@ -267,6 +278,11 @@ public class PlayerHealth : MonoBehaviour
         if (rageCounter >= 100)
         {
             //play effect
+            berserkBarEffect.Play();
         }
+    }
+    public void PointsAddition(int addVal)
+    {
+        points += addVal;
     }
 }

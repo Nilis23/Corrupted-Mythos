@@ -29,6 +29,7 @@ public class FrostGiantHealth : EnemyHealth
         if (script != null)
         {
             script.killCount++;
+            script.GodBarctrl.IncrementBar(script.GodBarctrl.GetFullSize() / 15);
         }
     }
 

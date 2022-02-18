@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public int killCount;
     public ParticleSystem wipe;
     public CameraShake shaker;
+    public GodBarControl GodBarctrl;
 
     [SerializeField]
     ImageController dash;
@@ -43,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        EnemyHealth.EnemyDied += IncrementKill;
+        IconOfDestruction.IconDestroyed += FillKill;
         pcontroller = new Inputs();
         //pcontroller.player.block.started += BlockOn;
         //pcontroller.player.block.canceled += BlockOff;
@@ -50,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
+        EnemyHealth.EnemyDied -= IncrementKill;
+        IconOfDestruction.IconDestroyed -= FillKill;
         //pcontroller.player.block.started -= BlockOn;
         //pcontroller.player.block.canceled -= BlockOff;
     }
@@ -58,9 +63,11 @@ public class PlayerMovement : MonoBehaviour
     {
         impact = transform.Find("impact").gameObject.transform;
         godWipe = transform.Find("GodWipe").gameObject;
-        //pcontroller = new Inputs();
+        Debug.Log("godwipe = " +godWipe);
         pcontroller.Enable();
         playerHealth = this.GetComponentInParent<PlayerHealth>();
+
+        //testFunc = IncrementKill;
     }
 
     private void BlockOn(InputAction.CallbackContext c)
@@ -194,6 +201,7 @@ public class PlayerMovement : MonoBehaviour
             godWipe.SetActive(true);
             godWipe.SetActive(false);
             killCount = 0;
+            GodBarctrl.ResetBar();
             //visual bloom
             wipe.Play();
             //screen shake
@@ -222,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
     public void spawning()
     {
         StartCoroutine(SpawnedIn());
+        GodBarctrl.ResetBar();
     }
 
     public void ToggleSwingBox(bool lean)
@@ -399,5 +408,16 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.inv = false;
         slam = false;
         weap.UnAttack();
+    }
+
+    public void IncrementKill()
+    {
+        killCount++;
+        GodBarctrl.IncrementBar(GodBarctrl.GetFullSize() / 15);
+    }
+    public void FillKill()
+    {
+        killCount = 15;
+        GodBarctrl.IncrementBar(GodBarctrl.GetFullSize());
     }
 }

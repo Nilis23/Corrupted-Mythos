@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class IconOfDestruction : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class IconOfDestruction : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject lit;
     public int count;
+
+    public static Action IconDestroyed = delegate { };
 
     private void Start()
     {
@@ -33,8 +36,12 @@ public class IconOfDestruction : MonoBehaviour
         if (count == 0)
         {
             effect.Play();
+            /*
             movement.killCount = 15;
             Debug.Log("killcount set to 15");
+            movement.GodBarctrl.IncrementBar(movement.GodBarctrl.GetFullSize());
+            */
+            IconDestroyed();
             StartCoroutine(destroyThis());
             count -= 1;
         }

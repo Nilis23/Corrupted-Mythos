@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class EnemyHealth : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public abstract class EnemyHealth : MonoBehaviour
     [SerializeField]
     public GameObject soulPref;
 
-    //private IoDAbomHealth icon;
+    public static Action EnemyDied = delegate { };
+    public static Action<int> AddPoints = delegate { };
 
     //MinusHealth is now an abstract funtion implemented by individual enemy health scripts, this makes it easier for each enemy to do something different
     public abstract void minusHealth(int damage, int knockback = 0);
@@ -47,28 +49,13 @@ public abstract class EnemyHealth : MonoBehaviour
         {
             em.knockback(4f);
             em.setStgr(20, true);
-
         }
 
         if (health <= 0)
         {
-            if (points != 0)
-            {
-                player.GetComponent<PlayerHealth>().points += points;
-                Debug.Log("adding points: enemy "+points);
-                if (player.GetComponent<PlayerHealth>().pointScore != null)
-                    player.GetComponent<PlayerHealth>().pointScore.text = player.GetComponent<PlayerHealth>().pointScore.ToString();
+            EnemyDied();
+            AddPoints(points);
 
-            }
-
-            /*
-            soulPref.GetComponent<wispParticles>().player = player;
-            Debug.Log(soulPref);
-            GameObject Soul = Instantiate(soulPref);
-            Soul.transform.position = this.transform.position;
-            Soul.transform.parent = null;
-            Soul.SetActive(true);
-            */
             Destroy(this.gameObject, 0.1f);            
         }
     }
@@ -76,6 +63,5 @@ public abstract class EnemyHealth : MonoBehaviour
     public void addHealth(int gain)
     {
         health += gain;
-        Debug.Log(health);
     }
 }

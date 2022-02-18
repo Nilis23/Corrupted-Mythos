@@ -12,10 +12,11 @@ public class OWAbomHealth : EnemyHealth
 
     private IoDAbomHealth icon;
     bool Icon = false;
+    public float berserkGiven=10;
 
     private void Start()
     {
-        script = gameObject.GetComponent<PlayerMovement>();
+        script = player.GetComponent<PlayerMovement>();
         icon = this.GetComponent<IoDAbomHealth>();
         if(icon != null)
         {
@@ -29,7 +30,7 @@ public class OWAbomHealth : EnemyHealth
 
         if (health <= 0)
         {
-            float drop = Random.value;
+            float drop = UnityEngine.Random.value;
             if (Icon)
             {
                 icon.dead();
@@ -46,12 +47,9 @@ public class OWAbomHealth : EnemyHealth
             }
 
             GameObject soul = Instantiate(soulPref);
+            soul.GetComponent<wispParticles>().StoredBerserk = berserkGiven;
             soul.transform.position = this.transform.position;
 
-            if (script != null)
-            {
-                script.killCount++;
-            }
         }
     }
 }

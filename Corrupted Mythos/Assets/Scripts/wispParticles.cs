@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class wispParticles : MonoBehaviour
 {
+    public float StoredBerserk;
     private Vector2 endloc;
     private float speed = 10;
     PlayerMovement player;
