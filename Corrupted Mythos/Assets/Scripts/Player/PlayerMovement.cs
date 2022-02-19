@@ -199,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("wipe");
             //kill enemies on screen 
             godWipe.SetActive(true);
-            godWipe.SetActive(false);
+            //godWipe.SetActive(false);
             killCount = 0;
             GodBarctrl.ResetBar();
             //visual bloom
