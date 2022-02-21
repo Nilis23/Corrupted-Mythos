@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 199727142985160701}
   - component: {fileID: 5023744544221611993}
   - component: {fileID: 5831923292380406405}
+  - component: {fileID: -1259490246541428071}
   m_Layer: 0
   m_Name: CorruptNode
   m_TagString: Untagged
@@ -345,6 +346,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1259490246541428071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199727143045169882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &6370757559677080102
 GameObject:
   m_ObjectHideFlags: 0

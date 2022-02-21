@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1830983220906550976}
   - component: {fileID: 1830983220906550977}
   - component: {fileID: 1830983220906550983}
+  - component: {fileID: -493149214126142753}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -187,6 +188,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1830983220906550977}
+--- !u!114 &-493149214126142753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830983220906550978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!61 &738493120998230558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ccca3b39b4f924f83438054986c1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AddedBerserk: 0
 --- !u!1001 &6388732905928027994
 PrefabInstance:
   m_ObjectHideFlags: 0

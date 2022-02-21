@@ -320,6 +320,7 @@ MonoBehaviour:
   bypassDist: 4.5
   Attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
   doBypass: 1
+  right: 1
 --- !u!114 &4932792692613233228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,9 +369,11 @@ MonoBehaviour:
   animator: {fileID: 4932792692073876047}
   script: {fileID: 0}
   player: {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+  soulPref: {fileID: 0}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   AbomPoints: 50
+  berserkGiven: 10
 --- !u!114 &4932792692613233226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,6 +5293,7 @@ GameObject:
   - component: {fileID: 4932792692749133404}
   - component: {fileID: 4932792692749133405}
   - component: {fileID: 4932792692749133406}
+  - component: {fileID: 5120950103885978937}
   m_Layer: 0
   m_Name: Icon of Destruction (unused)
   m_TagString: Untagged
@@ -5405,6 +5409,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5120950103885978937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932792692749133402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &4932792693000517589
 GameObject:
   m_ObjectHideFlags: 0
@@ -10736,6 +10753,7 @@ MonoBehaviour:
   bypassDist: 4.5
   Attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
   doBypass: 1
+  right: 1
 --- !u!114 &4932792693566193677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10784,9 +10802,11 @@ MonoBehaviour:
   animator: {fileID: 4932792693254253512}
   script: {fileID: 0}
   player: {fileID: 8994769088578590136, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+  soulPref: {fileID: 0}
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   AbomPoints: 50
+  berserkGiven: 10
 --- !u!114 &4932792693566193675
 MonoBehaviour:
   m_ObjectHideFlags: 0

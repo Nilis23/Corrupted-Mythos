@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1107102001710737057}
   - component: {fileID: 1107102001710737062}
   - component: {fileID: 1107102001710737063}
+  - component: {fileID: 231754098687888807}
   m_Layer: 0
   m_Name: Sign
   m_TagString: Untagged
@@ -136,6 +137,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isImage: 0
+--- !u!114 &231754098687888807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107102001710737060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &1107102001903855292
 GameObject:
   m_ObjectHideFlags: 0

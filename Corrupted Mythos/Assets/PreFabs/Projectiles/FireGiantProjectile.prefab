@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2195012337165663305}
   - component: {fileID: -4063300218532938748}
   - component: {fileID: 2615314861393489495}
+  - component: {fileID: 8229753439503728606}
   m_Layer: 10
   m_Name: FireGiantProjectile
   m_TagString: 'Projectile '
@@ -88,6 +89,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8229753439503728606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570958598915870579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &5718308747642380087
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +172,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1896865509
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5f9a6c10b854e6f419051c59f734321b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

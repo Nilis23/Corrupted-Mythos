@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 395663509039255221}
   - component: {fileID: 1577840161901279880}
   - component: {fileID: 1264876288321598814}
+  - component: {fileID: -3626923826498526960}
   m_Layer: 10
   m_Name: Axe
   m_TagString: 'Projectile '
@@ -210,3 +211,16 @@ MonoBehaviour:
   launchAngle: 0.75
   timeToPeak: 0.5
   rotSpeed: 450
+--- !u!114 &-3626923826498526960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679738632903409333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

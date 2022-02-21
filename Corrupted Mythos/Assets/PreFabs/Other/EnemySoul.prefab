@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1293211651821104196}
   - component: {fileID: 1293211651821104197}
   - component: {fileID: 1451368075790287844}
+  - component: {fileID: -6715007597711476658}
   m_Layer: 10
   m_Name: EnemySoul
   m_TagString: Souls
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e875e94920d4546b72e506744924f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoredBerserk: 0
 --- !u!212 &1451368075790287844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,3 +97,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6715007597711476658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293211651821104217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

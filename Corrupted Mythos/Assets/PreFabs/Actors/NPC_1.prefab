@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 4079109553048679867}
   - component: {fileID: 6755750499868158654}
   - component: {fileID: 6755750499868158655}
+  - component: {fileID: 4252936122741781330}
   m_Layer: 0
   m_Name: NPC_1
   m_TagString: NPC
@@ -345,3 +346,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   dialouge: Hello\nthere
+--- !u!114 &4252936122741781330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755750499868158624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

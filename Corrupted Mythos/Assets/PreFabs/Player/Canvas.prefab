@@ -2946,6 +2946,7 @@ GameObject:
   - component: {fileID: 1319010288258014140}
   - component: {fileID: 1319010288258014128}
   - component: {fileID: 1319010288258014129}
+  - component: {fileID: 7487457932021065389}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3056,7 +3057,6 @@ MonoBehaviour:
   pause: {fileID: 1319010287150186407}
   restart: {fileID: 1319010287054847224}
   player: {fileID: 0}
-  berserkLoc: {fileID: 2940320395905608563}
 --- !u!114 &1319010288258014129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3073,6 +3073,19 @@ MonoBehaviour:
   death: {fileID: 1319010287054847224}
   options: {fileID: 1319010287909558850}
   playingUI: {fileID: 1319010288396421059}
+--- !u!114 &7487457932021065389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319010288258014143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &1319010288346769978
 GameObject:
   m_ObjectHideFlags: 0
@@ -6034,11 +6047,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
---- !u!1 &2940320395905608563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4060102402722046698, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}
-  m_PrefabInstance: {fileID: 1195279425197771161}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8501434952091935062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7308592629119756495, guid: 0e32a861a2ebff547b35768c3b546ed1, type: 3}

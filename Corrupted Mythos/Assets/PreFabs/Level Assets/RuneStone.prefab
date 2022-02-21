@@ -4874,6 +4874,7 @@ GameObject:
   - component: {fileID: 898773140276278286}
   - component: {fileID: 1103876674}
   - component: {fileID: 4733039309708064536}
+  - component: {fileID: 5283919572103363604}
   m_Layer: 0
   m_Name: RuneStone
   m_TagString: checkpoint
@@ -5075,3 +5076,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 66516320}
+--- !u!114 &5283919572103363604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898773140276278287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

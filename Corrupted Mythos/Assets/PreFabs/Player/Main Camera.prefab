@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4660274755222007600}
   - component: {fileID: 4660274755222007607}
   - component: {fileID: 4660274755222007604}
+  - component: {fileID: -9181906456993575461}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -151,3 +152,16 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &-9181906456993575461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660274755222007603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 2882597727957746578}
   - component: {fileID: 2882597727957746669}
   - component: {fileID: -5919473169882004584}
+  - component: {fileID: 288807178584917236}
   m_Layer: 8
   m_Name: Abomonation
   m_TagString: enemy
@@ -467,6 +468,7 @@ MonoBehaviour:
   bypassDist: 4.5
   Attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
   doBypass: 1
+  right: 1
 --- !u!114 &2882597727957746669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,3 +521,17 @@ MonoBehaviour:
   foodChance: 0.1
   foodPref: {fileID: 3257239557045572455, guid: d1436c6c65b10cd40b3ae51ca36a0a20, type: 3}
   AbomPoints: 50
+  berserkGiven: 10
+--- !u!114 &288807178584917236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882597727957746579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}

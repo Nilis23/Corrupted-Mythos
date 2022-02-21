@@ -5451,6 +5451,7 @@ GameObject:
   - component: {fileID: 8994769088578590138}
   - component: {fileID: 8994769088578590080}
   - component: {fileID: 8994769088578590081}
+  - component: {fileID: 8338061352963660422}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -5645,6 +5646,19 @@ MonoBehaviour:
   dash: {fileID: 0}
   SlamEffect: {fileID: 5720990074273928064}
   beserkLocator: {fileID: 0}
+--- !u!114 &8338061352963660422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994769088578590136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &8994769088890999083
 GameObject:
   m_ObjectHideFlags: 0

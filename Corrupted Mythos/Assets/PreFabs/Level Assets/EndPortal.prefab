@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7101643720780794658}
   - component: {fileID: 7101643720780794659}
   - component: {fileID: 7101643720780794656}
+  - component: {fileID: -5540282720143091524}
   m_Layer: 0
   m_Name: EndPortal
   m_TagString: Untagged
@@ -163,6 +164,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: EndScene
+--- !u!114 &-5540282720143091524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101643720780794657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!1 &7101643721048011370
 GameObject:
   m_ObjectHideFlags: 0

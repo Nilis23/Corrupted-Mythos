@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6535474071209280966}
   - component: {fileID: 6535474071209280960}
   - component: {fileID: 6535474071209280963}
+  - component: {fileID: -1845571348516573051}
   m_Layer: 0
   m_Name: berserkGiver
   m_TagString: Untagged
@@ -70,3 +71,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d29df4366981d45963862911156d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1845571348516573051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535474071209280962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
