@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int points;
     public Text pointScore;
+    public Text livesCount;
     public int deathCount;
 
     public GameObject Pcamera;
@@ -73,7 +74,8 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
 
         script = this.gameObject.GetComponent<PlayerMovement>();
-        lives = 10;
+        lives = 4;
+        livesCount.text = lives.ToString();
     }
 
     
@@ -200,6 +202,7 @@ public class PlayerHealth : MonoBehaviour
         points = points - (points / 10 / 2);
 
         lives--;
+        livesCount.text = lives.ToString();
         //update UI
         if (lives <= 0)
         {

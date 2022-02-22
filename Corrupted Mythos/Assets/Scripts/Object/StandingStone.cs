@@ -41,7 +41,7 @@ public class StandingStone : MonoBehaviour
                     script.pointScore.text = script.points.ToString();
 
 
-                script.lives++;
+                //script.lives++;
             }
             triggered = true;
         }

@@ -95,6 +95,7 @@ public class CorruptedNode : MonoBehaviour
                     playerHealth.pointScore.text = playerHealth.points.ToString();
 
                 playerHealth.lives++;
+                playerHealth.livesCount.text = playerHealth.lives.ToString();
             }
             else if(Enemies.Count == 0)
             {
