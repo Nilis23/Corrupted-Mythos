@@ -12,8 +12,9 @@ public class wispLoc : MonoBehaviour
     {
         if (collision.gameObject.tag == "Souls")
         {
+            Debug.Log("destroying");
             AddedBerserk = collision.GetComponent<wispParticles>().StoredBerserk;
-            Destroy(collision);
+            Destroy(collision.gameObject);
             BerserkIncrement(AddedBerserk);
         }
     }

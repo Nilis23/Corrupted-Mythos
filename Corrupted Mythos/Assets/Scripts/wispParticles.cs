@@ -34,8 +34,8 @@ public class wispParticles : MonoBehaviour
             transform.localScale = Vector3.Slerp(origScale, Vector3.zero, rate);
         }
 
-        this.gameObject.SetActive(false);
-        Destroy(this);
+        //this.gameObject.SetActive(false);
+        //Destroy(this);
     }
 
     public void end(GameObject location)

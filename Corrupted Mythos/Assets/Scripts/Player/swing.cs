@@ -178,7 +178,7 @@ public class swing : MonoBehaviour
             script.minusHealth(damage * bonus, 1);
             dt = 0.56f;
 
-            PlayerHealth.enrage(10);
+            //PlayerHealth.enrage(10);
 
             GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
 

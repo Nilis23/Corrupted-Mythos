@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7308592629119756495}
   - component: {fileID: 8275100132919226901}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: berserkLocator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
