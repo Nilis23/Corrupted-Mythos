@@ -13,35 +13,32 @@ MonoBehaviour:
   m_Name: Prefab Menu Controller
   m_EditorClassIdentifier: 
   categories:
-  - Level Assets
-  - UI
+  - Player
   - Enemies
+  - Nodes
+  - Level Assets
+  - Decor
+  - Drops
+  - Projectiles
   folder:
-  - Assets/PreFabs/Level Assets/
+  - Assets/PreFabs/Player/
   - Assets/Prefabs/Actors/
+  - Assets/Prefabs/NodePrefs/
+  - Assets/Prefabs/Level Assets/
+  - Assets/Prefabs/Decor Prefabs/
+  - Assets/Prefabs/Drops/
+  - Assets/Prefabs/Projectiles/
   Assets:
-  - {fileID: 5663992059825265214, guid: 5ccfd8e908a5f21459591ce0884a7783, type: 3}
-  - {fileID: 4451958314703448046, guid: b2fc7044db559f94ead3dc0ff2433071, type: 3}
-  - {fileID: 5627953141649502237, guid: dc8d0497381b09e4ba2e0aec2d3a1042, type: 3}
-  - {fileID: 1319010288258014143, guid: 8235a5e865d0e064287581b03441275f, type: 3}
-  - {fileID: 1830983220906550978, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
-  - {fileID: 3364286103723988176, guid: eaa1d7432c2e41149b244a873e0601e6, type: 3}
-  - {fileID: 1726433008623437273, guid: 6805d3a5479c41b488c3bc87ef1798fb, type: 3}
-  - {fileID: 2406910931672508756, guid: d3c7ce65dd10c9e4183246aff56d0a5c, type: 3}
-  - {fileID: 8652938764818904004, guid: 6a456ae35c826bc4aa624341b74239eb, type: 3}
-  - {fileID: 7101643720780794657, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
-  - {fileID: 6340982991302796584, guid: be3904f20fe43794d8c87b473c1d77e4, type: 3}
-  - {fileID: 4932792692749133402, guid: 34e76f51254993640a51e397ad09f8a2, type: 3}
-  - {fileID: 1061002161616251708, guid: 4b7bb76761c66754fb4851cfcad2671f, type: 3}
-  - {fileID: 8200538125921948274, guid: 60fdf8a36df985c4f88bd8bad7c1df5c, type: 3}
-  - {fileID: 591624410879889570, guid: 2c55e3574bca63b41866b0258d3abfc2, type: 3}
-  - {fileID: 4660274755222007603, guid: 16934ee7e1685ca428abecca56ff0367, type: 3}
-  - {fileID: 199727143045169882, guid: e755afefc0cce0243862ca433c5dea6c, type: 3}
-  - {fileID: 6787741493592540932, guid: 455fccc679548d44abe899815a412c83, type: 3}
-  - {fileID: 4077531993475796596, guid: eeb2c5018a42f984cab1307c087f6abe, type: 3}
-  - {fileID: 6084865303878170531, guid: 822f5f4f1372a0b4ba3cad2293c873b4, type: 3}
-  - {fileID: 898773140276278287, guid: b8aedc1b9b0be214d9b256e055edf94e, type: 3}
-  - {fileID: 1107102001710737060, guid: 05c4f4559c6dc174782ae1f60c03194c, type: 3}
-  - {fileID: 4673903921007063557, guid: 2f06eb9677fde244894fdad6cbcc81a8, type: 3}
-  - {fileID: 5202260309615627640, guid: 5120810488b386548a45ac43f48e23ab, type: 3}
-  index: 0
+  - {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+  - {fileID: 3743684799867251208, guid: a03901a3ef40f884ea1b382e4922782e, type: 3}
+  - {fileID: 3635417699456738414, guid: 6a6960cf25de0d24cb14bdf265900413, type: 3}
+  - {fileID: 6755750499868158624, guid: fc4211c44c0965d4fa6f471cfb2c56e2, type: 3}
+  - {fileID: 2430753120311767230, guid: c9910138b7e596f49ada884aa9844df3, type: 3}
+  - {fileID: 549624843375694296, guid: 915a3b5d7c8b2524b80155923168d1fc, type: 3}
+  - {fileID: 4376201681347952359, guid: 8425c75327647e24faaf1d4fd80c185a, type: 3}
+  - {fileID: 3885939799044644756, guid: c357cc0f4345fb840b38eb390b0029b9, type: 3}
+  - {fileID: 7905687791689355355, guid: 1645551d83cfd9841883d36ebf27b435, type: 3}
+  - {fileID: 4612784550712309316, guid: 2206ebb9e83da6145a79741cec1f5bae, type: 3}
+  index: 1
+  Selected: {fileID: 0}
+  replace: 0
