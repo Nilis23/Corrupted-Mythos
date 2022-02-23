@@ -11,8 +11,13 @@ public class EnemyAttack : MonoBehaviour
     [Space]
     [SerializeField]
     Animator animator;
+    [Space]
+    [SerializeField]
+    bool charge = false;
     float t = 0;
     AudioManager manager;
+
+    [Space]
     public EnemyHealth eHealth;
     public bool fG;
 
@@ -114,9 +119,15 @@ public class EnemyAttack : MonoBehaviour
                 manager.PlaySound("abomHit");
             }
 
+            if (charge) 
+            {
 
-            StartCoroutine(DoAttack(collision));
-            //StartCoroutine(DashAttack(10));
+                StartCoroutine(DashAttack(10, collision));
+            }
+            else
+            {
+                StartCoroutine(DoAttack(collision));
+            }
         }
     }
 }
