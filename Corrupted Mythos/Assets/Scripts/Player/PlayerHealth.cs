@@ -75,7 +75,10 @@ public class PlayerHealth : MonoBehaviour
 
         script = this.gameObject.GetComponent<PlayerMovement>();
         lives = 4;
-        livesCount.text = lives.ToString();
+        if (livesCount != null) //Don't forget your null checking especially if you're not grabbing it in code
+        {
+            livesCount.text = lives.ToString();
+        }
     }
 
     

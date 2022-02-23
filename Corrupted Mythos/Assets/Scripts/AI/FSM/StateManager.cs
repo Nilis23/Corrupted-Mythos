@@ -12,7 +12,7 @@ public class StateManager : MonoBehaviour
 
     [Space]
     public EnemyHealth hp;
-    public Seeker seeker;
+    //public Seeker seeker;
     public GameObject player;
     public EnemyNavigator nav;
 

@@ -54,7 +54,10 @@ public abstract class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             EnemyDied();
-            AddPoints(points);
+            if (points != 0)
+            {
+                AddPoints(points);
+            }
 
             Destroy(this.gameObject, 0.1f);            
         }
