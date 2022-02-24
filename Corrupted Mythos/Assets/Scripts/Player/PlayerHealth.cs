@@ -74,7 +74,7 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
 
         script = this.gameObject.GetComponent<PlayerMovement>();
-        lives = 4;
+        lives = 5;
         if (livesCount != null) //Don't forget your null checking especially if you're not grabbing it in code
         {
             livesCount.text = lives.ToString();

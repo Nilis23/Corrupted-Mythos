@@ -413,7 +413,10 @@ public class PlayerMovement : MonoBehaviour
     public void IncrementKill()
     {
         killCount++;
-        GodBarctrl.IncrementBar(GodBarctrl.GetFullSize() / 15);
+        if (GodBarctrl != null)
+        {
+            GodBarctrl.IncrementBar(GodBarctrl.GetFullSize() / 15);
+        }
     }
     public void FillKill()
     {
