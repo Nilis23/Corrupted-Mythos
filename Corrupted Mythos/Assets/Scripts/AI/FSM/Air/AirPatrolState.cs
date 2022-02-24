@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Air Patrol State", menuName = "FSM/States/Air/Patrol", order = 2)]
 public class AirPatrolState : State
 {
-    public State chase;
+    public State attack;
     public State idle;
 
 
@@ -34,9 +34,9 @@ public class AirPatrolState : State
         }
 
         int colState = em.getCollisionState();
-        if (Mathf.Abs(em.gameObject.transform.position.x - em.player.transform.position.x) < 6.5f && Mathf.Abs(em.gameObject.transform.position.y - em.player.transform.position.y) < 1f) //The player has entered the second sphere, transfer to attack
+        if (em.attack) //The player has entered the attack range
         {
-            return chase;
+            return attack;
         }
         else if (colState < 1)
         {

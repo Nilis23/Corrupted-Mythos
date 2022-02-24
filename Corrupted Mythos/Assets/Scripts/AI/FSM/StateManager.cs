@@ -29,6 +29,14 @@ public class StateManager : MonoBehaviour
     public int collisions = 0;
     public float stagr = 0;
 
+    [Space]
+    [SerializeField]
+    AnimationCurve yCurve;
+    [SerializeField]
+    GameObject BatHitDetection;
+    [SerializeField]
+    GameObject BatAttackHitBox;
+
     private void Start()
     {
         //Find and store the player
@@ -121,6 +129,11 @@ public class StateManager : MonoBehaviour
         return currentState;
     }
 
+    public void DoBatAttack()
+    {
+        StartCoroutine(BatAttack());
+    }
+
     public void knockback(float mod)
     {
         float dir = player.transform.position.x - transform.position.x;
@@ -194,6 +207,39 @@ public class StateManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    IEnumerator BatAttack()
+    {
+        Vector2 myPos = transform.position;
+        Vector2 playerPos = player.transform.position;
+        BatHitDetection.SetActive(false);
+        BatAttackHitBox.SetActive(true);
+
+        //Calc Offset:
+        float offX = Mathf.Abs(myPos.x - playerPos.x); //Knowing hpw far to move in the X axis
+        float offY = Mathf.Abs(myPos.y - playerPos.y); //The multiplication factor in the Y axis
+
+        if (!nav.right) //Make sure that the bat moves in right direction if facing left
+        {
+            offX *= -1;
+        }
+
+        //Movement
+        float t = 0;
+        while(t < 2)
+        {
+            transform.position = new Vector2(myPos.x + ((offX * 2) * (t / 2)), myPos.y - (yCurve.Evaluate(t) * offY));
+            t += Time.deltaTime;
+            Debug.Log("Hello");
+            yield return null;
+        }
+
+        //End
+        transform.position = new Vector2(myPos.x + (offX * 2), myPos.y); //Reset end position
+        BatHitDetection.SetActive(true);
+        BatAttackHitBox.SetActive(false);
+        attack = false;
     }
 
     public void setStgr(float val, bool clr = false)
