@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3994124250893701624}
   - component: {fileID: 851583216045898313}
+  - component: {fileID: 1077779886496337449}
   m_Layer: 0
   m_Name: ObstacleParent
   m_TagString: Untagged
@@ -45,6 +46,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 11400000, guid: 459bfbfae1a483c409e5842d2b8828d1, type: 2}
+--- !u!95 &1077779886496337449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994124250893701626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10242f8cc75372f41a2904475fbdd2b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &774335699325060859
 PrefabInstance:
   m_ObjectHideFlags: 0
