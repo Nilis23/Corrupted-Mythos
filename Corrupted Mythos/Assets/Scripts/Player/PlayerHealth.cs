@@ -292,9 +292,9 @@ public class PlayerHealth : MonoBehaviour
         points += addVal;
     }
 
-    public void knockAround()
+    public void knockAround(bool flip)
     {
-        StartCoroutine(knockUp());
+        StartCoroutine(knockUpSide(flip));
     }
 
     IEnumerator knockUp()
@@ -317,5 +317,38 @@ public class PlayerHealth : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    IEnumerator knockUpSide(bool flip)
+    {
+        Vector2 upPos;
+        if (flip)
+        {
+            upPos = new Vector2(transform.position.x + 4, transform.position.y + 4);
+        }
+        else
+        {
+            upPos = new Vector2(transform.position.x-4, transform.position.y + 4);
+        }
+        
+        Vector2 orgPos = transform.position;
+        float t = 0;
+
+        while (t <= 0.3f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(orgPos, upPos, t / 0.3f);
+
+            yield return null;
+        }
+        /*
+        while (t <= 0.5f)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector2.Lerp(upPos, orgPos, (t - 0.3f) / 0.25f);
+
+            yield return null;
+        }
+        */
     }
 }

@@ -6,6 +6,7 @@ public class Obstacles : MonoBehaviour
 {
     public int damage;
     private PlayerHealth script;
+    public bool flip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +14,7 @@ public class Obstacles : MonoBehaviour
         {
             script = collision.gameObject.GetComponent<PlayerHealth>();
             script.minusHealth(damage);
-            script.knockAround();
+            script.knockAround(flip);
         }
     }
 }
