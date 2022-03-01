@@ -17,6 +17,7 @@ public class PrefabHandler : MonoBehaviour
 
     public void SendRef()
     {
+        Debug.Log("Sending");
         (menu as PrefabMenu).Selected = this;
     }
 }

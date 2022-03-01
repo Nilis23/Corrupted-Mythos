@@ -33,8 +33,18 @@ public class PrefabMenu : ScriptableObject
         {
             clone.transform.position = Selected.transform.position;
             DestroyImmediate(Selected.gameObject);
-            Selected = null;
+            Selected = clone.GetComponent<PrefabHandler>();
         }
+        else
+        {
+            Camera sceneCam = SceneView.lastActiveSceneView.camera;
+            Vector3 placePos = sceneCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
+            clone.transform.position = new Vector3(placePos.x, placePos.y, 1);
+        }
+
+        Selection.activeObject = clone;
+
+        
     }
 
     public void LoadAssets(int indx)
