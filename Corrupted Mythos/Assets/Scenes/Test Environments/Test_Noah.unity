@@ -376,7 +376,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: Attack
+  _animationName: 
   loop: 1
   timeScale: 1
 --- !u!23 &152261542
@@ -8261,7 +8261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   em: {fileID: 1235019041}
-  stagTime: 2
+  stagTime: 1
   animator: {fileID: 1589017152}
   script: {fileID: 0}
   player: {fileID: 0}
@@ -8345,9 +8345,9 @@ MonoBehaviour:
   speed: 5
   nWaypointDistance: 3
   em: {fileID: 1235019041}
-  bypassDist: 0
+  bypassDist: 15
   Attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
-  doBypass: 0
+  doBypass: 1
   right: 1
 --- !u!4 &1235019043
 Transform:

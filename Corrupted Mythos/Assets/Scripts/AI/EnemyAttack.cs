@@ -105,6 +105,8 @@ public class EnemyAttack : MonoBehaviour
         {
             em.transform.position = newPos;
         }
+        em.attack = false;
+        em.setStgr(1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
