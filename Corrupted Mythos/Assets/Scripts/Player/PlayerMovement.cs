@@ -345,9 +345,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator rageMode()
     {
         float i;
-        //deplete the berserk mode bar
         Bactive = true;
         playerHealth.berserking = true;
+        playerHealth.CallBerserkEffect();
 
         for (i = 0; i < 5; i++)
         {
@@ -355,8 +355,6 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.rageMeter.loseHP(20);
             yield return new WaitForSeconds(2);
         }
-
-        //yield return new WaitForSeconds(10);
 
         playerHealth.rageCounter = 0;
         playerHealth.rageMeter.setCurHP(0);
@@ -366,9 +364,9 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.berserking = false;
 
         Bactive = false;
-        //Debug.Log("unberserking");
         gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;
+        playerHealth.berserk = false;
     }
 
     IEnumerator PerfectBlock()
@@ -400,6 +398,10 @@ public class PlayerMovement : MonoBehaviour
             if(col.tag == "enemy")
             {
                 col.gameObject.GetComponent<EnemyHealth>()?.minusHealth(50, 10);
+            }
+            else if (col.tag == "Dummy")
+            {
+                col.gameObject.GetComponent<DummyHealth>()?.doDamage(50);
             }
         }
 

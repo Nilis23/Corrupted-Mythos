@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static Action<bool> BerserkEffect = delegate { };
+
     public bool berserk;
     public bool berserking;
     public float rageCounter;
@@ -79,6 +82,7 @@ public class PlayerHealth : MonoBehaviour
         {
             livesCount.text = lives.ToString();
         }
+        berserk = false;
     }
 
     
@@ -260,13 +264,7 @@ public class PlayerHealth : MonoBehaviour
         if (rageMeter != null)
         {
             rageCounter += val;
-
-            //fill rage meter
             SetBerserkUI();
-            if (rageCounter >= 100)
-            {
-                berserk = true;
-            }
         }
     }
 
@@ -274,6 +272,7 @@ public class PlayerHealth : MonoBehaviour
     {
         float diff = 100 - rageCounter;
         enrage(diff);
+
         Debug.Log("Filled bar");
         Debug.Log(rageCounter);
     }
@@ -283,10 +282,20 @@ public class PlayerHealth : MonoBehaviour
         rageMeter.setCurHP(rageCounter);
         if (rageCounter >= 100)
         {
-            //play effect
-            berserkBarEffect.Play();
+            if (berserk == false)
+            {
+                Debug.Log("effect on");
+                BerserkEffect(false);
+            }
+            berserk = true;
         }
     }
+
+    public void CallBerserkEffect()
+    {
+        BerserkEffect(false);
+    }
+
     public void PointsAddition(int addVal)
     {
         points += addVal;
@@ -341,14 +350,5 @@ public class PlayerHealth : MonoBehaviour
 
             yield return null;
         }
-        /*
-        while (t <= 0.5f)
-        {
-            t += Time.deltaTime;
-            transform.position = Vector2.Lerp(upPos, orgPos, (t - 0.3f) / 0.25f);
-
-            yield return null;
-        }
-        */
     }
 }
