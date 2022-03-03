@@ -291,9 +291,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void CallBerserkEffect()
+    public void TurnOffBerserkEffect()
     {
-        BerserkEffect(false);
+        BerserkEffect(true);
     }
 
     public void PointsAddition(int addVal)

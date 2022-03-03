@@ -347,13 +347,12 @@ public class PlayerMovement : MonoBehaviour
         float i;
         Bactive = true;
         playerHealth.berserking = true;
-        playerHealth.CallBerserkEffect();
 
         for (i = 0; i < 5; i++)
         {
-            playerHealth.rageCounter -= 20;
-            playerHealth.rageMeter.loseHP(20);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
+            playerHealth.rageCounter -= 10;
+            playerHealth.rageMeter.loseHP(10);
         }
 
         playerHealth.rageCounter = 0;
@@ -367,6 +366,8 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         impact.GetComponent<SpriteRenderer>().color = Color.white;
         playerHealth.berserk = false;
+        //turn off berserk effect
+        playerHealth.TurnOffBerserkEffect();
     }
 
     IEnumerator PerfectBlock()
