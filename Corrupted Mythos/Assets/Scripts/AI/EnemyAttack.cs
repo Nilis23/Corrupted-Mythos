@@ -14,6 +14,12 @@ public class EnemyAttack : MonoBehaviour
     [Space]
     [SerializeField]
     bool charge = false;
+    [SerializeField]
+    bool summon = false;
+    [SerializeField]
+    List<Transform> SummonPoints = new List<Transform>();
+    [SerializeField]
+    List<GameObject> Summonables = new List<GameObject>();
     float t = 0;
     AudioManager manager;
 
@@ -34,6 +40,16 @@ public class EnemyAttack : MonoBehaviour
         {
             t -= Time.deltaTime;
         }
+    }
+
+    public void Summon()
+    {
+        int x = Random.Range(0, SummonPoints.Count - 1);
+        int y = Random.Range(0, Summonables.Count - 1);
+
+        GameObject clone = Instantiate(Summonables[y]);
+
+        clone.transform.position = SummonPoints[x].position;
     }
 
     IEnumerator DoAttack(Collider2D collision)
@@ -125,6 +141,11 @@ public class EnemyAttack : MonoBehaviour
             {
 
                 StartCoroutine(DashAttack(10, collision));
+            }
+            else if (summon)
+            {
+                StartCoroutine(DoAttack(collision));
+                Summon();
             }
             else
             {
