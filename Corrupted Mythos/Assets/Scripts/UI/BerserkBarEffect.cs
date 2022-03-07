@@ -1,21 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BerserkBarEffect : MonoBehaviour
 {
+    private Image effect;
 
     void Start()
     {
-        this.gameObject.SetActive(false);
         PlayerHealth.BerserkEffect += FlipActive;
-    }
-
-    private void OnEnable(){    }
-
-    private void OnDisable()
-    {
-        //PlayerHealth.BerserkEffect -= FlipActive;
+        effect = GetComponent<Image>();
+        effect.enabled = false;
     }
 
     public void FlipActive(bool flip)
@@ -23,11 +19,11 @@ public class BerserkBarEffect : MonoBehaviour
         Debug.Log("effect happening");
         if (flip == true)
         {
-            this.gameObject.SetActive(false);
+            effect.enabled = false;
         }
         else if (flip == false)
         {
-            this.gameObject.SetActive(true);
+            effect.enabled = true;
         }
         else
         {
