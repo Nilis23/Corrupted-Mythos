@@ -12,7 +12,7 @@ public class OWAbomHealth : EnemyHealth
 
     private IoDAbomHealth icon;
     bool Icon = false;
-    public float berserkGiven=10;
+    private float berserkGiven=10;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class OWAbomHealth : EnemyHealth
         {
             Icon = true;
         }
+        BerserkGiver = berserkGiven;
     }
 
     public override void minusHealth(int damage, int knockback = 0)
@@ -45,10 +46,6 @@ public class OWAbomHealth : EnemyHealth
             {
                 chanceMod += 0.05f;
             }
-
-            GameObject soul = Instantiate(soulPref);
-            soul.GetComponent<wispParticles>().StoredBerserk = berserkGiven;
-            soul.transform.position = this.transform.position;
 
         }
     }

@@ -9,10 +9,12 @@ public class AbomHealth : EnemyHealth
     static float chanceMod = 0;
     public GameObject foodPref;
     public GameObject NodeBerserkBarLocator;
+    private float BerserkGiven = 10;
 
     private void Start()
     {
         script = gameObject.GetComponent<PlayerMovement>();
+        BerserkGiver = BerserkGiven;
     }
 
     public override void minusHealth(int damage, int knockback = 0)

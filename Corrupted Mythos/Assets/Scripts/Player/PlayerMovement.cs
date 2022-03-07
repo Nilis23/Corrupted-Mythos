@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer;
     private bool slam = false;
     private bool chkAttk;
-    private GameObject godWipe;
+    public GameObject godWipe;
 
     bool block;
 
@@ -197,14 +197,11 @@ public class PlayerMovement : MonoBehaviour
         if (pcontroller.player.GodWipe.triggered && killCount >= 15)
         {
             Debug.Log("wipe");
-            //kill enemies on screen 
             godWipe.SetActive(true);
-            //godWipe.SetActive(false);
             killCount = 0;
             GodBarctrl.ResetBar();
-            //visual bloom
+
             wipe.Play();
-            //screen shake
             shaker.shakeCam(1, 1);
         }
 
