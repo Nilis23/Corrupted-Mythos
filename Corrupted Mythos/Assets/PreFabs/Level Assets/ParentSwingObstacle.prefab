@@ -100,6 +100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2983517399960829406}
     m_Modifications:
+    - target: {fileID: 1225132876707377957, guid: e184f5aa622eb89498850715ede9718f, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3705272559777946213, guid: e184f5aa622eb89498850715ede9718f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -151,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 5350739971886380628, guid: e184f5aa622eb89498850715ede9718f, type: 3}
       propertyPath: m_Simulated
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7952008227309965437, guid: e184f5aa622eb89498850715ede9718f, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5350739971886380628, guid: e184f5aa622eb89498850715ede9718f, type: 3}
