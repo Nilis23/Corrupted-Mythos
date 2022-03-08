@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   flip: 1
+  OtherSideHit: {fileID: 8538807360438228205}
 --- !u!114 &2965287020940604515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   flip: 0
+  OtherSideHit: {fileID: 8086452663042454388}
 --- !u!1001 &1876963689429049978
 PrefabInstance:
   m_ObjectHideFlags: 0
