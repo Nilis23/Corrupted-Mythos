@@ -52,9 +52,11 @@ public class EnemyNavigator : MonoBehaviour
         if (target != null && em.stagr <= 0 && !em.idle && !em.attack)
         {
             Vector2 dir = (target - rb.position).normalized;
-            Vector2 force = dir * (speed * Time.fixedDeltaTime);
+            Vector2 force = dir * speed;
             SwapGFX(force);
-            this.transform.Translate(new Vector2(force.x, 0f));
+            //transform.Translate(new Vector2(force.x, 0f));
+            //transform.localPosition += new Vector3(force.x, 0f, 0f);
+            rb.AddForce(new Vector2(force.x, 0f));
 
             float dist = Mathf.Abs(rb.position.x - target.x);
             if (dist < nWaypointDistance)
