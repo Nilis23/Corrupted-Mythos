@@ -105,7 +105,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fbb67200102ca6f4096d01931374053a, type: 2}
   startState: {fileID: 11400000, guid: 4bf2f7d7c59f9b24eac3ffb3da47ecfa, type: 2}
   hp: {fileID: 3743684799867251314}
-  seeker: {fileID: 0}
   player: {fileID: 0}
   nav: {fileID: 3743684799867251214}
   pointOne: {fileID: 0}
@@ -116,6 +115,14 @@ MonoBehaviour:
   attack: 0
   collisions: 0
   stagr: 0
+  yCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  BatHitDetection: {fileID: 0}
+  BatAttackHitBox: {fileID: 0}
 --- !u!114 &3743684799867251214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +161,8 @@ MonoBehaviour:
   animator: {fileID: 3743684800424924702}
   script: {fileID: 0}
   player: {fileID: 0}
-  soulPref: {fileID: 0}
+  soulPref: {fileID: 1293211651821104217, guid: c81a355c4e31b1644a156875f90f3e1d, type: 3}
+  BerserkGiver: 0
   inv: 0
 --- !u!114 &3743684799867251313
 MonoBehaviour:

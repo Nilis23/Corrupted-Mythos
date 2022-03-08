@@ -64,12 +64,19 @@ public abstract class EnemyHealth : MonoBehaviour
             soul.GetComponent<wispParticles>().StoredBerserk = BerserkGiver;
             soul.transform.position = this.transform.position;
 
-            Destroy(this.gameObject, 0.1f);            
+            //Destroy(this.gameObject, 0.1f);
+            StartCoroutine(die());
         }
     }
 
     public void addHealth(int gain)
     {
         health += gain;
+    }
+
+    IEnumerator die()
+    {
+        yield return new WaitForEndOfFrame();
+        Destroy(this.gameObject, 0.1f);
     }
 }
