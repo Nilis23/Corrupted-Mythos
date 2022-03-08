@@ -176,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                Debug.Log(cntrler.m_Grounded + " " + slam);
                 //weap.attack();
                 StartCoroutine(DetermineAttack());
             }
