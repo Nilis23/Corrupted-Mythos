@@ -28,16 +28,19 @@ public class AbomHealth : EnemyHealth
             {
                 GameObject food = Instantiate(foodPref);
                 food.transform.position = this.transform.position;
+                food.GetComponent<wispParticles>().StoredBerserk = BerserkGiver;
                 chanceMod = 0;
             }
             else
             {
                 chanceMod += 0.05f;
             }
-
+            
+            /*
             GameObject soul = Instantiate(soulPref);
             soul.GetComponent<wispParticles>().end(NodeBerserkBarLocator);
             soul.transform.position = this.transform.position;
+            */
 
             if (script != null)
             {

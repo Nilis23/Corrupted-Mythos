@@ -333,11 +333,11 @@ public class PlayerHealth : MonoBehaviour
         Vector2 upPos;
         if (flip)
         {
-            upPos = new Vector2(transform.position.x + 4, transform.position.y + 4);
+            upPos = new Vector2(transform.position.x + 2, transform.position.y + 2);
         }
         else
         {
-            upPos = new Vector2(transform.position.x-4, transform.position.y + 4);
+            upPos = new Vector2(transform.position.x-2, transform.position.y + 2);
         }
         
         Vector2 orgPos = transform.position;
