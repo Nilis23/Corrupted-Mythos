@@ -189,9 +189,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (playerHealth.berserk)
             {
-                gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
-                impact.GetComponent<SpriteRenderer>().color = Color.magenta;
-                speed += 20;
                 StartCoroutine(rageMode());
             }
         }
@@ -342,15 +339,18 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator rageMode()
     {
-        float i;
         Bactive = true;
         playerHealth.berserking = true;
 
-        for (i = 0; i < 5; i++)
+        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        impact.GetComponent<SpriteRenderer>().color = Color.magenta;
+        speed += 20;
+
+        while (playerHealth.rageCounter>0)
         {
             yield return new WaitForSeconds(1);
-            playerHealth.rageCounter -= 10;
-            playerHealth.rageMeter.loseHP(10);
+            playerHealth.rageCounter -= 20;
+            playerHealth.rageMeter.loseHP(20);
         }
 
         playerHealth.rageCounter = 0;
