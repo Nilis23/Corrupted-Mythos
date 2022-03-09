@@ -7,22 +7,26 @@ public class BerserkBarEffect : MonoBehaviour
 {
     private Image effect;
 
-    void Start()
+    void Awake()
     {
         PlayerHealth.BerserkEffect += FlipActive;
         effect = GetComponent<Image>();
         effect.enabled = false;
     }
-
+    private void OnDisable()
+    {
+        PlayerHealth.BerserkEffect -= FlipActive;
+    }
     public void FlipActive(bool flip)
     {
         Debug.Log("effect happening");
-        if (flip == true)
+        if (flip)
         {
             effect.enabled = false;
         }
-        else if (flip == false)
+        else if (!flip)
         {
+            Debug.Log(transform.name);
             effect.enabled = true;
         }
         else
