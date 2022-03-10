@@ -140,6 +140,7 @@ MonoBehaviour:
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 0}
+  BerserkGiver: 0
 --- !u!61 &3271911875945537044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 248c391281afc47468fa87e272ab385e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -295,7 +296,7 @@ Animator:
   m_GameObject: {fileID: 3271911876680559350}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dea24ecf417bdd14e926a665a50534cf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -494,6 +495,9 @@ MonoBehaviour:
   damage: 25
   animator: {fileID: 3271911876680559345}
   charge: 0
+  summon: 0
+  SummonPoints: []
+  Summonables: []
   eHealth: {fileID: 3271911875945537045}
   fG: 0
 --- !u!1 &3271911877693708120
