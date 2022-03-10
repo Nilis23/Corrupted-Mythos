@@ -7,6 +7,7 @@ public class MenuControl : MonoBehaviour
 {
     public GameObject pause;
     public GameObject restart;
+    public GameObject reload;
     public PlayerMovement player;
 
     public void Resume()
@@ -19,7 +20,6 @@ public class MenuControl : MonoBehaviour
     {
         Time.timeScale = 1f;
         player.paused = false;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameObject.FindObjectOfType<PlayerHealth>()?.RespawnPlayer();
 
         if (pause.activeSelf)
@@ -27,6 +27,16 @@ public class MenuControl : MonoBehaviour
             pause.SetActive(false);
         }
     }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (reload.activeSelf)
+        {
+            reload.SetActive(false);
+        }
+    }
+
     public void Quit()
     {
         Time.timeScale = 1f;

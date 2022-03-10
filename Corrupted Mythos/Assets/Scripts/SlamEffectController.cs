@@ -10,7 +10,6 @@ public class SlamEffectController : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("hello");
         myanim.SetTrigger("Slam");
         t = 0.33f;
     }

@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     public int health, check=0, maxHealth;
     public Transform player;
     public Transform spawn;
-    public GameObject death;
+    PlayingUICntrl UICntrl;
     public LazyUIBar hpBar;
     public LazyUIBar rageMeter;
     public PlayerMovement script;
@@ -76,13 +76,14 @@ public class PlayerHealth : MonoBehaviour
 
         maxHealth = health;
 
-        script = this.gameObject.GetComponent<PlayerMovement>();
+        script = gameObject.GetComponent<PlayerMovement>();
         lives = 5;
         if (livesCount != null) //Don't forget your null checking especially if you're not grabbing it in code
         {
             livesCount.text = lives.ToString();
         }
         berserk = false;
+        UICntrl = GameObject.Find("Canvas")?.GetComponent<PlayingUICntrl>();
     }
 
     
@@ -134,8 +135,20 @@ public class PlayerHealth : MonoBehaviour
             {
                 //RespawnPlayer();
                 PlayerAnim.SetTrigger("Die");
+                lives--;
+                livesCount.text = lives.ToString();
                 script.paused = true;
-                Invoke("DeathScreen", 0.2f);
+
+                //update UI
+                if (lives <= 0)
+                {
+                    UICntrl.ShowDeathReload();
+                    Time.timeScale = 0f;
+                }
+                else
+                {
+                    Invoke("DeathScreen", 0.2f);
+                }
             }
         }
         
@@ -143,14 +156,23 @@ public class PlayerHealth : MonoBehaviour
 
     void DeathScreen()
     {
-        death.SetActive(true);
+        UICntrl.ShowDeath();
         Time.timeScale = 0f;
     }
 
     public void killPlayer()
     {
-        Time.timeScale = 0f;
-        death.SetActive(true);
+        lives--;
+        livesCount.text = lives.ToString();
+        if (lives <= 0)
+        {
+            UICntrl.ShowDeathReload();
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            DeathScreen();
+        }
     }
 
     public void addHealth(int gain)
@@ -177,9 +199,9 @@ public class PlayerHealth : MonoBehaviour
             Pcamera.SetActive(true);
             Fcamera.SetActive(false);
         }
-        
 
-        death.SetActive(false);
+
+        UICntrl.HideDeath();
 
         player.position = spawn.position;
         health = 100;
@@ -207,17 +229,6 @@ public class PlayerHealth : MonoBehaviour
 
         deathCount += 1;
         points = points - (points / 10 / 2);
-
-        lives--;
-        livesCount.text = lives.ToString();
-        //update UI
-        if (lives <= 0)
-        {
-            Debug.Log("resetting");
-            //restart scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //Application.LoadLevel(Application.loadedLevel);
-        }
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {
@@ -272,9 +283,6 @@ public class PlayerHealth : MonoBehaviour
     {
         float diff = 100 - rageCounter;
         enrage(diff);
-
-        Debug.Log("Filled bar");
-        Debug.Log(rageCounter);
     }
     
     public void SetBerserkUI()
@@ -284,7 +292,6 @@ public class PlayerHealth : MonoBehaviour
         {
             if (berserk == false)
             {
-                Debug.Log("effect on");
                 BerserkEffect(false);
             }
             berserk = true;

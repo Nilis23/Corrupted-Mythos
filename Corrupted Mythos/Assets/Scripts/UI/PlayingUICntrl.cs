@@ -9,14 +9,17 @@ public class PlayingUICntrl : MonoBehaviour
     [SerializeField]
     GameObject death;
     [SerializeField]
+    GameObject deathReload;
+    [SerializeField]
     GameObject options;
     [SerializeField]
     GameObject playingUI;
+    
 
     // Update is called once per frame
     void Update()
     {
-        if(Pause.activeSelf || death.activeSelf || options.activeSelf)
+        if(Pause.activeSelf || death.activeSelf || options.activeSelf || deathReload.activeSelf)
         {
             playingUI.gameObject.SetActive(false);
         }
@@ -24,5 +27,26 @@ public class PlayingUICntrl : MonoBehaviour
         {
             playingUI.SetActive(true);
         }
+    }
+
+    public void ShowPause()
+    {
+        Pause.SetActive(true);
+    }
+    public void ShowDeath()
+    {
+        death.SetActive(true);
+    }
+    public void HideDeath()
+    {
+        death.SetActive(false);
+    }
+    public void ShowDeathReload()
+    {
+        deathReload.SetActive(true);
+    }
+    public void ShowOptions()
+    {
+        options.SetActive(true);
     }
 }

@@ -13,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     public float speed;
     public swing weap;
-    public GameObject pause;
-    public GameObject dashbox;
+
+    PlayingUICntrl UICntrl;
     public bool paused = false;
+
+    public GameObject dashbox;
     public PlayerHealth playerHealth;
     public Transform impact;
 
@@ -47,27 +49,21 @@ public class PlayerMovement : MonoBehaviour
         EnemyHealth.EnemyDied += IncrementKill;
         IconOfDestruction.IconDestroyed += FillKill;
         pcontroller = new Inputs();
-        //pcontroller.player.block.started += BlockOn;
-        //pcontroller.player.block.canceled += BlockOff;
     }
 
     private void OnDisable()
     {
         EnemyHealth.EnemyDied -= IncrementKill;
         IconOfDestruction.IconDestroyed -= FillKill;
-        //pcontroller.player.block.started -= BlockOn;
-        //pcontroller.player.block.canceled -= BlockOff;
     }
 
     void Start()
     {
         impact = transform.Find("impact").gameObject.transform;
         godWipe = transform.Find("GodWipe").gameObject;
-        Debug.Log("godwipe = " +godWipe);
         pcontroller.Enable();
-        playerHealth = this.GetComponentInParent<PlayerHealth>();
-
-        //testFunc = IncrementKill;
+        playerHealth = GetComponentInParent<PlayerHealth>();
+        UICntrl = GameObject.Find("Canvas")?.GetComponent<PlayingUICntrl>();
     }
 
     private void BlockOn(InputAction.CallbackContext c)
@@ -95,9 +91,9 @@ public class PlayerMovement : MonoBehaviour
     {
         dir = 0;
 
-        if (pcontroller.player.Pause.triggered)
+        if (pcontroller.player.Pause.triggered && Time.timeScale != 0)
         {
-            pause.SetActive(true);
+            UICntrl.ShowPause();
             paused = true;
             Time.timeScale = 0f;
         }
@@ -176,7 +172,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                Debug.Log(cntrler.m_Grounded + " " + slam);
                 //weap.attack();
                 StartCoroutine(DetermineAttack());
             }
