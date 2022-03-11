@@ -192,7 +192,7 @@ public class PlayerHealth : MonoBehaviour
     public void RespawnPlayer()
     {
         GameObject sr = gameObject.transform.GetChild(0).gameObject;
-        PlayerAnim.SetTrigger("Respawn");
+        //PlayerAnim.SetTrigger("Respawn"); - this does not exist, make it exist
 
         if (Pcamera.activeInHierarchy == false)
         {
