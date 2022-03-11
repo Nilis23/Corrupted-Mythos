@@ -30,6 +30,7 @@ public class FlamingTiles : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("start hurt");
             script = collision.gameObject.GetComponent<PlayerHealth>();
             time = 1f;
             //flaming = true;
@@ -60,6 +61,7 @@ public class FlamingTiles : MonoBehaviour
 
             if (time >= 1f)
             {
+                Debug.Log("hurting" + damage);
                 script.minusHealth(damage);
                 time = 0;
             }
