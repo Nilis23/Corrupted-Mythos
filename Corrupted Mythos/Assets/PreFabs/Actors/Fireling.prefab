@@ -103,7 +103,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 938f07e6166fe4e48a1a2b594f32f720, type: 2}
   - {fileID: 11400000, guid: fbb67200102ca6f4096d01931374053a, type: 2}
   startState: {fileID: 11400000, guid: 4bf2f7d7c59f9b24eac3ffb3da47ecfa, type: 2}
-  hp: {fileID: 0}
+  hp: {fileID: 3444722036047962627}
   player: {fileID: 0}
   nav: {fileID: 3743684799867251214}
   pointOne: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
+  menu: {fileID: 11400000, guid: 459bfbfae1a483c409e5842d2b8828d1, type: 2}
 --- !u!1 &3743684800424924697
 GameObject:
   m_ObjectHideFlags: 0
