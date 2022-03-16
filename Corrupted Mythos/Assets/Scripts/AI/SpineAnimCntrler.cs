@@ -19,6 +19,14 @@ public class SpineAnimCntrler : MonoBehaviour
      */
     public void DoSpineAnim(int indx, string name, bool loop = false)
     {
-        sAnimation.AnimationState.SetAnimation(indx, name, loop);
+        Debug.Log(sAnimation.AnimationState.GetCurrent(indx));
+
+        if (sAnimation.AnimationState.GetCurrent(indx) == null)
+        {
+            sAnimation.AnimationState.SetAnimation(indx, name, loop);
+            Debug.Log("Set");
+        }
+
+        Debug.Log(sAnimation.AnimationState.GetCurrent(indx));
     }
 }

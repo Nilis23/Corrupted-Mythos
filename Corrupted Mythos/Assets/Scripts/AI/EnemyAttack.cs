@@ -11,6 +11,8 @@ public class EnemyAttack : MonoBehaviour
     [Space]
     [SerializeField]
     Animator animator;
+    [SerializeField]
+    SpineAnimCntrler sAnimator;
     [Space]
     [SerializeField]
     bool charge = false;
@@ -133,7 +135,15 @@ public class EnemyAttack : MonoBehaviour
             if (!fG)
             {
                 em.attack = true;
-                animator.SetTrigger("Attack");
+                //animator.SetTrigger("Attack");
+                if(animator != null)
+                {
+                    animator.SetTrigger("Attack");
+                }
+                else
+                {
+                    sAnimator.DoSpineAnim(0, "Attack");
+                }
                 manager.PlaySound("abomHit");
             }
 

@@ -902,6 +902,7 @@ MonoBehaviour:
   em: {fileID: 1235019041}
   damage: 10
   animator: {fileID: 0}
+  sAnimator: {fileID: 1589017152}
   charge: 1
   summon: 0
   SummonPoints: []
@@ -8726,6 +8727,9 @@ MonoBehaviour:
   Attack: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
   doBypass: 1
   right: 1
+  doWalkAnim: 1
+  animator: {fileID: 0}
+  sAnimator: {fileID: 1589017152}
 --- !u!4 &1235019043
 Transform:
   m_ObjectHideFlags: 0
@@ -8985,6 +8989,9 @@ MonoBehaviour:
   Attack: {fileID: 0}
   doBypass: 0
   right: 1
+  doWalkAnim: 0
+  animator: {fileID: 0}
+  sAnimator: {fileID: 0}
 --- !u!4 &1336161173
 Transform:
   m_ObjectHideFlags: 0
@@ -9550,6 +9557,7 @@ MonoBehaviour:
   em: {fileID: 1336161171}
   damage: 5
   animator: {fileID: 1978593672}
+  sAnimator: {fileID: 0}
   charge: 0
   summon: 1
   SummonPoints:
@@ -10564,6 +10572,7 @@ MonoBehaviour:
   em: {fileID: 2341086647168227615}
   damage: 0
   animator: {fileID: 2341086647005736438}
+  sAnimator: {fileID: 0}
   charge: 0
   summon: 0
   SummonPoints: []
@@ -10892,6 +10901,9 @@ MonoBehaviour:
   Attack: {fileID: 0}
   doBypass: 0
   right: 1
+  doWalkAnim: 0
+  animator: {fileID: 0}
+  sAnimator: {fileID: 0}
 --- !u!114 &2341086647168227615
 MonoBehaviour:
   m_ObjectHideFlags: 0

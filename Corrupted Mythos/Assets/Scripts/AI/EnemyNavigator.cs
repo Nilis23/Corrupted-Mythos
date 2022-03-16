@@ -35,6 +35,11 @@ public class EnemyNavigator : MonoBehaviour
     bool bypass = false;
     public bool right = true;
 
+    [Space]
+    [SerializeField] bool doWalkAnim;
+    [SerializeField] Animator animator;
+    [SerializeField] SpineAnimCntrler sAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +60,19 @@ public class EnemyNavigator : MonoBehaviour
             Vector2 force = dir * speed * Time.fixedDeltaTime;
             SwapGFX(force);
             transform.Translate(new Vector2(force.x, 0f));
+
+            if (doWalkAnim) //Protection for enemies who do not have a walk cycle
+            {
+                if (animator != null)
+                {
+                    animator.SetFloat("Speed", Mathf.Abs(force.x));
+                }
+                else
+                {
+                    sAnimator.DoSpineAnim(3, "Walk");
+                }
+            }
+
             //transform.localPosition += new Vector3(force.x, 0f, 0f);
             //rb.AddForce(new Vector2(force.x, 0f));
             //Vector2.MoveTowards(transform.position, target, speed * 100);
