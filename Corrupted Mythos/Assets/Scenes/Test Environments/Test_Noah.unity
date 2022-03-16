@@ -901,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   em: {fileID: 1235019041}
   damage: 10
-  animator: {fileID: 1589017152}
+  animator: {fileID: 0}
   charge: 1
   summon: 0
   SummonPoints: []
@@ -8561,7 +8561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1235019037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8637,7 +8637,8 @@ MonoBehaviour:
   health: 100
   em: {fileID: 1235019041}
   stagTime: 1
-  animator: {fileID: 1589017152}
+  animator: {fileID: 0}
+  sAnimator: {fileID: 1589017152}
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 0}
@@ -8896,6 +8897,7 @@ MonoBehaviour:
   em: {fileID: 1336161171}
   stagTime: 1
   animator: {fileID: 1978593672}
+  sAnimator: {fileID: 0}
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 0}
@@ -9243,25 +9245,19 @@ Transform:
   m_Father: {fileID: 1235019043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1589017152
-Animator:
-  serializedVersion: 3
+--- !u!114 &1589017152
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589017150}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd0bf9f863e27a4d88d1f2343bc7485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sAnimation: {fileID: 152261541}
 --- !u!212 &1589017153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10786,6 +10782,7 @@ MonoBehaviour:
   em: {fileID: 0}
   stagTime: 0
   animator: {fileID: 0}
+  sAnimator: {fileID: 0}
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 0}

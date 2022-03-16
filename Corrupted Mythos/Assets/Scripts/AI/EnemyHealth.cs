@@ -16,6 +16,8 @@ public abstract class EnemyHealth : MonoBehaviour
     [Space]
     [SerializeField]
     public Animator animator;
+    [SerializeField]
+    SpineAnimCntrler sAnimator;
     public PlayerMovement script;
     public GameObject player;
     [SerializeField]
@@ -31,7 +33,16 @@ public abstract class EnemyHealth : MonoBehaviour
     public void takeDamage(int damage, int knockback = 0, int points =0)
     {
         health -= damage;
-        animator.SetTrigger("Hit");
+
+        if (animator != null)
+        {
+            animator.SetTrigger("Hit");
+        }
+        else
+        {
+            sAnimator.DoSpineAnim(2, "Idle");
+        }
+
         if(knockback == 0)
         {
             em.setStgr(stagTime, true);
