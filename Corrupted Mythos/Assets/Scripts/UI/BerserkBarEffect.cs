@@ -19,14 +19,14 @@ public class BerserkBarEffect : MonoBehaviour
     }
     public void FlipActive(bool flip)
     {
-        Debug.Log("effect happening");
+        Debug.Log("effect");
         if (flip)
         {
+            Debug.Log("off");
             effect.enabled = false;
         }
         else if (!flip)
         {
-            Debug.Log(transform.name);
             effect.enabled = true;
         }
         else
