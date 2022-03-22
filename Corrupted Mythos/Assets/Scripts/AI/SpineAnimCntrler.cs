@@ -19,14 +19,39 @@ public class SpineAnimCntrler : MonoBehaviour
      */
     public void DoSpineAnim(int indx, string name, bool loop = false)
     {
-        Debug.Log(sAnimation.AnimationState.GetCurrent(indx));
-
-        if (sAnimation.AnimationState.GetCurrent(indx) == null)
+        if(indx != 3)
         {
-            sAnimation.AnimationState.SetAnimation(indx, name, loop);
-            Debug.Log("Set");
+            if (sAnimation.AnimationState.GetCurrent(indx) == null)
+            {
+                sAnimation.AnimationState.ClearTrack(indx);
+                sAnimation.AnimationState.ClearTrack(3);
+                sAnimation.AnimationState.SetAnimation(indx, name, loop);
+            }
         }
+        else
+        {
+            QueryCompleteAnim(0);
+            QueryCompleteAnim(2);
 
-        Debug.Log(sAnimation.AnimationState.GetCurrent(indx));
+            if (sAnimation.AnimationState.GetCurrent(0) == null && sAnimation.AnimationState.GetCurrent(2) == null)
+            {
+                if (sAnimation.AnimationState.GetCurrent(indx) == null)
+                {
+                    sAnimation.AnimationState.SetAnimation(indx, name, loop);
+                }
+                else if (sAnimation.AnimationState.GetCurrent(indx).IsComplete)
+                {
+                    sAnimation.AnimationState.SetAnimation(indx, name, loop);
+                }
+            }
+        }
+    }
+
+    void QueryCompleteAnim(int trackindx)
+    {
+        if (sAnimation.AnimationState.GetCurrent(trackindx) != null && sAnimation.AnimationState.GetCurrent(trackindx).IsComplete)
+        {
+            sAnimation.AnimationState.ClearTrack(trackindx);
+        }
     }
 }
