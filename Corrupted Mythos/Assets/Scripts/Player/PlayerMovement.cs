@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
             killCount = 0;
             GodBarctrl.ResetBar();
 
-            wipe.Play();
+            //wipe.Play();
             shaker.shakeCam(1, 1);
         }
 
