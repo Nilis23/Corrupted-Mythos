@@ -61,7 +61,7 @@ public class EnemyNavigator : MonoBehaviour
             SwapGFX(force);
             transform.Translate(new Vector2(force.x, 0f));
 
-            if (doWalkAnim) //Protection for enemies who do not have a walk cycle
+            if (doWalkAnim && !em.attack) //Protection for enemies who do not have a walk cycle
             {
                 if (animator != null)
                 {
