@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     public float speed;
     public swing weap;
+    private GameObject FollowEffect;
 
     PlayingUICntrl UICntrl;
     public bool paused = false;
@@ -64,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         pcontroller.Enable();
         playerHealth = GetComponentInParent<PlayerHealth>();
         UICntrl = GameObject.Find("Canvas")?.GetComponent<PlayingUICntrl>();
+        FollowEffect = GameObject.Find("FollowEffect").gameObject;
+        FollowEffect.SetActive(false);
     }
 
     private void BlockOn(InputAction.CallbackContext c)
@@ -336,6 +339,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Bactive = true;
         playerHealth.berserking = true;
+        FollowEffect.SetActive(true);
 
         gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         impact.GetComponent<SpriteRenderer>().color = Color.magenta;
@@ -361,6 +365,7 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.berserk = false;
         //turn off berserk effect
         playerHealth.TurnOffBerserkEffect();
+        FollowEffect.SetActive(false);
     }
 
     IEnumerator PerfectBlock()
