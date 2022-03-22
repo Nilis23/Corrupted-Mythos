@@ -17,6 +17,7 @@ public class SpineAnimCntrler : MonoBehaviour
      * This should be the same for each pre-built enemy using the spine animation toolkit, for those instances where it is not adjustments may be needed
      * 
      */
+
     public void DoSpineAnim(int indx, string name, bool loop = false)
     {
         if(indx != 3)
