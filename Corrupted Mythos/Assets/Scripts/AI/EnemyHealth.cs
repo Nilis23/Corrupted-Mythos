@@ -12,6 +12,8 @@ public abstract class EnemyHealth : MonoBehaviour
     public StateManager em;
     [SerializeField]
     float stagTime;
+    [SerializeField]
+    bool doDeath;
     
     [Space]
     [SerializeField]
@@ -71,11 +73,18 @@ public abstract class EnemyHealth : MonoBehaviour
                 AddPoints(points);
             }
 
-            GameObject soul = Instantiate(soulPref);
-            soul.GetComponent<wispParticles>().StoredBerserk = BerserkGiver;
-            soul.transform.position = this.transform.position;
+            if (soulPref != null)
+            {
+                GameObject soul = Instantiate(soulPref);
+                soul.GetComponent<wispParticles>().StoredBerserk = BerserkGiver;
+                soul.transform.position = this.transform.position;
+            }
 
             //Destroy(this.gameObject, 0.1f);
+            if (doDeath)
+            {
+                animator.SetTrigger("Die");
+            }
             StartCoroutine(die());
         }
     }

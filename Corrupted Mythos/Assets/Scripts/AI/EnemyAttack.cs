@@ -8,6 +8,8 @@ public class EnemyAttack : MonoBehaviour
     StateManager em;
     [SerializeField]
     int damage;
+    [SerializeField]
+    float waittime;
     [Space]
     [SerializeField]
     Animator animator;
@@ -110,6 +112,14 @@ public class EnemyAttack : MonoBehaviour
             }
         }
         collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage, false);
+
+        while(t < waittime)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        t = 0;
+
         //Move
         while (t < 0.25f)
         {
