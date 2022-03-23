@@ -910,6 +910,7 @@ MonoBehaviour:
   Summonables: []
   eHealth: {fileID: 1235019040}
   fG: 0
+  bat: 0
 --- !u!61 &739785530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9463,6 +9464,7 @@ MonoBehaviour:
   - {fileID: 2882597727957746579, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
   eHealth: {fileID: 0}
   fG: 0
+  bat: 0
 --- !u!61 &1733969372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10485,6 +10487,7 @@ MonoBehaviour:
   Summonables: []
   eHealth: {fileID: 2341086647168227602}
   fG: 0
+  bat: 0
 --- !u!61 &2341086645686784083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10944,6 +10947,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3271911875945537055, guid: ea6d0c54315d60847b924dc0e9c9a64f, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271911877688831503, guid: ea6d0c54315d60847b924dc0e9c9a64f, type: 3}
+      propertyPath: bat
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
