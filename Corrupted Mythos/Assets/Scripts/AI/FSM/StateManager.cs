@@ -36,6 +36,9 @@ public class StateManager : MonoBehaviour
     GameObject BatHitDetection;
     [SerializeField]
     GameObject BatAttackHitBox;
+    [Space]
+    [SerializeField]
+    bool spine = false;
 
     private void Start()
     {
@@ -72,10 +75,18 @@ public class StateManager : MonoBehaviour
             //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 73, 73);
             stagr = stagr - Time.deltaTime;
 
-            if(stagr <= 0)
+            /*if(stagr <= 0)
             {
-                this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            }
+                if (!spine)
+                {
+                    this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    this.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+                }
+            }*/
+            this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
     }
 
