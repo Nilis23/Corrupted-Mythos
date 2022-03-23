@@ -13,6 +13,7 @@ public class BatHitDetect : MonoBehaviour
         {
             em.attack = true;
             em.DoBatAttack();
+            fganim.SetTrigger("Attack");
         }
     }
 }

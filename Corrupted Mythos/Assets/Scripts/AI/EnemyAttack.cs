@@ -30,6 +30,9 @@ public class EnemyAttack : MonoBehaviour
     [Space]
     public EnemyHealth eHealth;
     public bool fG;
+    [Space]
+    [SerializeField]
+    bool bat;
 
     BoxCollider2D box;
     private void Start()
@@ -148,7 +151,14 @@ public class EnemyAttack : MonoBehaviour
                 //animator.SetTrigger("Attack");
                 if(animator != null)
                 {
-                    animator.SetTrigger("Attack");
+                    if (!bat)
+                    {
+                        animator.SetTrigger("Attack");
+                    }
+                    else
+                    {
+                        animator.SetTrigger("UnAttack");
+                    }
                 }
                 else
                 {
