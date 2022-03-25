@@ -75,7 +75,7 @@ public class StateManager : MonoBehaviour
             //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 73, 73);
             stagr = stagr - Time.deltaTime;
 
-            /*if(stagr <= 0)
+            if (stagr <= 0)
             {
                 if (!spine)
                 {
@@ -83,10 +83,10 @@ public class StateManager : MonoBehaviour
                 }
                 else
                 {
-                    this.transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+                    this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
                 }
-            }*/
-            this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            }
+            //this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
     }
 
@@ -259,7 +259,14 @@ public class StateManager : MonoBehaviour
 
         if (clr)
         {
-            this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            if (!spine)
+            {
+                this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+            }
         }
     }
 
@@ -267,11 +274,25 @@ public class StateManager : MonoBehaviour
     {
         if (flee) 
         {
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.yellow;
+            if (!spine)
+            {
+                this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+            }
+            else
+            {
+                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.yellow;
+            }
         }
         else
         {
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+            if (!spine)
+            {
+                this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
+            }
         }
     }
 }

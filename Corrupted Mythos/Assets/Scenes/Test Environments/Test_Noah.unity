@@ -10673,6 +10673,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2882597727957746669, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
+      propertyPath: spine
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882597727957746669, guid: a168f70d6a7436f42a41f2519adf1738, type: 3}
       propertyPath: pointOne
       value: 
       objectReference: {fileID: 348859345}
