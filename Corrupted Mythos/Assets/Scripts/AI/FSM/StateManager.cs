@@ -83,7 +83,9 @@ public class StateManager : MonoBehaviour
                 }
                 else
                 {
-                    this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
+                    Renderer r = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
+                    //float id = Shader.PropertyToID("_BaseColor");
+                    r.material.SetColor("_BaseColor", Color.white);
                 }
             }
             //this.transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
@@ -265,7 +267,9 @@ public class StateManager : MonoBehaviour
             }
             else
             {
-                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+                Renderer r = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
+                //float id = Shader.PropertyToID("_BaseColor");
+                r.material.SetColor("_BaseColor", Color.red);
             }
         }
     }
@@ -280,7 +284,9 @@ public class StateManager : MonoBehaviour
             }
             else
             {
-                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.yellow;
+                Renderer r = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
+                //float id = Shader.PropertyToID("_BaseColor");
+                r.material.SetColor("_BaseColor", Color.yellow);
             }
         }
         else
@@ -291,7 +297,9 @@ public class StateManager : MonoBehaviour
             }
             else
             {
-                this.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.white;
+                Renderer r = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
+                //float id = Shader.PropertyToID("_BaseColor");
+                r.material.SetColor("_BaseColor", Color.white);
             }
         }
     }
