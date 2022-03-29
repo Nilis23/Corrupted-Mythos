@@ -40,12 +40,16 @@ public class EnemyNavigator : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] SpineAnimCntrler sAnimator;
 
+    Vector3 orgpos;
+
     // Start is called before the first frame update
     void Start()
     {
         //seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        orgpos = transform.position;
 
     }
 
@@ -59,23 +63,44 @@ public class EnemyNavigator : MonoBehaviour
             Vector2 dir = (target - rb.position).normalized;
             Vector2 force = dir * speed * Time.fixedDeltaTime;
             SwapGFX(force);
-            transform.Translate(new Vector2(force.x, 0f));
 
-            if (doWalkAnim && !em.attack) //Protection for enemies who do not have a walk cycle
-            {
-                if (animator != null)
-                {
-                    animator.SetFloat("Speed", Mathf.Abs(force.x));
-                }
-                else
-                {
-                    sAnimator.DoSpineAnim(3, "Walk");
-                }
-            }
+            //if raycast equal to force.x hits terrain, then dont translate
+
 
             //transform.localPosition += new Vector3(force.x, 0f, 0f);
             //rb.AddForce(new Vector2(force.x, 0f));
             //Vector2.MoveTowards(transform.position, target, speed * 100);
+
+            if (doWalkAnim && !em.attack) //Protection for enemies who do not have a walk cycle
+            {
+                if (transform.position != orgpos)
+                {
+                    Debug.Log(transform.position - orgpos, this);
+                    if (animator != null)
+                    {
+                        animator.SetFloat("Speed", Mathf.Abs(force.x));
+                    }
+                    else
+                    {
+                        sAnimator.DoSpineAnim(3, "Walk");
+                    }
+                }
+                else
+                {
+                    Debug.Log("No movement", this);
+                    if (animator != null)
+                    {
+                        animator.SetFloat("Speed", Mathf.Abs(force.x));
+                    }
+                    else
+                    {
+                        sAnimator.StopSpineAnim(3);
+                    }
+                }
+            }
+
+            orgpos = transform.position;
+            transform.Translate(new Vector2(force.x, 0f));
 
             float dist = Mathf.Abs(rb.position.x - target.x);
             if (dist < nWaypointDistance)

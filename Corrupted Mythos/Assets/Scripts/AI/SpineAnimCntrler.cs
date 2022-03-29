@@ -48,6 +48,11 @@ public class SpineAnimCntrler : MonoBehaviour
         }
     }
 
+    public void StopSpineAnim(int indx)
+    {
+        sAnimation.AnimationState.ClearTrack(indx);
+    }
+
     void QueryCompleteAnim(int trackindx)
     {
         if (sAnimation.AnimationState.GetCurrent(trackindx) != null && sAnimation.AnimationState.GetCurrent(trackindx).IsComplete)
