@@ -77,8 +77,7 @@ public class EnemyAttack : MonoBehaviour
         }
         collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
         
-        GameObject.FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
-        
+        FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
     }
 
     IEnumerator DashAttack(float dist, Collider2D collision)
