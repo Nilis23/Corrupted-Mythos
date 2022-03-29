@@ -24,7 +24,7 @@ public class fireGiantProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        life = 1000f;
+        life = 8f;
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
         dir = (Player.transform.position - this.transform.position).normalized;
