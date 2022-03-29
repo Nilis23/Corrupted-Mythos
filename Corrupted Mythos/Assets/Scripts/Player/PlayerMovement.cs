@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerHealth playerHP;
     [Space]
     public float speed;
+    private float StoredSpeed;
     public swing weap;
     private GameObject FollowEffect;
 
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (block)
         {
-            speed = 40;
+            speed = StoredSpeed;
             playerHealth.block = false;
             block = false;
             pcontroller.player.Defend.canceled -= BlockOff;
@@ -147,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (!block)
                     {
+                        StoredSpeed = speed;
                         speed = 0;
                         playerHealth.block = true;
                         StartCoroutine(PerfectBlock());
@@ -355,7 +357,8 @@ public class PlayerMovement : MonoBehaviour
         playerHealth.rageCounter = 0;
         playerHealth.rageMeter.setCurHP(0);
 
-        speed -= 20;
+        StoredSpeed = 40;
+        speed = 40;
         playerHealth.berserk = false;
         playerHealth.berserking = false;
 
