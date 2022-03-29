@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Attack State
   m_EditorClassIdentifier: 
   chaseState: {fileID: 11400000, guid: 28e0266077bc2f34b945333430a89a7c, type: 2}
-  timer: 0.2
+  timer: 1

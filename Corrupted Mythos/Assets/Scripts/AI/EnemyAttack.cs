@@ -61,7 +61,7 @@ public class EnemyAttack : MonoBehaviour
 
     IEnumerator DoAttack(Collider2D collision)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         //if (box.IsTouching(collision)) { } //Prototype for post animations
         if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
         {
@@ -114,7 +114,6 @@ public class EnemyAttack : MonoBehaviour
                 newPos = new Vector2(orgPos.x + ((b - 2) * dir), orgPos.y);
             }
         }
-        collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage, false);
 
         while(t < waittime)
         {
@@ -124,6 +123,7 @@ public class EnemyAttack : MonoBehaviour
         t = 0;
 
         //Move
+        collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage, false);
         while (t < 0.25f)
         {
             t += Time.deltaTime;
