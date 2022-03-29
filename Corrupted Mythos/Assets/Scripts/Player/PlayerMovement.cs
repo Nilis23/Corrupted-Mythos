@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
             animatior.SetFloat("Speed", 0);
         }
 
-        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block && slam != true)
+        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block && slam != true && !chkAttk)
         {
             jump = true;
         }
