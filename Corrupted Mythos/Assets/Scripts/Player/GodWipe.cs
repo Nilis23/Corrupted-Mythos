@@ -19,12 +19,7 @@ public class GodWipe : MonoBehaviour
     {        
         if (collision.CompareTag("enemy"))
         {
-            /*
-            if (collision.TryGetComponent(out EnemyHealth eH))
-            {
-                eH.takeDamage(10000);
-            }
-            */
+            Debug.Log("die");
             collision.GetComponent<EnemyHealth>()?.takeDamage(1000);
         }
     }
