@@ -298,37 +298,32 @@ public class PlayerMovement : MonoBehaviour
         Vector2 orgPos = transform.position;
         string[] strings = new string[] { "Platforms", "FrostGiant", "Barriers" };
         int layermask = LayerMask.GetMask(strings);
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(dir, 0), 5, layermask);
-        RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), new Vector2(dir, 0), 5, layermask);
-        if (hit || hitt)
-        {
-            float a = Vector2.Distance(hit.point, orgPos);
-            float b = Vector2.Distance(hitt.point, orgPos);
-
-            if (a < b)
-            {
-                targPos = new Vector2(orgPos.x + ((a - 0.5f) * dir), orgPos.y);
-                t = (0.25f * (5 / a));
-            }
-            else
-            {
-                targPos = new Vector2(orgPos.x + ((b - 0.5f) * dir), orgPos.y);
-                t = (0.25f * (5 / b));
-            }
-
-            animatior.speed = 0.25f / t;
-        }
+        
         //Move
+        bool early = false;
         while (t < 0.25f)
         {
             t += Time.deltaTime;
-            transform.position = Vector2.Lerp(orgPos, targPos, (t / 0.25f));
+            Vector2 direction = new Vector2(dir, 0);
+
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), direction, 0.5f, layermask);
+            RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), direction, 0.5f, layermask);
+            if (hit || hitt)
+            {
+                t = 0.26f;
+                early = true;
+            }
+            else
+            {
+                transform.position = Vector2.Lerp(orgPos, targPos, (t / 0.25f)); ;
+            }
 
             yield return null;
         }
+
         //End
         playerHealth.inv = false;
-        if (!hit && !hitt)
+        if (!early)
         {
             transform.position = targPos;
         }
