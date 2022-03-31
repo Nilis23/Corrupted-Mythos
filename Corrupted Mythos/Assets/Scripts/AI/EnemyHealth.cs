@@ -62,7 +62,7 @@ public abstract class EnemyHealth : MonoBehaviour
         else if(knockback == 10)
         {
             em.knockback(4f);
-            em.setStgr(20, true);
+            em.setStgr(stagTime * 3, true);
         }
 
         if (health <= 0)
