@@ -218,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1830983220906550976, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.8825
+      value: -13.2
       objectReference: {fileID: 0}
     - target: {fileID: 1830983220906550976, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3792062
+      value: 0.29999983
       objectReference: {fileID: 0}
     - target: {fileID: 1830983220906550976, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -256,6 +256,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1830983220906550977, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2019855122}
+    - target: {fileID: 1830983220906550977, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 2019855122}
     - target: {fileID: 1830983220906550978, guid: 57b40cd87680f6f45a3277caa07d8cfd, type: 3}
       propertyPath: m_Name
       value: CM vcam1 (1)
@@ -143932,6 +143940,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3054577758127819674, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054577758127819674, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054577758127819674, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6263052234076763355, guid: 0bb75af43d75a9a41bc7678a57bc1b8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.44
