@@ -143638,9 +143638,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 754952791733365064, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549409061021469382, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549409061021469382, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1334362789
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853286459797324708, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853286459797324708, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853286459797324708, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853286459797324708, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245699234632013825, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245699234632013825, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1334362789
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245699234632013825, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e162c08da1abc294cb851248f51dfc40, type: 2}
+    - target: {fileID: 5816821148077221223, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7101643720780794657, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
       propertyPath: m_Name
       value: EndPortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101643720780794657, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101643720780794658, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7101643720780794661, guid: efd5fee09776d1647aa9e5d625887e0f, type: 3}
       propertyPath: m_RootOrder
