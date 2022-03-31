@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySprite: {fileID: 5718308747642380087}
   myCol: {fileID: -4063300218532938748}
-  step: 6
+  step: 8
   damage: 25
   origin: {x: 0, y: 0}
 --- !u!58 &-4063300218532938748
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
+  menu: {fileID: 11400000, guid: 459bfbfae1a483c409e5842d2b8828d1, type: 2}
 --- !u!1 &5718308747642380087
 GameObject:
   m_ObjectHideFlags: 0
