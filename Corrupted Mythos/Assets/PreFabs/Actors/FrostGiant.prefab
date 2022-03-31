@@ -286,13 +286,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   em: {fileID: 3635417699456738389}
   damage: 75
+  waittime: 0
   animator: {fileID: 3635417697809617444}
+  sAnimator: {fileID: 0}
   charge: 0
   summon: 0
   SummonPoints: []
   Summonables: []
   eHealth: {fileID: -5529378395534252090}
   fG: 1
+  bat: 0
 --- !u!61 &3635417699035916443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -568,6 +571,9 @@ MonoBehaviour:
   Attack: {fileID: 11400000, guid: 7d2778d3706fc724cbb92ee6715d2dda, type: 2}
   doBypass: 0
   right: 1
+  doWalkAnim: 0
+  animator: {fileID: 0}
+  sAnimator: {fileID: 0}
 --- !u!114 &3635417699456738389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +610,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   BatHitDetection: {fileID: 0}
   BatAttackHitBox: {fileID: 0}
+  spine: 0
 --- !u!114 &-5529378395534252090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,8 +625,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   em: {fileID: 3635417699456738389}
-  stagTime: 0.5
+  stagTime: 1
+  doDeath: 0
   animator: {fileID: 3635417697809617444}
+  sAnimator: {fileID: 0}
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 1293211651821104217, guid: c81a355c4e31b1644a156875f90f3e1d, type: 3}
@@ -637,4 +646,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
+  menu: {fileID: 11400000, guid: 459bfbfae1a483c409e5842d2b8828d1, type: 2}

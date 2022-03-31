@@ -276,7 +276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press the Right bumper to use the horn and blast enemies away from you!
+  m_Text: Press the Y or 2 Button to use the horn and blast enemies away from you!
 --- !u!222 &933923611
 CanvasRenderer:
   m_ObjectHideFlags: 0
