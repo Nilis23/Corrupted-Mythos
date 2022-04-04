@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a844f52455f3cc49b118f26145c708e, type: 3}
   m_Name: Idle State
   m_EditorClassIdentifier: 
-  FrostChase: {fileID: 11400000, guid: 7d2778d3706fc724cbb92ee6715d2dda, type: 2}
+  FrostAttack: {fileID: 11400000, guid: 4eaa6ccb68676914395e22db50c2e521, type: 2}

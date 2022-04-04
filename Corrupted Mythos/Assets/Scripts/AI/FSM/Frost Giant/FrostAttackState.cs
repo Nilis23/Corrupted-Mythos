@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Attack State", menuName = "FSM/States/FrostGiant/Attack", order = 3)]
 public class FrostAttackState : State
 {
-    public State chaseState;
+    public State idle;
     public float timer;
     float t;
     public override void StartState(StateManager em)
@@ -18,7 +18,7 @@ public class FrostAttackState : State
         if (t >= timer)
         {
             em.attack = false;
-            return chaseState;
+            return idle;
         }
 
         t += Time.deltaTime;
