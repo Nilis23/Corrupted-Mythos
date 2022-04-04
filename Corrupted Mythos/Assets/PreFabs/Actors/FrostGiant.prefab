@@ -269,7 +269,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3635417699035916442
@@ -632,7 +632,7 @@ MonoBehaviour:
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 1293211651821104217, guid: c81a355c4e31b1644a156875f90f3e1d, type: 3}
-  BerserkGiver: 0
+  BerserkGiver: 40
   stagertime: 2
 --- !u!114 &2637557635929815139
 MonoBehaviour:

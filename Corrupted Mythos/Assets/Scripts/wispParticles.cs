@@ -6,7 +6,7 @@ public class wispParticles : MonoBehaviour
 {
     public float StoredBerserk;
     private Vector2 endloc;
-    private float speed = 10;
+    private float speed = 15;
     PlayerMovement player;
     private float rate;
     private Vector3 origScale;
@@ -29,6 +29,7 @@ public class wispParticles : MonoBehaviour
         {
             yield return null;
             transform.position = Vector2.MoveTowards(this.transform.position, endloc, Time.deltaTime * speed);
+            endloc = player.beserkLocator.transform.position;
             rate += Time.deltaTime * .3f;
             rate = Mathf.Clamp(rate, 0, 1);
             transform.localScale = Vector3.Slerp(origScale, Vector3.zero, rate);

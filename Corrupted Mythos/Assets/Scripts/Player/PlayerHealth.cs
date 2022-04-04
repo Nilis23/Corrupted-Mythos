@@ -276,8 +276,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (rageMeter != null)
         {
+            if (!block)
+            {
             rageCounter += val;
             SetBerserkUI();
+            }
         }
     }
 
@@ -339,6 +342,11 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator knockUpSide(bool flip)
     {
+        if (block)
+        {
+            yield break;
+        }
+
         Vector2 upPos;
         if (flip)
         {

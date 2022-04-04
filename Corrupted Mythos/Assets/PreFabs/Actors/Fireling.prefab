@@ -181,7 +181,7 @@ MonoBehaviour:
   script: {fileID: 0}
   player: {fileID: 0}
   soulPref: {fileID: 1293211651821104217, guid: c81a355c4e31b1644a156875f90f3e1d, type: 3}
-  BerserkGiver: 0
+  BerserkGiver: 10
   inv: 0
 --- !u!114 &-2749599729003686035
 MonoBehaviour:
