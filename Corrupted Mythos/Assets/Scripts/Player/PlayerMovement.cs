@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if (!weap.getStatus() && !paused && !playerHealth.block && slam != true && !chkAttk)
+        if (!weap.getStatus() && !paused && !playerHealth.block && !slam && !chkAttk)
         {
             dir = pcontroller.player.movement.ReadValue<Vector2>().x;
             if (dir != 0)
@@ -306,8 +306,12 @@ public class PlayerMovement : MonoBehaviour
             t += Time.deltaTime;
             Vector2 direction = new Vector2(dir, 0);
 
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1), direction, 0.5f, layermask);
-            RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 2), direction, 0.5f, layermask);
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 1.2f), direction, 1f, layermask);
+            RaycastHit2D hitt = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.8f), direction, 1f, layermask);
+
+            Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 1.2f), direction * 5, Color.red, 1f, false);
+            Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + 0.8f), direction * 5, Color.red, 1f, false);
+
             if (hit || hitt)
             {
                 t = 0.26f;
