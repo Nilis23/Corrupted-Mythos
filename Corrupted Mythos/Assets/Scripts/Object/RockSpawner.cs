@@ -10,6 +10,7 @@ public class RockSpawner : MonoBehaviour
     float fallDist;
 
     float yHeight;
+    GameObject rk = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,11 @@ public class RockSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject obj = Instantiate(RockPref, new Vector3(transform.position.x, transform.position.y + yHeight, transform.position.z), Quaternion.Euler(0, 0, 0));
-        obj.GetComponent<Rock>().SetFallDist(fallDist);
+        if (rk == null)
+        {
+            GameObject obj = Instantiate(RockPref, new Vector3(transform.position.x, transform.position.y + yHeight, transform.position.z), Quaternion.Euler(0, 0, 0));
+            obj.GetComponent<Rock>().SetFallDist(fallDist);
+            rk = obj;
+        }
     }
 }

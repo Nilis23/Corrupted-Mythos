@@ -156,6 +156,7 @@ public class PlayerHealth : MonoBehaviour
 
     void DeathScreen()
     {
+        script.paused = true;
         UICntrl.ShowDeath();
         Time.timeScale = 0f;
     }
@@ -216,6 +217,7 @@ public class PlayerHealth : MonoBehaviour
         sr.GetComponent<SpriteRenderer>().color = Color.white;
         this.transform.localScale = new Vector2(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y);
         StopAllCoroutines();
+        script.StopAllCoroutines();
         script.spawning();
 
         if (node != null)

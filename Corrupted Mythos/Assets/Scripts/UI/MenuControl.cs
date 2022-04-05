@@ -13,19 +13,22 @@ public class MenuControl : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1f;
-        player.paused = false;
         pause.SetActive(false);
+
+        Invoke("unpause", 0.2f);
     }
     public void Restart()
     {
         Time.timeScale = 1f;
-        player.paused = false;
+        
         GameObject.FindObjectOfType<PlayerHealth>()?.RespawnPlayer();
 
         if (pause.activeSelf)
         {
             pause.SetActive(false);
         }
+
+        Invoke("unpause", 0.2f);
     }
 
     public void Reload()
@@ -43,5 +46,10 @@ public class MenuControl : MonoBehaviour
         Time.timeScale = 1f;
         player.paused = false;
         SceneManager.LoadScene(0);
+    }
+
+    void unpause()
+    {
+        player.paused = false;
     }
 }
