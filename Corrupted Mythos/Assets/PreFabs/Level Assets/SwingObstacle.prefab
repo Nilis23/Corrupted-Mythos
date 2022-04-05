@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3705272559777946213}
   - component: {fileID: 3705272559777946212}
-  - component: {fileID: 5350739971886380628}
-  - component: {fileID: 4356879587708705002}
   m_Layer: 0
   m_Name: SwingObstacle
   m_TagString: Untagged
@@ -86,41 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5350739971886380628
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3705272559777946214}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &4356879587708705002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3705272559777946214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b33a3cdcff4d14fabaac5365cdc752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  flip: 0
 --- !u!1 &7652892701566800142
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +95,7 @@ GameObject:
   - component: {fileID: 3498374693485493864}
   - component: {fileID: 7952008227309965437}
   - component: {fileID: 3664602961645582519}
+  - component: {fileID: 7656481494303458137}
   m_Layer: 0
   m_Name: 'rightHit '
   m_TagString: Untagged
@@ -203,6 +167,22 @@ PolygonCollider2D:
       - {x: -2.39, y: 0.05}
       - {x: -1.94, y: -1.23}
       - {x: -1.25, y: -1.73}
+--- !u!114 &7656481494303458137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652892701566800142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b33a3cdcff4d14fabaac5365cdc752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  knockup: 0
+  flip: 1
+  OtherSideHit: {fileID: 7814766293668656791}
 --- !u!1 &7814766293668656791
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +194,7 @@ GameObject:
   - component: {fileID: 7950531299595653286}
   - component: {fileID: 1225132876707377957}
   - component: {fileID: 9218621756581651422}
+  - component: {fileID: 821697383104671215}
   m_Layer: 0
   m_Name: leftHit
   m_TagString: Untagged
@@ -285,3 +266,19 @@ PolygonCollider2D:
       - {x: -2.39, y: 0.05}
       - {x: -1.94, y: 1.28}
       - {x: -1.25, y: 1.71}
+--- !u!114 &821697383104671215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814766293668656791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b33a3cdcff4d14fabaac5365cdc752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  knockup: 0
+  flip: 0
+  OtherSideHit: {fileID: 7652892701566800142}

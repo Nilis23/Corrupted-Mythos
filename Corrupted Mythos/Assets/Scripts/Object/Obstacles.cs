@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     public int damage;
+    public int knockup;
     private PlayerHealth script;
     public bool flip;
     public GameObject OtherSideHit;
@@ -15,7 +16,7 @@ public class Obstacles : MonoBehaviour
         {
             script = collision.gameObject.GetComponent<PlayerHealth>();
             script.minusHealth(damage);
-            script.knockAround(flip);
+            script.knockAround(flip, knockup);
             StartCoroutine(IFrames());
         }
     }

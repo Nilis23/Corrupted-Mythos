@@ -315,9 +315,9 @@ public class PlayerHealth : MonoBehaviour
         points += addVal;
     }
 
-    public void knockAround(bool flip)
+    public void knockAround(bool flip, int knockup)
     {
-        StartCoroutine(knockUpSide(flip));
+        StartCoroutine(knockUpSide(flip, knockup));
     }
 
     IEnumerator knockUp()
@@ -342,7 +342,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    IEnumerator knockUpSide(bool flip)
+    IEnumerator knockUpSide(bool flip, int knockup)
     {
         if (block)
         {
@@ -352,11 +352,11 @@ public class PlayerHealth : MonoBehaviour
         Vector2 upPos;
         if (flip)
         {
-            upPos = new Vector2(transform.position.x + 2, transform.position.y + 2);
+            upPos = new Vector2(transform.position.x + knockup, transform.position.y + knockup);
         }
         else
         {
-            upPos = new Vector2(transform.position.x-2, transform.position.y + 2);
+            upPos = new Vector2(transform.position.x-knockup, transform.position.y + knockup);
         }
         
         Vector2 orgPos = transform.position;

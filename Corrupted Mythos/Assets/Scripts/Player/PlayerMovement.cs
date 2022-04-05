@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     GameObject SlamEffect;
 
     public GameObject beserkLocator;
+    public GameObject GodEffectPref;
 
     private void OnEnable()
     {
@@ -62,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         impact = transform.Find("impact").gameObject.transform;
-        godWipe = transform.Find("GodWipe").gameObject;
+        //godWipe = transform.Find("GodWipe").gameObject;
+        killCount = 0;
         pcontroller.Enable();
         playerHealth = GetComponentInParent<PlayerHealth>();
         UICntrl = GameObject.Find("Canvas")?.GetComponent<PlayingUICntrl>();
@@ -194,12 +196,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (pcontroller.player.GodWipe.triggered && killCount >= 15)
         {
-            Debug.Log("wipe");
-            godWipe.SetActive(true);
+            GameObject GodEffect = Instantiate(GodEffectPref);
+            GodEffect.transform.position = this.transform.position;
             killCount = 0;
             GodBarctrl.ResetBar();
 
-            //wipe.Play();
             shaker.shakeCam(1, 1);
         }
 
