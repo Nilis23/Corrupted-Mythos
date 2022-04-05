@@ -84,12 +84,12 @@ public class fireGiantProjectile : MonoBehaviour
         {
             StartCoroutine(DoAttack(collision));
         }
-        else if(collision.gameObject.tag == "enemy" && defl)
+        else if (collision.gameObject.tag == "enemy" && defl)
         {
             collision.gameObject.GetComponent<EnemyHealth>().minusHealth(damage);
             StartCoroutine(DoDestruction());
         }
-        else
+        else if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "enemy")
         {
             StartCoroutine(DoDestruction());
         }
@@ -99,7 +99,7 @@ public class fireGiantProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         //if (box.IsTouching(collision)) { } //Prototype for post animations
-        if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
+        if (collision.gameObject.GetComponent<PlayerHealth>().block)
         {
             swapDir();
         }
