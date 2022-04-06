@@ -99,7 +99,7 @@ public class fireGiantProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         //if (box.IsTouching(collision)) { } //Prototype for post animations
-        if (collision.gameObject.GetComponent<PlayerHealth>().block)
+        if (collision.gameObject.GetComponent<PlayerHealth>().block || collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
         {
             swapDir();
         }
