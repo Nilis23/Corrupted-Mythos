@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Foldout text="States" name="StateContainer" style="flex-direction: column;">
+        <ui:Foldout text="Valid States" name="ValidStates" />
+        <ui:TextField picking-mode="Ignore" label="Current State" value="filler text" />
+        <ui:Toggle label="Idle" value="true" />
+        <ui:Toggle label="Attack" value="false" />
+    </ui:Foldout>
+    <ui:Foldout text="Scripts" name="LinkedScripts" />
+    <ui:Foldout text="Navigation" name="NavData" />
+    <ui:Foldout text="Timers" name="Timers" />
+    <ui:Foldout text="Bat Fields" name="Bat" />
+    <ui:Foldout text="Spine Fields" name="Spine" />
+</ui:UXML>
