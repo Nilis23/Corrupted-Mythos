@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -48,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject GodEffectPref;
 
     public bool isDash = false;
+
+    public bool mountable;
+    public bool mounted;
+    public Ballista ontop;
+    //public static Action mounted = delegate { };
+    public static Action shoot = delegate { };
 
     private void OnEnable()
     {
@@ -167,10 +174,6 @@ public class PlayerMovement : MonoBehaviour
             animatior.SetFloat("Speed", 0);
         }
 
-        if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block && slam != true && !chkAttk)
-        {
-            jump = true;
-        }
         if (pcontroller.player.attack.triggered && !paused && !playerHealth.block && !chkAttk && !slam)
         {
             if (cntrler.m_Grounded == false && !slam)
@@ -194,6 +197,30 @@ public class PlayerMovement : MonoBehaviour
             if (playerHealth.berserk)
             {
                 StartCoroutine(rageMode());
+            }
+        }
+        if (pcontroller.player.jump.triggered && mounted && !weap.getStatus() && !playerHealth.block && slam != true && !chkAttk)
+        {
+            shoot();
+        }
+        else if (pcontroller.player.jump.triggered && !paused && !weap.getStatus() && !playerHealth.block && slam != true && !chkAttk)
+        {
+            jump = true;
+        }
+        if (pcontroller.player.NodeInteract.triggered && mountable)
+        {
+            if (mounted)
+            {
+                mounted = false;
+                paused = false;
+                ontop.CtrlInputs = null;
+            }
+            else
+            {
+                mounted = true;
+                paused = true;
+                ontop.CtrlInputs = pcontroller;
+                ontop.strtcore();
             }
         }
         if (pcontroller.player.GodWipe.triggered && killCount >= 15)
