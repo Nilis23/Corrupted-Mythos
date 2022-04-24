@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
 
-[CustomEditor(typeof(StateManager))]
-public class ManagerInspector : Editor
+[CustomEditor(typeof(EnemyNavigator))]
+public class NavigatorInspector : Editor
 {
     public VisualTreeAsset m_InspectorXML;
+
     public override VisualElement CreateInspectorGUI()
     {
         VisualElement myInspector = new VisualElement();
