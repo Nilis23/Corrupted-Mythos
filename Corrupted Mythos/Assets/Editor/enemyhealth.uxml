@@ -1,16 +1,15 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:TextField picking-mode="Ignore" label="Health" value="filler text" text="filler text" name="hp" />
-    <ui:Toggle label="Invincibility" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:TextField picking-mode="Ignore" label="Health" value="filler text" text="filler text" name="hp" binding-path="health" />
+    <ui:Toggle label="Invincibility" name="invtoggle" binding-path="dontHurt" />
     <ui:Foldout text="References" name="Scripts">
-        <ui:TextField picking-mode="Ignore" label="Enemy Manager" value="filler text" text="filler text" name="em" />
-        <ui:TextField picking-mode="Ignore" label="Player Movement" value="filler text" text="filler text" name="playermovement" />
-        <ui:TextField picking-mode="Ignore" label="Player Object" value="filler text" text="filler text" name="playerobj" />
+        <uie:PropertyField name="em" label="Enemy Manager" binding-path="em" />
+        <uie:PropertyField name="playermovement" label="Player Movement" binding-path="script" />
+        <uie:PropertyField name="playerobj" label="Player&apos;s Object" binding-path="player" />
     </ui:Foldout>
     <ui:Foldout text="Animation" name="anim">
-        <ui:TextField picking-mode="Ignore" label="Animator" value="filler text" text="filler text" />
-        <ui:Toggle label="Spine Animation" />
-        <ui:TextField picking-mode="Ignore" label="Spine Animator" value="filler text" text="filler text" />
-        <ui:Toggle label="Do Death" />
+        <uie:PropertyField name="anim" label="Animator" binding-path="animator" />
+        <uie:PropertyField label="Spine Animator" name="sanim" binding-path="sAnimator" />
+        <ui:Toggle label="Do Death" name="deathtoggle" binding-path="doDeath" />
     </ui:Foldout>
-    <ui:TextField picking-mode="Ignore" label="Soul Prefab" value="filler text" text="filler text" />
+    <uie:PropertyField name="soulobj" label="Soul Prefab" binding-path="soulPref" />
 </ui:UXML>
