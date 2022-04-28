@@ -9,6 +9,12 @@ public class Obstacles : MonoBehaviour
     private PlayerHealth script;
     public bool flip;
     public GameObject OtherSideHit;
+    CameraShake camshake;
+
+    private void Awake()
+    {
+        camshake = GameObject.FindObjectOfType<CameraShake>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +26,7 @@ public class Obstacles : MonoBehaviour
             if (!dash)
             {
                 script.minusHealth(damage, false);
+                camshake.shakeCam(3, 0.2f, true);
                 script.knockAround(flip, knockup);
                 StartCoroutine(IFrames());
             }

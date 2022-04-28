@@ -80,7 +80,7 @@ public class EnemyAttack : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
-            FindObjectOfType<CameraShake>()?.shakeCam(2, 0.1f, true);
+            FindObjectOfType<CameraShake>()?.shakeCam(3, 0.2f, true);
         }
     }
 
