@@ -29,6 +29,7 @@ public class Obstacles : MonoBehaviour
                 camshake.shakeCam(3, 0.2f, true);
                 script.knockAround(flip, knockup);
                 StartCoroutine(IFrames());
+                GameObject.FindObjectOfType<CameraShake>().shakeCam(10, 0.2f, true);
             }
         }
     }

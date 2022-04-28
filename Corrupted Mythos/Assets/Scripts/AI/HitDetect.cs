@@ -21,5 +21,12 @@ public class HitDetect : MonoBehaviour
                 sanim.DoSpineAnim(0, "Attack");
             }
         }
+        StartCoroutine(holdon());
+    }
+
+    IEnumerator holdon()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<CameraShake>().shakeCam(10, 0.3f);
     }
 }
