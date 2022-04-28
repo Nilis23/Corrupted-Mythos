@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 3129240198031696559}
   - component: {fileID: 3129240198031696556}
   - component: {fileID: 3129240198031696552}
+  - component: {fileID: 750946641978090046}
   m_Layer: 0
   m_Name: Ballista
   m_TagString: Untagged
@@ -276,3 +277,16 @@ MonoBehaviour:
   shotPref: {fileID: 82433296427165915, guid: 7b52a000d7e2f4b42933ad1ce4b6c9b6, type: 3}
   aim: {fileID: 3129240197604655742}
   speed: 150
+--- !u!114 &750946641978090046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3129240198031696557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
