@@ -17,7 +17,7 @@ public class BerserkBarEffect : MonoBehaviour
     {
         PlayerHealth.BerserkEffect -= FlipActive;
     }
-    public void FlipActive(bool flip)
+    public void FlipActive(bool flip=true)
     {
         Debug.Log("effect");
         if (flip)
