@@ -138,6 +138,7 @@ public class PlayerHealth : MonoBehaviour
                 lives--;
                 livesCount.text = lives.ToString();
                 script.paused = true;
+                BerserkEffect(true);
 
                 //update UI
                 if (lives <= 0)
@@ -233,7 +234,7 @@ public class PlayerHealth : MonoBehaviour
         deathCount += 1;
         points = points - (points / 10 / 2);
         Debug.Log("turning off");
-        BerserkEffect(true);
+        //BerserkEffect(true);
     }
     IEnumerator FlashObject(SpriteRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed)
     {

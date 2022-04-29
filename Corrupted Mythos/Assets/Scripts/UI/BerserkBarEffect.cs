@@ -27,6 +27,7 @@ public class BerserkBarEffect : MonoBehaviour
         }
         else if (!flip)
         {
+            Debug.Log("on");
             effect.enabled = true;
         }
         else
