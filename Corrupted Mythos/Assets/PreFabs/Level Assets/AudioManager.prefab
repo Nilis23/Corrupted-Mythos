@@ -117,6 +117,30 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 01ffb155a6680d34b9be60fd11aeb424, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CaveAmbience
+    clip: {fileID: 8300000, guid: 6191e88865054334498a1359b6577ea2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GiantSwing
+    clip: {fileID: 8300000, guid: 313de129b274bed4199b9f1aa492559f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: jumpBoost
+    clip: {fileID: 8300000, guid: 67f3fc41b78669e41b3b3ef1bc162104, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   mixer: {fileID: 24100000, guid: 4a6502f6a57b44b4f9c6cbfdb19e79bd, type: 2}
 --- !u!114 &-2088366010615260002
 MonoBehaviour:
@@ -130,4 +154,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7b03cd04ae3e64883d18041fba990a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
+  menu: {fileID: 11400000, guid: 459bfbfae1a483c409e5842d2b8828d1, type: 2}
