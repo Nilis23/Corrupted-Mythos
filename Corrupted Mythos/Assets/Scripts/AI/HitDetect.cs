@@ -13,6 +13,7 @@ public class HitDetect : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" &&  em.stagr <= 0)
         {
+            Debug.Log("hit detect");
             em.attack = true;
             fganim.SetTrigger("Attack");
             if(sanim != null)
@@ -20,8 +21,8 @@ public class HitDetect : MonoBehaviour
                 sanim.StopSpineAnim(0);
                 sanim.DoSpineAnim(0, "Attack");
             }
+            StartCoroutine(holdon());
         }
-        StartCoroutine(holdon());
     }
 
     IEnumerator holdon()

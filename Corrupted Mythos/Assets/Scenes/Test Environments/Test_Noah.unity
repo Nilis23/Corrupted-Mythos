@@ -14180,7 +14180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477051204577071564, guid: f7f51b1c697961841be303d098e25a74, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4477051204577071600, guid: f7f51b1c697961841be303d098e25a74, type: 3}
       propertyPath: m_RootOrder
@@ -14824,6 +14824,10 @@ PrefabInstance:
     - target: {fileID: 4612784550712309316, guid: 2206ebb9e83da6145a79741cec1f5bae, type: 3}
       propertyPath: m_Name
       value: Bierd - He say Caw Caw
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612784550712309316, guid: 2206ebb9e83da6145a79741cec1f5bae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4612784550712309319, guid: 2206ebb9e83da6145a79741cec1f5bae, type: 3}
       propertyPath: m_RootOrder

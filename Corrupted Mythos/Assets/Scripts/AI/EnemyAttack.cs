@@ -59,7 +59,7 @@ public class EnemyAttack : MonoBehaviour
         clone.transform.position = SummonPoints[x].position;
     }
 
-    IEnumerator DoAttack(Collider2D collision)
+    IEnumerator DoAttack(Collider2D collision, bool doShake = true)
     {
         yield return new WaitForSeconds(0.3f);
         //if (box.IsTouching(collision)) { } //Prototype for post animations
@@ -80,7 +80,10 @@ public class EnemyAttack : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
 
-            FindObjectOfType<CameraShake>()?.shakeCam(3, 0.2f, true);
+            if (doShake)
+            {
+                FindObjectOfType<CameraShake>()?.shakeCam(3, 0.2f, true);
+            }
         }
     }
 
@@ -182,7 +185,14 @@ public class EnemyAttack : MonoBehaviour
             }
             else
             {
-                StartCoroutine(DoAttack(collision));
+                if (fG)
+                {
+                    StartCoroutine(DoAttack(collision, false));
+                }
+                else
+                {
+                    StartCoroutine(DoAttack(collision));
+                }
             }
         }
     }
