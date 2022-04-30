@@ -61,6 +61,7 @@ public class EnemyAttack : MonoBehaviour
 
     IEnumerator DoAttack(Collider2D collision, bool doShake = true)
     {
+        
         yield return new WaitForSeconds(0.3f);
         //if (box.IsTouching(collision)) { } //Prototype for post animations
         if (collision.gameObject.GetComponent<PlayerHealth>().perfectBlock)
@@ -76,10 +77,10 @@ public class EnemyAttack : MonoBehaviour
             }
         }
 
-        if (em.stagr == 0)
+        if (em.stagr <= 0)
         {
             collision.gameObject.GetComponent<PlayerHealth>().minusHealth(damage);
-
+            Debug.Log("Doing attack");
             if (doShake)
             {
                 FindObjectOfType<CameraShake>()?.shakeCam(3, 0.2f, true);
