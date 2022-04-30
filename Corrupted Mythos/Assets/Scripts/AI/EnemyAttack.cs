@@ -171,7 +171,6 @@ public class EnemyAttack : MonoBehaviour
                 {
                     sAnimator.DoSpineAnim(0, "Attack");
                 }
-                manager.PlaySound("abomHit");
             }
 
             if (charge) 
@@ -189,10 +188,12 @@ public class EnemyAttack : MonoBehaviour
                 if (fG)
                 {
                     StartCoroutine(DoAttack(collision, false));
+                    manager.PlaySound("GiantSwing", true);
                 }
                 else
                 {
                     StartCoroutine(DoAttack(collision));
+                    manager.PlaySound("abomHit");
                 }
             }
         }

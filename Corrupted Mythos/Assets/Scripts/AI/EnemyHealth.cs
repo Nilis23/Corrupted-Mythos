@@ -92,6 +92,7 @@ public abstract class EnemyHealth : MonoBehaviour
                 animator.SetTrigger("Die");
             }
             StartCoroutine(die());
+            FindObjectOfType<AudioManager>().PlaySound("EnemyDeath");
         }
     }
 

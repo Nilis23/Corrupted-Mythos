@@ -155,6 +155,11 @@ public class CharacterController2D : MonoBehaviour
 			PlayerAnim.SetTrigger("Jump");
 			jumped = true;
 			canJump = false;
+
+			if(m_JumpForce > 700)
+            {
+				FindObjectOfType<AudioManager>().PlaySound("jumpBoost");
+			}
 		}
 	}
 

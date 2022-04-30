@@ -43,11 +43,17 @@ public class AudioManager : MonoBehaviour
         this.stopAllSounds();
     }
 
-    public void PlaySound(string name)
+    public void PlaySound(string name, bool skip = false)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if(s != null && s.source != null)
+        {
+            if(skip)
+            {
+                s.source.time = 0.3f;
+            }
             s.source.Play();
+        }
 
         if(s != null && s.source == null)
         {
